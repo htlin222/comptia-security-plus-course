@@ -1,0 +1,37 @@
+name: Deploy to Cloudflare Pages
+
+# 每次推 main 就重建並部署。建置只用 Python 標準庫，所以不需要安裝相依套件。
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: 建置與離線稽核
+        # audit 不打網路，是確定性的，放在部署前擋掉配額與設定錯誤。
+        # 打真實 API 的 make verify 不放這裡——外部服務掛掉不該擋住部署。
+        run: |
+          uv run python src/build/build.py
+          uv run python src/build/audit.py
+
+      - name: 部署
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name security-plus-course --branch main --commit-dirty=true

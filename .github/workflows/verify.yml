@@ -1,0 +1,20 @@
+name: Verify links and standards
+
+# 影片會下架、標準文件會改版，所以每週對真實 API 重驗一次。
+# 失敗不代表程式壞了，代表有一格需要重挑——看 job 輸出就知道是哪一格。
+on:
+  schedule:
+    - cron: "17 3 * * 1"
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv run python src/build/build.py
+      - name: 重驗每個 YouTube 連結
+        run: uv run python src/build/verify_links.py
+      - name: 重驗每條標準依據
+        run: uv run python src/build/verify_refs.py
