@@ -7,7 +7,9 @@ const $ = (s, r = document) => r.querySelector(s);
 let CFG = null;
 
 export function setDiscussions(cfg) {
-	CFG = cfg?.repo ? cfg : null;
+	// repoId 與 categoryId 要到 giscus 裝進 repo 之後才拿得到。少了任何一個，
+	// giscus 只會在面板裡吐錯誤——那比沒有討論功能更糟，所以整個不渲染。
+	CFG = cfg?.repo && cfg.repoId && cfg.categoryId ? cfg : null;
 }
 
 export const enabled = () => !!CFG;
