@@ -1,0 +1,436 @@
+{
+  "_readme": [
+    "類別層級的標準依據：這一整類做法在官方標準裡的出處。",
+    "citations 的 type 決定 make verify 走哪個 API 重驗——nist 打 csrc.nist.gov、rfc 打 IETF",
+    "datatracker、attck 打 attack.mitre.org、cve 打 NVD。url 一律寫在資料裡，程式不替任何",
+    "來源組網址：組錯了會連到別份文件，而且看起來完全正常。"
+  ],
+  "categories": [
+    {
+      "id": "crypto",
+      "name": "密碼學與金鑰",
+      "evidence_grade": "standard",
+      "summary": "演算法選擇與金鑰長度在 NIST 與 FIPS 裡是明文規定，不是業界慣例。考題問「該用哪一個」時，標準答案通常就是 FIPS 核可清單上的那一個。",
+      "citations": [
+        {
+          "type": "nist",
+          "id": "SP 800-175B",
+          "url": "https://csrc.nist.gov/pubs/sp/800/175/b/final",
+          "publisher": "NIST",
+          "year": 2020,
+          "title": "Guideline for Using Cryptographic Standards in the Federal Government: Cryptographic Mechanisms",
+          "takeaway": "哪些演算法可用、用在什麼場景，這份是總覽。"
+        },
+        {
+          "type": "nist",
+          "id": "FIPS 197",
+          "url": "https://csrc.nist.gov/pubs/fips/197/final",
+          "publisher": "NIST",
+          "year": 2001,
+          "title": "Advanced Encryption Standard (AES)",
+          "takeaway": "AES 本體。考題裡的對稱加密預設就是它。"
+        },
+        {
+          "type": "nist",
+          "id": "FIPS 180-4",
+          "url": "https://csrc.nist.gov/pubs/fips/180-4/final",
+          "publisher": "NIST",
+          "year": 2015,
+          "title": "Secure Hash Standard (SHS)",
+          "takeaway": "SHA-2 家族的規範。MD5 與 SHA-1 已不在核可之列。"
+        },
+        {
+          "type": "nist",
+          "id": "SP 800-57 Part 1 Rev. 5",
+          "url": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final",
+          "publisher": "NIST",
+          "year": 2020,
+          "title": "Recommendation for Key Management: Part 1 – General",
+          "takeaway": "金鑰生命週期、輪替週期與強度對照表的原始出處。"
+        },
+        {
+          "type": "rfc",
+          "id": "RFC 8446",
+          "url": "https://www.rfc-editor.org/rfc/rfc8446",
+          "publisher": "IETF",
+          "year": 2018,
+          "title": "The Transport Layer Security (TLS) Protocol Version 1.3",
+          "takeaway": "TLS 1.3 拿掉了 RSA 金鑰傳輸，強制前向保密——這是與 1.2 最關鍵的差別。"
+        }
+      ]
+    },
+    {
+      "id": "identity",
+      "name": "身分與存取管理",
+      "evidence_grade": "standard",
+      "summary": "認證強度分級、零信任的三個元件、ABAC 的定義都有對應的 NIST 文件。SP 800-63B 尤其重要——它就是「簡訊 OTP 不再建議」這個說法的出處。",
+      "citations": [
+        {
+          "type": "nist",
+          "id": "SP 800-63B",
+          "url": "https://csrc.nist.gov/pubs/sp/800/63/b/final",
+          "publisher": "NIST",
+          "year": 2017,
+          "title": "Digital Identity Guidelines: Authentication and Lifecycle Management",
+          "takeaway": "AAL 分級、密碼規則、為什麼不該再強制定期改密碼。"
+        },
+        {
+          "type": "nist",
+          "id": "SP 800-207",
+          "url": "https://csrc.nist.gov/pubs/sp/800/207/final",
+          "publisher": "NIST",
+          "year": 2020,
+          "title": "Zero Trust Architecture",
+          "takeaway": "Policy Engine／Policy Administrator／PEP 三個元件的定義來源。"
+        },
+        {
+          "type": "nist",
+          "id": "SP 800-162",
+          "url": "https://csrc.nist.gov/pubs/sp/800/162/final",
+          "publisher": "NIST",
+          "year": 2014,
+          "title": "Guide to Attribute Based Access Control (ABAC) Definition and Considerations",
+          "takeaway": "ABAC 與 RBAC 的分界在這份講得最清楚。"
+        },
+        {
+          "type": "rfc",
+          "id": "RFC 6749",
+          "url": "https://www.rfc-editor.org/rfc/rfc6749",
+          "publisher": "IETF",
+          "year": 2012,
+          "title": "The OAuth 2.0 Authorization Framework",
+          "takeaway": "OAuth 是授權框架不是認證協定，這份規格開宗明義就說了。"
+        },
+        {
+          "type": "rfc",
+          "id": "RFC 4120",
+          "url": "https://www.rfc-editor.org/rfc/rfc4120",
+          "publisher": "IETF",
+          "year": 2005,
+          "title": "The Kerberos Network Authentication Service (V5)",
+          "takeaway": "票證機制與時間同步要求的原始定義。"
+        }
+      ]
+    },
+    {
+      "id": "netdef",
+      "name": "網路邊界防禦",
+      "evidence_grade": "standard",
+      "summary": "防火牆政策、IDPS 部署與 IPsec VPN 各有專屬的 NIST 指引。考題常考的「IDS 旁掛、IPS 串接」在 SP 800-94 裡是明寫的。",
+      "citations": [
+        {
+          "type": "nist",
+          "id": "SP 800-41 Rev. 1",
+          "url": "https://csrc.nist.gov/pubs/sp/800/41/r1/final",
+          "publisher": "NIST",
+          "year": 2009,
+          "title": "Guidelines on Firewalls and Firewall Policy",
+          "takeaway": "封包過濾、狀態檢視、應用層代理的分類出處。"
+        },
+        {
+          "type": "nist",
+          "id": "SP 800-94",
+          "url": "https://csrc.nist.gov/pubs/sp/800/94/final",
+          "publisher": "NIST",
+          "year": 2007,
+          "title": "Guide to Intrusion Detection and Prevention Systems (IDPS)",
+          "takeaway": "特徵式與異常式偵測的取捨、以及誤判成本的討論。"
+        },
+        {
+          "type": "nist",
+          "id": "SP 800-77 Rev. 1",
+          "url": "https://csrc.nist.gov/pubs/sp/800/77/r1/final",
+          "publisher": "NIST",
+          "year": 2020,
+          "title": "Guide to IPsec VPNs",
+          "takeaway": "AH 與 ESP 的差別、tunnel 與 transport 模式怎麼選。"
+        },
+        {
+          "type": "rfc",
+          "id": "RFC 4301",
+          "url": "https://www.rfc-editor.org/rfc/rfc4301",
+          "publisher": "IETF",
+          "year": 2005,
+          "title": "Security Architecture for the Internet Protocol",
+          "takeaway": "IPsec 架構本體。"
+        }
+      ]
+    },
+    {
+      "id": "detect",
+      "name": "偵測、監控與日誌",
+      "evidence_grade": "standard",
+      "summary": "日誌管理與持續監控是兩份不同的 NIST 文件，考題也常把它們分開問：前者管「留什麼、留多久」，後者管「多久看一次、看什麼指標」。",
+      "citations": [
+        {
+          "type": "nist",
+          "id": "SP 800-92",
+          "url": "https://csrc.nist.gov/pubs/sp/800/92/final",
+          "publisher": "NIST",
+          "year": 2006,
+          "title": "Guide to Computer Security Log Management",
+          "takeaway": "日誌來源分類、保留期限與時間同步的要求。"
+        },
+        {
+          "type": "nist",
+          "id": "SP 800-137",
+          "url": "https://csrc.nist.gov/pubs/sp/800/137/final",
+          "publisher": "NIST",
+          "year": 2011,
+          "title": "Information Security Continuous Monitoring (ISCM) for Federal Information Systems and Organizations",
+          "takeaway": "持續監控不是「一直看螢幕」，而是有頻率與指標的制度。"
+        },
+        {
+          "type": "attck",
+          "id": "T1078",
+          "url": "https://attack.mitre.org/techniques/T1078/",
+          "publisher": "MITRE ATT&CK",
+          "title": "Valid Accounts",
+          "takeaway": "合法憑證被濫用是最難靠特徵偵測的一類，只能靠行為基線。"
+        }
+      ]
+    },
+    {
+      "id": "respond",
+      "name": "事件應變與數位鑑識",
+      "evidence_grade": "standard",
+      "summary": "考試會考的事件應變六階段，出處就是 SP 800-61；蒐證的揮發性順序出自 SP 800-86 與 RFC 3227。這兩個順序常被混用，要分清楚。",
+      "citations": [
+        {
+          "type": "nist",
+          "id": "SP 800-61 Rev. 2",
+          "url": "https://csrc.nist.gov/pubs/sp/800/61/r2/final",
+          "publisher": "NIST",
+          "year": 2012,
+          "title": "Computer Security Incident Handling Guide",
+          "takeaway": "準備、偵測與分析、圍堵根除復原、事後檢討——考題的標準框架。"
+        },
+        {
+          "type": "nist",
+          "id": "SP 800-86",
+          "url": "https://csrc.nist.gov/pubs/sp/800/86/final",
+          "publisher": "NIST",
+          "year": 2006,
+          "title": "Guide to Integrating Forensic Techniques into Incident Response",
+          "takeaway": "蒐證流程與證據保全的官方作法。"
+        },
+        {
+          "type": "rfc",
+          "id": "RFC 3227",
+          "url": "https://www.rfc-editor.org/rfc/rfc3227",
+          "publisher": "IETF",
+          "year": 2002,
+          "title": "Guidelines for Evidence Collection and Archiving",
+          "takeaway": "揮發性順序（暫存器 → 記憶體 → 網路狀態 → 磁碟）的原始出處。"
+        },
+        {
+          "type": "nist",
+          "id": "SP 800-34 Rev. 1",
+          "url": "https://csrc.nist.gov/pubs/sp/800/34/r1/final",
+          "publisher": "NIST",
+          "year": 2010,
+          "title": "Contingency Planning Guide for Federal Information Systems",
+          "takeaway": "BCP／DRP 的分工與演練型態分級。"
+        }
+      ]
+    },
+    {
+      "id": "vuln",
+      "name": "弱點與修補管理",
+      "evidence_grade": "standard",
+      "summary": "修補管理與滲透測試各有指引。要注意的是 CVSS 分數只是輸入之一，SP 800-40 明確要求把資產重要性一起納入排序。",
+      "citations": [
+        {
+          "type": "nist",
+          "id": "SP 800-40 Rev. 4",
+          "url": "https://csrc.nist.gov/pubs/sp/800/40/r4/final",
+          "publisher": "NIST",
+          "year": 2022,
+          "title": "Guide to Enterprise Patch Management Planning: Preventive Maintenance for Technology",
+          "takeaway": "把修補當成日常維運而不是專案，並要求先做資產盤點。"
+        },
+        {
+          "type": "nist",
+          "id": "SP 800-115",
+          "url": "https://csrc.nist.gov/pubs/sp/800/115/final",
+          "publisher": "NIST",
+          "year": 2008,
+          "title": "Technical Guide to Information Security Testing and Assessment",
+          "takeaway": "掃描、滲透測試、社交工程測試的範圍界定與授權要求。"
+        },
+        {
+          "type": "cve",
+          "id": "CVE-2021-44228",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-44228",
+          "publisher": "NVD",
+          "year": 2021,
+          "title": "Apache Log4j2 2.0-beta9 through 2.15.0 (excluding security releases 2.12.2, 2.12.3, and 2.3.1) JNDI features used in configuration, log messages, and parameters do not protect against attacker controlled LDAP and other JNDI related endpoints",
+          "takeaway": "Log4Shell：零日 + 供應鏈 + 相依套件盤點三個考點的實際案例。"
+        }
+      ]
+    },
+    {
+      "id": "cloud",
+      "name": "雲端、容器與虛擬化",
+      "evidence_grade": "standard",
+      "summary": "考題裡的雲端服務模式定義（IaaS／PaaS／SaaS）與部署模式全部出自 SP 800-145；容器與虛擬化的攻擊面則各有專屬文件。",
+      "citations": [
+        {
+          "type": "nist",
+          "id": "SP 800-145",
+          "url": "https://csrc.nist.gov/pubs/sp/800/145/final",
+          "publisher": "NIST",
+          "year": 2011,
+          "title": "The NIST Definition of Cloud Computing",
+          "takeaway": "五個特徵、三種服務模式、四種部署模式的標準定義。"
+        },
+        {
+          "type": "nist",
+          "id": "SP 800-190",
+          "url": "https://csrc.nist.gov/pubs/sp/800/190/final",
+          "publisher": "NIST",
+          "year": 2017,
+          "title": "Application Container Security Guide",
+          "takeaway": "映像檔、註冊表、編排器、執行期四層各自的風險。"
+        },
+        {
+          "type": "nist",
+          "id": "SP 800-125",
+          "url": "https://csrc.nist.gov/pubs/sp/800/125/final",
+          "publisher": "NIST",
+          "year": 2011,
+          "title": "Guide to Security for Full Virtualization Technologies",
+          "takeaway": "hypervisor 攻擊面與 VM 逃逸的官方討論。"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "name": "資料保護與隱私",
+      "evidence_grade": "standard",
+      "summary": "資料分級的三個衝擊等級出自 FIPS 199；PII 的處理要求出自 SP 800-122；媒體銷毀的三個層級（clear／purge／destroy）出自 SP 800-88，這三個是考題常客。",
+      "citations": [
+        {
+          "type": "nist",
+          "id": "FIPS 199",
+          "url": "https://csrc.nist.gov/pubs/fips/199/final",
+          "publisher": "NIST",
+          "year": 2004,
+          "title": "Standards for Security Categorization of Federal Information and Information Systems",
+          "takeaway": "low／moderate/high 三級與 CIA 各自評分的作法。"
+        },
+        {
+          "type": "nist",
+          "id": "SP 800-122",
+          "url": "https://csrc.nist.gov/pubs/sp/800/122/final",
+          "publisher": "NIST",
+          "year": 2010,
+          "title": "Guide to Protecting the Confidentiality of Personally Identifiable Information (PII)",
+          "takeaway": "去識別化的層級與殘餘再識別風險。"
+        },
+        {
+          "type": "nist",
+          "id": "SP 800-88 Rev. 1",
+          "url": "https://csrc.nist.gov/pubs/sp/800/88/r1/final",
+          "publisher": "NIST",
+          "year": 2014,
+          "title": "Guidelines for Media Sanitization",
+          "takeaway": "clear／purge／destroy 的判斷依據是媒體會不會離開組織掌控。"
+        }
+      ]
+    },
+    {
+      "id": "govern",
+      "name": "治理、風險與法遵",
+      "evidence_grade": "standard",
+      "summary": "風險評鑑流程、RMF 六階段與 CSF 2.0 的六大功能是這一類的骨幹。注意 CSF 2.0 才把 Govern 加進來，用舊版五功能作答會錯。",
+      "citations": [
+        {
+          "type": "nist",
+          "id": "CSWP 29",
+          "url": "https://csrc.nist.gov/pubs/cswp/29/the-nist-cybersecurity-framework-csf-20/final",
+          "publisher": "NIST",
+          "year": 2024,
+          "title": "The NIST Cybersecurity Framework (CSF) 2.0",
+          "takeaway": "Govern、Identify、Protect、Detect、Respond、Recover 六大功能。"
+        },
+        {
+          "type": "nist",
+          "id": "SP 800-30 Rev. 1",
+          "url": "https://csrc.nist.gov/pubs/sp/800/30/r1/final",
+          "publisher": "NIST",
+          "year": 2012,
+          "title": "Guide for Conducting Risk Assessments",
+          "takeaway": "威脅來源、脆弱性、可能性與衝擊的四要素模型。"
+        },
+        {
+          "type": "nist",
+          "id": "SP 800-37 Rev. 2",
+          "url": "https://csrc.nist.gov/pubs/sp/800/37/r2/final",
+          "publisher": "NIST",
+          "year": 2018,
+          "title": "Risk Management Framework for Information Systems and Organizations: A System Life Cycle Approach for Security and Privacy",
+          "takeaway": "RMF 七步驟，含 CSF 2.0 之後補上的 Prepare。"
+        },
+        {
+          "type": "nist",
+          "id": "SP 800-53 Rev. 5",
+          "url": "https://csrc.nist.gov/pubs/sp/800/53/r5/final",
+          "publisher": "NIST",
+          "year": 2020,
+          "title": "Security and Privacy Controls for Information Systems and Organizations",
+          "takeaway": "控制項目錄。考題的控制類別與功能分類多半對得回這裡。"
+        }
+      ]
+    },
+    {
+      "id": "threat",
+      "name": "威脅手法與社交工程",
+      "evidence_grade": "framework",
+      "summary": "攻擊手法用 MITRE ATT&CK 對照比用教科書分類精確——它記的是實際觀測到的行為，不是理論分類。惡意程式處置則有 NIST 專屬指引。",
+      "citations": [
+        {
+          "type": "attck",
+          "id": "T1566",
+          "url": "https://attack.mitre.org/techniques/T1566/",
+          "publisher": "MITRE ATT&CK",
+          "title": "Phishing",
+          "takeaway": "底下四個子技術對應到考題的附件、連結、服務、語音四種釣魚。"
+        },
+        {
+          "type": "attck",
+          "id": "T1486",
+          "url": "https://attack.mitre.org/techniques/T1486/",
+          "publisher": "MITRE ATT&CK",
+          "title": "Data Encrypted for Impact",
+          "takeaway": "勒索軟體在 ATT&CK 裡歸在 Impact 戰術，不是在 Exfiltration。"
+        },
+        {
+          "type": "attck",
+          "id": "T1195",
+          "url": "https://attack.mitre.org/techniques/T1195/",
+          "publisher": "MITRE ATT&CK",
+          "title": "Supply Chain Compromise",
+          "takeaway": "軟體、硬體與開發工具鏈三條路徑。"
+        },
+        {
+          "type": "attck",
+          "id": "T1557",
+          "url": "https://attack.mitre.org/techniques/T1557/",
+          "publisher": "MITRE ATT&CK",
+          "title": "Adversary-in-the-Middle",
+          "takeaway": "ATT&CK 已改用 adversary-in-the-middle 這個中性名稱。"
+        },
+        {
+          "type": "nist",
+          "id": "SP 800-83 Rev. 1",
+          "url": "https://csrc.nist.gov/pubs/sp/800/83/r1/final",
+          "publisher": "NIST",
+          "year": 2013,
+          "title": "Guide to Malware Incident Prevention and Handling for Desktops and Laptops",
+          "takeaway": "惡意程式事件的預防與處置流程。"
+        }
+      ]
+    }
+  ]
+}

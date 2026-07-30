@@ -1,0 +1,810 @@
+{
+ "chapter": "CH1",
+ "units": [
+  {
+   "id": "ch1-u1",
+   "name": "AAA 框架：認證、授權、計帳",
+   "type": "topic",
+   "assessment": "把 Authentication、Authorization、Accounting 三個字各配一個動作說出來。再問自己：RADIUS 和 TACACS+ 差在哪一層、哪一個把三個 A 拆開處理？答不出 TACACS+ 可以只做授權而不管認證，就是還沒讀通。",
+   "note": {
+    "slug": "aaa-framework",
+    "title": "AAA Framework",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/aaa-framework",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-aaa-framework",
+    "questions": 4,
+    "concepts": [
+     "authentication",
+     "authorization",
+     "Accounting",
+     "RADIUS",
+     "TACACS+",
+     "Kerberos"
+    ],
+    "eli5": "AAA 就像是進入管制區的流程。1. 認證 (Authentication)：確認「你是誰」 (檢查證件)；2. 授權 (Authorization)：確認「你能做什麼」 (你有哪裡的鑰匙)；3. 紀錄 (Accounting)：記下「你做了什麼」 (攝影機紀錄)。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Cisco CCNA Packet Tracer Ultimate labs: AAA Lab. Answers Part 1: TACACS & RADIUS configuration.",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=WaS9BRNb4Yw",
+     "channel": "David Bombal",
+     "duration": "7:52",
+     "why": "David Bombal，實作示範"
+    },
+    {
+     "name": "AAA Framework Explained: Authentication, Authorization, Accounting (Cybersecurity)",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=NXCn2G7wL0s",
+     "channel": "Cyber and Tech Explained",
+     "duration": "2:26",
+     "why": "Cyber and Tech Explained，短講補強"
+    },
+    {
+     "name": "AAA: Authentication🪪, Authorization🆔, Auditing👀, Accounting🕵️‍♂️🕵️‍♂️",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=K2WpUSgJLws",
+     "channel": "Gate Smashers",
+     "duration": "7:03",
+     "why": "Gate Smashers，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Authentication, Authorization, and Accounting",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=AhaZtj5P2a8",
+    "duration": "9:04",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch1-u2",
+   "name": "存取控制模型（DAC／MAC／RBAC／ABAC）",
+   "type": "topic",
+   "assessment": "用一句話說明四種模型「由誰決定權限」：DAC 是擁有者、MAC 是系統標籤、RBAC 是職務、ABAC 是屬性組合。再舉一個只有 ABAC 做得到而 RBAC 做不到的情境（例如「只有上班時間、從公司網段、用受管裝置才能存取」）。",
+   "note": {
+    "slug": "access-control-models",
+    "title": "Access Control Models",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/access-control-models",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-access-control-models",
+    "questions": 4,
+    "concepts": [
+     "Bell-LaPadula Model",
+     "Biba Model"
+    ],
+    "eli5": "存取控制模型是決定誰能看什麼的不同規則。有的由檔案主人決定 (DAC)，有的由公司職位決定 (RBAC)，有的由國家安全等級決定 (MAC)。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Access Control Models Explained | DAC MAC RBAC ABAC | Cybersecurity Fundamentals - Infosec Guardians",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=hlbRzgg3lac",
+     "channel": "InfoSec Guardians",
+     "duration": "16:54",
+     "why": "InfoSec Guardians，完整講解"
+    },
+    {
+     "name": "Azure RBAC Explained with Real-Time Demo | Role-Based Access Control in Azure for Beginners",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=2H8HCg9os5Y",
+     "channel": "TechnoAarambh",
+     "duration": "21:33",
+     "why": "TechnoAarambh，實作示範"
+    },
+    {
+     "name": "Access Control Models: DAC, MAC, RBAC, ABAC, and More!",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=Kn41z3fl_UY",
+     "channel": "Cyber connect",
+     "duration": "5:03",
+     "why": "Cyber connect，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Access Controls",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=9ANHcZwJfdQ",
+    "duration": "7:49",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch1-u3",
+   "name": "攻擊向量與攻擊面",
+   "type": "topic",
+   "assessment": "列出五種攻擊向量並各配一個對應的緩解控制。再自問：攻擊向量（怎麼進來）和威脅行為者（誰要進來）差在哪？把這兩個混在一起是考題最愛設的陷阱。",
+   "note": {
+    "slug": "attack-vectors",
+    "title": "Attack Vectors",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/attack-vectors",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-attack-vectors",
+    "questions": 4,
+    "concepts": [
+     "social engineering",
+     "Open service ports",
+     "Human vectors",
+     "Attack surface management"
+    ],
+    "eli5": "攻擊媒介就是壞人進入你家的方式。可能是窗戶 (電子郵件)、門縫 (隨身碟)、或是騙你開門 (社交工程)。",
+    "eli5Lang": "zh",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Watering Hole Attacks",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=z413PV6l_Ys",
+     "channel": "Professor Messer",
+     "duration": "4:12",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "CompTIA Security+ Full Course: Attack and Attacker Categories",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=LdSJcbvtIko",
+     "channel": "Certify Breakfast",
+     "duration": "27:47",
+     "why": "Certify Breakfast，完整講解"
+    },
+    {
+     "name": "Every Cyber Attack Type Explained in 5 minutes",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=lCH7rta13wo",
+     "channel": "Mr.PiwPiew",
+     "duration": "5:01",
+     "why": "Mr.PiwPiew，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Common Threat Vectors",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=4lAbGpTDZ18",
+    "duration": "17:14",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch1-u4",
+   "name": "身分認證方式",
+   "type": "topic",
+   "assessment": "把 something you know／have／are／somewhere you are／something you do 各舉一例。再判斷：密碼加上安全提問算不算多因子？答案是不算——兩個都是 knowledge，說得出這一點才算懂因子的定義。",
+   "note": {
+    "slug": "authentication",
+    "title": "Authentication",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/authentication",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-authentication",
+    "questions": 4,
+    "concepts": [
+     "Single-factor authentication (SFA)",
+     "mfa",
+     "password attacks",
+     "Certificate-based authentication",
+     "Biometric authentication",
+     "Passwordless authentication",
+     "Directory services",
+     "sso",
+     "federation"
+    ],
+    "eli5": "認證就是證明你真的是你所說的那個人。常見方式有：你知道的東西 (密碼)、你擁有的東西 (手機)、你就是的東西 (指紋)。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Password Security",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=eMOe-PLBy1k",
+     "channel": "Professor Messer",
+     "duration": "6:22",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "What is Multi-Factor Authentication",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=L3alw3iXaio",
+     "channel": "IBM Technology",
+     "duration": "3:03",
+     "why": "IBM Technology，短講補強"
+    },
+    {
+     "name": "Risk-Based Authentication Explained",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=n2eT3JRGAM4",
+     "channel": "IBM Technology",
+     "duration": "13:37",
+     "why": "IBM Technology，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Multifactor Authentication - CompTIA Security+ SY0-701 - 4.6",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=MpIzA4fNWew",
+    "duration": "4:30",
+    "why": "Messer 官方課程沒有單獨講這個主題，改用 Professor Messer 這支講得最完整的"
+   }
+  },
+  {
+   "id": "ch1-u5",
+   "name": "授權與權限模型",
+   "type": "topic",
+   "assessment": "說明最小權限與 need-to-know 的差別，再解釋權限繼承在什麼情況下會意外放大權限。能講出「使用者換部門但舊權限沒收回」叫 privilege creep，才算掌握這一格的考點。",
+   "note": {
+    "slug": "authorization",
+    "title": "Authorization",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/authorization",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-authorization",
+    "questions": 4,
+    "concepts": [
+     "Authorization vs. Authentication",
+     "Principle of least privilege",
+     "Separation of duties",
+     "access control models",
+     "Permission inheritance",
+     "Implicit deny",
+     "OAuth 2.0",
+     "Conditional access"
+    ],
+    "eli5": "授權是在你進門後，決定你能去哪些房間。你可能有大門鑰匙，但不能進去財務室。這就是權限管理。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Authorization in SAP RAP: Global, Instance & Pre-checks | Part 41",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=DrIdxjlOXyY",
+     "channel": "SAP TECHNOMANIAC",
+     "duration": "47:34",
+     "why": "SAP TECHNOMANIAC，完整講解"
+    },
+    {
+     "name": "Authorization vs. Authentication (Google Bug Bounty)",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=hmJKUQlcGAc",
+     "channel": "LiveOverflow",
+     "duration": "9:55",
+     "why": "LiveOverflow，短講補強"
+    },
+    {
+     "name": "Authentication vs Authorization Explained",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=7ijBiXddB7w",
+     "channel": "xplodivity",
+     "duration": "3:41",
+     "why": "xplodivity，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Authorization Explained: When to Use RBAC, ABAC, ACL & More",
+    "channel": "Hayk Simonyan",
+    "url": "https://www.youtube.com/watch?v=DT6Zy1X3ytM",
+    "duration": "11:03",
+    "why": "Messer 官方課程沒有單獨講這個主題，改用 Hayk Simonyan 這支講得最完整的"
+   }
+  },
+  {
+   "id": "ch1-u6",
+   "name": "變更管理流程",
+   "type": "topic",
+   "assessment": "依序說出變更流程的關鍵關卡：申請、影響分析、CAB 核准、測試、排程於維護時間、實施、驗證、文件更新。再自問：backout plan 什麼時候必須先寫好？答案是核准前，不是失敗後。",
+   "note": {
+    "slug": "change-management",
+    "title": "Change Management",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/change-management",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-change-management",
+    "questions": 4,
+    "concepts": [
+     "Change Advisory Board (CAB)",
+     "Backout/Rollback plan",
+     "Maintenance windows",
+     "Version control",
+     "Configuration management"
+    ],
+    "eli5": "變更管理就是「先報告，再動手」。在修理或改動重要的東西前，先計畫好、讓人審查，並想好如果修壞了要怎麼復原。",
+    "eli5Lang": "zh",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Technical Change Management",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=H9TYNjcpl-0",
+     "channel": "Professor Messer",
+     "duration": "10:54",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "(Day 18)Incident ServiceNow | Problem ServiceNow | Change ServiceNow | Life Cycle",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=8YyIUtfFWQo",
+     "channel": "Learn Tech with Ravi",
+     "duration": "36:02",
+     "why": "Learn Tech with Ravi，完整講解"
+    },
+    {
+     "name": "ITSM ServiceNow Full Course | Major Incident Management ServiceNow | ServiceNow Ticketing Tool",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=9hsNOV3t_LU",
+     "channel": "TechTalk with Bill",
+     "duration": "4:31",
+     "why": "TechTalk with Bill，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Change Management",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=48wRbMdHFVI",
+    "duration": "11:22",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch1-u7",
+   "name": "CIA 三要素與 DAD 對照",
+   "type": "topic",
+   "assessment": "給三個情境各判斷破壞了哪一個要素：資料庫被讀走、帳務數字被竄改、勒索軟體加密檔案。再把 DAD 三個對立面配上去（Disclosure／Alteration／Destruction），能一一對應才算熟。",
+   "note": {
+    "slug": "cia-triad",
+    "title": "CIA Triad",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cia-triad",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-cia-triad",
+    "questions": 4,
+    "concepts": [
+     "Confidentiality",
+     "Integrity",
+     "Availability",
+     "DAD Triad",
+     "Non-repudiation"
+    ],
+    "eli5": "想像你有一個秘密寶盒： 1. 機密性 (Confidentiality)：只有你有鑰匙能打開看裡面的東西，別人看不到。 2. 完整性 (Integrity)：沒人能偷偷換掉或弄壞裡面的東西，內容保證正確。 3. 可用性 (Availability)：當你想看的時候，寶盒隨時都在那裡讓你打開。 任何安全規則都是為了保護這三件事。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Non-repudiation",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=XxnCxPEllMg",
+     "channel": "Professor Messer",
+     "duration": "7:58",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "The CIA Triad - CompTIA Network+ (N10-008)",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=q2E9URvdoYs",
+     "channel": "BurningIceTech",
+     "duration": "16:29",
+     "why": "BurningIceTech，完整講解"
+    },
+    {
+     "name": "What is the CIA Triad in Cybersecurity? | Confidentiality, Integrity, Availability",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=tdix9-Ir0Mo",
+     "channel": "WsCube Cyber Security",
+     "duration": "6:44",
+     "why": "WsCube Cyber Security，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "The CIA Triad",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=SBcDGb9l6yo",
+    "duration": "5:18",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch1-u8",
+   "name": "誘捕與欺敵技術",
+   "type": "topic",
+   "assessment": "分辨 honeypot、honeynet、honeyfile、honeytoken 各自誘捕的對象。再回答：為什麼 honeypot 的告警幾乎沒有誤報？說得出「正常使用者沒有理由碰它」，這一格就通了。",
+   "note": {
+    "slug": "deception-technologies",
+    "title": "Deception Technologies",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/deception-technologies",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-deception-technologies",
+    "questions": 4,
+    "concepts": [
+     "Honeypots",
+     "Honeynets",
+     "Honeyfiles",
+     "Honeytokens",
+     "DNS sinkholes",
+     "Fake telemetry",
+     "Deception platforms"
+    ],
+    "eli5": "欺敵技術就像是「假錢包」或「誘餌」。放一個假的系統在那裡讓壞人去攻擊，這樣你就能發現他們，同時保護真的系統。",
+    "eli5Lang": "zh",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Types of honeypot|| Canary tokens|| Detecting honeypots",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=q1Cd5BhHQio",
+     "channel": "Cyber Technical knowledge",
+     "duration": "42:29",
+     "why": "Cyber Technical knowledge，完整講解"
+    },
+    {
+     "name": "How To Setup Canary Tokens - Home Made Honeypots 🍯",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=FlAabHP1rpo",
+     "channel": "InfoSec Pat",
+     "duration": "12:36",
+     "why": "InfoSec Pat，實作示範"
+    },
+    {
+     "name": "Encryption Technologies - CompTIA Security+ SY0-701 - 1.4",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=u61J0xR_XPU",
+     "channel": "Professor Messer",
+     "duration": "6:53",
+     "why": "Professor Messer，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Deception and Disruption",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=X_qfMVty4ts",
+    "duration": "4:31",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch1-u9",
+   "name": "縱深防禦與控制多樣性",
+   "type": "topic",
+   "assessment": "為一台對外網站列出四層不同性質的控制，並確認它們不是同一種失效模式。再自問：買兩台同廠牌防火牆串起來算不算控制多樣性？不算——同一個漏洞會同時打穿兩台。",
+   "note": {
+    "slug": "defense-in-depth",
+    "title": "Defense in Depth",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/defense-in-depth",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-defense-in-depth",
+    "questions": 4,
+    "concepts": [
+     "Security layers",
+     "physical security",
+     "Administrative controls",
+     "Technical controls",
+     "Physical controls",
+     "Preventive, Detective, Corrective",
+     "Vendor diversity",
+     "Control diversity"
+    ],
+    "eli5": "深度防禦就像城堡的防禦：有護城河、城牆、守衛，最後還有保險箱。即使一層壞了，還有其他層保護。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Security Controls",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=STM3EUvL7wg",
+     "channel": "Professor Messer",
+     "duration": "11:49",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "What is Defense-in-Depth? | How to implement defense-in-depth| Layered Security| Cybersecurity",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=a3JR1i2HBoU",
+     "channel": "CyberPlatter",
+     "duration": "24:47",
+     "why": "CyberPlatter，實作示範"
+    },
+    {
+     "name": "Defense in Depth Information Security Strategy | Layered Security | Cybersecurity Education",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=tDRdO4ppB0g",
+     "channel": "Cyber Gray Matter",
+     "duration": "7:19",
+     "why": "Cyber Gray Matter，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Defense in Depth - N10-008 CompTIA Network+ : 4.1",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=1nUXQHr4l9g",
+    "duration": "10:02",
+    "why": "Messer 官方課程沒有單獨講這個主題，改用 Professor Messer 這支講得最完整的"
+   }
+  },
+  {
+   "id": "ch1-u10",
+   "name": "實體安全控制",
+   "type": "topic",
+   "assessment": "把 bollard、mantrap、fence、lighting、sensor 各歸類成嚇阻、預防或偵測。再回答：門禁前庭（access control vestibule）主要防的是哪一種行為？答 tailgating 才對。",
+   "note": {
+    "slug": "physical-security",
+    "title": "Physical Security",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/physical-security",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-physical-security",
+    "questions": 4,
+    "concepts": [
+     "Bollards",
+     "Fencing",
+     "Access control vestibules (mantraps)",
+     "Security guards",
+     "Video surveillance (CCTV)",
+     "Access badges",
+     "Lighting",
+     "Locks",
+     "Cable locks",
+     "Screen filters/privacy screens"
+    ],
+    "eli5": "實體安全就是保護你看得到的東西。比如門鎖、監視器、警衛，甚至是防止人跟著你進門的旋轉門。",
+    "eli5Lang": "zh",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Physical Attacks",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=oIpOuTX2HRs",
+     "channel": "Professor Messer",
+     "duration": "4:04",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "CompTIA Security+ Full Course: Physical Security",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=qyok8f4tQ4U",
+     "channel": "Certify Breakfast",
+     "duration": "29:42",
+     "why": "Certify Breakfast，完整講解"
+    },
+    {
+     "name": "Physical Security Explained - CompTIA, ISC2, ISACA, EC-Council",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=oxTHmYfcfDc",
+     "channel": "Cyberkraft",
+     "duration": "14:10",
+     "why": "Cyberkraft，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Physical Security",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=YtT8q2mUM9c",
+    "duration": "8:18",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch1-u11",
+   "name": "資安控制類型與功能",
+   "type": "topic",
+   "assessment": "說出控制的四個類別（技術、管理、實體、營運）與六個功能（預防、嚇阻、偵測、矯正、補償、指導），並替 CCTV、警衛、備份、政策各標一組。類別與功能混用是這一格最常見的失分。",
+   "note": {
+    "slug": "security-concepts",
+    "title": "Security Concepts",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/security-concepts",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-security-concepts",
+    "questions": 4,
+    "concepts": [
+     "cia triad",
+     "Non-repudiation",
+     "Least privilege",
+     "Separation of duties",
+     "Need to know",
+     "Due diligence vs. due care",
+     "Security through obscurity",
+     "Open design principle"
+    ],
+    "eli5": "安全概念就是大家為了保護資訊而遵守的基本規則，就像在學校學的安全守則一樣：只與需要知道的人分享秘密、不給予超過必要的權力、並記錄誰做了什麼。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Gap Analysis",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=cuTVyyS5C7M",
+     "channel": "Professor Messer",
+     "duration": "6:45",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Learn Cyber Security (සිංහල) Chapter 01 - Security Concepts and Controls",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=Cf152evvw0s",
+     "channel": "Vibernets Streaming",
+     "duration": "58:52",
+     "why": "Vibernets Streaming，完整講解"
+    },
+    {
+     "name": "Network Infrastructure Concepts - CompTIA Security+ SY0-701 - 3.1",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=jd001Hj7XWM",
+     "channel": "Professor Messer",
+     "duration": "6:56",
+     "why": "Professor Messer，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Security Controls",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=STM3EUvL7wg",
+    "duration": "11:49",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch1-u12",
+   "name": "社交工程手法",
+   "type": "topic",
+   "assessment": "分辨 phishing、spear phishing、whaling、vishing、smishing、pretexting、baiting 的差別，關鍵在管道與目標範圍。再自問：impersonation 和 pretexting 差在哪？前者是冒充身分，後者是編造情境，考題常拿這兩個互當誘答。",
+   "note": {
+    "slug": "social-engineering",
+    "title": "Social Engineering",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/social-engineering",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-social-engineering",
+    "questions": 4,
+    "concepts": [
+     "Phishing",
+     "Vishing",
+     "Smishing",
+     "Pretexting",
+     "Baiting",
+     "Tailgating/Piggybacking",
+     "Watering hole attack",
+     "Typosquatting",
+     "Brand impersonation",
+     "Influence campaigns"
+    ],
+    "eli5": "社交工程就是「騙術」。不靠破解電腦，而是靠騙人來得到秘密。比如假裝是老闆叫你給密碼。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Impersonation",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=X3yoNAVuKwA",
+     "channel": "Professor Messer",
+     "duration": "5:52",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Other Social Engineering Attacks",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=akoDmeV3LQo",
+     "channel": "Professor Messer",
+     "duration": "3:29",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Phishing attacks are SCARY easy to do!! (let me show you!) // FREE Security+ // EP 2",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=u9dBGWVwMMA",
+     "channel": "NetworkChuck",
+     "duration": "17:54",
+     "why": "NetworkChuck，完整講解"
+    }
+   ],
+   "lesson": {
+    "title": "Phishing",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=9SD6DRCKZFU",
+    "duration": "6:32",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch1-u13",
+   "name": "威脅行為者分類",
+   "type": "topic",
+   "assessment": "依資源、動機與複雜度替 nation-state、organized crime、hacktivist、insider threat、script kiddie 排序。再回答：內部威脅最危險的地方在哪？答「已經在信任邊界內、繞過大部分周邊控制」才算到位。",
+   "note": {
+    "slug": "threat-actors",
+    "title": "Threat Actors",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/threat-actors",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-threat-actors",
+    "questions": 4,
+    "concepts": [
+     "Nation-state actors",
+     "attack vectors"
+    ],
+    "eli5": "威脅行為者就是那些想搞破壞或偷東西的人。包括業餘駭客 (指令小子)、商業間諜、內部員工、甚至是國家級的專業組織。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "STRIDE Threat Modeling for Beginners - In 20 Minutes",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=rEnJYNkUde0",
+     "channel": "Netsec Explained",
+     "duration": "21:49",
+     "why": "Netsec Explained，完整講解"
+    },
+    {
+     "name": "How to Stop Modern Attacks & Threat Actors | Cortex XDR",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=vPqQ90GR5xY",
+     "channel": "Cortex by Palo Alto Networks",
+     "duration": "3:25",
+     "why": "Cortex by Palo Alto Networks，實作示範"
+    },
+    {
+     "name": "Threat Intelligence - CompTIA Security+ SY0-701 - 4.3",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=86fruE9jkKk",
+     "channel": "Professor Messer",
+     "duration": "4:46",
+     "why": "Professor Messer，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Threat Actors",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=6xUH0t6ugIM",
+    "duration": "10:23",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch1-u14",
+   "name": "零信任架構",
+   "type": "topic",
+   "assessment": "畫出控制平面與資料平面的分工，並說出 Policy Engine、Policy Administrator、PEP 各做什麼。再自問：零信任只是網路的事嗎？答不是——身分、裝置、應用、資料都算，這是考題最愛的辨析。",
+   "note": {
+    "slug": "zero-trust",
+    "title": "Zero Trust",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/zero-trust",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-zero-trust",
+    "questions": 4,
+    "concepts": [
+     "Policy engine",
+     "Policy administrator",
+     "Policy enforcement point (PEP)",
+     "Adaptive identity",
+     "Implicit trust zones",
+     "network segmentation",
+     "Software-defined perimeter (SDP)"
+    ],
+    "eli5": "零信任就是「永不信任，始終驗證」。就像在銀行裡，即便你已經在大廳了，去保險庫前還是要重新檢查你的身分和權限，絕不因為你在內部就相信你。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Cybersecurity Zero Trust Architecture : Explained For Beginners",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=l9hifqNEmSA",
+     "channel": "StationX with Nathan House",
+     "duration": "32:47",
+     "why": "StationX with Nathan House，完整講解"
+    },
+    {
+     "name": "What Is Zero Trust Architecture (ZTA) ? NIST 800-207 Explained",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=5Kq64vOgE10",
+     "channel": "The CISO Perspective",
+     "duration": "9:30",
+     "why": "The CISO Perspective，短講補強"
+    },
+    {
+     "name": "Zero Trust Explained in 4 mins",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=yn6CPQ9RioA",
+     "channel": "IBM Technology",
+     "duration": "3:43",
+     "why": "IBM Technology，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Zero Trust",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=zC_Pndpg8-c",
+    "duration": "10:05",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  }
+ ]
+}

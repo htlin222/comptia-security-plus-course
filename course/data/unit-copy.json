@@ -1,0 +1,345 @@
+{
+  "_readme": [
+    "每個單元的繁中名稱與自我檢核。",
+    "assessment 寫成「答得出來才算懂」的自問自答，不是主題描述——描述沒辦法驗收，",
+    "問題可以。內容取材自筆記各 topic 頁的 Exam Tips 與辨析段落，用考場會遇到的角度重寫。"
+  ],
+  "units": {
+    "aaa-framework": {
+      "name": "AAA 框架：認證、授權、計帳",
+      "assessment": "把 Authentication、Authorization、Accounting 三個字各配一個動作說出來。再問自己：RADIUS 和 TACACS+ 差在哪一層、哪一個把三個 A 拆開處理？答不出 TACACS+ 可以只做授權而不管認證，就是還沒讀通。"
+    },
+    "access-control-models": {
+      "name": "存取控制模型（DAC／MAC／RBAC／ABAC）",
+      "assessment": "用一句話說明四種模型「由誰決定權限」：DAC 是擁有者、MAC 是系統標籤、RBAC 是職務、ABAC 是屬性組合。再舉一個只有 ABAC 做得到而 RBAC 做不到的情境（例如「只有上班時間、從公司網段、用受管裝置才能存取」）。"
+    },
+    "attack-vectors": {
+      "name": "攻擊向量與攻擊面",
+      "assessment": "列出五種攻擊向量並各配一個對應的緩解控制。再自問：攻擊向量（怎麼進來）和威脅行為者（誰要進來）差在哪？把這兩個混在一起是考題最愛設的陷阱。"
+    },
+    "authentication": {
+      "name": "身分認證方式",
+      "assessment": "把 something you know／have／are／somewhere you are／something you do 各舉一例。再判斷：密碼加上安全提問算不算多因子？答案是不算——兩個都是 knowledge，說得出這一點才算懂因子的定義。"
+    },
+    "authorization": {
+      "name": "授權與權限模型",
+      "assessment": "說明最小權限與 need-to-know 的差別，再解釋權限繼承在什麼情況下會意外放大權限。能講出「使用者換部門但舊權限沒收回」叫 privilege creep，才算掌握這一格的考點。"
+    },
+    "change-management": {
+      "name": "變更管理流程",
+      "assessment": "依序說出變更流程的關鍵關卡：申請、影響分析、CAB 核准、測試、排程於維護時間、實施、驗證、文件更新。再自問：backout plan 什麼時候必須先寫好？答案是核准前，不是失敗後。"
+    },
+    "cia-triad": {
+      "name": "CIA 三要素與 DAD 對照",
+      "assessment": "給三個情境各判斷破壞了哪一個要素：資料庫被讀走、帳務數字被竄改、勒索軟體加密檔案。再把 DAD 三個對立面配上去（Disclosure／Alteration／Destruction），能一一對應才算熟。"
+    },
+    "deception-technologies": {
+      "name": "誘捕與欺敵技術",
+      "assessment": "分辨 honeypot、honeynet、honeyfile、honeytoken 各自誘捕的對象。再回答：為什麼 honeypot 的告警幾乎沒有誤報？說得出「正常使用者沒有理由碰它」，這一格就通了。"
+    },
+    "defense-in-depth": {
+      "name": "縱深防禦與控制多樣性",
+      "assessment": "為一台對外網站列出四層不同性質的控制，並確認它們不是同一種失效模式。再自問：買兩台同廠牌防火牆串起來算不算控制多樣性？不算——同一個漏洞會同時打穿兩台。"
+    },
+    "physical-security": {
+      "name": "實體安全控制",
+      "assessment": "把 bollard、mantrap、fence、lighting、sensor 各歸類成嚇阻、預防或偵測。再回答：門禁前庭（access control vestibule）主要防的是哪一種行為？答 tailgating 才對。"
+    },
+    "security-concepts": {
+      "name": "資安控制類型與功能",
+      "assessment": "說出控制的四個類別（技術、管理、實體、營運）與六個功能（預防、嚇阻、偵測、矯正、補償、指導），並替 CCTV、警衛、備份、政策各標一組。類別與功能混用是這一格最常見的失分。"
+    },
+    "social-engineering": {
+      "name": "社交工程手法",
+      "assessment": "分辨 phishing、spear phishing、whaling、vishing、smishing、pretexting、baiting 的差別，關鍵在管道與目標範圍。再自問：impersonation 和 pretexting 差在哪？前者是冒充身分，後者是編造情境，考題常拿這兩個互當誘答。"
+    },
+    "threat-actors": {
+      "name": "威脅行為者分類",
+      "assessment": "依資源、動機與複雜度替 nation-state、organized crime、hacktivist、insider threat、script kiddie 排序。再回答：內部威脅最危險的地方在哪？答「已經在信任邊界內、繞過大部分周邊控制」才算到位。"
+    },
+    "zero-trust": {
+      "name": "零信任架構",
+      "assessment": "畫出控制平面與資料平面的分工，並說出 Policy Engine、Policy Administrator、PEP 各做什麼。再自問：零信任只是網路的事嗎？答不是——身分、裝置、應用、資料都算，這是考題最愛的辨析。"
+    },
+
+    "application-attacks": {
+      "name": "應用層攻擊",
+      "assessment": "分辨 race condition（TOCTOU）、directory traversal、privilege escalation、replay 的觸發條件。再回答：為什麼 TOCTOU 靠輸入驗證擋不住？說得出問題出在「檢查」與「使用」之間的時間差，才算懂。"
+    },
+    "cryptographic-attacks": {
+      "name": "密碼學攻擊",
+      "assessment": "說明 birthday attack、collision、downgrade attack、rainbow table 各攻擊密碼系統的哪一個環節。再自問：加了 salt 為什麼 rainbow table 就失效？答不出「預算表對不上每個帳號各自的鹽」就要回去重看。"
+    },
+    "denial-of-service": {
+      "name": "阻斷服務攻擊",
+      "assessment": "區分 DoS、DDoS、amplification、reflection 的差別，並說出放大攻擊為什麼多半走 UDP。再回答：為什麼防 DDoS 主要靠上游而不是自己的防火牆？頻寬在你這端已經被塞滿了。"
+    },
+    "dns-attacks": {
+      "name": "DNS 攻擊",
+      "assessment": "分辨 DNS poisoning、DNS hijacking、domain hijacking、DNS tunneling 攻擊的位置各在哪。再自問：DNSSEC 解決的是機密性還是完整性？答完整性——它簽名而不加密，這一點常考。"
+    },
+    "indicators-of-compromise": {
+      "name": "入侵指標（IoC）",
+      "assessment": "列出五種 IoC 並說明各自最可能對應到什麼攻擊階段。再回答：帳號在短時間內從兩個相隔很遠的地點登入，這個 IoC 叫什麼、代表什麼？答 impossible travel 與憑證外洩。"
+    },
+    "injection-attacks": {
+      "name": "注入攻擊",
+      "assessment": "說明 SQL injection、LDAP injection、XML injection、memory injection 的共同根因。再自問：參數化查詢為什麼比輸入過濾可靠？答得出「資料與指令從一開始就被分開，不是事後清理」才算懂。"
+    },
+    "malware-types": {
+      "name": "惡意程式分類",
+      "assessment": "分辨 virus、worm、trojan、rootkit、logic bomb、keylogger 的傳播方式與藏身位置。再回答：worm 和 virus 的關鍵差別是什麼？答 worm 不需要宿主檔案、能自我散播。"
+    },
+    "mitigation-techniques": {
+      "name": "緩解技術",
+      "assessment": "替一台被入侵的伺服器排出處置順序，並說明 segmentation、isolation、containment 三者的差別。再自問：least privilege 屬於預防還是矯正控制？答預防。"
+    },
+    "network-attacks": {
+      "name": "網路層攻擊",
+      "assessment": "說明 ARP poisoning、MAC flooding、VLAN hopping、rogue AP 各利用了哪個協定或設定的弱點。再回答：為什麼 port security 擋得住 MAC flooding？因為它限制單埠可學習的 MAC 數。"
+    },
+    "on-path-attacks": {
+      "name": "中間人／路徑攻擊",
+      "assessment": "說明 on-path 攻擊如何介入連線，以及 SSL stripping 和憑證偽造的差別。再自問：憑證釘選（pinning）擋的是哪一種？答得出它讓偽造憑證即使被系統信任也過不了應用這一關。"
+    },
+    "password-attacks": {
+      "name": "密碼攻擊",
+      "assessment": "分辨 brute force、dictionary、credential stuffing、password spraying 的差別，關鍵在「一個帳號試很多密碼」還是「很多帳號試一個密碼」。再回答：帳號鎖定為什麼擋不住 password spraying？"
+    },
+    "ransomware": {
+      "name": "勒索軟體",
+      "assessment": "說出勒索軟體從入侵到勒索的完整鏈路，並解釋 double extortion 多了哪一步。再自問：有離線備份就一定沒事嗎？不一定——資料已經被外洩的那一份，備份救不回機密性。"
+    },
+    "vulnerability-types": {
+      "name": "弱點類型總覽",
+      "assessment": "把 zero-day、misconfiguration、supply chain、end-of-life 各配一個真實案例與對應的處置方式。再回答：為什麼 zero-day 最難防？沒有修補程式可打，只能靠偵測與緩解控制撐住。"
+    },
+    "wireless-attacks": {
+      "name": "無線攻擊",
+      "assessment": "分辨 evil twin、rogue AP、deauthentication、jamming、bluesnarfing 的手法。再自問：evil twin 和 rogue AP 差在哪？前者刻意複製合法 SSID 誘騙連線，後者只是未授權接上內網。"
+    },
+    "xss-and-csrf": {
+      "name": "XSS 與 CSRF",
+      "assessment": "說明 reflected、stored、DOM-based XSS 的差別，以及 CSRF 為什麼靠 token 而不是輸入過濾防。再自問：XSS 攻擊的是誰的信任、CSRF 又是誰的？前者是使用者信任網站，後者是網站信任使用者。"
+    },
+
+    "certificates": {
+      "name": "數位憑證與憑證鏈",
+      "assessment": "說出憑證裡一定會有的欄位，以及 CSR、CA、中繼 CA、根 CA 的關係。再自問：CRL 和 OCSP 差在哪？一個是下載整份撤銷清單、一個是逐張即時查詢，OCSP stapling 又解決了什麼隱私與延遲問題。"
+    },
+    "cloud-security": {
+      "name": "雲端安全與責任共擔",
+      "assessment": "在 IaaS、PaaS、SaaS 三種模式下，各說出哪些安全責任在雲商、哪些在你。再回答：S3 bucket 設成公開造成外洩，責任在誰？在客戶——這是責任共擔模型最常考的落點。"
+    },
+    "data-protection": {
+      "name": "資料保護與資料狀態",
+      "assessment": "說出資料的三種狀態（at rest／in transit／in use）各用什麼技術保護。再自問：tokenization 和 encryption 差在哪？前者用無意義代碼替換、原值存在別處，後者可逆算回來，PCI 場景常拿這兩個對比。"
+    },
+    "dlp": {
+      "name": "資料外洩防護（DLP）",
+      "assessment": "說出 DLP 部署的三個位置（端點、網路、雲端／郵件）各攔得住什麼、攔不住什麼。再回答：為什麼 DLP 對加密流量幾乎無效？沒有解密就看不到內容，這決定了它要搭配什麼一起佈署。"
+    },
+    "embedded-systems-security": {
+      "name": "嵌入式與工控系統安全",
+      "assessment": "說明 SCADA／ICS、RTOS、IoT 裝置為什麼不能照一般伺服器的方式打補丁。再自問：這類系統最常用的補償控制是什麼？答網路隔離與單向閘道，因為可用性優先於機密性。"
+    },
+    "encryption": {
+      "name": "加密技術",
+      "assessment": "說出對稱與非對稱各自的強項與典型用途，並解釋混合加密為什麼兩個都要用。再回答：完美前向保密（PFS）解決了什麼問題？答得出「私鑰事後外洩也解不開先前錄下的流量」才算懂。"
+    },
+    "firewalls": {
+      "name": "防火牆類型",
+      "assessment": "分辨封包過濾、狀態檢視、NGFW、WAF、UTM 各看到 OSI 的哪一層。再自問：要擋 SQL injection 該用哪一種？答 WAF——一般防火牆看不到 HTTP 內容。"
+    },
+    "hashing": {
+      "name": "雜湊與數位簽章",
+      "assessment": "說明雜湊、加密、編碼三者的差別，以及數位簽章同時提供哪三個保證。再回答：簽章用哪一把金鑰簽、哪一把驗？私鑰簽、公鑰驗，反過來就是加密不是簽章。"
+    },
+    "ids-ips": {
+      "name": "入侵偵測與防禦系統",
+      "assessment": "說出 IDS 與 IPS 的部署差別（旁掛 vs 串接），以及特徵式與異常式偵測各自的盲點。再自問：把 IPS 調得太敏感會發生什麼？誤判把正常流量擋掉，可用性就出事了。"
+    },
+    "infrastructure-as-code": {
+      "name": "基礎設施即程式碼",
+      "assessment": "說明 IaC 為什麼能減少設定漂移，以及它把哪些新風險帶進來（秘密硬編碼、範本供應鏈）。再回答：什麼叫 immutable infrastructure？答得出「不修改既有主機、直接重建」才算懂。"
+    },
+    "key-management": {
+      "name": "金鑰管理",
+      "assessment": "說出金鑰生命週期的各階段，以及 HSM、KMS、key escrow、金鑰輪替各解決什麼問題。再自問：key escrow 帶來的風險是什麼？多一份可以解開所有資料的副本，就多一個攻擊目標。"
+    },
+    "load-balancers-and-proxies": {
+      "name": "負載平衡器與代理伺服器",
+      "assessment": "分辨正向代理與反向代理服務的對象，以及 SSL offloading 把解密放在哪裡。再回答：negative caching 與 session persistence 各在什麼情況下必須開？"
+    },
+    "nac": {
+      "name": "網路存取控制（NAC）與 802.1X",
+      "assessment": "說出 802.1X 三個角色（supplicant／authenticator／authentication server）各是誰。再自問：agent-based 與 agentless NAC 差在哪？前者能做裝置健康檢查，後者只能看網路層的表徵。"
+    },
+    "network-security-architecture": {
+      "name": "網路安全架構",
+      "assessment": "替一個有對外服務的組織畫出 DMZ、內網、管理網段的分界，並說明每一道分界上該放什麼控制。再回答：east-west 與 north-south 流量差在哪、為什麼前者更難監控？"
+    },
+    "network-segmentation": {
+      "name": "網路分段與微分段",
+      "assessment": "說明 VLAN、實體隔離、微分段的隔離強度差別。再自問：把伺服器切進不同 VLAN 但路由器上不設 ACL，實際上隔開了嗎？沒有——這是最常見的假分段。"
+    },
+    "pki": {
+      "name": "公開金鑰基礎建設（PKI）",
+      "assessment": "說出 PKI 的信任鏈怎麼建立，以及根 CA 為什麼要離線保存。再回答：中繼 CA 存在的意義是什麼？答得出「根 CA 一旦外洩整個信任體系要重建，中繼 CA 可以只撤一段」才算通。"
+    },
+    "resilience-and-redundancy": {
+      "name": "韌性與備援",
+      "assessment": "分辨高可用、容錯、負載平衡與備援的差別，並說出 RAID 各層級保護的是什麼。再自問：RAID 算備份嗎？不算——它防硬碟壞，不防誤刪與勒索加密。"
+    },
+    "serverless-and-containers": {
+      "name": "無伺服器與容器安全",
+      "assessment": "說明容器與虛擬機在隔離強度上的差別，以及容器逃逸攻擊的目標。再回答：serverless 把哪些責任交還給雲商、又留下哪些給你？留下的是程式碼、相依套件與 IAM 權限設定。"
+    },
+    "virtualization-security": {
+      "name": "虛擬化安全",
+      "assessment": "說明 VM escape、VM sprawl、hypervisor 攻擊面各自的風險。再自問：Type 1 與 Type 2 hypervisor 差在哪、哪一個攻擊面較小？答 Type 1 直接跑在硬體上、沒有底層作業系統可打。"
+    },
+    "vpn": {
+      "name": "VPN 與安全通訊",
+      "assessment": "分辨 site-to-site 與 remote access VPN，以及 IPsec 的 AH 與 ESP 各提供什麼。再回答：full tunnel 與 split tunnel 的資安取捨是什麼？後者省頻寬但讓端點同時暴露在兩個網路。"
+    },
+
+    "automation-and-scripting": {
+      "name": "自動化與腳本",
+      "assessment": "說出自動化在資安維運帶來的三個好處與兩個風險。再自問：把自動化腳本的憑證寫在程式碼裡會發生什麼？答得出「一個 repo 外洩等於全環境失守」才算有資安思維。"
+    },
+    "digital-forensics": {
+      "name": "數位鑑識",
+      "assessment": "依揮發性排出蒐證順序（暫存器→記憶體→網路連線→磁碟→備份），並說明 chain of custody 為什麼決定證據能不能上法庭。再回答：legal hold 一發出，正常的資料保留政策該怎麼調整？"
+    },
+    "edr-xdr": {
+      "name": "EDR 與 XDR",
+      "assessment": "說明 EDR 與傳統防毒的差別，以及 XDR 多整合了哪些訊號源。再自問：EDR 為什麼能抓到無檔案攻擊（fileless）？因為它看行為與記憶體，不只比對檔案特徵。"
+    },
+    "email-security": {
+      "name": "電子郵件安全",
+      "assessment": "說出 SPF、DKIM、DMARC 各驗證什麼，以及三者的依賴順序。再回答：只設 SPF 為什麼擋不住偽冒？SPF 驗的是信封寄件者，使用者看到的是表頭寄件者，DMARC 才把兩者對齊。"
+    },
+    "endpoint-security": {
+      "name": "端點安全",
+      "assessment": "列出端點防護的分層（HIDS/HIPS、防毒、EDR、應用程式白名單、磁碟加密）。再自問：allow list 與 block list 各適合什麼環境？高風險固定用途的機器用前者，一般辦公環境用後者。"
+    },
+    "federation": {
+      "name": "身分聯邦",
+      "assessment": "說出聯邦中三個角色（使用者、identity provider、service provider）的互動流程。再回答：SAML、OAuth 2.0、OIDC 各解決什麼？SAML 是認證斷言、OAuth 是授權委派、OIDC 是在 OAuth 上補回認證。"
+    },
+    "hardening": {
+      "name": "系統強化",
+      "assessment": "為一台新伺服器列出強化清單：關閉不必要服務與埠、移除預設帳號、套用基準、打補丁、開稽核日誌。再自問：什麼叫 secure baseline，它跟 hardening 的關係是什麼？"
+    },
+    "identity-management": {
+      "name": "身分管理",
+      "assessment": "說出身分生命週期（provisioning→變更→de-provisioning）各階段最常出的資安漏洞。再回答：離職當天沒有停用帳號屬於哪一類風險？孤兒帳號，這是稽核必查項。"
+    },
+    "incident-response": {
+      "name": "事件應變",
+      "assessment": "依序說出 NIST 的事件應變階段：準備、偵測與分析、圍堵、根除、復原、事後檢討。再自問：圍堵要選短期還是長期，判斷依據是什麼？答得出要權衡業務衝擊與證據保全才算懂。"
+    },
+    "log-management": {
+      "name": "日誌管理",
+      "assessment": "說出哪些日誌來源在調查時最關鍵，以及為什麼時間同步（NTP）是日誌關聯的前提。再回答：日誌保留期限該由什麼決定？法規與合約要求，不是硬碟大小。"
+    },
+    "mfa": {
+      "name": "多因子認證",
+      "assessment": "說出五種認證因子並判斷哪些組合才算真正的多因子。再自問：簡訊 OTP 的弱點是什麼？SIM swap 與 SS7 攔截，所以 NIST 已不建議把它當高保證等級的因子。"
+    },
+    "network-monitoring": {
+      "name": "網路監控",
+      "assessment": "分辨 SNMP、NetFlow、封包擷取、SIEM 各看到什麼層級的資訊。再回答：為什麼多數環境用 NetFlow 而不是全流量擷取？儲存成本與隱私，代價是看不到封包內容。"
+    },
+    "penetration-testing": {
+      "name": "滲透測試",
+      "assessment": "分辨 black box、gray box、white box 與紅隊、藍隊、紫隊的角色。再自問：滲透測試開始前一定要拿到什麼？書面授權（rules of engagement），沒有它就不是測試而是入侵。"
+    },
+    "privileged-access-management": {
+      "name": "特權存取管理（PAM）",
+      "assessment": "說出 PAM 的核心機制：密碼保管庫、即時提權（JIT）、連線側錄、自動輪替。再回答：為什麼共用的管理員帳號是稽核大忌？做不到不可否認性，出事查不出是誰。"
+    },
+    "siem": {
+      "name": "資安事件管理（SIEM）",
+      "assessment": "說出 SIEM 的三個動作：蒐集、關聯、告警。再自問：SIEM 會自動阻擋攻擊嗎？不會——它偵測與通知，要自動處置得靠 SOAR，這是考題最愛的辨析。"
+    },
+    "soar": {
+      "name": "資安協同與自動化應變（SOAR）",
+      "assessment": "說明 playbook 與 runbook 的差別，以及 SOAR 接手 SIEM 之後多做了什麼。再回答：把處置全自動化的風險是什麼？誤判被自動執行，衝擊比人工慢一步大得多。"
+    },
+    "sso": {
+      "name": "單一登入（SSO）",
+      "assessment": "說出 SSO 帶來的好處與它集中化之後的風險。再自問：SSO 等於 federation 嗎？不等於——SSO 是使用者體驗，federation 是跨組織的信任機制，一個組織內也可以有 SSO。"
+    },
+    "threat-hunting": {
+      "name": "威脅獵捕",
+      "assessment": "說明威脅獵捕與被動告警處理的差別，以及一次獵捕從假說到驗證的流程。再回答：獵捕的成果除了找到入侵，還應該產出什麼？新的偵測規則，否則同樣的手法下次還是要靠人找。"
+    },
+    "threat-intelligence": {
+      "name": "威脅情報",
+      "assessment": "分辨戰略、戰術、營運三個層級的威脅情報各給誰用。再自問：OSINT、商業情報、ISAC 各有什麼取捨？再說出 IoC 與 TTP 的差別——前者會過期，後者才是行為指紋。"
+    },
+    "vulnerability-management": {
+      "name": "弱點管理",
+      "assessment": "說出弱點管理循環：盤點、掃描、驗證、排序、修補、複掃。再回答：CVSS 分數高就一定要先修嗎？不一定——還要看資產暴露面與業務重要性，這是實務與考試都會強調的。"
+    },
+
+    "audits-and-assessments": {
+      "name": "稽核與評鑑",
+      "assessment": "分辨內部稽核、外部稽核、第三方認證與自評的效力差別。再自問：attestation 和 assessment 差在哪？前者是簽名背書、要承擔責任，後者只是評估報告。"
+    },
+    "business-continuity": {
+      "name": "營運持續",
+      "assessment": "說出 BCP 與 DRP 的分工，以及 tabletop、walkthrough、parallel、full interruption 四種演練的成本與風險排序。再回答：只寫了計畫但從沒演練過，實務上等於什麼？等於沒有計畫。"
+    },
+    "business-impact-analysis": {
+      "name": "營運衝擊分析（BIA）",
+      "assessment": "說出 RTO、RPO、MTTR、MTBF 各衡量什麼，並用一句話區分 RTO 與 RPO：前者是可以停多久，後者是可以掉多少資料。這四個縮寫混用是這一格最常見的失分。"
+    },
+    "compliance": {
+      "name": "法遵與合規",
+      "assessment": "說出不合規的後果類型（罰款、制裁、名譽、合約終止），以及 due care 與 due diligence 的差別：前者是做該做的事，後者是查清楚該做什麼。"
+    },
+    "data-classification": {
+      "name": "資料分級與角色",
+      "assessment": "說出常見的分級層次與各自的處理要求，再分辨 data owner、data controller、data processor、data custodian、DPO 五個角色的責任。角色搞混是 GDPR 相關題目最常見的錯誤。"
+    },
+    "disaster-recovery": {
+      "name": "災難復原",
+      "assessment": "分辨 hot site、warm site、cold site 的成本與切換時間，並說明 3-2-1 備份原則。再自問：全量、增量、差異備份的還原步驟各要動用幾份備份？"
+    },
+    "governance": {
+      "name": "資安治理",
+      "assessment": "說出政策、標準、程序、指引四層文件的效力差別與誰負責核准。再回答：治理與管理差在哪？治理決定方向與問責，管理負責執行，董事會層級的題目考的都是前者。"
+    },
+    "privacy": {
+      "name": "隱私保護",
+      "assessment": "分辨 PII、PHI、PII 與去識別化、假名化、匿名化的差別。再自問：假名化的資料還算個資嗎？算——因為還能還原，這是 GDPR 明訂的，考題很愛在這裡設陷阱。"
+    },
+    "regulations-and-frameworks": {
+      "name": "法規與框架",
+      "assessment": "把 GDPR、HIPAA、PCI DSS、SOX、ISO 27001、NIST CSF 各配一句適用範圍。再回答：PCI DSS 是法律嗎？不是——它是產業合約要求，違反的後果是罰款與停止收單，不是刑責。"
+    },
+    "risk-assessment": {
+      "name": "風險評鑑",
+      "assessment": "算一次量化風險：說出 SLE = AV × EF、ALE = SLE × ARO，並判斷一個年成本高於 ALE 的控制該不該買。再分辨質化與量化評鑑各自的適用場合。"
+    },
+    "risk-management": {
+      "name": "風險管理策略",
+      "assessment": "說出四種風險處置（接受、避免、轉移、緩解）並各配一個實例。再自問：買保險屬於哪一種？轉移——但殘餘風險與名譽損失仍留在自己身上，這一點考題常追問。"
+    },
+    "security-awareness-training": {
+      "name": "資安意識訓練",
+      "assessment": "說出意識訓練該涵蓋的主題與評估成效的方法（模擬釣魚點擊率、回報率）。再回答：回報率比點擊率更重要的原因是什麼？點擊會發生，關鍵是有沒有人願意通報。"
+    },
+    "security-policies": {
+      "name": "資安政策",
+      "assessment": "說出 AUP、密碼政策、資料保留政策、職務輪調與強制休假各防什麼。再自問：強制休假為什麼是資安控制？讓長期舞弊在當事人不在時被別人接手發現。"
+    },
+    "third-party-risk": {
+      "name": "第三方風險",
+      "assessment": "分辨 SLA、MOU、MSA、BPA、NDA、SOW 各約定什麼。再回答：供應商評鑑該在合約簽訂前還是後做？前，且要有持續監控條款——供應鏈攻擊的教訓都在這一格。"
+    }
+  }
+}

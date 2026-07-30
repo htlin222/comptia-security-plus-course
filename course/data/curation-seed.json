@@ -1,0 +1,552 @@
+{
+ "_readme": [
+  "策展種子。lesson / messer 欄位的 video ID 全部取自 Professor Messer 官方 SY0-701 播放清單",
+  "(PLG49S3nxzAnl4QDVqK-hOnoqcSKEIDDuv) 的實際 innertube API 回應，不是憑記憶拼湊。",
+  "lesson 為 null 代表 Messer 沒有真正對得上這個主題的單支影片，主課改由搜尋結果遞補——",
+  "硬塞一支「大致相關」的比留空更糟，因為它會讓學習者以為這個主題已經被講過了。",
+  "messer 是同主題可當延伸影片的其他 Messer 影片。q 是額外的搜尋關鍵字（沒寫就用標題自動生成）。",
+  "lesson 也可以填非 Messer 的 video ID（例如 Messer 沒講的 GRC），程式會回頭去 candidates 找它的真實中繼資料；找不到就會直接報錯，避免填進一個沒被搜尋結果佐證過的 ID。pin 則是指定要進延伸影片的 ID。",
+  "objective 只在 Messer 沒有單獨影片、無法從標題自動取編號時才手寫，對照的是 professormesser.com 上的官方 SY0-701 課程索引章節編號。"
+ ],
+ "topics": {
+  "aaa-framework": {
+   "lesson": "AhaZtj5P2a8",
+   "messer": []
+  },
+  "access-control-models": {
+   "lesson": "9ANHcZwJfdQ",
+   "messer": []
+  },
+  "attack-vectors": {
+   "lesson": "4lAbGpTDZ18",
+   "messer": [
+    "z413PV6l_Ys"
+   ]
+  },
+  "authentication": {
+   "lesson": null,
+   "messer": [
+    "eMOe-PLBy1k"
+   ],
+   "q": [
+    "authentication factors explained something you know have are"
+   ]
+  },
+  "authorization": {
+   "lesson": null,
+   "messer": [],
+   "q": [
+    "authorization vs authentication explained access control"
+   ],
+   "objective": "1.2"
+  },
+  "change-management": {
+   "lesson": "48wRbMdHFVI",
+   "messer": [
+    "H9TYNjcpl-0"
+   ]
+  },
+  "cia-triad": {
+   "lesson": "SBcDGb9l6yo",
+   "messer": [
+    "XxnCxPEllMg"
+   ]
+  },
+  "deception-technologies": {
+   "lesson": "X_qfMVty4ts",
+   "messer": [],
+   "q": [
+    "honeypot explained cybersecurity",
+    "honeytoken canary token tutorial",
+    "deception technology enterprise security"
+   ]
+  },
+  "defense-in-depth": {
+   "lesson": null,
+   "messer": [
+    "STM3EUvL7wg"
+   ],
+   "q": [
+    "defense in depth layered security explained"
+   ]
+  },
+  "physical-security": {
+   "lesson": "YtT8q2mUM9c",
+   "messer": [
+    "oIpOuTX2HRs"
+   ]
+  },
+  "security-concepts": {
+   "lesson": "STM3EUvL7wg",
+   "messer": [
+    "cuTVyyS5C7M"
+   ]
+  },
+  "social-engineering": {
+   "lesson": "9SD6DRCKZFU",
+   "messer": [
+    "X3yoNAVuKwA",
+    "akoDmeV3LQo"
+   ]
+  },
+  "threat-actors": {
+   "lesson": "6xUH0t6ugIM",
+   "messer": []
+  },
+  "zero-trust": {
+   "lesson": "zC_Pndpg8-c",
+   "messer": []
+  },
+  "application-attacks": {
+   "lesson": "yRSqIGjeb7s",
+   "messer": [
+    "MKptc1lPSw8"
+   ]
+  },
+  "cryptographic-attacks": {
+   "lesson": "7aJaEQy6Yoc",
+   "messer": [],
+   "q": [
+    "birthday attack hash collision explained",
+    "downgrade attack TLS explained",
+    "rainbow table salt password hashing"
+   ]
+  },
+  "denial-of-service": {
+   "lesson": "Z7OntvK--PQ",
+   "messer": []
+  },
+  "dns-attacks": {
+   "lesson": "BoxeL5ybOXI",
+   "messer": []
+  },
+  "indicators-of-compromise": {
+   "lesson": "x72hG9GvkaQ",
+   "messer": [],
+   "q": [
+    "indicators of compromise IOC explained",
+    "IOC vs TTP threat intelligence",
+    "detecting compromise host artifacts"
+   ]
+  },
+  "injection-attacks": {
+   "lesson": "qFUOLkEk8AQ",
+   "messer": [
+    "kBcTczu8FsM",
+    "0-qeeI5jTqU"
+   ]
+  },
+  "malware-types": {
+   "lesson": "-eZs8wjjGGE",
+   "messer": [
+    "Su8ANmAoerU",
+    "-VmI3xFJw78"
+   ]
+  },
+  "mitigation-techniques": {
+   "lesson": "Fc8ZJfmapbI",
+   "messer": [
+    "wXoC46Qr_9Q"
+   ],
+   "q": [
+    "security hardening mitigation techniques explained",
+    "network isolation containment security",
+    "application allow list explained"
+   ]
+  },
+  "network-attacks": {
+   "lesson": null,
+   "messer": [
+    "ai6qS13gKRo"
+   ],
+   "q": [
+    "common network attacks explained cybersecurity"
+   ]
+  },
+  "on-path-attacks": {
+   "lesson": "M_Af6_8JTuo",
+   "messer": []
+  },
+  "password-attacks": {
+   "lesson": "-ZfbifHwEVE",
+   "messer": []
+  },
+  "ransomware": {
+   "lesson": null,
+   "messer": [
+    "nu27ovJ5rqw"
+   ],
+   "q": [
+    "how ransomware works explained"
+   ]
+  },
+  "vulnerability-types": {
+   "lesson": null,
+   "messer": [
+    "FDFxGLnZtoY",
+    "NBKzlUqzVmE"
+   ],
+   "q": [
+    "types of security vulnerabilities explained"
+   ]
+  },
+  "wireless-attacks": {
+   "lesson": "tSLqrKhUvts",
+   "messer": []
+  },
+  "xss-and-csrf": {
+   "lesson": "PKgw0CLZIhE",
+   "messer": []
+  },
+  "certificates": {
+   "lesson": "cLa94BZH_9s",
+   "messer": []
+  },
+  "cloud-security": {
+   "lesson": "8qpQ8Q6xxiU",
+   "messer": [
+    "V2DCYO-sWRQ"
+   ]
+  },
+  "data-protection": {
+   "lesson": "leX_Qa7wqB4",
+   "messer": [
+    "71RQaYQ4QSw"
+   ]
+  },
+  "dlp": {
+   "lesson": null,
+   "messer": [],
+   "q": [
+    "data loss prevention DLP explained"
+   ],
+   "objective": "4.5"
+  },
+  "embedded-systems-security": {
+   "lesson": "HDiNPPrGhzE",
+   "messer": [
+    "TaTaEvqjjDM"
+   ],
+   "q": [
+    "ICS SCADA security explained"
+   ]
+  },
+  "encryption": {
+   "lesson": "jpsc4c7lntw",
+   "messer": [
+    "u61J0xR_XPU",
+    "LfuTMzZke4g"
+   ]
+  },
+  "firewalls": {
+   "lesson": "mq1HRM-zGtQ",
+   "messer": [
+    "VgNyh4HEqSU"
+   ]
+  },
+  "hashing": {
+   "lesson": "EcGmQjl6XEo",
+   "messer": []
+  },
+  "ids-ips": {
+   "lesson": "7QuYupuic3Q",
+   "messer": []
+  },
+  "infrastructure-as-code": {
+   "lesson": null,
+   "messer": [],
+   "q": [
+    "infrastructure as code explained terraform security"
+   ],
+   "objective": "3.1"
+  },
+  "key-management": {
+   "lesson": null,
+   "messer": [
+    "U6BWn81P5Ec"
+   ],
+   "q": [
+    "key management HSM key escrow explained"
+   ]
+  },
+  "load-balancers-and-proxies": {
+   "lesson": "WlOslEy3ztg",
+   "messer": [],
+   "q": [
+    "reverse proxy vs forward proxy explained",
+    "load balancer explained networking",
+    "SSL offloading explained"
+   ]
+  },
+  "nac": {
+   "lesson": "QhLQ6J4satw",
+   "messer": []
+  },
+  "network-security-architecture": {
+   "lesson": "jd001Hj7XWM",
+   "messer": [
+    "Ap3Z_0ZdqpQ",
+    "l64La1xYXL4"
+   ]
+  },
+  "network-segmentation": {
+   "lesson": "yDeDGCh_PDs",
+   "messer": []
+  },
+  "pki": {
+   "lesson": "xHAMEF7-inQ",
+   "messer": []
+  },
+  "resilience-and-redundancy": {
+   "lesson": "sb0dRaQbuBA",
+   "messer": [
+    "WGlT6-gNwqY",
+    "-EY45MimSBM"
+   ]
+  },
+  "serverless-and-containers": {
+   "lesson": null,
+   "messer": [],
+   "q": [
+    "container security kubernetes docker explained",
+    "serverless security explained"
+   ],
+   "pin": [
+    "oBf5lrmquYI",
+    "vxJobGtqKVM"
+   ],
+   "objective": "3.1"
+  },
+  "virtualization-security": {
+   "lesson": "t2JrPrzRDLA",
+   "messer": [],
+   "q": [
+    "hypervisor security VM escape explained",
+    "type 1 vs type 2 hypervisor",
+    "virtual machine sprawl security"
+   ]
+  },
+  "vpn": {
+   "lesson": "uU3e_ntg-3g",
+   "messer": []
+  },
+  "automation-and-scripting": {
+   "lesson": "R9ojg881dLs",
+   "messer": []
+  },
+  "digital-forensics": {
+   "lesson": "UtDWApdO8Zk",
+   "messer": []
+  },
+  "edr-xdr": {
+   "lesson": null,
+   "messer": [],
+   "q": [
+    "EDR XDR endpoint detection response explained"
+   ],
+   "objective": "4.5"
+  },
+  "email-security": {
+   "lesson": "v6ht9efsnRI",
+   "messer": [],
+   "q": [
+    "SPF DKIM DMARC explained"
+   ]
+  },
+  "endpoint-security": {
+   "lesson": "83pCkSSj1IQ",
+   "messer": [
+    "4dpTyRM6BU8"
+   ]
+  },
+  "federation": {
+   "lesson": null,
+   "messer": [],
+   "q": [
+    "federation SAML identity federation explained"
+   ],
+   "objective": "4.6"
+  },
+  "hardening": {
+   "lesson": "wXoC46Qr_9Q",
+   "messer": [
+    "BWPJD9Eb9iE",
+    "YQKbs0ug0XQ"
+   ]
+  },
+  "identity-management": {
+   "lesson": "ZoOyyqhptik",
+   "messer": []
+  },
+  "incident-response": {
+   "lesson": "X2UiMLxRdhE",
+   "messer": [
+    "CYFe16lCRMk"
+   ]
+  },
+  "log-management": {
+   "lesson": "EDru1LTYDJw",
+   "messer": [
+    "ZDJ-BLPLWq4"
+   ]
+  },
+  "mfa": {
+   "lesson": "MpIzA4fNWew",
+   "messer": []
+  },
+  "network-monitoring": {
+   "lesson": "np2WI_rM-Ok",
+   "messer": [
+    "nNiNTviiacU"
+   ]
+  },
+  "penetration-testing": {
+   "lesson": "-LevHAzXgFs",
+   "messer": [
+    "wEMzVfwBiWY"
+   ]
+  },
+  "privileged-access-management": {
+   "lesson": null,
+   "messer": [],
+   "q": [
+    "privileged access management PAM explained"
+   ],
+   "objective": "4.6"
+  },
+  "siem": {
+   "lesson": null,
+   "messer": [
+    "nNiNTviiacU"
+   ],
+   "q": [
+    "what is SIEM security information event management"
+   ]
+  },
+  "soar": {
+   "lesson": null,
+   "messer": [],
+   "q": [
+    "SOAR security orchestration automation response explained"
+   ],
+   "objective": "4.7"
+  },
+  "sso": {
+   "lesson": null,
+   "messer": [],
+   "q": [
+    "single sign on SSO explained how it works"
+   ],
+   "objective": "4.6"
+  },
+  "threat-hunting": {
+   "lesson": null,
+   "messer": [],
+   "q": [
+    "threat hunting explained cybersecurity"
+   ],
+   "objective": "4.3"
+  },
+  "threat-intelligence": {
+   "lesson": "86fruE9jkKk",
+   "messer": []
+  },
+  "vulnerability-management": {
+   "lesson": "9B0mtWk_AM0",
+   "messer": [
+    "eyVy1gKCuAU",
+    "P9xakfmX70c"
+   ]
+  },
+  "audits-and-assessments": {
+   "lesson": "uo2Yw720mv4",
+   "messer": [],
+   "q": [
+    "internal vs external audit security explained",
+    "SOC 2 audit explained",
+    "security assessment vs audit vs attestation"
+   ]
+  },
+  "business-continuity": {
+   "lesson": null,
+   "messer": [],
+   "q": [
+    "business continuity planning explained"
+   ],
+   "objective": "5.2"
+  },
+  "business-impact-analysis": {
+   "lesson": "myI-v3mj7Kc",
+   "messer": []
+  },
+  "compliance": {
+   "lesson": "IjJf4jLtONQ",
+   "messer": []
+  },
+  "data-classification": {
+   "lesson": "R0W0_gZCVzk",
+   "messer": [
+    "gxNi-04yP8Q"
+   ]
+  },
+  "disaster-recovery": {
+   "lesson": null,
+   "messer": [
+    "IhT7Odu4xHc",
+    "8mGSwRScqIM"
+   ],
+   "q": [
+    "disaster recovery RTO RPO explained"
+   ]
+  },
+  "governance": {
+   "lesson": "ujkNmD3ygoY",
+   "messer": [
+    "4tGFraaP48Q"
+   ],
+   "q": [
+    "GRC governance risk compliance explained",
+    "security governance policy standard procedure guideline"
+   ],
+   "pin": [
+    "SCqiX7LpfF8"
+   ]
+  },
+  "privacy": {
+   "lesson": "WGXrbAh0LUI",
+   "messer": []
+  },
+  "regulations-and-frameworks": {
+   "lesson": "jBvdRpXaomk",
+   "messer": [
+    "vJINnOZyQNg"
+   ]
+  },
+  "risk-assessment": {
+   "lesson": "Ykx7t54y-oo",
+   "messer": []
+  },
+  "risk-management": {
+   "lesson": "cLhUMoQS1a8",
+   "messer": [
+    "pmyuWY7Pbag"
+   ]
+  },
+  "security-awareness-training": {
+   "lesson": "W_Npxwk4fbI",
+   "messer": [
+    "WQRZMMLUkGE"
+   ]
+  },
+  "security-policies": {
+   "lesson": "5kY9kvzeWjA",
+   "messer": []
+  },
+  "third-party-risk": {
+   "lesson": "13KNjPexnEI",
+   "messer": [
+    "HSZxjj1YAh8"
+   ]
+  }
+ }
+}

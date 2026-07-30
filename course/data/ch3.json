@@ -1,0 +1,1117 @@
+{
+ "chapter": "CH3",
+ "units": [
+  {
+   "id": "ch3-u1",
+   "name": "數位憑證與憑證鏈",
+   "type": "topic",
+   "assessment": "說出憑證裡一定會有的欄位，以及 CSR、CA、中繼 CA、根 CA 的關係。再自問：CRL 和 OCSP 差在哪？一個是下載整份撤銷清單、一個是逐張即時查詢，OCSP stapling 又解決了什麼隱私與延遲問題。",
+   "note": {
+    "slug": "certificates",
+    "title": "Certificates",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/certificates",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-certificates",
+    "questions": 4,
+    "concepts": [
+     "X.509 certificate fields:",
+     "Certificate lifecycle:",
+     "CSR (Certificate Signing Request)",
+     "Revocation:",
+     "Certificate formats:"
+    ],
+    "eli5": "數位證書就像是網路上的身分證，由大家都信任的發證機構簽署，證明網站真的是它所說的那個人。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Certificates and Certificate Authority Explained",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=x_I6Qc35PuQ",
+     "channel": "Hussein Nasser",
+     "duration": "16:23",
+     "why": "Hussein Nasser，完整講解"
+    },
+    {
+     "name": "Hashing and Digital Signatures - CompTIA Security+ SY0-701 - 1.4",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=EcGmQjl6XEo",
+     "channel": "Professor Messer",
+     "duration": "10:25",
+     "why": "Professor Messer，短講補強"
+    },
+    {
+     "name": "Your Certs Are Expiring: Digital Certificate Management Explained",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=V7EgIMWOqgw",
+     "channel": "IBM Technology",
+     "duration": "9:41",
+     "why": "IBM Technology，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Certificates",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=cLa94BZH_9s",
+    "duration": "14:38",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch3-u2",
+   "name": "雲端安全與責任共擔",
+   "type": "topic",
+   "assessment": "在 IaaS、PaaS、SaaS 三種模式下，各說出哪些安全責任在雲商、哪些在你。再回答：S3 bucket 設成公開造成外洩，責任在誰？在客戶——這是責任共擔模型最常考的落點。",
+   "note": {
+    "slug": "cloud-security",
+    "title": "Cloud Security",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cloud-security",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-cloud-security",
+    "questions": 4,
+    "concepts": [
+     "Cloud deployment models:",
+     "Shared responsibility model",
+     "Identity and access management",
+     "Data sovereignty",
+     "Multitenancy risks",
+     "API security",
+     "Secrets management"
+    ],
+    "eli5": "雲端安全就是保護放在別人電腦裡的資料。你需要搞清楚哪些是你的責任 (資料和存取控制)，哪些是雲端公司的責任 (實體伺服器)。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Cloud-specific Vulnerabilities",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=V2DCYO-sWRQ",
+     "channel": "Professor Messer",
+     "duration": "4:06",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Full Cloud Security Course For Beginners | What is Cloud Security?",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=sF014G2BUXM",
+     "channel": "Tech With Soleyman",
+     "duration": "16:05",
+     "why": "Tech With Soleyman，完整講解"
+    },
+    {
+     "name": "How to ACTUALLY Learn Cloud Security (Complete Beginners Guide)",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=gblkOr7phK8",
+     "channel": "Tech With Lucy",
+     "duration": "9:09",
+     "why": "Tech With Lucy，實作示範"
+    }
+   ],
+   "lesson": {
+    "title": "Cloud Infrastructures",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=8qpQ8Q6xxiU",
+    "duration": "9:56",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch3-u3",
+   "name": "資料保護與資料狀態",
+   "type": "topic",
+   "assessment": "說出資料的三種狀態（at rest／in transit／in use）各用什麼技術保護。再自問：tokenization 和 encryption 差在哪？前者用無意義代碼替換、原值存在別處，後者可逆算回來，PCI 場景常拿這兩個對比。",
+   "note": {
+    "slug": "data-protection",
+    "title": "Data Protection",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/data-protection",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-data-protection",
+    "questions": 4,
+    "concepts": [
+     "Data sovereignty",
+     "Data loss prevention (DLP)",
+     "Rights management (DRM/IRM)",
+     "Tokenization",
+     "Data masking",
+     "Anonymization",
+     "Pseudonymization",
+     "Data retention policies"
+    ],
+    "eli5": "資料保護就是確保資料在任何狀態都是安全的：存在硬碟裡 (待命狀態)、在網路上傳輸 (傳輸狀態)、或正在被程式讀取 (使用中)。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "States of Data",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=71RQaYQ4QSw",
+     "channel": "Professor Messer",
+     "duration": "6:07",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "The Data Protection Act and the General Data Protection Regulation (GDPR)",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=gBJXfayW40M",
+     "channel": "Computer Science Lessons",
+     "duration": "34:41",
+     "why": "Computer Science Lessons，完整講解"
+    },
+    {
+     "name": "Master Microsoft Purview: Beginner’s Hands-On Lab for Data Protection & Compliance | Part 1",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=tygOsCR5wwY",
+     "channel": "A Guide to Cloud & AI — Bites",
+     "duration": "19:59",
+     "why": "A Guide to Cloud & AI — Bites，實作示範"
+    }
+   ],
+   "lesson": {
+    "title": "Protecting Data",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=leX_Qa7wqB4",
+    "duration": "14:28",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch3-u4",
+   "name": "資料外洩防護（DLP）",
+   "type": "topic",
+   "assessment": "說出 DLP 部署的三個位置（端點、網路、雲端／郵件）各攔得住什麼、攔不住什麼。再回答：為什麼 DLP 對加密流量幾乎無效？沒有解密就看不到內容，這決定了它要搭配什麼一起佈署。",
+   "note": {
+    "slug": "dlp",
+    "title": "DLP",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/dlp",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-dlp",
+    "questions": 4,
+    "concepts": [
+     "Policy actions:",
+     "False positives"
+    ],
+    "eli5": "DLP 就像是公司的海關。它會盯著所有要寄出去的信件和檔案，如果發現裡面有秘密 (像身分證字號)，就會攔下來不准發出去。",
+    "eli5Lang": "zh",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Data Loss Prevention and Endpoint DLP",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=TCI7ymVtrnU",
+     "channel": "Microsoft Modern Work Webinars",
+     "duration": "51:32",
+     "why": "Microsoft Modern Work Webinars，完整講解"
+    },
+    {
+     "name": "Endpoint Data Loss Prevention (DLP) | What it is and how to set it up in Microsoft 365",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=XO2zMA3w1wA",
+     "channel": "Microsoft Mechanics",
+     "duration": "7:58",
+     "why": "Microsoft Mechanics，實作示範"
+    },
+    {
+     "name": "What is Netskope Data Loss Prevention DLP?  — Netskope Cloud Security Tutorials",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=2WLMsLBh-TA",
+     "channel": "Somerford Associates",
+     "duration": "9:18",
+     "why": "Somerford Associates，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "What is Data Loss Prevention (DLP)?",
+    "channel": "Google Cloud Tech",
+    "url": "https://www.youtube.com/watch?v=OjMnlizubTU",
+    "duration": "2:37",
+    "why": "Messer 官方課程沒有單獨講這個主題，改用 Google Cloud Tech 這支講得最完整的"
+   }
+  },
+  {
+   "id": "ch3-u5",
+   "name": "嵌入式與工控系統安全",
+   "type": "topic",
+   "assessment": "說明 SCADA／ICS、RTOS、IoT 裝置為什麼不能照一般伺服器的方式打補丁。再自問：這類系統最常用的補償控制是什麼？答網路隔離與單向閘道，因為可用性優先於機密性。",
+   "note": {
+    "slug": "embedded-systems-security",
+    "title": "Embedded Systems Security",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/embedded-systems-security",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-embedded-systems-security",
+    "questions": 4,
+    "concepts": [],
+    "eli5": "Think about all the smart gadgets around you -- a thermostat, a traffic light, or a medical device. These are tiny computers built to do one specific job, and most of them cannot be easily updated like your phone or laptop. Keeping these devices safe is tricky because they often run for years without anyone checking on them, and bad guys know they are easy targets. Embedded systems security is about protecting these little computers from being hacked.",
+    "eli5Lang": "en",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Understanding security threats to embedded systems and IoT devices",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=SOx-8Ltmm7g",
+     "channel": "Texas Instruments",
+     "duration": "21:29",
+     "why": "Texas Instruments，完整講解"
+    },
+    {
+     "name": "Securing Your IoT Devices",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=7zWVxrjjIpE",
+     "channel": "IBM Technology",
+     "duration": "13:55",
+     "why": "IBM Technology，短講補強"
+    },
+    {
+     "name": "Industrial Control Systems - Understanding ICS Architectures",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=tHZNkXadh5U",
+     "channel": "Mandiant & Google Cloud Security",
+     "duration": "6:23",
+     "why": "Mandiant & Google Cloud Security，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Other Infrastructure Concepts",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=HDiNPPrGhzE",
+    "duration": "14:24",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch3-u6",
+   "name": "加密技術",
+   "type": "topic",
+   "assessment": "說出對稱與非對稱各自的強項與典型用途，並解釋混合加密為什麼兩個都要用。再回答：完美前向保密（PFS）解決了什麼問題？答得出「私鑰事後外洩也解不開先前錄下的流量」才算懂。",
+   "note": {
+    "slug": "encryption",
+    "title": "Encryption",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/encryption",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-encryption",
+    "questions": 4,
+    "concepts": [
+     "Hybrid encryption",
+     "Encryption modes",
+     "Key length",
+     "Perfect Forward Secrecy (PFS)",
+     "ephemeral Diffie-Hellman"
+    ],
+    "eli5": "加密就像是把你的信件變成看不懂的亂碼，只有擁有正確鑰匙的人才能把它還原成原本的內容。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Obfuscation",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=LfuTMzZke4g",
+     "channel": "Professor Messer",
+     "duration": "8:00",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Personal VPNs: Encryption Myths and Data Security Explained",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=2fCTrjmDqyg",
+     "channel": "IBM Technology",
+     "duration": "16:04",
+     "why": "IBM Technology，完整講解"
+    },
+    {
+     "name": "Encryption - Symmetric Encryption vs Asymmetric Encryption - Cryptography - Practical TLS",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=o_g-M7UBqI8",
+     "channel": "Practical Networking",
+     "duration": "13:58",
+     "why": "Practical Networking，實作示範"
+    }
+   ],
+   "lesson": {
+    "title": "Encrypting Data",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=jpsc4c7lntw",
+    "duration": "9:48",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch3-u7",
+   "name": "防火牆類型",
+   "type": "topic",
+   "assessment": "分辨封包過濾、狀態檢視、NGFW、WAF、UTM 各看到 OSI 的哪一層。再自問：要擋 SQL injection 該用哪一種？答 WAF——一般防火牆看不到 HTTP 內容。",
+   "note": {
+    "slug": "firewalls",
+    "title": "Firewalls",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/firewalls",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-firewalls",
+    "questions": 4,
+    "concepts": [
+     "Host-based vs. network-based",
+     "Unified Threat Management (UTM)",
+     "Access Control Lists (ACLs)",
+     "Screened subnet (DMZ)"
+    ],
+    "eli5": "防火牆就像是公司的警衛，它會檢查所有進出的包裹，只允許符合安全規則的包裹通過，把可疑的擋在門外。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Firewalls",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=VgNyh4HEqSU",
+     "channel": "Professor Messer",
+     "duration": "11:31",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "I will teach you FIREWALLS in 15 minutes | Beginner friendly (zones, policies, interfaces etc.)",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=NfaMCDGb1XI",
+     "channel": "The Social Dork | Cyber Security",
+     "duration": "16:09",
+     "why": "The Social Dork | Cyber Security，完整講解"
+    },
+    {
+     "name": "Lec-93: What is Firewalls and How it Works | Packet Filtering firewall explained in Hindi Part-1",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=o_vyfo3Hw0Y",
+     "channel": "Gate Smashers",
+     "duration": "13:45",
+     "why": "Gate Smashers，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Firewall Types",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=mq1HRM-zGtQ",
+    "duration": "8:00",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch3-u8",
+   "name": "雜湊與數位簽章",
+   "type": "topic",
+   "assessment": "說明雜湊、加密、編碼三者的差別，以及數位簽章同時提供哪三個保證。再回答：簽章用哪一把金鑰簽、哪一把驗？私鑰簽、公鑰驗，反過來就是加密不是簽章。",
+   "note": {
+    "slug": "hashing",
+    "title": "Hashing",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/hashing",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-hashing",
+    "questions": 4,
+    "concepts": [
+     "HMAC (Hash-based Message Authentication Code)",
+     "Password hashing",
+     "Digital signatures",
+     "File integrity monitoring"
+    ],
+    "eli5": "雜湊就像是資料的指紋。即便是超大的檔案，經過雜湊運算後都會得到一段簡短且唯一的字串，只要檔案改動一點點，指紋就會完全不同。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Hashing Algorithms and Security - Computerphile",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=b4b8ktEV4Bg",
+     "channel": "Computerphile",
+     "duration": "8:12",
+     "why": "Computerphile，短講補強"
+    },
+    {
+     "name": "SHA: Secure Hashing Algorithm - Computerphile",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=DMtFhACPnTY",
+     "channel": "Computerphile",
+     "duration": "10:21",
+     "why": "Computerphile，短講補強"
+    },
+    {
+     "name": "Hash Collisions & The Birthday Paradox - Computerphile",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=jsraR-el8_o",
+     "channel": "Computerphile",
+     "duration": "14:21",
+     "why": "Computerphile，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Hashing and Digital Signatures",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=EcGmQjl6XEo",
+    "duration": "10:25",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch3-u9",
+   "name": "入侵偵測與防禦系統",
+   "type": "topic",
+   "assessment": "說出 IDS 與 IPS 的部署差別（旁掛 vs 串接），以及特徵式與異常式偵測各自的盲點。再自問：把 IPS 調得太敏感會發生什麼？誤判把正常流量擋掉，可用性就出事了。",
+   "note": {
+    "slug": "ids-ips",
+    "title": "IDS/IPS",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/ids-ips",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-ids-ips",
+    "questions": 4,
+    "concepts": [
+     "Tuning",
+     "Inline vs. passive deployment",
+     "FIM (File Integrity Monitoring)"
+    ],
+    "eli5": "IDS 是警報器，發現有人翻牆就大叫；IPS 是守衛，發現有人翻牆會直接把他抓起來丟出去。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "IDS vs IPS vs Firewall #networksecurity #firewall #IPS #IDS",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=l7FeR1MIRFY",
+     "channel": "TechWithEase",
+     "duration": "6:02",
+     "why": "TechWithEase，短講補強"
+    },
+    {
+     "name": "Intrusion Detection and Prevention Systems (IDS/ IPS) | Security Basics",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=cGIgJOICpX0",
+     "channel": "LookingPoint, Inc.",
+     "duration": "3:45",
+     "why": "LookingPoint, Inc.，短講補強"
+    },
+    {
+     "name": "What Is Intrusion Detection System? | Intrusion Detection System (IDS) | Cyber Security |Simplilearn",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=dfVAi87BSEs",
+     "channel": "Simplilearn",
+     "duration": "10:50",
+     "why": "Simplilearn，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Intrusion Prevention",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=7QuYupuic3Q",
+    "duration": "5:14",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch3-u10",
+   "name": "基礎設施即程式碼",
+   "type": "topic",
+   "assessment": "說明 IaC 為什麼能減少設定漂移，以及它把哪些新風險帶進來（秘密硬編碼、範本供應鏈）。再回答：什麼叫 immutable infrastructure？答得出「不修改既有主機、直接重建」才算懂。",
+   "note": {
+    "slug": "infrastructure-as-code",
+    "title": "Infrastructure as Code",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/infrastructure-as-code",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-infrastructure-as-code",
+    "questions": 4,
+    "concepts": [
+     "Configuration drift",
+     "Immutable infrastructure",
+     "Common tools:",
+     "Policy as code"
+    ],
+    "eli5": "IaC 就是用寫劇本的方式來蓋房子。只要寫好程式碼，電腦就能自動幫你蓋好成千上萬個伺服器，而且保證每一台都長得一模一樣。",
+    "eli5Lang": "zh",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Infrastructure as Code with Terraform & AWS",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=a3vVUiLzm8w",
+     "channel": "John Hammond",
+     "duration": "18:06",
+     "why": "John Hammond，完整講解"
+    },
+    {
+     "name": "What Is IaC Security Scanning? Terraform, Kubernetes & Cloud Misconfigurations Explained",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=QaK3cou8PAU",
+     "channel": "Aikido Security",
+     "duration": "9:25",
+     "why": "Aikido Security，短講補強"
+    },
+    {
+     "name": "Catching Commits to Secure Infrastructure as Code • Rosemary Wang • GOTO 2023",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=7j3h2IqkmIA",
+     "channel": "GOTO Conferences",
+     "duration": "45:22",
+     "why": "GOTO Conferences，完整講解"
+    }
+   ],
+   "lesson": {
+    "title": "What is Infrastructure as Code?",
+    "channel": "IBM Technology",
+    "url": "https://www.youtube.com/watch?v=zWw2wuiKd5o",
+    "duration": "8:51",
+    "why": "Messer 官方課程沒有單獨講這個主題，改用 IBM Technology 這支講得最完整的"
+   }
+  },
+  {
+   "id": "ch3-u11",
+   "name": "金鑰管理",
+   "type": "topic",
+   "assessment": "說出金鑰生命週期的各階段，以及 HSM、KMS、key escrow、金鑰輪替各解決什麼問題。再自問：key escrow 帶來的風險是什麼？多一份可以解開所有資料的副本，就多一個攻擊目標。",
+   "note": {
+    "slug": "key-management",
+    "title": "Key Management",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/key-management",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-key-management",
+    "questions": 4,
+    "concepts": [
+     "Hardware Security Module (HSM)",
+     "Trusted Platform Module (TPM)",
+     "Key escrow",
+     "Key splitting / secret sharing",
+     "Ephemeral keys",
+     "Perfect forward secrecy (PFS)"
+    ],
+    "eli5": "If encryption is like using a lock to keep your secrets safe, then key management is about taking care of the keys themselves. Where do you keep the key? Who gets a copy? When do you change the locks? If you lose the key or someone copies it, the lock becomes useless. Key management is all the rules for creating, sharing, storing, and eventually throwing away those keys so your secrets stay protected.",
+    "eli5Lang": "en",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Key Exchange",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=U6BWn81P5Ec",
+     "channel": "Professor Messer",
+     "duration": "3:39",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Tech Talk: What is Public Key Infrastructure (PKI)?",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=0ctat6RBrFo",
+     "channel": "IBM Technology",
+     "duration": "9:22",
+     "why": "IBM Technology，短講補強"
+    },
+    {
+     "name": "Secrets Management: Secure Credentials & Avoid Data Leaks",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=BqekRTA6VCs",
+     "channel": "IBM Technology",
+     "duration": "9:40",
+     "why": "IBM Technology，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Public Key Infrastructure - CompTIA Security+ Sy0-701 - 1.4",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=xHAMEF7-inQ",
+    "duration": "9:08",
+    "why": "Messer 官方課程沒有單獨講這個主題，改用 Professor Messer 這支講得最完整的"
+   }
+  },
+  {
+   "id": "ch3-u12",
+   "name": "負載平衡器與代理伺服器",
+   "type": "topic",
+   "assessment": "分辨正向代理與反向代理服務的對象，以及 SSL offloading 把解密放在哪裡。再回答：negative caching 與 session persistence 各在什麼情況下必須開？",
+   "note": {
+    "slug": "load-balancers-and-proxies",
+    "title": "Load Balancers and Proxies",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/load-balancers-and-proxies",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-load-balancers-and-proxies",
+    "questions": 4,
+    "concepts": [
+     "Scheduling algorithms",
+     "Active-active vs. active-passive",
+     "SSL/TLS offloading",
+     "Health checks",
+     "Content filtering",
+     "Caching"
+    ],
+    "eli5": "Picture a really popular ice cream shop with five windows. A load balancer is like a helper out front who sends each customer to the window with the shortest line, so nobody waits too long. A proxy is more like a middle-man -- you tell the proxy what ice cream you want, and the proxy goes and gets it for you, so the shop never knows who you are. Both help things run smoothly and safely.",
+    "eli5Lang": "en",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Cloud OnAir: Networking 104 - Everything You Need to Know About Load Balancers on GCP",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=D4XZkCJyqis",
+     "channel": "Google Cloud Tech",
+     "duration": "42:57",
+     "why": "Google Cloud Tech，完整講解"
+    },
+    {
+     "name": "What is a Load Balancer?",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=sCR3SAVdyCc",
+     "channel": "IBM Technology",
+     "duration": "8:22",
+     "why": "IBM Technology，短講補強"
+    },
+    {
+     "name": "Load Balancer Explained",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=1fN2UDbtGDQ",
+     "channel": "PowerCert Animated Videos",
+     "duration": "9:12",
+     "why": "PowerCert Animated Videos，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Network Appliances",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=WlOslEy3ztg",
+    "duration": "11:56",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch3-u13",
+   "name": "網路存取控制（NAC）與 802.1X",
+   "type": "topic",
+   "assessment": "說出 802.1X 三個角色（supplicant／authenticator／authentication server）各是誰。再自問：agent-based 與 agentless NAC 差在哪？前者能做裝置健康檢查，後者只能看網路層的表徵。",
+   "note": {
+    "slug": "nac",
+    "title": "NAC",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/nac",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-nac",
+    "questions": 4,
+    "concepts": [
+     "802.1X",
+     "Remediation network",
+     "Guest networking"
+    ],
+    "eli5": "It's like a health check before you enter a theme park. Before you get on the rides, someone checks your ticket and makes sure you are tall enough. NAC (Network Access Control) does the same for devices joining a network -- it checks that your computer has the right updates and security software before letting you in. If your device does not pass the check, it gets sent to a waiting area until it is fixed.",
+    "eli5Lang": "en",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "What is network access control (NAC) and how does it work?",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=i-OYNqJqatI",
+     "channel": "Luv Johar Free IT Training Videos",
+     "duration": "5:24",
+     "why": "Luv Johar Free IT Training Videos，短講補強"
+    },
+    {
+     "name": "Network Access Control (NAC)",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=Oh0su6tQSVQ",
+     "channel": "Cyber Security Entertainment",
+     "duration": "13:24",
+     "why": "Cyber Security Entertainment，短講補強"
+    },
+    {
+     "name": "Network Access/Admission Control (NAC)",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=nCgnigJ7Jvc",
+     "channel": "Cyber Security Entertainment",
+     "duration": "10:03",
+     "why": "Cyber Security Entertainment，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Port Security",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=QhLQ6J4satw",
+    "duration": "3:50",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch3-u14",
+   "name": "網路安全架構",
+   "type": "topic",
+   "assessment": "替一個有對外服務的組織畫出 DMZ、內網、管理網段的分界，並說明每一道分界上該放什麼控制。再回答：east-west 與 north-south 流量差在哪、為什麼前者更難監控？",
+   "note": {
+    "slug": "network-security-architecture",
+    "title": "Network Security Architecture",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/network-security-architecture",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-network-security-architecture",
+    "questions": 4,
+    "concepts": [
+     "Defense in depth",
+     "Zero trust architecture",
+     "Network zones",
+     "DMZ (Demilitarized Zone)",
+     "East-west vs. north-south traffic",
+     "Software-Defined Networking (SDN)",
+     "Secure Access Service Edge (SASE)",
+     "Micro-segmentation",
+     "Implicit deny",
+     "SSL/TLS offloading"
+    ],
+    "eli5": "Think of a castle with walls, a moat, drawbridges, and guards at every gate. Network security architecture is like the blueprint for building all those defenses around a computer network. It plans where the walls go, who guards each entrance, and how to keep intruders from moving around inside if they do get in. The idea is that no single defense has to be perfect, because there are many layers backing it up.",
+    "eli5Lang": "en",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Infrastructure Considerations",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=Ap3Z_0ZdqpQ",
+     "channel": "Professor Messer",
+     "duration": "13:48",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Secure Infrastructures",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=l64La1xYXL4",
+     "channel": "Professor Messer",
+     "duration": "5:54",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Cybersecurity Architecture: Five Principles to Follow (and One to Avoid)",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=jq_LZ1RFPfU",
+     "channel": "IBM Technology",
+     "duration": "17:34",
+     "why": "IBM Technology，完整講解"
+    }
+   ],
+   "lesson": {
+    "title": "Network Infrastructure Concepts",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=jd001Hj7XWM",
+    "duration": "6:56",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch3-u15",
+   "name": "網路分段與微分段",
+   "type": "topic",
+   "assessment": "說明 VLAN、實體隔離、微分段的隔離強度差別。再自問：把伺服器切進不同 VLAN 但路由器上不設 ACL，實際上隔開了嗎？沒有——這是最常見的假分段。",
+   "note": {
+    "slug": "network-segmentation",
+    "title": "Network Segmentation",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/network-segmentation",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-network-segmentation",
+    "questions": 4,
+    "concepts": [
+     "Physical segmentation",
+     "Logical segmentation",
+     "VLANs (Virtual LANs)",
+     "Micro-segmentation",
+     "Air gap",
+     "Jumpbox / jump server",
+     "East-west traffic control"
+    ],
+    "eli5": "You know how a submarine has separate compartments with heavy doors? If water floods one room, the doors keep it from spreading to the rest of the submarine. Network segmentation works the same way -- it divides a big network into smaller sections with barriers between them. If a hacker breaks into one section, they cannot easily reach everything else. It limits the damage.",
+    "eli5Lang": "en",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "AWS WAN Demo - Global Network, Core Network, Segments, Attachments, Core network policy - Part 25",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=fcHIRvZTods",
+     "channel": "Rahul Wagh",
+     "duration": "40:42",
+     "why": "Rahul Wagh，實作示範"
+    },
+    {
+     "name": "Understanding Cybersecurity: Network Segmentation",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=wZuS_jawlyA",
+     "channel": "Intelligence Quest",
+     "duration": "12:03",
+     "why": "Intelligence Quest，短講補強"
+    },
+    {
+     "name": "What is Network Segmentation?",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=ouvqTP3RajU",
+     "channel": "NordLayer",
+     "duration": "3:25",
+     "why": "NordLayer，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Segmentation and Access Control",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=yDeDGCh_PDs",
+    "duration": "6:06",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch3-u16",
+   "name": "公開金鑰基礎建設（PKI）",
+   "type": "topic",
+   "assessment": "說出 PKI 的信任鏈怎麼建立，以及根 CA 為什麼要離線保存。再回答：中繼 CA 存在的意義是什麼？答得出「根 CA 一旦外洩整個信任體系要重建，中繼 CA 可以只撤一段」才算通。",
+   "note": {
+    "slug": "pki",
+    "title": "PKI",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/pki",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-pki",
+    "questions": 4,
+    "concepts": [
+     "Chain of trust",
+     "Certificate pinning",
+     "Key escrow",
+     "Cross-certification",
+     "Certificate formats"
+    ],
+    "eli5": "PKI 就像是發行身分證的一整套系統。它決定了誰能發證、怎麼驗證、以及如果證件弄丟了要怎麼作廢。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "CompTIA Security+ Full Course: Public Key Infrastructure (PKI)",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=dhWXqUXLuz0",
+     "channel": "Certify Breakfast",
+     "duration": "43:48",
+     "why": "Certify Breakfast，完整講解"
+    },
+    {
+     "name": "Public Key Infrastructure - What is a PKI? - Cryptography - Practical TLS",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=Jefr7wFLu3M",
+     "channel": "Practical Networking",
+     "duration": "5:49",
+     "why": "Practical Networking，實作示範"
+    },
+    {
+     "name": "What is Public Key Infrastructure (PKI) by Securemetric",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=i-rtxrEz_E8",
+     "channel": "Securemetric",
+     "duration": "3:41",
+     "why": "Securemetric，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Public Key Infrastructure",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=xHAMEF7-inQ",
+    "duration": "9:08",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch3-u17",
+   "name": "韌性與備援",
+   "type": "topic",
+   "assessment": "分辨高可用、容錯、負載平衡與備援的差別，並說出 RAID 各層級保護的是什麼。再自問：RAID 算備份嗎？不算——它防硬碟壞，不防誤刪與勒索加密。",
+   "note": {
+    "slug": "resilience-and-redundancy",
+    "title": "Resilience and Redundancy",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/resilience-and-redundancy",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-resilience-and-redundancy",
+    "questions": 4,
+    "concepts": [
+     "High availability (HA)",
+     "Failover",
+     "Failback",
+     "Diversity",
+     "Capacity planning",
+     "Scalability",
+     "Non-persistence"
+    ],
+    "eli5": "韌性與冗餘就是「備份」。當一台機器壞了，另一台能立刻補上，確保生意不會因為意外而中斷。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Capacity Planning",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=WGlT6-gNwqY",
+     "channel": "Professor Messer",
+     "duration": "3:53",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Power Resiliency",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=-EY45MimSBM",
+     "channel": "Professor Messer",
+     "duration": "4:02",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Redundancy, Fault Tolerance, and High Availability - CompTIA Security+ SY0-301: 2.7",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=BYIIyjlKed0",
+     "channel": "Professor Messer",
+     "duration": "10:11",
+     "why": "Professor Messer，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Resiliency",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=sb0dRaQbuBA",
+    "duration": "9:42",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch3-u18",
+   "name": "無伺服器與容器安全",
+   "type": "topic",
+   "assessment": "說明容器與虛擬機在隔離強度上的差別，以及容器逃逸攻擊的目標。再回答：serverless 把哪些責任交還給雲商、又留下哪些給你？留下的是程式碼、相依套件與 IAM 權限設定。",
+   "note": {
+    "slug": "serverless-and-containers",
+    "title": "Serverless and Containers",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/serverless-and-containers",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-serverless-and-containers",
+    "questions": 4,
+    "concepts": [],
+    "eli5": "Think of containers like lunchboxes -- each one has everything a meal needs, packed neatly so it does not mix with anyone else's food. You can stack many lunchboxes on one table. Serverless is even simpler: instead of packing your own lunch, you just tell the cafeteria what you want, and they make it for you on the spot. Both are ways to run programs on computers more efficiently, but each comes with its own safety rules to follow.",
+    "eli5Lang": "en",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Kubernetes Security Best Practices you need to know | THE Guide for securing your K8s cluster!",
+     "channel": "TechWorld with Nana",
+     "url": "https://www.youtube.com/watch?v=oBf5lrmquYI",
+     "duration": "29:41",
+     "why": "TechWorld with Nana，指定收錄",
+     "kind": "deep"
+    },
+    {
+     "name": "What is Serverless?",
+     "channel": "IBM Technology",
+     "url": "https://www.youtube.com/watch?v=vxJobGtqKVM",
+     "duration": "6:42",
+     "why": "IBM Technology，指定收錄",
+     "kind": "core"
+    },
+    {
+     "name": "How to secure Docker Containers - Container Security Best Practices",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=gV9nSU54BOk",
+     "channel": "Sysdig",
+     "duration": "3:48",
+     "why": "Sysdig，實作示範"
+    }
+   ],
+   "lesson": {
+    "title": "Virtual Machines vs Containers",
+    "channel": "PowerCert Animated Videos",
+    "url": "https://www.youtube.com/watch?v=eyNBf1sqdBQ",
+    "duration": "8:57",
+    "why": "Messer 官方課程沒有單獨講這個主題，改用 PowerCert Animated Videos 這支講得最完整的"
+   }
+  },
+  {
+   "id": "ch3-u19",
+   "name": "虛擬化安全",
+   "type": "topic",
+   "assessment": "說明 VM escape、VM sprawl、hypervisor 攻擊面各自的風險。再自問：Type 1 與 Type 2 hypervisor 差在哪、哪一個攻擊面較小？答 Type 1 直接跑在硬體上、沒有底層作業系統可打。",
+   "note": {
+    "slug": "virtualization-security",
+    "title": "Virtualization Security",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/virtualization-security",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-virtualization-security",
+    "questions": 4,
+    "concepts": [
+     "VM escape",
+     "VM sprawl",
+     "Resource contention",
+     "VM isolation",
+     "Snapshot management",
+     "Virtual network security",
+     "Hardening the hypervisor",
+     "Live migration security",
+     "Sandboxing"
+    ],
+    "eli5": "Picture one big apartment building where each apartment is completely separate -- you cannot hear your neighbors or walk into their space. Virtualization lets one powerful computer pretend to be many smaller computers, each in its own \"apartment.\" But if the building manager (the hypervisor) is not careful, someone could break through the walls. Virtualization security is about keeping each apartment safe and the building itself locked down.",
+    "eli5Lang": "en",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Virtualization Explained",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=FZR0rG3HKIk",
+     "channel": "IBM Technology",
+     "duration": "5:20",
+     "why": "IBM Technology，短講補強"
+    },
+    {
+     "name": "Virtualization Security（待補 1）",
+     "kind": "core",
+     "url": null,
+     "note": "搜過 104 支候選，符合主題且過得了觀看數與長度門檻的不足這一格"
+    },
+    {
+     "name": "Virtualization Security（待補 2）",
+     "kind": "core",
+     "url": null,
+     "note": "搜過 104 支候選，符合主題且過得了觀看數與長度門檻的不足這一格"
+    }
+   ],
+   "lesson": {
+    "title": "Virtualization Vulnerabilities",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=t2JrPrzRDLA",
+    "duration": "5:25",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch3-u20",
+   "name": "VPN 與安全通訊",
+   "type": "topic",
+   "assessment": "分辨 site-to-site 與 remote access VPN，以及 IPsec 的 AH 與 ESP 各提供什麼。再回答：full tunnel 與 split tunnel 的資安取捨是什麼？後者省頻寬但讓端點同時暴露在兩個網路。",
+   "note": {
+    "slug": "vpn",
+    "title": "VPN",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/vpn",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-vpn",
+    "questions": 4,
+    "concepts": [
+     "Always-on VPN",
+     "VPN concentrator",
+     "Authentication"
+    ],
+    "eli5": "VPN 就像是在公共網路上挖了一條只有你通行的私人隧道。你在這條隧道裡傳輸的東西，路人即便看得到也摸不著。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "AWS Client VPN - AWS Networking",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=St8y0xZSn3c",
+     "channel": "Digital Cloud Training",
+     "duration": "24:00",
+     "why": "Digital Cloud Training，完整講解"
+    },
+    {
+     "name": "How to Use a VPN - Beginners Guide",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=IbMTIvKhcRM",
+     "channel": "Howfinity",
+     "duration": "9:00",
+     "why": "Howfinity，實作示範"
+    },
+    {
+     "name": "VPN (Virtual Private Network) Explained",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=R-JUOpCgTZc",
+     "channel": "PowerCert Animated Videos",
+     "duration": "7:11",
+     "why": "PowerCert Animated Videos，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Secure Communication",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=uU3e_ntg-3g",
+    "duration": "9:55",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  }
+ ]
+}

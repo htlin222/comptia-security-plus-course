@@ -1,0 +1,80 @@
+{
+  "_readme": [
+    "concept-1/2/3 是首頁與「這門課的立場」頁用的三條自我查證，不屬於任何章節。",
+    "寫的是對這門課自己不利的結論。查證結果不好看就照實寫——把它藏起來，",
+    "讀的人遲早自己發現，那時失去的是整站的可信度。",
+    "沒有可重驗的權威來源支持的主張，citations 就留空，不要硬找一份沾邊的標準來墊背。"
+  ],
+  "topics": [
+    {
+      "unit": "concept-1",
+      "name": "影片看得完，等於考得過嗎？",
+      "evidence_grade": "advisory",
+      "summary": "不等於。SY0-701 的題型以情境判斷與 performance-based 為主，考的是「這個情況該選哪個控制」，不是「這個名詞的定義是什麼」。影片能把定義講清楚，但沒辦法替你累積判斷力。",
+      "exam_scope": "全考綱",
+      "real_world": "影片適合建立詞彙與心智模型，這一段它做得比讀文字快。但把 15 小時的影片看完之後直接進考場，通常會敗在「四個選項看起來都對」的情境題上。",
+      "common_trap": "把「聽懂了」當成「會了」。聽懂是被動辨認，考試要的是主動選擇——這兩件事的落差要靠做題才會顯現。",
+      "pitfalls": [
+        "只看不練",
+        "跳過情境題",
+        "把定義背熟就以為準備好了"
+      ],
+      "caveats": "這條沒有可重驗的官方文件支持——CompTIA 不公布分數分布與備考方式的成效資料。這是根據考綱題型結構做的判斷，不是實證研究結論，請當成經驗法則而非事實。",
+      "url": "https://www.comptia.org/certifications/security"
+    },
+    {
+      "unit": "concept-2",
+      "name": "YouTube 的資安內容跟得上考綱嗎？",
+      "evidence_grade": "contested",
+      "summary": "有明顯的時效落差，而且不同主題差很多。基礎密碼學、網路攻擊這類主題五年前的影片照樣正確；雲端、容器、AI 治理與框架改版相關的內容，兩年前的就可能已經過時。",
+      "exam_scope": "尤以 3.1 雲端架構、4.7 自動化、5.1 治理為甚",
+      "real_world": "最具體的例子是 NIST CSF：2024 年的 2.0 版新增了 Govern 功能，變成六大功能。網路上絕大多數講 CSF 的影片還停在五功能版本，照著背會答錯。",
+      "common_trap": "看到觀看數高就當成內容新。觀看數是累積的，越老的影片通常越高——這個訊號跟時效性剛好相反。",
+      "pitfalls": [
+        "CSF 仍講五大功能（2.0 已是六大）",
+        "引用 SY0-601 舊考綱編號",
+        "密碼政策仍建議定期強制更換"
+      ],
+      "caveats": "本課程的策展已排除標題含 SY0-601／501 的影片，並優先選擇明確標註 SY0-701 的內容，但無法保證每一支影片的每一個細節都跟上最新改版。發現過時內容請開 issue。",
+      "citations": [
+        {
+          "type": "nist",
+          "id": "CSWP 29",
+          "url": "https://csrc.nist.gov/pubs/cswp/29/the-nist-cybersecurity-framework-csf-20/final",
+          "publisher": "NIST",
+          "year": 2024,
+          "title": "The NIST Cybersecurity Framework (CSF) 2.0",
+          "takeaway": "2024 年才加入 Govern 功能，這之前的影片講的都是舊版五功能。"
+        }
+      ],
+      "url": "https://csrc.nist.gov/pubs/cswp/29/the-nist-cybersecurity-framework-csf-20/final"
+    },
+    {
+      "unit": "concept-3",
+      "name": "考過 Security+ 等於會做資安嗎？",
+      "evidence_grade": "advisory",
+      "summary": "不等於，而且 Security+ 本來就沒有這樣宣稱。它驗證的是跨團隊溝通用的共通詞彙與風險判斷框架——知道什麼時候該找誰、該問什麼問題。動手能力是另一回事。",
+      "exam_scope": "全考綱",
+      "standard_basis": "NICE Framework 把資安人力拆成知識、技能與任務三層，證照對應的主要是知識層",
+      "real_world": "這不是缺點，是定位。一個能正確說出「這屬於哪一類控制、風險該接受還是轉移」的人，在跨部門會議裡的價值很實在——但別因此以為自己能獨力做事件應變。",
+      "common_trap": "把證照當成能力證明去接超出自己實作經驗的工作，或反過來因為「反正只是背多分」就輕視它的溝通價值。兩種都是誤判。",
+      "pitfalls": [
+        "以為考過就能獨立處理事件",
+        "因為考的是觀念就否定它的價值"
+      ],
+      "caveats": "這是對證照定位的詮釋，不是 CompTIA 的官方聲明。引用的 NICE Framework 是人力框架而非證照評鑑標準，只能佐證「知識與任務是分開的兩層」這件事本身。",
+      "citations": [
+        {
+          "type": "nist",
+          "id": "SP 800-181 Rev. 1",
+          "url": "https://csrc.nist.gov/pubs/sp/800/181/r1/final",
+          "publisher": "NIST",
+          "year": 2020,
+          "title": "Workforce Framework for Cybersecurity (NICE Framework)",
+          "takeaway": "知識（K）、技能（S）與任務（T）是分開定義的三層，證照對應的主要是 K。"
+        }
+      ],
+      "url": "https://csrc.nist.gov/pubs/sp/800/181/r1/final"
+    }
+  ]
+}

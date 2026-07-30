@@ -1,0 +1,910 @@
+{
+ "chapter": "CH2",
+ "units": [
+  {
+   "id": "ch2-u1",
+   "name": "應用層攻擊",
+   "type": "topic",
+   "assessment": "分辨 race condition（TOCTOU）、directory traversal、privilege escalation、replay 的觸發條件。再回答：為什麼 TOCTOU 靠輸入驗證擋不住？說得出問題出在「檢查」與「使用」之間的時間差，才算懂。",
+   "note": {
+    "slug": "application-attacks",
+    "title": "Application Attacks",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/application-attacks",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-application-attacks",
+    "questions": 4,
+    "concepts": [
+     "Buffer overflow",
+     "Integer overflow",
+     "Race condition / TOCTOU",
+     "Directory traversal",
+     "Session hijacking",
+     "Session replay",
+     "API attacks",
+     "Privilege escalation",
+     "Resource exhaustion",
+     "injection attacks"
+    ],
+    "eli5": "應用程式攻擊是利用軟體程式碼裡的漏洞。就像是房子雖然鎖了門，但窗戶沒關好，壞人就能從沒人想到的地方溜進去。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Race Conditions",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=MKptc1lPSw8",
+     "channel": "Professor Messer",
+     "duration": "4:58",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Web Application Hacking - File Upload Attacks Explained",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=YAFVGQ-lBoM",
+     "channel": "The Cyber Mentors",
+     "duration": "17:24",
+     "why": "The Cyber Mentors，完整講解"
+    },
+    {
+     "name": "Replay Attacks - CompTIA Security+ SY0-701- 2.4",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=ai6qS13gKRo",
+     "channel": "Professor Messer",
+     "duration": "5:45",
+     "why": "Professor Messer，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Application Attacks",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=yRSqIGjeb7s",
+    "duration": "11:48",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch2-u2",
+   "name": "密碼學攻擊",
+   "type": "topic",
+   "assessment": "說明 birthday attack、collision、downgrade attack、rainbow table 各攻擊密碼系統的哪一個環節。再自問：加了 salt 為什麼 rainbow table 就失效？答不出「預算表對不上每個帳號各自的鹽」就要回去重看。",
+   "note": {
+    "slug": "cryptographic-attacks",
+    "title": "Cryptographic Attacks",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cryptographic-attacks",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-cryptographic-attacks",
+    "questions": 4,
+    "concepts": [
+     "Brute force",
+     "Birthday attack",
+     "Collision attack",
+     "Downgrade attack",
+     "Known plaintext attack",
+     "Chosen plaintext/ciphertext attack",
+     "Side-channel attacks",
+     "Key stretching",
+     "Deprecated algorithms",
+     "Quantum computing threat"
+    ],
+    "eli5": "加密攻擊是想辦法破解被鎖起來的訊息。壞人可能會利用數學上的弱點，或是在你加密的過程中偷看一些線索。",
+    "eli5Lang": "zh",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "How to Perform SSL Stripping Attacks using Kali Linux?",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=_Dnw1ZDVXz8",
+     "channel": "TechSky - Ethical Hacking",
+     "duration": "8:28",
+     "why": "TechSky - Ethical Hacking，實作示範"
+    },
+    {
+     "name": "Birthday Attacks Explained | Brute Force vs. Birthday Attack",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=tkFeRAyePAI",
+     "channel": "Shree Learning Academy",
+     "duration": "6:13",
+     "why": "Shree Learning Academy，短講補強"
+    },
+    {
+     "name": "Cryptographic Attacks（待補 1）",
+     "kind": "core",
+     "url": null,
+     "note": "搜過 114 支候選，符合主題且過得了觀看數與長度門檻的不足這一格"
+    }
+   ],
+   "lesson": {
+    "title": "Cryptographic Attacks",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=7aJaEQy6Yoc",
+    "duration": "9:31",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch2-u3",
+   "name": "阻斷服務攻擊",
+   "type": "topic",
+   "assessment": "區分 DoS、DDoS、amplification、reflection 的差別，並說出放大攻擊為什麼多半走 UDP。再回答：為什麼防 DDoS 主要靠上游而不是自己的防火牆？頻寬在你這端已經被塞滿了。",
+   "note": {
+    "slug": "denial-of-service",
+    "title": "Denial of Service",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/denial-of-service",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-denial-of-service",
+    "questions": 4,
+    "concepts": [
+     "Volumetric attacks",
+     "Protocol attacks",
+     "Application-layer attacks",
+     "SYN flood",
+     "Amplification/Reflection",
+     "Botnet",
+     "Smurf attack",
+     "Slowloris"
+    ],
+    "eli5": "阻斷服務攻擊 (DoS) 就像是有一群人不停地打電話去同一家餐廳，讓真正的客人打不進去，導致餐廳無法正常運作。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "DDoS Attack Explained | What Is DDoS Attack? | Cyber Security Training | Simplilearn",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=N7yWVRkrBvQ",
+     "channel": "Simplilearn",
+     "duration": "21:57",
+     "why": "Simplilearn，完整講解"
+    },
+    {
+     "name": "Hping3  Demo- Kali Linux - Ping Flood and SYN Flood Attack - DOS and DDOS - Explained - CSE4003",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=lFpDnPGXNwk",
+     "channel": "Satish C J",
+     "duration": "48:51",
+     "why": "Satish C J，實作示範"
+    },
+    {
+     "name": "Denial of Service - CompTIA A+ 220-1102 - 2.4",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=LmCm_BlSyWU",
+     "channel": "Professor Messer",
+     "duration": "3:33",
+     "why": "Professor Messer，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Denial of Service",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=Z7OntvK--PQ",
+    "duration": "6:07",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch2-u4",
+   "name": "DNS 攻擊",
+   "type": "topic",
+   "assessment": "分辨 DNS poisoning、DNS hijacking、domain hijacking、DNS tunneling 攻擊的位置各在哪。再自問：DNSSEC 解決的是機密性還是完整性？答完整性——它簽名而不加密，這一點常考。",
+   "note": {
+    "slug": "dns-attacks",
+    "title": "DNS Attacks",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/dns-attacks",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-dns-attacks",
+    "questions": 4,
+    "concepts": [
+     "DNS poisoning / DNS cache poisoning",
+     "DNS spoofing",
+     "DNS hijacking",
+     "DNS tunneling",
+     "DNS amplification",
+     "Domain hijacking",
+     "Typosquatting / URL hijacking",
+     "DNSSEC (DNS Security Extensions)",
+     "DNS over HTTPS (DoH) / DNS over TLS (DoT)"
+    ],
+    "eli5": "DNS 攻擊就像是改掉了電話簿裡的地址。當你想去 A 網站時，壞人把你導向了他們偽造的 B 網站。",
+    "eli5Lang": "zh",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "What is DNS? (and how it makes the Internet work)",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=NiQTs9DbtW4",
+     "channel": "NetworkChuck",
+     "duration": "24:22",
+     "why": "NetworkChuck，完整講解"
+    },
+    {
+     "name": "DNS Spoofing Attack Explained | MITM, ARP Spoofing & Bettercap Demo",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=Sf9tm7twUCw",
+     "channel": "LocalHostVicky ",
+     "duration": "11:57",
+     "why": "LocalHostVicky ，實作示範"
+    },
+    {
+     "name": "How a DNS Server (Domain Name System) works.",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=mpQZVYPuDGU",
+     "channel": "PowerCert Animated Videos",
+     "duration": "6:05",
+     "why": "PowerCert Animated Videos，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "DNS Attacks",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=BoxeL5ybOXI",
+    "duration": "8:57",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch2-u5",
+   "name": "入侵指標（IoC）",
+   "type": "topic",
+   "assessment": "列出五種 IoC 並說明各自最可能對應到什麼攻擊階段。再回答：帳號在短時間內從兩個相隔很遠的地點登入，這個 IoC 叫什麼、代表什麼？答 impossible travel 與憑證外洩。",
+   "note": {
+    "slug": "indicators-of-compromise",
+    "title": "Indicators of Compromise",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/indicators-of-compromise",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-indicators-of-compromise",
+    "questions": 4,
+    "concepts": [
+     "File-based indicators",
+     "Network-based indicators",
+     "Host-based indicators",
+     "Behavioral indicators",
+     "Email indicators",
+     "Account indicators",
+     "Indicators of Attack (IoA)",
+     "STIX/TAXII",
+     "Threat feeds",
+     "False positives"
+    ],
+    "eli5": "入侵指標 (IoC) 就像是小偷闖進家裡後留下的腳印或指紋。在電腦世界裡，這可能是奇怪的檔案、陌生的連線紀錄或是系統變慢。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "CompTIA CySA+ Full Course Part 08: Threat Research and Indicators of Compromise",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=rbKH1NiUiwY",
+     "channel": "Certify Breakfast",
+     "duration": "22:36",
+     "why": "Certify Breakfast，完整講解"
+    },
+    {
+     "name": "Zeek in Action, Video 1, Suspected Malware Compromise",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=xpPEHtACrek",
+     "channel": "Zeek",
+     "duration": "54:57",
+     "why": "Zeek，實作示範"
+    },
+    {
+     "name": "Indicator of Attack vs Indicator of Compromise | IOA vs IOC",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=KPHVg-oeI9w",
+     "channel": "Hacker Associate",
+     "duration": "5:49",
+     "why": "Hacker Associate，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Indicators of Compromise",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=x72hG9GvkaQ",
+    "duration": "10:59",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch2-u6",
+   "name": "注入攻擊",
+   "type": "topic",
+   "assessment": "說明 SQL injection、LDAP injection、XML injection、memory injection 的共同根因。再自問：參數化查詢為什麼比輸入過濾可靠？答得出「資料與指令從一開始就被分開，不是事後清理」才算懂。",
+   "note": {
+    "slug": "injection-attacks",
+    "title": "Injection Attacks",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/injection-attacks",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-injection-attacks",
+    "questions": 4,
+    "concepts": [
+     "SQL injection (SQLi)",
+     "Blind SQL injection",
+     "LDAP injection",
+     "XML injection / XXE",
+     "Command injection (OS injection)",
+     "DLL injection",
+     "HTML injection",
+     "Parameterized queries / Prepared statements",
+     "Input validation",
+     "Stored procedures"
+    ],
+    "eli5": "注入攻擊就像是你在填表格時，故意寫入一些「命令」而不是資料。如果系統沒檢查，它就會把你的指令當成自己的工作去執行，讓你看到不該看的資料。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Memory Injections",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=kBcTczu8FsM",
+     "channel": "Professor Messer",
+     "duration": "2:39",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Buffer Overflows",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=0-qeeI5jTqU",
+     "channel": "Professor Messer",
+     "duration": "3:37",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Running an SQL Injection Attack - Computerphile",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=ciNHn38EyRc",
+     "channel": "Computerphile",
+     "duration": "17:11",
+     "why": "Computerphile，完整講解"
+    }
+   ],
+   "lesson": {
+    "title": "SQL Injection",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=qFUOLkEk8AQ",
+    "duration": "5:09",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch2-u7",
+   "name": "惡意程式分類",
+   "type": "topic",
+   "assessment": "分辨 virus、worm、trojan、rootkit、logic bomb、keylogger 的傳播方式與藏身位置。再回答：worm 和 virus 的關鍵差別是什麼？答 worm 不需要宿主檔案、能自我散播。",
+   "note": {
+    "slug": "malware-types",
+    "title": "Malware Types",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/malware-types",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-malware-types",
+    "questions": 4,
+    "concepts": [
+     "Virus",
+     "Worm",
+     "Trojan",
+     "Rootkit",
+     "Spyware",
+     "Keylogger",
+     "RAT (Remote Access Trojan)",
+     "Fileless malware",
+     "Logic bomb",
+     "Potentially Unwanted Programs (PUPs)"
+    ],
+    "eli5": "惡意軟體就是壞電腦程式。有的像病毒 (靠別人的檔案傳播)、有的像蠕蟲 (自己鑽過網路)、有的像木馬 (假裝是好程式)、有的像間諜 (偷看你打字)。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Viruses and Worms",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=Su8ANmAoerU",
+     "channel": "Professor Messer",
+     "duration": "5:54",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Spyware and Bloatware",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=-VmI3xFJw78",
+     "channel": "Professor Messer",
+     "duration": "4:21",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "The Evolution of Malware: Past, Present, and the AI-Driven Future",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=h85G7dBqBKU",
+     "channel": "IBM Technology",
+     "duration": "21:25",
+     "why": "IBM Technology，完整講解"
+    }
+   ],
+   "lesson": {
+    "title": "An Overview of Malware",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=-eZs8wjjGGE",
+    "duration": "6:06",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch2-u8",
+   "name": "緩解技術",
+   "type": "topic",
+   "assessment": "替一台被入侵的伺服器排出處置順序，並說明 segmentation、isolation、containment 三者的差別。再自問：least privilege 屬於預防還是矯正控制？答預防。",
+   "note": {
+    "slug": "mitigation-techniques",
+    "title": "Mitigation Techniques",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/mitigation-techniques",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-mitigation-techniques",
+    "questions": 4,
+    "concepts": [
+     "Patching",
+     "Network segmentation",
+     "Least privilege",
+     "Input validation",
+     "Encryption",
+     "Access control lists (ACLs)",
+     "Security baselines and hardening",
+     "Application allowlisting",
+     "Configuration management",
+     "Decommissioning"
+    ],
+    "eli5": "緩解技術就是用來減輕攻擊傷害的方法。雖然不能百分之百防止，但可以增加壞人的難度，或是縮小被破壞後的損失。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Hardening Techniques",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=wXoC46Qr_9Q",
+     "channel": "Professor Messer",
+     "duration": "12:11",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Content Security Policy: A successful mess between hardening and mitigation - Spagnuolo/Weichselbaum",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=_L06HetskC4",
+     "channel": "LocoMocoSec: Hawaii Product Security Conference",
+     "duration": "42:04",
+     "why": "LocoMocoSec: Hawaii Product Security Conference，完整講解"
+    },
+    {
+     "name": "Cybersecurity Threat Hunting Explained",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=VNp35Uw_bSM",
+     "channel": "IBM Technology",
+     "duration": "6:51",
+     "why": "IBM Technology，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Mitigation Techniques",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=Fc8ZJfmapbI",
+    "duration": "6:51",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch2-u9",
+   "name": "網路層攻擊",
+   "type": "topic",
+   "assessment": "說明 ARP poisoning、MAC flooding、VLAN hopping、rogue AP 各利用了哪個協定或設定的弱點。再回答：為什麼 port security 擋得住 MAC flooding？因為它限制單埠可學習的 MAC 數。",
+   "note": {
+    "slug": "network-attacks",
+    "title": "Network Attacks",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/network-attacks",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-network-attacks",
+    "questions": 4,
+    "concepts": [
+     "ARP spoofing/poisoning",
+     "MAC flooding",
+     "VLAN hopping",
+     "Rogue DHCP server",
+     "Evil twin",
+     "Deauthentication attack",
+     "Replay attack",
+     "Amplification attack",
+     "IP spoofing",
+     "Port scanning"
+    ],
+    "eli5": "網路攻擊是在資料傳輸的過程中搞鬼。壞人可能在半路攔截你的訊息、假冒成別人、或是在你的網路線路裡塞滿垃圾。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Network Attacks - Everything You Need to Know in 20 Minutes",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=CH2J2mYb51s",
+     "channel": "howtonetwork",
+     "duration": "20:03",
+     "why": "howtonetwork，完整講解"
+    },
+    {
+     "name": "Nmap Tutorial to find Network Vulnerabilities",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=4t4kBkMsDbQ",
+     "channel": "NetworkChuck",
+     "duration": "17:09",
+     "why": "NetworkChuck，實作示範"
+    },
+    {
+     "name": "On-path Attacks - CompTIA Security+ SY0-701 - 2.4",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=M_Af6_8JTuo",
+     "channel": "Professor Messer",
+     "duration": "5:30",
+     "why": "Professor Messer，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Wireless Attacks - CompTIA Security+ SY0-701 - 2.4",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=tSLqrKhUvts",
+    "duration": "7:55",
+    "why": "Messer 官方課程沒有單獨講這個主題，改用 Professor Messer 這支講得最完整的"
+   }
+  },
+  {
+   "id": "ch2-u10",
+   "name": "中間人／路徑攻擊",
+   "type": "topic",
+   "assessment": "說明 on-path 攻擊如何介入連線，以及 SSL stripping 和憑證偽造的差別。再自問：憑證釘選（pinning）擋的是哪一種？答得出它讓偽造憑證即使被系統信任也過不了應用這一關。",
+   "note": {
+    "slug": "on-path-attacks",
+    "title": "On-Path Attacks",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/on-path-attacks",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-on-path-attacks",
+    "questions": 4,
+    "concepts": [
+     "ARP spoofing/poisoning",
+     "SSL/TLS stripping",
+     "SSL/TLS interception (SSL proxy)",
+     "DNS spoofing",
+     "HTTPS spoofing",
+     "Session hijacking",
+     "Man-in-the-Browser (MitB)",
+     "Relay attacks",
+     "Defenses"
+    ],
+    "eli5": "在路徑攻擊 (以前叫中間人攻擊) 就像是郵差偷偷拆開你的信看過後，再裝回去寄給收件人。你跟對方都以為在直接溝通，其實中間有人在偷聽。",
+    "eli5Lang": "zh",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "NMAP Tutorial for Beginners! Network Attacks",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=LTMucsu35dk",
+     "channel": "Loi Liang Yang",
+     "duration": "15:51",
+     "why": "Loi Liang Yang，實作示範"
+    },
+    {
+     "name": "On-Path Attacks - CompTIA A+ 220-1102 - 2.4",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=AKujr1etOFE",
+     "channel": "Professor Messer",
+     "duration": "5:08",
+     "why": "Professor Messer，短講補強"
+    },
+    {
+     "name": "On-path Attacks - N10-008 CompTIA Network+ : 4.2",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=jdeAT8w9o38",
+     "channel": "Professor Messer",
+     "duration": "6:59",
+     "why": "Professor Messer，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "On-path Attacks",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=M_Af6_8JTuo",
+    "duration": "5:30",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch2-u11",
+   "name": "密碼攻擊",
+   "type": "topic",
+   "assessment": "分辨 brute force、dictionary、credential stuffing、password spraying 的差別，關鍵在「一個帳號試很多密碼」還是「很多帳號試一個密碼」。再回答：帳號鎖定為什麼擋不住 password spraying？",
+   "note": {
+    "slug": "password-attacks",
+    "title": "Password Attacks",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/password-attacks",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-password-attacks",
+    "questions": 4,
+    "concepts": [
+     "Brute force",
+     "Dictionary attack",
+     "Password spraying",
+     "Credential stuffing",
+     "Rainbow table attack",
+     "Salting",
+     "Hybrid attack",
+     "Pass-the-hash",
+     "Kerberoasting",
+     "Keylogging"
+    ],
+    "eli5": "密碼攻擊就是壞人想辦法猜出你的密碼。他們可能會一個一個試 (暴力破解)、用常見的密碼清單 (字典攻擊)、或是拿別家公司流出的資料來試 (憑證填充)。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "54 Password Attacks | Offensive Security Certified Professional",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=wHeoEieU730",
+     "channel": "Nakerah Network",
+     "duration": "26:05",
+     "why": "Nakerah Network，完整講解"
+    },
+    {
+     "name": "The Most Common Types of Cyber Attacks",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=4V_LHDplu3U",
+     "channel": "Keeper Security",
+     "duration": "2:46",
+     "why": "Keeper Security，短講補強"
+    },
+    {
+     "name": "Password Cracking with John the Ripper | Learn Cybersecurity |",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=frL21o37klM",
+     "channel": "Cyberwings Security",
+     "duration": "32:40",
+     "why": "Cyberwings Security，完整講解"
+    }
+   ],
+   "lesson": {
+    "title": "Password Attacks",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=-ZfbifHwEVE",
+    "duration": "7:16",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch2-u12",
+   "name": "勒索軟體",
+   "type": "topic",
+   "assessment": "說出勒索軟體從入侵到勒索的完整鏈路，並解釋 double extortion 多了哪一步。再自問：有離線備份就一定沒事嗎？不一定——資料已經被外洩的那一份，備份救不回機密性。",
+   "note": {
+    "slug": "ransomware",
+    "title": "Ransomware",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/ransomware",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-ransomware",
+    "questions": 4,
+    "concepts": [
+     "Encryption-based ransomware",
+     "Locker ransomware",
+     "Double extortion",
+     "Triple extortion",
+     "Ransomware-as-a-Service (RaaS)",
+     "Common delivery methods",
+     "Lateral movement",
+     "Cryptocurrency payment",
+     "Notable examples"
+    ],
+    "eli5": "勒索軟體就是「電腦綁匪」。它會把你所有的檔案鎖起來，然後叫你付錢才給你鑰匙。有時還會威脅你不付錢就把你的秘密公開。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Malware Analysis with Any.Run | Malware Testing | Testing Viruses | Beginners",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=QH_u7DHKzzI",
+     "channel": "Nico Knows Tech",
+     "duration": "15:28",
+     "why": "Nico Knows Tech，完整講解"
+    },
+    {
+     "name": "Hands-on Ransomware: Exploring Cybercrime",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=9zEXov_L0os",
+     "channel": "John Hammond",
+     "duration": "43:28",
+     "why": "John Hammond，實作示範"
+    },
+    {
+     "name": "Learning Malware Analysis with NoEscape Ransomware",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=Lw5SwjUoYXg",
+     "channel": "PC Security Channel",
+     "duration": "8:04",
+     "why": "PC Security Channel，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Other Malware Types - CompTIA Security+ SY0-701 - 2.4",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=nu27ovJ5rqw",
+    "duration": "7:32",
+    "why": "Messer 官方課程沒有單獨講這個主題，改用 Professor Messer 這支講得最完整的"
+   }
+  },
+  {
+   "id": "ch2-u13",
+   "name": "弱點類型總覽",
+   "type": "topic",
+   "assessment": "把 zero-day、misconfiguration、supply chain、end-of-life 各配一個真實案例與對應的處置方式。再回答：為什麼 zero-day 最難防？沒有修補程式可打，只能靠偵測與緩解控制撐住。",
+   "note": {
+    "slug": "vulnerability-types",
+    "title": "Vulnerability Types",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/vulnerability-types",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-vulnerability-types",
+    "questions": 4,
+    "concepts": [
+     "Misconfigurations",
+     "Unpatched software",
+     "Zero-day vulnerabilities",
+     "Default credentials",
+     "Insecure protocols",
+     "Weak encryption",
+     "Race conditions",
+     "Memory vulnerabilities",
+     "Third-party/supply chain risks",
+     "Human factors"
+    ],
+    "eli5": "漏洞類型就是系統裡的「弱點」。可能是程式碼寫錯、設定沒弄好、或是用了太舊的軟體。這些弱點給了壞人可趁之機。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Zero-day Vulnerabilities",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=FDFxGLnZtoY",
+     "channel": "Professor Messer",
+     "duration": "3:02",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Misconfiguration Vulnerabilities",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=NBKzlUqzVmE",
+     "channel": "Professor Messer",
+     "duration": "7:09",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "OWASP's Top 10 Ways to Attack LLMs: AI Vulnerabilities Exposed",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=gUNXZMcd2jU",
+     "channel": "IBM Technology",
+     "duration": "25:12",
+     "why": "IBM Technology，完整講解"
+    }
+   ],
+   "lesson": {
+    "title": "Hardware Vulnerabilities - CompTIA Security+ SY0-701 - 2.3",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=TaTaEvqjjDM",
+    "duration": "6:27",
+    "why": "Messer 官方課程沒有單獨講這個主題，改用 Professor Messer 這支講得最完整的"
+   }
+  },
+  {
+   "id": "ch2-u14",
+   "name": "無線攻擊",
+   "type": "topic",
+   "assessment": "分辨 evil twin、rogue AP、deauthentication、jamming、bluesnarfing 的手法。再自問：evil twin 和 rogue AP 差在哪？前者刻意複製合法 SSID 誘騙連線，後者只是未授權接上內網。",
+   "note": {
+    "slug": "wireless-attacks",
+    "title": "Wireless Attacks",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/wireless-attacks",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-wireless-attacks",
+    "questions": 4,
+    "concepts": [
+     "Evil twin",
+     "Rogue access point",
+     "Deauthentication attack",
+     "WPA/WPA2 handshake capture",
+     "WPS attacks",
+     "KRACK (Key Reinstallation Attack)",
+     "Bluetooth attacks",
+     "RFID cloning",
+     "NFC attacks",
+     "Jamming"
+    ],
+    "eli5": "無線攻擊是針對 Wi-Fi 或藍牙的攻擊。壞人可能在公共場所架設假的 Wi-Fi 誘騙你連線，或是破解你家 Wi-Fi 的密碼。",
+    "eli5Lang": "zh",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Wireless Security Settings - CompTIA Security+ SY0-701 - 4.1",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=KaqKoKNEKnE",
+     "channel": "Professor Messer",
+     "duration": "10:55",
+     "why": "Professor Messer，短講補強"
+    },
+    {
+     "name": "Security + 1.2 Wireless Attacks WEP & IV",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=Fr84Y1ur5dc",
+     "channel": "Cyber-Recon",
+     "duration": "8:33",
+     "why": "Cyber-Recon，短講補強"
+    },
+    {
+     "name": "8 Common Types of Wireless Attacks",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=Bjo_Uj8IrnE",
+     "channel": "Hacker Joe",
+     "duration": "6:01",
+     "why": "Hacker Joe，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Wireless Attacks",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=tSLqrKhUvts",
+    "duration": "7:55",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch2-u15",
+   "name": "XSS 與 CSRF",
+   "type": "topic",
+   "assessment": "說明 reflected、stored、DOM-based XSS 的差別，以及 CSRF 為什麼靠 token 而不是輸入過濾防。再自問：XSS 攻擊的是誰的信任、CSRF 又是誰的？前者是使用者信任網站，後者是網站信任使用者。",
+   "note": {
+    "slug": "xss-and-csrf",
+    "title": "Cross-Site Scripting and Cross-Site Request Forgery",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/xss-and-csrf",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-xss-and-csrf",
+    "questions": 4,
+    "concepts": [
+     "Reflected XSS",
+     "Stored (Persistent) XSS",
+     "DOM-based XSS",
+     "Impact",
+     "Defenses",
+     "Mechanism",
+     "Example"
+    ],
+    "eli5": "XSS 是壞人在網站上貼一段惡意腳本，讓去逛那個網站的人中招。CSRF 則是騙你在不知情的情況下，用你已經登入的身分去執行某些動作 (像是轉帳)。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "DVWA CSRF LOW , MEDIUM | HOW TO HACK | CYBER SECURITY  TUTORIAL BEGINERS | ETHICAL HACKING | OWASP10",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=-GfLZkGdc_w",
+     "channel": "Hacademy ",
+     "duration": "6:21",
+     "why": "Hacademy ，實作示範"
+    },
+    {
+     "name": "Cross-Site Request Forgery (CSRF) Explained And Demonstrated By A Pro Hacker!",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=V03_7CphtHE",
+     "channel": "Loi Liang Yang",
+     "duration": "6:31",
+     "why": "Loi Liang Yang，短講補強"
+    },
+    {
+     "name": "Intro to CSRF (Cross-Site Request Forgery) - Security Simplified",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=SA-GOrAP2g0",
+     "channel": "Vickie Li Dev",
+     "duration": "3:55",
+     "why": "Vickie Li Dev，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Cross-site Scripting",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=PKgw0CLZIhE",
+    "duration": "8:34",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  }
+ ]
+}

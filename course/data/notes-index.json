@@ -1,0 +1,4551 @@
+{
+ "source": {
+  "repo": "htlin222/CompTIA-security-plus-notes",
+  "branch": "v4",
+  "site": "https://htlin222.github.io/CompTIA-security-plus-notes"
+ },
+ "counts": {
+  "topics": 83,
+  "concepts": 687,
+  "questions": 332,
+  "cases": 83
+ },
+ "topics": {
+  "aaa-framework": {
+   "slug": "aaa-framework",
+   "title": "AAA Framework",
+   "description": "Authentication, Authorization, and Accounting — the three pillars of access management",
+   "domain": 1,
+   "dir": "domain-1-general-security",
+   "weight": "high",
+   "aliases": [
+    "AAA"
+   ],
+   "eli5_en": "Think of going to a theme park. First, they check your ticket to make sure you're really a guest (that's authentication). Then, the ticket says which rides you're allowed on -- maybe you have a VIP pass or a basic pass (that's authorization). Finally, the park keeps track of which rides you went on and when (that's accounting). Computers use these same three steps to keep track of who's using them and what they're doing.",
+   "eli5_zh": "AAA 就像是進入管制區的流程。1. 認證 (Authentication)：確認「你是誰」 (檢查證件)；2. 授權 (Authorization)：確認「你能做什麼」 (你有哪裡的鑰匙)；3. 紀錄 (Accounting)：記下「你做了什麼」 (攝影機紀錄)。",
+   "concepts": [
+    {
+     "slug": "authentication",
+     "label": "authentication"
+    },
+    {
+     "slug": "authorization",
+     "label": "authorization"
+    },
+    {
+     "slug": "accounting",
+     "label": "Accounting"
+    },
+    {
+     "slug": "radius",
+     "label": "RADIUS"
+    },
+    {
+     "slug": "tacacs",
+     "label": "TACACS+"
+    },
+    {
+     "slug": "kerberos",
+     "label": "Kerberos"
+    }
+   ],
+   "tips": [
+    "| Feature | RADIUS | TACACS+ | |---|---|---| | Protocol | UDP (1812/1813) | TCP (49) | | Encryption | Password only | Full packet | | AAA Separation | Combined auth/authz | Separate | | Best for | Network access | Device admin |",
+    "\"RADIUS for Remote users, TACACS+ for Terminal/device administration.\" The exam loves comparing these two."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/aaa-framework",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-aaa-framework"
+  },
+  "access-control-models": {
+   "slug": "access-control-models",
+   "title": "Access Control Models",
+   "description": "Formal models that define how subjects access objects in information systems",
+   "domain": 1,
+   "dir": "domain-1-general-security",
+   "weight": "high",
+   "aliases": [
+    "ACL",
+    "RBAC",
+    "MAC",
+    "DAC",
+    "ABAC"
+   ],
+   "eli5_en": "You know how some classrooms let the teacher decide who can borrow supplies (the teacher picks), while other classrooms have strict rules posted on the wall that nobody can change? Access control models are like different sets of rules for deciding who gets to use what. Some let the owner choose, some follow strict labels, and some give access based on your job or role. Each set of rules works better in different situations.",
+   "eli5_zh": "存取控制模型是決定誰能看什麼的不同規則。有的由檔案主人決定 (DAC)，有的由公司職位決定 (RBAC)，有的由國家安全等級決定 (MAC)。",
+   "concepts": [
+    {
+     "slug": "bell-lapadula-model",
+     "label": "Bell-LaPadula Model"
+    },
+    {
+     "slug": "biba-model",
+     "label": "Biba Model"
+    }
+   ],
+   "tips": [
+    "Bell-LaPadula = BLP = \"Be Loyal to Privacy\" = Confidentiality (no read up, no write down) Biba = \"Be Integrity\" = Integrity (no read down, no write up)",
+    "RBAC is simpler (role = permissions). ABAC is more granular (multiple attributes evaluated). If the question involves complex conditional access, think ABAC."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/access-control-models",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-access-control-models"
+  },
+  "attack-vectors": {
+   "slug": "attack-vectors",
+   "title": "Attack Vectors",
+   "description": "Pathways and methods that threat actors use to gain unauthorized access to systems",
+   "domain": 1,
+   "dir": "domain-1-general-security",
+   "weight": "medium",
+   "aliases": [
+    "Attack Surface"
+   ],
+   "eli5_en": "Picture your house. A burglar could try the front door, climb through a window, sneak in through the garage, or even come down the chimney. Each of those paths into your house is like an attack vector. In the computer world, bad guys look for every possible way in -- emails, websites, USB drives, even tricking people on the phone. The more paths you leave open, the easier it is for someone to break in.",
+   "eli5_zh": "攻擊媒介就是壞人進入你家的方式。可能是窗戶 (電子郵件)、門縫 (隨身碟)、或是騙你開門 (社交工程)。",
+   "concepts": [
+    {
+     "slug": "social-engineering",
+     "label": "social engineering"
+    },
+    {
+     "slug": "open-service-ports",
+     "label": "Open service ports"
+    },
+    {
+     "slug": "human-vectors",
+     "label": "Human vectors"
+    },
+    {
+     "slug": "attack-surface-management",
+     "label": "Attack surface management"
+    }
+   ],
+   "tips": [
+    "The exam categorizes vectors as: message-based, image-based, file-based, voice-based, removable device, vulnerable software, unsecure network, open service ports, default credentials, and supply chain. Be able to identify each from a scenario.",
+    "These are high-weight on the SY0-701. A supply chain attack compromises a trusted vendor or software to reach the ultimate target. Think SolarWinds, Kaseya, or compromised npm packages."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/attack-vectors",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-attack-vectors"
+  },
+  "authentication": {
+   "slug": "authentication",
+   "title": "Authentication",
+   "description": "Methods and mechanisms for verifying the identity of users, devices, and services",
+   "domain": 1,
+   "dir": "domain-1-general-security",
+   "weight": "high",
+   "aliases": [
+    "AuthN"
+   ],
+   "eli5_en": "It's like when your school asks you to show your student ID before letting you into the building. They need to prove you are who you say you are. You might show your face, type a password, scan your fingerprint, or tap a special card. Sometimes you need more than one of these -- like both a password and a fingerprint -- to make it really hard for someone to pretend to be you.",
+   "eli5_zh": "認證就是證明你真的是你所說的那個人。常見方式有：你知道的東西 (密碼)、你擁有的東西 (手機)、你就是的東西 (指紋)。",
+   "concepts": [
+    {
+     "slug": "single-factor-authentication-sfa",
+     "label": "Single-factor authentication (SFA)"
+    },
+    {
+     "slug": "mfa",
+     "label": "mfa"
+    },
+    {
+     "slug": "password-attacks",
+     "label": "password attacks"
+    },
+    {
+     "slug": "certificate-based-authentication",
+     "label": "Certificate-based authentication"
+    },
+    {
+     "slug": "biometric-authentication",
+     "label": "Biometric authentication"
+    },
+    {
+     "slug": "passwordless-authentication",
+     "label": "Passwordless authentication"
+    },
+    {
+     "slug": "directory-services",
+     "label": "Directory services"
+    },
+    {
+     "slug": "sso",
+     "label": "sso"
+    },
+    {
+     "slug": "federation",
+     "label": "federation"
+    }
+   ],
+   "tips": [
+    "Two passwords is NOT multi-factor — it is two instances of the same factor (something you know). True MFA requires factors from different categories.",
+    "FAR = unauthorized person accepted (security concern). FRR = authorized person rejected (usability concern). CER = where FAR and FRR meet — lower CER means better biometric system."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/authentication",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-authentication"
+  },
+  "authorization": {
+   "slug": "authorization",
+   "title": "Authorization",
+   "description": "Mechanisms that determine what authenticated users are permitted to access and do",
+   "domain": 1,
+   "dir": "domain-1-general-security",
+   "weight": "high",
+   "aliases": [
+    "AuthZ"
+   ],
+   "eli5_en": "Once the school knows who you are, authorization is about what you're allowed to do. A regular student can go to class but can't walk into the principal's office and read private files. A teacher can go places students can't. Authorization is the set of rules that says \"you're allowed to do this, but not that.\" On computers, it works the same way -- after you log in, the system checks what you're actually permitted to see and change.",
+   "eli5_zh": "授權是在你進門後，決定你能去哪些房間。你可能有大門鑰匙，但不能進去財務室。這就是權限管理。",
+   "concepts": [
+    {
+     "slug": "authorization-vs-authentication",
+     "label": "Authorization vs. Authentication"
+    },
+    {
+     "slug": "principle-of-least-privilege",
+     "label": "Principle of least privilege"
+    },
+    {
+     "slug": "separation-of-duties",
+     "label": "Separation of duties"
+    },
+    {
+     "slug": "access-control-models",
+     "label": "access control models"
+    },
+    {
+     "slug": "permission-inheritance",
+     "label": "Permission inheritance"
+    },
+    {
+     "slug": "implicit-deny",
+     "label": "Implicit deny"
+    },
+    {
+     "slug": "oauth-20",
+     "label": "OAuth 2.0"
+    },
+    {
+     "slug": "conditional-access",
+     "label": "Conditional access"
+    }
+   ],
+   "tips": [
+    "OAuth is for Authorization, NOT Authentication. OAuth grants access tokens for resource access. OpenID Connect (OIDC) adds authentication on top of OAuth. The exam tests this distinction.",
+    "If a question describes a firewall or ACL scenario where no rule matches, the answer is always deny. This is a core security principle."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/authorization",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-authorization"
+  },
+  "change-management": {
+   "slug": "change-management",
+   "title": "Change Management",
+   "description": "Structured process for managing changes to IT systems while minimizing security risk",
+   "domain": 1,
+   "dir": "domain-1-general-security",
+   "weight": "medium",
+   "aliases": [
+    "Change Control"
+   ],
+   "eli5_en": "Before your school repaints the cafeteria or moves all the desks around, they don't just do it randomly. Someone writes a plan, the principal approves it, they pick a time when students aren't there, and they make sure they can put things back if it goes wrong. Change management for computers works the same way -- every change gets planned, approved, and tested so nothing accidentally breaks.",
+   "eli5_zh": "變更管理就是「先報告，再動手」。在修理或改動重要的東西前，先計畫好、讓人審查，並想好如果修壞了要怎麼復原。",
+   "concepts": [
+    {
+     "slug": "change-advisory-board-cab",
+     "label": "Change Advisory Board (CAB)"
+    },
+    {
+     "slug": "backoutrollback-plan",
+     "label": "Backout/Rollback plan"
+    },
+    {
+     "slug": "maintenance-windows",
+     "label": "Maintenance windows"
+    },
+    {
+     "slug": "version-control",
+     "label": "Version control"
+    },
+    {
+     "slug": "configuration-management",
+     "label": "Configuration management"
+    }
+   ],
+   "tips": [
+    "Every change must have: documentation, approval, testing, and a rollback plan. If a scenario describes skipping any of these steps, that is the security concern. The exam loves testing \"what went wrong\" in a change management failure.",
+    "Emergency changes bypass normal approval but still require retroactive documentation and review. They are not exempt from the process — just expedited."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/change-management",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-change-management"
+  },
+  "cia-triad": {
+   "slug": "cia-triad",
+   "title": "CIA Triad",
+   "description": "The three pillars of information security: Confidentiality, Integrity, and Availability",
+   "domain": 1,
+   "dir": "domain-1-general-security",
+   "weight": "high",
+   "aliases": [
+    "CIA Triad",
+    "Confidentiality Integrity Availability"
+   ],
+   "eli5_en": "The CIA Triad is the three big promises of keeping information safe. Confidentiality means only the right people can see your secret diary. Integrity means nobody can sneak in and change what you wrote. Availability means you can always open your diary when you need it. Every security rule and tool exists to protect at least one of these three things. If any one of them breaks, your information is in trouble.",
+   "eli5_zh": "想像你有一個秘密寶盒： 1. 機密性 (Confidentiality)：只有你有鑰匙能打開看裡面的東西，別人看不到。 2. 完整性 (Integrity)：沒人能偷偷換掉或弄壞裡面的東西，內容保證正確。 3. 可用性 (Availability)：當你想看的時候，寶盒隨時都在那裡讓你打開。 任何安全規則都是為了保護這三件事。",
+   "concepts": [
+    {
+     "slug": "confidentiality",
+     "label": "Confidentiality"
+    },
+    {
+     "slug": "integrity",
+     "label": "Integrity"
+    },
+    {
+     "slug": "availability",
+     "label": "Availability"
+    },
+    {
+     "slug": "dad-triad",
+     "label": "DAD Triad"
+    },
+    {
+     "slug": "non-repudiation",
+     "label": "Non-repudiation"
+    }
+   ],
+   "tips": [
+    "CIA vs. DAD: Confidentiality opposes Disclosure, Integrity opposes Alteration, Availability opposes Destruction. Scenario questions often describe an attack — identify which CIA element is compromised.",
+    "Ransomware primarily attacks Availability (locks you out of data) and Confidentiality (threatens to leak data in double-extortion schemes)."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cia-triad",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-cia-triad"
+  },
+  "deception-technologies": {
+   "slug": "deception-technologies",
+   "title": "Deception Technologies",
+   "description": "Decoy systems and techniques designed to detect, deflect, and study attackers",
+   "domain": 1,
+   "dir": "domain-1-general-security",
+   "weight": "medium",
+   "aliases": [
+    "Honeypots",
+    "Honeynets"
+   ],
+   "eli5_en": "It's like setting up a fake treasure chest in your room. If someone sneaks in and opens it, an alarm goes off -- and now you know someone was snooping. Security teams do the same thing with computers: they create fake files, fake passwords, and even fake computers that look real. No normal person would ever touch them, so if anyone does, it means a bad guy is in the system. It's a clever trap that catches intruders early.",
+   "eli5_zh": "欺敵技術就像是「假錢包」或「誘餌」。放一個假的系統在那裡讓壞人去攻擊，這樣你就能發現他們，同時保護真的系統。",
+   "concepts": [
+    {
+     "slug": "honeypots",
+     "label": "Honeypots"
+    },
+    {
+     "slug": "honeynets",
+     "label": "Honeynets"
+    },
+    {
+     "slug": "honeyfiles",
+     "label": "Honeyfiles"
+    },
+    {
+     "slug": "honeytokens",
+     "label": "Honeytokens"
+    },
+    {
+     "slug": "dns-sinkholes",
+     "label": "DNS sinkholes"
+    },
+    {
+     "slug": "fake-telemetry",
+     "label": "Fake telemetry"
+    },
+    {
+     "slug": "deception-platforms",
+     "label": "Deception platforms"
+    }
+   ],
+   "tips": [
+    "Honeypot = decoy system. Honeynet = network of honeypots. Honeyfile = decoy file. Honeytoken = decoy credential/data. DNS sinkhole = redirects malicious DNS to controlled IP. Know the distinctions — the exam tests each term specifically.",
+    "Deception technologies have a very low false-positive rate because legitimate users and processes should never interact with decoy resources. Any interaction is suspicious by definition."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/deception-technologies",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-deception-technologies"
+  },
+  "defense-in-depth": {
+   "slug": "defense-in-depth",
+   "title": "Defense in Depth",
+   "description": "Layered security strategy using multiple controls to protect information assets",
+   "domain": 1,
+   "dir": "domain-1-general-security",
+   "weight": "high",
+   "aliases": [
+    "Layered Security",
+    "DiD"
+   ],
+   "eli5_en": "Think of a castle. It doesn't just have one wall -- it has a moat, then an outer wall, then an inner wall, then guards, then a locked tower. If an attacker gets past one barrier, there's always another one waiting. Defense in depth means protecting computers the same way: with many layers of security stacked on top of each other. No single lock is perfect, but together they make it really, really hard for anyone to get through.",
+   "eli5_zh": "深度防禦就像城堡的防禦：有護城河、城牆、守衛，最後還有保險箱。即使一層壞了，還有其他層保護。",
+   "concepts": [
+    {
+     "slug": "security-layers",
+     "label": "Security layers"
+    },
+    {
+     "slug": "physical-security",
+     "label": "physical security"
+    },
+    {
+     "slug": "administrative-controls",
+     "label": "Administrative controls"
+    },
+    {
+     "slug": "technical-controls",
+     "label": "Technical controls"
+    },
+    {
+     "slug": "physical-controls",
+     "label": "Physical controls"
+    },
+    {
+     "slug": "preventive-detective-corrective",
+     "label": "Preventive, Detective, Corrective"
+    },
+    {
+     "slug": "vendor-diversity",
+     "label": "Vendor diversity"
+    },
+    {
+     "slug": "control-diversity",
+     "label": "Control diversity"
+    }
+   ],
+   "tips": [
+    "Defense in Depth = multiple layers + multiple control types. If a question asks about protecting against a single point of failure in security, the answer is Defense in Depth (or redundancy for availability).",
+    "Administrative (people/policy), Technical (technology), Physical (tangible barriers). The exam frequently asks you to categorize a given control into one of these three types."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/defense-in-depth",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-defense-in-depth"
+  },
+  "physical-security": {
+   "slug": "physical-security",
+   "title": "Physical Security",
+   "description": "Tangible controls and measures that protect facilities, hardware, and personnel",
+   "domain": 1,
+   "dir": "domain-1-general-security",
+   "weight": "medium",
+   "aliases": [
+    "Physical Controls"
+   ],
+   "eli5_en": "Physical security is all the real-world stuff that keeps bad people away from your computers and buildings -- fences around the property, locks on the doors, cameras watching the hallways, and guards checking who comes in. Even the best password in the world won't help if someone can just walk up to a computer and steal it. That's why protecting the actual building and the equipment inside it is just as important as protecting what's on the screen.",
+   "eli5_zh": "實體安全就是保護你看得到的東西。比如門鎖、監視器、警衛，甚至是防止人跟著你進門的旋轉門。",
+   "concepts": [
+    {
+     "slug": "bollards",
+     "label": "Bollards"
+    },
+    {
+     "slug": "fencing",
+     "label": "Fencing"
+    },
+    {
+     "slug": "access-control-vestibules-mantraps",
+     "label": "Access control vestibules (mantraps)"
+    },
+    {
+     "slug": "security-guards",
+     "label": "Security guards"
+    },
+    {
+     "slug": "video-surveillance-cctv",
+     "label": "Video surveillance (CCTV)"
+    },
+    {
+     "slug": "access-badges",
+     "label": "Access badges"
+    },
+    {
+     "slug": "lighting",
+     "label": "Lighting"
+    },
+    {
+     "slug": "locks",
+     "label": "Locks"
+    },
+    {
+     "slug": "cable-locks",
+     "label": "Cable locks"
+    },
+    {
+     "slug": "screen-filtersprivacy-screens",
+     "label": "Screen filters/privacy screens"
+    },
+    {
+     "slug": "secure-areas",
+     "label": "Secure areas"
+    },
+    {
+     "slug": "environmental-controls",
+     "label": "Environmental controls"
+    },
+    {
+     "slug": "faraday-cage",
+     "label": "Faraday cage"
+    }
+   ],
+   "tips": [
+    "Access control vestibule (mantrap) = prevents tailgating. Bollards = prevents vehicle attacks. Faraday cage = prevents electromagnetic eavesdropping. Know which physical control maps to which threat.",
+    "Wet pipe = always has water, fastest response. Dry pipe = water held back by valve, for cold environments. Clean agent (FM-200, Halon replacement) = safe for electronics in data centers."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/physical-security",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-physical-security"
+  },
+  "security-concepts": {
+   "slug": "security-concepts",
+   "title": "Security Concepts",
+   "description": "Foundational security principles and terminology for the SY0-701 exam",
+   "domain": 1,
+   "dir": "domain-1-general-security",
+   "weight": "high",
+   "aliases": [
+    "Security Fundamentals"
+   ],
+   "eli5_en": "Security concepts are the basic rules everyone follows to keep information safe -- kind of like the safety rules you learn on the first day of school. They include ideas like \"only share secrets with people who need to know,\" \"don't give anyone more power than they need,\" and \"keep records of who did what.\" These simple ideas guide every decision about protecting computers and data, no matter how big or complicated the system gets.",
+   "eli5_zh": "安全概念就是大家為了保護資訊而遵守的基本規則，就像在學校學的安全守則一樣：只與需要知道的人分享秘密、不給予超過必要的權力、並記錄誰做了什麼。",
+   "concepts": [
+    {
+     "slug": "cia-triad",
+     "label": "cia triad"
+    },
+    {
+     "slug": "non-repudiation",
+     "label": "Non-repudiation"
+    },
+    {
+     "slug": "least-privilege",
+     "label": "Least privilege"
+    },
+    {
+     "slug": "separation-of-duties",
+     "label": "Separation of duties"
+    },
+    {
+     "slug": "need-to-know",
+     "label": "Need to know"
+    },
+    {
+     "slug": "due-diligence-vs-due-care",
+     "label": "Due diligence vs. due care"
+    },
+    {
+     "slug": "security-through-obscurity",
+     "label": "Security through obscurity"
+    },
+    {
+     "slug": "open-design-principle",
+     "label": "Open design principle"
+    }
+   ],
+   "tips": [
+    "The CIA triad appears in nearly every domain. When evaluating a scenario question, ask: \"Which element of CIA is being threatened?\" This frames the correct answer quickly.",
+    "Least privilege limits permissions; need to know limits information access. Both reduce attack surface but operate at different levels."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/security-concepts",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-security-concepts"
+  },
+  "social-engineering": {
+   "slug": "social-engineering",
+   "title": "Social Engineering",
+   "description": "Psychological manipulation techniques used to trick people into compromising security",
+   "domain": 1,
+   "dir": "domain-1-general-security",
+   "weight": "high",
+   "aliases": [
+    "Social Engineering Attacks"
+   ],
+   "eli5_en": "Instead of picking a lock, what if a burglar just tricked you into handing over the key? That's social engineering. Bad guys use lies, fake stories, and pressure to get people to give up passwords, open dangerous files, or let strangers into secure places. They play on feelings like trust, fear, and helpfulness. It works because even the strongest computer security can be beaten when a person gets fooled.",
+   "eli5_zh": "社交工程就是「騙術」。不靠破解電腦，而是靠騙人來得到秘密。比如假裝是老闆叫你給密碼。",
+   "concepts": [
+    {
+     "slug": "phishing",
+     "label": "Phishing"
+    },
+    {
+     "slug": "vishing",
+     "label": "Vishing"
+    },
+    {
+     "slug": "smishing",
+     "label": "Smishing"
+    },
+    {
+     "slug": "pretexting",
+     "label": "Pretexting"
+    },
+    {
+     "slug": "baiting",
+     "label": "Baiting"
+    },
+    {
+     "slug": "tailgatingpiggybacking",
+     "label": "Tailgating/Piggybacking"
+    },
+    {
+     "slug": "watering-hole-attack",
+     "label": "Watering hole attack"
+    },
+    {
+     "slug": "typosquatting",
+     "label": "Typosquatting"
+    },
+    {
+     "slug": "brand-impersonation",
+     "label": "Brand impersonation"
+    },
+    {
+     "slug": "influence-campaigns",
+     "label": "Influence campaigns"
+    }
+   ],
+   "tips": [
+    "Phishing family: Email = Phishing, Phone = Vishing, SMS = Smishing, Targeted = Spear phishing, Executive = Whaling. The exam will describe a scenario and expect you to identify the specific type.",
+    "Tailgating = victim is unaware someone followed them through the door. Piggybacking = victim knowingly allows it (e.g., holds door open out of politeness)."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/social-engineering",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-social-engineering"
+  },
+  "threat-actors": {
+   "slug": "threat-actors",
+   "title": "Threat Actors",
+   "description": "Categories of adversaries and their motivations, capabilities, and attack methods",
+   "domain": 1,
+   "dir": "domain-1-general-security",
+   "weight": "high",
+   "aliases": [
+    "Threat Agents"
+   ],
+   "eli5_en": "Threat actors are the different kinds of \"bad guys\" in the computer world. Some are like professional burglars backed by a whole country's government. Some are criminals looking to steal money. Some are angry employees who already have the keys. Others are just bored kids trying to show off. Knowing which type you're dealing with helps you figure out what they're after and how to defend against them, because each group has different skills and goals.",
+   "eli5_zh": "威脅行為者就是那些想搞破壞或偷東西的人。包括業餘駭客 (指令小子)、商業間諜、內部員工、甚至是國家級的專業組織。",
+   "concepts": [
+    {
+     "slug": "nation-state-actors",
+     "label": "Nation-state actors"
+    },
+    {
+     "slug": "attack-vectors",
+     "label": "attack vectors"
+    }
+   ],
+   "tips": [
+    "Motivation mapping: Nation-state = espionage/sabotage, Organized crime = money, Hacktivists = ideology, Insiders = revenge/negligence, Script kiddies = curiosity/notoriety.",
+    "Insider threats are the most dangerous because they bypass perimeter defenses. The exam often presents scenarios where an employee is the threat — look for signs of excessive access or unusual behavior."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/threat-actors",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-threat-actors"
+  },
+  "zero-trust": {
+   "slug": "zero-trust",
+   "title": "Zero Trust",
+   "description": "Security model that assumes no implicit trust and verifies every access request continuously",
+   "domain": 1,
+   "dir": "domain-1-general-security",
+   "weight": "high",
+   "aliases": [
+    "Zero Trust Architecture",
+    "ZTA"
+   ],
+   "eli5_en": "Most buildings work like this: once you're past the front door, everyone trusts you. Zero Trust says \"no way.\" Even if you're already inside the building, you still have to show your badge every time you open a new door, and someone checks whether you should really be there right now. It doesn't matter if you're the CEO or a new employee -- everyone gets checked, every time, for every request. No free passes.",
+   "eli5_zh": "零信任就是「永不信任，始終驗證」。就像在銀行裡，即便你已經在大廳了，去保險庫前還是要重新檢查你的身分和權限，絕不因為你在內部就相信你。",
+   "concepts": [
+    {
+     "slug": "policy-engine",
+     "label": "Policy engine"
+    },
+    {
+     "slug": "policy-administrator",
+     "label": "Policy administrator"
+    },
+    {
+     "slug": "policy-enforcement-point-pep",
+     "label": "Policy enforcement point (PEP)"
+    },
+    {
+     "slug": "adaptive-identity",
+     "label": "Adaptive identity"
+    },
+    {
+     "slug": "implicit-trust-zones",
+     "label": "Implicit trust zones"
+    },
+    {
+     "slug": "network-segmentation",
+     "label": "network segmentation"
+    },
+    {
+     "slug": "software-defined-perimeter-sdp",
+     "label": "Software-defined perimeter (SDP)"
+    }
+   ],
+   "tips": [
+    "Zero Trust = Control Plane (decisions) + Data Plane (enforcement). Know the three components: Policy Engine, Policy Administrator, Policy Enforcement Point. The exam specifically tests the plane architecture.",
+    "Zero Trust is NOT just about the network — it covers identity, devices, applications, data, and infrastructure. If a question mentions \"eliminating implicit trust,\" the answer is Zero Trust."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/zero-trust",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-1-general-security/cases/case-zero-trust"
+  },
+  "application-attacks": {
+   "slug": "application-attacks",
+   "title": "Application Attacks",
+   "description": "Attacks targeting software applications through input manipulation, logic flaws, and misconfigurations",
+   "domain": 2,
+   "dir": "domain-2-threats-vulnerabilities",
+   "weight": "high",
+   "aliases": [
+    "Web Application Attacks"
+   ],
+   "eli5_en": "You know how some apps on your phone ask you to type things in, like your name or a search? Application attacks are when a bad person types in sneaky, harmful instructions instead of normal words. It's like someone slipping a fake note into a suggestion box that tricks the person reading it into doing something wrong. These attacks work because the app trusts what you type without double-checking, so the bad instructions get followed just like real ones. That's why apps need to carefully check everything people type in.",
+   "eli5_zh": "應用程式攻擊是利用軟體程式碼裡的漏洞。就像是房子雖然鎖了門，但窗戶沒關好，壞人就能從沒人想到的地方溜進去。",
+   "concepts": [
+    {
+     "slug": "buffer-overflow",
+     "label": "Buffer overflow"
+    },
+    {
+     "slug": "integer-overflow",
+     "label": "Integer overflow"
+    },
+    {
+     "slug": "race-condition-toctou",
+     "label": "Race condition / TOCTOU"
+    },
+    {
+     "slug": "directory-traversal",
+     "label": "Directory traversal"
+    },
+    {
+     "slug": "session-hijacking",
+     "label": "Session hijacking"
+    },
+    {
+     "slug": "session-replay",
+     "label": "Session replay"
+    },
+    {
+     "slug": "api-attacks",
+     "label": "API attacks"
+    },
+    {
+     "slug": "privilege-escalation",
+     "label": "Privilege escalation"
+    },
+    {
+     "slug": "resource-exhaustion",
+     "label": "Resource exhaustion"
+    },
+    {
+     "slug": "injection-attacks",
+     "label": "injection attacks"
+    },
+    {
+     "slug": "server-side-request-forgery-ssrf",
+     "label": "Server-Side Request Forgery (SSRF)"
+    },
+    {
+     "slug": "xml-injection-xxe",
+     "label": "XML injection"
+    },
+    {
+     "slug": "ldap-injection",
+     "label": "LDAP injection"
+    },
+    {
+     "slug": "dll-injection",
+     "label": "DLL injection"
+    },
+    {
+     "slug": "pass-the-hash",
+     "label": "Pass the hash"
+    }
+   ],
+   "tips": [
+    "Input validation is the #1 defense against application attacks. Buffer overflows = memory safety issue. Directory traversal = path validation issue. SSRF = the server becomes the attacker's proxy to internal systems."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/application-attacks",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-application-attacks"
+  },
+  "cryptographic-attacks": {
+   "slug": "cryptographic-attacks",
+   "title": "Cryptographic Attacks",
+   "description": "Attacks targeting cryptographic implementations to break encryption, forge signatures, or bypass protections",
+   "domain": 2,
+   "dir": "domain-2-threats-vulnerabilities",
+   "weight": "medium",
+   "aliases": [
+    "Crypto Attacks"
+   ],
+   "eli5_en": "Think of a secret code you and your best friend use to pass notes in class. Cryptographic attacks are when someone figures out how to crack your code and read your private messages. Maybe they notice patterns, or maybe your code is too simple. Some attackers even trick you into using an easier code that's simpler to break. This is why computers need really strong codes (called encryption) to keep secrets safe, and why old, weak codes need to be replaced with better ones.",
+   "eli5_zh": "加密攻擊是想辦法破解被鎖起來的訊息。壞人可能會利用數學上的弱點，或是在你加密的過程中偷看一些線索。",
+   "concepts": [
+    {
+     "slug": "brute-force",
+     "label": "Brute force"
+    },
+    {
+     "slug": "birthday-attack",
+     "label": "Birthday attack"
+    },
+    {
+     "slug": "collision-attack",
+     "label": "Collision attack"
+    },
+    {
+     "slug": "downgrade-attack",
+     "label": "Downgrade attack"
+    },
+    {
+     "slug": "known-plaintext-attack",
+     "label": "Known plaintext attack"
+    },
+    {
+     "slug": "chosen-plaintextciphertext-attack",
+     "label": "Chosen plaintext/ciphertext attack"
+    },
+    {
+     "slug": "side-channel-attacks",
+     "label": "Side-channel attacks"
+    },
+    {
+     "slug": "key-stretching",
+     "label": "Key stretching"
+    },
+    {
+     "slug": "deprecated-algorithms",
+     "label": "Deprecated algorithms"
+    },
+    {
+     "slug": "quantum-computing-threat",
+     "label": "Quantum computing threat"
+    }
+   ],
+   "tips": [
+    "MD5 and SHA-1 = broken (collisions found). DES = too short (56-bit). Use SHA-256+ for hashing, AES-256 for symmetric encryption. Downgrade attacks force weaker crypto — disable legacy protocols to prevent them."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cryptographic-attacks",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-cryptographic-attacks"
+  },
+  "denial-of-service": {
+   "slug": "denial-of-service",
+   "title": "Denial of Service",
+   "description": "Attacks designed to make systems, services, or networks unavailable to legitimate users",
+   "domain": 2,
+   "dir": "domain-2-threats-vulnerabilities",
+   "weight": "high",
+   "aliases": [
+    "DoS",
+    "DDoS"
+   ],
+   "eli5_en": "Picture a school water fountain. Normally, everyone takes turns getting a drink. But what if a hundred kids all crowded around the fountain at once, blocking everyone else? Nobody who actually needs a drink can get one. That's what a denial-of-service attack does to websites and computers -- it floods them with so much fake traffic that real people can't use them anymore. Sometimes attackers even get thousands of hijacked computers to join in at once, making it way harder to stop.",
+   "eli5_zh": "阻斷服務攻擊 (DoS) 就像是有一群人不停地打電話去同一家餐廳，讓真正的客人打不進去，導致餐廳無法正常運作。",
+   "concepts": [
+    {
+     "slug": "volumetric-attacks",
+     "label": "Volumetric attacks"
+    },
+    {
+     "slug": "protocol-attacks",
+     "label": "Protocol attacks"
+    },
+    {
+     "slug": "application-layer-attacks",
+     "label": "Application-layer attacks"
+    },
+    {
+     "slug": "syn-flood",
+     "label": "SYN flood"
+    },
+    {
+     "slug": "amplificationreflection",
+     "label": "Amplification/Reflection"
+    },
+    {
+     "slug": "botnet",
+     "label": "Botnet"
+    },
+    {
+     "slug": "smurf-attack",
+     "label": "Smurf attack"
+    },
+    {
+     "slug": "slowloris",
+     "label": "Slowloris"
+    }
+   ],
+   "tips": [
+    "DoS = single source. DDoS = multiple sources (botnet). Three categories: Volumetric (bandwidth), Protocol (connection state), Application (resource exhaustion). SYN cookies are the defense against SYN floods."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/denial-of-service",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-denial-of-service"
+  },
+  "dns-attacks": {
+   "slug": "dns-attacks",
+   "title": "DNS Attacks",
+   "description": "Attacks targeting the Domain Name System to redirect traffic, intercept communications, or disrupt name resolution",
+   "domain": 2,
+   "dir": "domain-2-threats-vulnerabilities",
+   "weight": "medium",
+   "aliases": [
+    "DNS Attacks"
+   ],
+   "eli5_en": "The internet has a phone book that turns website names (like \"google.com\") into the actual addresses computers use. DNS attacks mess with that phone book. It's like if someone secretly changed the phone number next to your friend's name so that when you call them, you actually reach a stranger pretending to be your friend. The stranger could trick you into sharing secrets. DNS attacks redirect people to fake websites without them ever knowing the address was swapped.",
+   "eli5_zh": "DNS 攻擊就像是改掉了電話簿裡的地址。當你想去 A 網站時，壞人把你導向了他們偽造的 B 網站。",
+   "concepts": [
+    {
+     "slug": "dns-poisoning-dns-cache-poisoning",
+     "label": "DNS poisoning / DNS cache poisoning"
+    },
+    {
+     "slug": "dns-spoofing",
+     "label": "DNS spoofing"
+    },
+    {
+     "slug": "dns-hijacking",
+     "label": "DNS hijacking"
+    },
+    {
+     "slug": "dns-tunneling",
+     "label": "DNS tunneling"
+    },
+    {
+     "slug": "dns-amplification",
+     "label": "DNS amplification"
+    },
+    {
+     "slug": "domain-hijacking",
+     "label": "Domain hijacking"
+    },
+    {
+     "slug": "typosquatting-url-hijacking",
+     "label": "Typosquatting / URL hijacking"
+    },
+    {
+     "slug": "dnssec-dns-security-extensions",
+     "label": "DNSSEC (DNS Security Extensions)"
+    },
+    {
+     "slug": "dns-over-https-doh-dns-over-tls-dot",
+     "label": "DNS over HTTPS (DoH) / DNS over TLS (DoT)"
+    }
+   ],
+   "tips": [
+    "DNS poisoning = fake records in cache. DNS tunneling = data exfiltration via DNS queries. DNSSEC = integrity (digital signatures, NOT encryption). DoH/DoT = confidentiality (encrypts DNS traffic)."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/dns-attacks",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-dns-attacks"
+  },
+  "indicators-of-compromise": {
+   "slug": "indicators-of-compromise",
+   "title": "Indicators of Compromise",
+   "description": "Observable artifacts or behaviors that indicate a system or network has been breached",
+   "domain": 2,
+   "dir": "domain-2-threats-vulnerabilities",
+   "weight": "high",
+   "aliases": [
+    "IoC"
+   ],
+   "eli5_en": "After a burglar breaks into a house, they leave clues behind -- a broken window, muddy footprints, things moved around. Indicators of compromise are the digital clues that tell you a computer or network has been broken into. Maybe there are strange files that shouldn't be there, or a program is running at 3 AM when nobody's working. Security teams look for these clues the same way detectives look for evidence, so they can figure out what happened and stop it from getting worse.",
+   "eli5_zh": "入侵指標 (IoC) 就像是小偷闖進家裡後留下的腳印或指紋。在電腦世界裡，這可能是奇怪的檔案、陌生的連線紀錄或是系統變慢。",
+   "concepts": [
+    {
+     "slug": "file-based-indicators",
+     "label": "File-based indicators"
+    },
+    {
+     "slug": "network-based-indicators",
+     "label": "Network-based indicators"
+    },
+    {
+     "slug": "host-based-indicators",
+     "label": "Host-based indicators"
+    },
+    {
+     "slug": "behavioral-indicators",
+     "label": "Behavioral indicators"
+    },
+    {
+     "slug": "email-indicators",
+     "label": "Email indicators"
+    },
+    {
+     "slug": "account-indicators",
+     "label": "Account indicators"
+    },
+    {
+     "slug": "indicators-of-attack-ioa",
+     "label": "Indicators of Attack (IoA)"
+    },
+    {
+     "slug": "stixtaxii",
+     "label": "STIX/TAXII"
+    },
+    {
+     "slug": "threat-feeds",
+     "label": "Threat feeds"
+    },
+    {
+     "slug": "false-positives",
+     "label": "False positives"
+    }
+   ],
+   "tips": [
+    "IoCs = evidence of past compromise (reactive). IoAs = signs of active attack (proactive). Common IoCs: unexpected outbound traffic, unusual process execution, beaconing (regular interval C2 communication), new accounts."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/indicators-of-compromise",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-indicators-of-compromise"
+  },
+  "injection-attacks": {
+   "slug": "injection-attacks",
+   "title": "Injection Attacks",
+   "description": "Attacks that insert malicious code or commands into application inputs to manipulate backend systems",
+   "domain": 2,
+   "dir": "domain-2-threats-vulnerabilities",
+   "weight": "high",
+   "aliases": [
+    "SQL Injection",
+    "SQLi",
+    "Command Injection"
+   ],
+   "eli5_en": "You know how a teacher might ask students to fill in a blank on a worksheet? Now imagine a sneaky student writes something like \"Give me an A+ on everything\" in that blank, and the teacher's computer just follows the instruction without questioning it. That's an injection attack -- someone types harmful commands into a spot where normal text should go, and the computer blindly obeys. It works because the computer can't tell the difference between real instructions and fake ones typed into the wrong place.",
+   "eli5_zh": "注入攻擊就像是你在填表格時，故意寫入一些「命令」而不是資料。如果系統沒檢查，它就會把你的指令當成自己的工作去執行，讓你看到不該看的資料。",
+   "concepts": [
+    {
+     "slug": "sql-injection-sqli",
+     "label": "SQL injection (SQLi)"
+    },
+    {
+     "slug": "blind-sql-injection",
+     "label": "Blind SQL injection"
+    },
+    {
+     "slug": "ldap-injection",
+     "label": "LDAP injection"
+    },
+    {
+     "slug": "xml-injection-xxe",
+     "label": "XML injection / XXE"
+    },
+    {
+     "slug": "command-injection-os-injection",
+     "label": "Command injection (OS injection)"
+    },
+    {
+     "slug": "dll-injection",
+     "label": "DLL injection"
+    },
+    {
+     "slug": "html-injection",
+     "label": "HTML injection"
+    },
+    {
+     "slug": "parameterized-queries-prepared-statements",
+     "label": "Parameterized queries / Prepared statements"
+    },
+    {
+     "slug": "input-validation",
+     "label": "Input validation"
+    },
+    {
+     "slug": "stored-procedures",
+     "label": "Stored procedures"
+    }
+   ],
+   "tips": [
+    "Defense against injection: (1) Parameterized queries / prepared statements, (2) Input validation (allowlist), (3) Least privilege database accounts, (4) WAF as defense-in-depth. Never build SQL queries by concatenating user input."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/injection-attacks",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-injection-attacks"
+  },
+  "malware-types": {
+   "slug": "malware-types",
+   "title": "Malware Types",
+   "description": "Categories of malicious software including viruses, worms, trojans, rootkits, and fileless malware",
+   "domain": 2,
+   "dir": "domain-2-threats-vulnerabilities",
+   "weight": "high",
+   "aliases": [
+    "Malware"
+   ],
+   "eli5_en": "Malware is like different kinds of germs that can make your computer sick. Some germs spread when you touch something (like a virus that hides in files you download). Some travel on their own through the air (like worms that jump between computers). Others pretend to be medicine but are actually poison (like trojans that look like helpful programs). Just like doctors need to know different germs to treat them, security people need to know different types of malware to protect against each one.",
+   "eli5_zh": "惡意軟體就是壞電腦程式。有的像病毒 (靠別人的檔案傳播)、有的像蠕蟲 (自己鑽過網路)、有的像木馬 (假裝是好程式)、有的像間諜 (偷看你打字)。",
+   "concepts": [
+    {
+     "slug": "virus",
+     "label": "Virus"
+    },
+    {
+     "slug": "worm",
+     "label": "Worm"
+    },
+    {
+     "slug": "trojan",
+     "label": "Trojan"
+    },
+    {
+     "slug": "rootkit",
+     "label": "Rootkit"
+    },
+    {
+     "slug": "spyware",
+     "label": "Spyware"
+    },
+    {
+     "slug": "keylogger",
+     "label": "Keylogger"
+    },
+    {
+     "slug": "rat-remote-access-trojan",
+     "label": "RAT (Remote Access Trojan)"
+    },
+    {
+     "slug": "fileless-malware",
+     "label": "Fileless malware"
+    },
+    {
+     "slug": "logic-bomb",
+     "label": "Logic bomb"
+    },
+    {
+     "slug": "potentially-unwanted-programs-pups",
+     "label": "Potentially Unwanted Programs (PUPs)"
+    },
+    {
+     "slug": "polymorphic-malware",
+     "label": "Polymorphic malware"
+    },
+    {
+     "slug": "metamorphic-malware",
+     "label": "Metamorphic malware"
+    }
+   ],
+   "tips": [
+    "Virus = needs host file. Worm = self-replicates over network. Trojan = disguised as legit. Rootkit = hides in OS. Fileless = lives in memory. Polymorphic = changes signature. Know the DELIVERY and BEHAVIOR of each type."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/malware-types",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-malware-types"
+  },
+  "mitigation-techniques": {
+   "slug": "mitigation-techniques",
+   "title": "Mitigation Techniques",
+   "description": "Strategies and controls used to reduce or eliminate the impact of threats and vulnerabilities",
+   "domain": 2,
+   "dir": "domain-2-threats-vulnerabilities",
+   "weight": "high",
+   "aliases": [
+    "Threat Mitigation",
+    "Security Controls"
+   ],
+   "eli5_en": "When your house has problems -- maybe the lock is broken or a window won't close -- you fix them so burglars can't get in. Mitigation techniques are all the different ways we fix and protect computers from bad guys. Some fixes are like installing a better lock (patching software). Others are like adding a security camera (monitoring). Some are like teaching your family not to open the door for strangers (security training). The more layers of protection you add, the harder it is for anyone to break in.",
+   "eli5_zh": "緩解技術就是用來減輕攻擊傷害的方法。雖然不能百分之百防止，但可以增加壞人的難度，或是縮小被破壞後的損失。",
+   "concepts": [
+    {
+     "slug": "patching",
+     "label": "Patching"
+    },
+    {
+     "slug": "network-segmentation",
+     "label": "Network segmentation"
+    },
+    {
+     "slug": "least-privilege",
+     "label": "Least privilege"
+    },
+    {
+     "slug": "input-validation",
+     "label": "Input validation"
+    },
+    {
+     "slug": "encryption",
+     "label": "Encryption"
+    },
+    {
+     "slug": "access-control-lists-acls",
+     "label": "Access control lists (ACLs)"
+    },
+    {
+     "slug": "security-baselines-and-hardening",
+     "label": "Security baselines and hardening"
+    },
+    {
+     "slug": "application-allowlisting",
+     "label": "Application allowlisting"
+    },
+    {
+     "slug": "configuration-management",
+     "label": "Configuration management"
+    },
+    {
+     "slug": "decommissioning",
+     "label": "Decommissioning"
+    },
+    {
+     "slug": "compensating-controls",
+     "label": "Compensating controls"
+    },
+    {
+     "slug": "security-awareness-training",
+     "label": "Security awareness training"
+    }
+   ],
+   "tips": [
+    "Mitigation order of preference: Eliminate the vulnerability (patch/remove) > Reduce the impact (segment/encrypt) > Transfer the risk (insurance/contract) > Accept the risk (documented decision). Compensating controls are NOT equal to primary controls."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/mitigation-techniques",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-mitigation-techniques"
+  },
+  "network-attacks": {
+   "slug": "network-attacks",
+   "title": "Network Attacks",
+   "description": "Attacks targeting network infrastructure, protocols, and communications to intercept, disrupt, or manipulate traffic",
+   "domain": 2,
+   "dir": "domain-2-threats-vulnerabilities",
+   "weight": "high",
+   "aliases": [
+    "Network-Based Attacks"
+   ],
+   "eli5_en": "Think of computer networks like roads that connect buildings in a city. Network attacks are when bad guys mess with those roads -- they might put up fake detour signs to redirect traffic, block the road so nobody can get through, or secretly listen in on conversations happening in passing cars. Every time your computer sends information to another computer, it travels along these \"roads,\" and attackers look for ways to intercept, redirect, or block that information before it reaches its destination.",
+   "eli5_zh": "網路攻擊是在資料傳輸的過程中搞鬼。壞人可能在半路攔截你的訊息、假冒成別人、或是在你的網路線路裡塞滿垃圾。",
+   "concepts": [
+    {
+     "slug": "arp-spoofingpoisoning",
+     "label": "ARP spoofing/poisoning"
+    },
+    {
+     "slug": "mac-flooding",
+     "label": "MAC flooding"
+    },
+    {
+     "slug": "vlan-hopping",
+     "label": "VLAN hopping"
+    },
+    {
+     "slug": "rogue-dhcp-server",
+     "label": "Rogue DHCP server"
+    },
+    {
+     "slug": "evil-twin",
+     "label": "Evil twin"
+    },
+    {
+     "slug": "deauthentication-attack",
+     "label": "Deauthentication attack"
+    },
+    {
+     "slug": "replay-attack",
+     "label": "Replay attack"
+    },
+    {
+     "slug": "amplification-attack",
+     "label": "Amplification attack"
+    },
+    {
+     "slug": "ip-spoofing",
+     "label": "IP spoofing"
+    },
+    {
+     "slug": "port-scanning",
+     "label": "Port scanning"
+    },
+    {
+     "slug": "bluetooth-attacks",
+     "label": "Bluejacking"
+    }
+   ],
+   "tips": [
+    "ARP poisoning = Layer 2 (data link). VLAN hopping = Layer 2. IP spoofing = Layer 3 (network). Port security, DHCP snooping, dynamic ARP inspection (DAI), and 802.1X are key Layer 2 defenses."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/network-attacks",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-network-attacks"
+  },
+  "on-path-attacks": {
+   "slug": "on-path-attacks",
+   "title": "On-Path Attacks",
+   "description": "Attacks where the adversary positions themselves between two communicating parties to intercept or alter traffic",
+   "domain": 2,
+   "dir": "domain-2-threats-vulnerabilities",
+   "weight": "medium",
+   "aliases": [
+    "Man-in-the-Middle",
+    "MitM"
+   ],
+   "eli5_en": "Say you're passing notes to a friend in class, but someone sitting between you secretly reads each note, maybe even changes what it says, then passes it along. Neither you nor your friend realizes anyone is in the middle. That's an on-path attack -- the attacker sits between two people (or computers) who are talking, secretly reading or changing messages as they pass through. Both sides think they're talking directly to each other, but everything goes through the attacker first.",
+   "eli5_zh": "在路徑攻擊 (以前叫中間人攻擊) 就像是郵差偷偷拆開你的信看過後，再裝回去寄給收件人。你跟對方都以為在直接溝通，其實中間有人在偷聽。",
+   "concepts": [
+    {
+     "slug": "arp-spoofingpoisoning",
+     "label": "ARP spoofing/poisoning"
+    },
+    {
+     "slug": "ssltls-stripping",
+     "label": "SSL/TLS stripping"
+    },
+    {
+     "slug": "ssltls-interception-ssl-proxy",
+     "label": "SSL/TLS interception (SSL proxy)"
+    },
+    {
+     "slug": "dns-spoofing",
+     "label": "DNS spoofing"
+    },
+    {
+     "slug": "https-spoofing",
+     "label": "HTTPS spoofing"
+    },
+    {
+     "slug": "session-hijacking",
+     "label": "Session hijacking"
+    },
+    {
+     "slug": "man-in-the-browser-mitb",
+     "label": "Man-in-the-Browser (MitB)"
+    },
+    {
+     "slug": "relay-attacks",
+     "label": "Relay attacks"
+    },
+    {
+     "slug": "defenses",
+     "label": "Defenses"
+    }
+   ],
+   "tips": [
+    "On-path = attacker is BETWEEN two parties. ARP poisoning = Layer 2 on-path setup. SSL stripping = HTTPS downgraded to HTTP. Defense: use encrypted protocols (HTTPS, SSH), HSTS headers, and certificate validation."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/on-path-attacks",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-on-path-attacks"
+  },
+  "password-attacks": {
+   "slug": "password-attacks",
+   "title": "Password Attacks",
+   "description": "Techniques used to discover, crack, or bypass password-based authentication",
+   "domain": 2,
+   "dir": "domain-2-threats-vulnerabilities",
+   "weight": "high",
+   "aliases": [
+    "Credential Attacks"
+   ],
+   "eli5_en": "Your password is like the combination to your locker. Password attacks are all the different ways someone might try to figure out that combination. They could try every single number one by one (brute force), guess common ones like \"1234\" (dictionary attack), or find a list of combinations that leaked from another school (credential stuffing). Some attackers don't even try to guess -- they just watch you type it in. That's why using long, unique passwords and not reusing them matters so much.",
+   "eli5_zh": "密碼攻擊就是壞人想辦法猜出你的密碼。他們可能會一個一個試 (暴力破解)、用常見的密碼清單 (字典攻擊)、或是拿別家公司流出的資料來試 (憑證填充)。",
+   "concepts": [
+    {
+     "slug": "brute-force",
+     "label": "Brute force"
+    },
+    {
+     "slug": "dictionary-attack",
+     "label": "Dictionary attack"
+    },
+    {
+     "slug": "password-spraying",
+     "label": "Password spraying"
+    },
+    {
+     "slug": "credential-stuffing",
+     "label": "Credential stuffing"
+    },
+    {
+     "slug": "rainbow-table-attack",
+     "label": "Rainbow table attack"
+    },
+    {
+     "slug": "salting",
+     "label": "Salting"
+    },
+    {
+     "slug": "hybrid-attack",
+     "label": "Hybrid attack"
+    },
+    {
+     "slug": "pass-the-hash",
+     "label": "Pass-the-hash"
+    },
+    {
+     "slug": "kerberoasting",
+     "label": "Kerberoasting"
+    },
+    {
+     "slug": "keylogging",
+     "label": "Keylogging"
+    },
+    {
+     "slug": "shoulder-surfing",
+     "label": "Shoulder surfing"
+    }
+   ],
+   "tips": [
+    "Password spraying avoids lockout (few passwords, many accounts). Credential stuffing exploits password reuse. Rainbow tables are defeated by SALTING. Pass-the-hash works without knowing the plaintext password."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/password-attacks",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-password-attacks"
+  },
+  "ransomware": {
+   "slug": "ransomware",
+   "title": "Ransomware",
+   "description": "Malware that encrypts victim data and demands payment for the decryption key",
+   "domain": 2,
+   "dir": "domain-2-threats-vulnerabilities",
+   "weight": "high",
+   "aliases": [
+    "Crypto-Malware"
+   ],
+   "eli5_en": "Picture someone sneaking into your room, putting all your favorite toys and books into a locked safe, and then saying \"Pay me $50 or you'll never see them again.\" That's ransomware. It's a type of bad software that scrambles all your computer files so you can't open them, then demands money to unlock them. Sometimes the attacker also threatens to show your private stuff to everyone if you don't pay. It's one of the scariest computer threats because people can lose everything important to them.",
+   "eli5_zh": "勒索軟體就是「電腦綁匪」。它會把你所有的檔案鎖起來，然後叫你付錢才給你鑰匙。有時還會威脅你不付錢就把你的秘密公開。",
+   "concepts": [
+    {
+     "slug": "encryption-based-ransomware",
+     "label": "Encryption-based ransomware"
+    },
+    {
+     "slug": "locker-ransomware",
+     "label": "Locker ransomware"
+    },
+    {
+     "slug": "double-extortion",
+     "label": "Double extortion"
+    },
+    {
+     "slug": "triple-extortion",
+     "label": "Triple extortion"
+    },
+    {
+     "slug": "ransomware-as-a-service-raas",
+     "label": "Ransomware-as-a-Service (RaaS)"
+    },
+    {
+     "slug": "common-delivery-methods",
+     "label": "Common delivery methods"
+    },
+    {
+     "slug": "lateral-movement",
+     "label": "Lateral movement"
+    },
+    {
+     "slug": "cryptocurrency-payment",
+     "label": "Cryptocurrency payment"
+    },
+    {
+     "slug": "notable-examples",
+     "label": "Notable examples"
+    }
+   ],
+   "tips": [
+    "Best defense against ransomware: offline/immutable backups + network segmentation + patching + user training. Never rely solely on paying the ransom — there is no guarantee of decryption, and it funds criminal operations."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/ransomware",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-ransomware"
+  },
+  "vulnerability-types": {
+   "slug": "vulnerability-types",
+   "title": "Vulnerability Types",
+   "description": "Categories of security weaknesses including misconfigurations, software flaws, and human factors",
+   "domain": 2,
+   "dir": "domain-2-threats-vulnerabilities",
+   "weight": "high",
+   "aliases": [
+    "Security Vulnerabilities"
+   ],
+   "eli5_en": "Every building has weak spots -- maybe a window that doesn't lock, a door with a flimsy hinge, or a fence with a hole in it. Computers have weak spots too, and those are called vulnerabilities. Some happen because someone forgot to change the default settings (like leaving the factory password on a router). Others are mistakes in the software itself, like a bug. And sometimes, the weak spot is actually a person who gets tricked into opening a bad email. Knowing what the weak spots are is the first step to fixing them.",
+   "eli5_zh": "漏洞類型就是系統裡的「弱點」。可能是程式碼寫錯、設定沒弄好、或是用了太舊的軟體。這些弱點給了壞人可趁之機。",
+   "concepts": [
+    {
+     "slug": "misconfigurations",
+     "label": "Misconfigurations"
+    },
+    {
+     "slug": "unpatched-software",
+     "label": "Unpatched software"
+    },
+    {
+     "slug": "zero-day-vulnerabilities",
+     "label": "Zero-day vulnerabilities"
+    },
+    {
+     "slug": "default-credentials",
+     "label": "Default credentials"
+    },
+    {
+     "slug": "insecure-protocols",
+     "label": "Insecure protocols"
+    },
+    {
+     "slug": "weak-encryption",
+     "label": "Weak encryption"
+    },
+    {
+     "slug": "race-conditions",
+     "label": "Race conditions"
+    },
+    {
+     "slug": "memory-vulnerabilities",
+     "label": "Memory vulnerabilities"
+    },
+    {
+     "slug": "third-partysupply-chain-risks",
+     "label": "Third-party/supply chain risks"
+    },
+    {
+     "slug": "human-factors",
+     "label": "Human factors"
+    },
+    {
+     "slug": "hardware-vulnerabilities",
+     "label": "Hardware vulnerabilities"
+    }
+   ],
+   "tips": [
+    "Misconfigurations are the #1 vulnerability type — more common than code flaws. Zero-day = no patch exists yet. Always check for: default creds, open ports, unpatched software, insecure protocols, excessive permissions."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/vulnerability-types",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-vulnerability-types"
+  },
+  "wireless-attacks": {
+   "slug": "wireless-attacks",
+   "title": "Wireless Attacks",
+   "description": "Attacks targeting wireless networks and protocols including Wi-Fi, Bluetooth, and RFID",
+   "domain": 2,
+   "dir": "domain-2-threats-vulnerabilities",
+   "weight": "medium",
+   "aliases": [
+    "Wi-Fi Attacks"
+   ],
+   "eli5_en": "Wi-Fi is like an invisible conversation happening through the air between your device and a router. Since it's traveling through open air instead of a wire, anyone nearby can try to listen in or interfere. Wireless attacks are when someone sets up a fake Wi-Fi network that looks real (like a fake lemonade stand), jams the signal so you can't connect, or eavesdrops on what you're sending. It's like someone with a walkie-talkie tuned to your channel, hearing everything you say.",
+   "eli5_zh": "無線攻擊是針對 Wi-Fi 或藍牙的攻擊。壞人可能在公共場所架設假的 Wi-Fi 誘騙你連線，或是破解你家 Wi-Fi 的密碼。",
+   "concepts": [
+    {
+     "slug": "evil-twin",
+     "label": "Evil twin"
+    },
+    {
+     "slug": "rogue-access-point",
+     "label": "Rogue access point"
+    },
+    {
+     "slug": "deauthentication-attack",
+     "label": "Deauthentication attack"
+    },
+    {
+     "slug": "wpawpa2-handshake-capture",
+     "label": "WPA/WPA2 handshake capture"
+    },
+    {
+     "slug": "wps-attacks",
+     "label": "WPS attacks"
+    },
+    {
+     "slug": "krack-key-reinstallation-attack",
+     "label": "KRACK (Key Reinstallation Attack)"
+    },
+    {
+     "slug": "bluetooth-attacks",
+     "label": "Bluetooth attacks"
+    },
+    {
+     "slug": "rfid-cloning",
+     "label": "RFID cloning"
+    },
+    {
+     "slug": "nfc-attacks",
+     "label": "NFC attacks"
+    },
+    {
+     "slug": "jamming",
+     "label": "Jamming"
+    },
+    {
+     "slug": "war-driving",
+     "label": "War driving"
+    }
+   ],
+   "tips": [
+    "WPA3 fixes KRACK and adds SAE (Simultaneous Authentication of Equals) replacing PSK. Evil twin = fake AP, rogue AP = unauthorized AP on network. Always disable WPS. Use WPA3-Enterprise with 802.1X for maximum security."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/wireless-attacks",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-wireless-attacks"
+  },
+  "xss-and-csrf": {
+   "slug": "xss-and-csrf",
+   "title": "Cross-Site Scripting and Cross-Site Request Forgery",
+   "description": "Client-side web attacks that exploit trust between users, browsers, and web applications",
+   "domain": 2,
+   "dir": "domain-2-threats-vulnerabilities",
+   "weight": "high",
+   "aliases": [
+    "XSS",
+    "CSRF"
+   ],
+   "eli5_en": "These are two tricks that bad guys play on websites. Cross-site scripting is like someone taping a fake \"Push this button for candy\" sign on a school wall -- when kids push it, something bad happens. The website accidentally shows the attacker's trick to everyone who visits. Cross-site request forgery is different -- it's like someone secretly sending a letter to the principal with your name on it, asking to do something you never agreed to. Both attacks trick your web browser into doing things you didn't mean to do.",
+   "eli5_zh": "XSS 是壞人在網站上貼一段惡意腳本，讓去逛那個網站的人中招。CSRF 則是騙你在不知情的情況下，用你已經登入的身分去執行某些動作 (像是轉帳)。",
+   "concepts": [
+    {
+     "slug": "reflected-xss",
+     "label": "Reflected XSS"
+    },
+    {
+     "slug": "stored-persistent-xss",
+     "label": "Stored (Persistent) XSS"
+    },
+    {
+     "slug": "dom-based-xss",
+     "label": "DOM-based XSS"
+    },
+    {
+     "slug": "impact",
+     "label": "Impact"
+    },
+    {
+     "slug": "defenses",
+     "label": "Defenses"
+    },
+    {
+     "slug": "mechanism",
+     "label": "Mechanism"
+    },
+    {
+     "slug": "example",
+     "label": "Example"
+    }
+   ],
+   "tips": [
+    "XSS = attacker injects script into a page that OTHER USERS see (exploits user trust in the site). CSRF = attacker tricks the user's BROWSER into making requests (exploits site trust in the user). XSS steals data; CSRF performs actions."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/xss-and-csrf",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-2-threats-vulnerabilities/cases/case-xss-and-csrf"
+  },
+  "certificates": {
+   "slug": "certificates",
+   "title": "Certificates",
+   "description": "Digital certificates bind a public key to an identity, enabling trust, authentication, and encrypted communications.",
+   "domain": 3,
+   "dir": "domain-3-security-architecture",
+   "weight": "high",
+   "aliases": [
+    "Digital Certificates",
+    "X.509"
+   ],
+   "eli5_en": "Think of a digital certificate like a school ID card. The school (a trusted authority) creates the card with your name and photo so everyone knows you are who you say you are. On the internet, certificates work the same way -- a trusted organization creates a digital ID that proves a website or person is real. Without it, you would never know if you were talking to the real website or a fake one pretending to be it.",
+   "eli5_zh": "數位證書就像是網路上的身分證，由大家都信任的發證機構簽署，證明網站真的是它所說的那個人。",
+   "concepts": [
+    {
+     "slug": "x509-certificate-fields",
+     "label": "X.509 certificate fields:"
+    },
+    {
+     "slug": "certificate-lifecycle",
+     "label": "Certificate lifecycle:"
+    },
+    {
+     "slug": "csr-certificate-signing-request",
+     "label": "CSR (Certificate Signing Request)"
+    },
+    {
+     "slug": "revocation",
+     "label": "Revocation:"
+    },
+    {
+     "slug": "certificate-formats",
+     "label": "Certificate formats:"
+    }
+   ],
+   "tips": [
+    "Wildcard covers \\.domain.com but NOT the root domain itself. SAN certificates list specific domains. DV = domain only, EV = highest trust. Self-signed certificates are NOT trusted by browsers by default. CSR contains the public key, never the private key."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/certificates",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-certificates"
+  },
+  "cloud-security": {
+   "slug": "cloud-security",
+   "title": "Cloud Security",
+   "description": "Cloud security encompasses the controls, policies, and technologies that protect cloud-based infrastructure, applications, and data.",
+   "domain": 3,
+   "dir": "domain-3-security-architecture",
+   "weight": "high",
+   "aliases": [
+    "Cloud Security"
+   ],
+   "eli5_en": "You know how you might store your toys at a friend's house? You trust your friend to keep them safe, but you still want to make sure the door is locked and nobody else can take them. Cloud security is the same idea -- when companies store their data on someone else's computers (the cloud), they need rules and locks to keep that data safe, even though they do not own the building where it lives.",
+   "eli5_zh": "雲端安全就是保護放在別人電腦裡的資料。你需要搞清楚哪些是你的責任 (資料和存取控制)，哪些是雲端公司的責任 (實體伺服器)。",
+   "concepts": [
+    {
+     "slug": "cloud-deployment-models",
+     "label": "Cloud deployment models:"
+    },
+    {
+     "slug": "shared-responsibility-model",
+     "label": "Shared responsibility model"
+    },
+    {
+     "slug": "identity-and-access-management",
+     "label": "Identity and access management"
+    },
+    {
+     "slug": "data-sovereignty",
+     "label": "Data sovereignty"
+    },
+    {
+     "slug": "multitenancy-risks",
+     "label": "Multitenancy risks"
+    },
+    {
+     "slug": "api-security",
+     "label": "API security"
+    },
+    {
+     "slug": "secrets-management",
+     "label": "Secrets management"
+    }
+   ],
+   "tips": [
+    "Shared responsibility: IaaS = customer manages the most; SaaS = provider manages the most. CASB = policy enforcement between users and cloud. CSPM = finds misconfigurations. The exam loves testing the shared responsibility model."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cloud-security",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-cloud-security"
+  },
+  "data-protection": {
+   "slug": "data-protection",
+   "title": "Data Protection",
+   "description": "Data protection encompasses the technical and administrative controls used to safeguard data throughout its lifecycle.",
+   "domain": 3,
+   "dir": "domain-3-security-architecture",
+   "weight": "high",
+   "aliases": [
+    "Data Protection"
+   ],
+   "eli5_en": "It's like keeping your diary safe. You might put a lock on it so nobody can read it, hide it in a secret spot, and decide when to throw away old pages. Data protection means all the different ways we keep important information safe -- locking it up, controlling who can see it, and making sure it does not end up somewhere it should not be. Every step of the way, from creating data to deleting it, needs a plan.",
+   "eli5_zh": "資料保護就是確保資料在任何狀態都是安全的：存在硬碟裡 (待命狀態)、在網路上傳輸 (傳輸狀態)、或正在被程式讀取 (使用中)。",
+   "concepts": [
+    {
+     "slug": "data-sovereignty",
+     "label": "Data sovereignty"
+    },
+    {
+     "slug": "data-loss-prevention-dlp",
+     "label": "Data loss prevention (DLP)"
+    },
+    {
+     "slug": "rights-management-drmirm",
+     "label": "Rights management (DRM/IRM)"
+    },
+    {
+     "slug": "tokenization",
+     "label": "Tokenization"
+    },
+    {
+     "slug": "data-masking",
+     "label": "Data masking"
+    },
+    {
+     "slug": "anonymization",
+     "label": "Anonymization"
+    },
+    {
+     "slug": "pseudonymization",
+     "label": "Pseudonymization"
+    },
+    {
+     "slug": "data-retention-policies",
+     "label": "Data retention policies"
+    }
+   ],
+   "tips": [
+    "Tokenization replaces data with tokens (PCI DSS loves this). Masking hides parts of data. Degaussing only works on magnetic media, NOT SSDs. Cryptographic erasure = destroy the key to destroy the data. Know all three data states."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/data-protection",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-data-protection"
+  },
+  "dlp": {
+   "slug": "dlp",
+   "title": "DLP",
+   "description": "Data Loss Prevention systems detect and prevent unauthorized transmission or exfiltration of sensitive data.",
+   "domain": 3,
+   "dir": "domain-3-security-architecture",
+   "weight": "medium",
+   "aliases": [
+    "DLP",
+    "Data Loss Prevention"
+   ],
+   "eli5_en": "Picture a guard standing at every exit of a building, checking bags to make sure nobody takes anything valuable out. DLP (Data Loss Prevention) works like that guard for your computer network. It watches emails, file transfers, and other ways data moves around, and if someone tries to send secret information outside the company -- whether on purpose or by accident -- it steps in and stops it.",
+   "eli5_zh": "DLP 就像是公司的海關。它會盯著所有要寄出去的信件和檔案，如果發現裡面有秘密 (像身分證字號)，就會攔下來不准發出去。",
+   "concepts": [
+    {
+     "slug": "policy-actions",
+     "label": "Policy actions:"
+    },
+    {
+     "slug": "false-positives",
+     "label": "False positives"
+    }
+   ],
+   "tips": [
+    "DLP monitors data in all three states: at rest, in transit, in use. Network DLP catches email and web exfiltration. Endpoint DLP catches USB and print. Cloud DLP integrates with CASB. Tuning is critical to reduce false positives."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/dlp",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-dlp"
+  },
+  "embedded-systems-security": {
+   "slug": "embedded-systems-security",
+   "title": "Embedded Systems Security",
+   "description": "Embedded systems security addresses the unique risks of securing purpose-built devices with limited resources and long lifecycles.",
+   "domain": 3,
+   "dir": "domain-3-security-architecture",
+   "weight": "medium",
+   "aliases": [
+    "Embedded Systems",
+    "IoT Security"
+   ],
+   "eli5_en": "Think about all the smart gadgets around you -- a thermostat, a traffic light, or a medical device. These are tiny computers built to do one specific job, and most of them cannot be easily updated like your phone or laptop. Keeping these devices safe is tricky because they often run for years without anyone checking on them, and bad guys know they are easy targets. Embedded systems security is about protecting these little computers from being hacked.",
+   "eli5_zh": "",
+   "concepts": [],
+   "tips": [
+    "SCADA/ICS = critical infrastructure, high impact. IoT devices have weak security defaults. Always segment embedded devices onto their own network. Change default credentials immediately. Constrained resources limit security options."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/embedded-systems-security",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-embedded-systems-security"
+  },
+  "encryption": {
+   "slug": "encryption",
+   "title": "Encryption",
+   "description": "Encryption transforms plaintext into ciphertext using algorithms and keys to protect data confidentiality.",
+   "domain": 3,
+   "dir": "domain-3-security-architecture",
+   "weight": "high",
+   "aliases": [
+    "Encryption"
+   ],
+   "eli5_en": "You know how some kids write secret notes using a code only their best friend knows? Encryption works the same way. It scrambles your message so that anyone who intercepts it just sees nonsense. Only the person with the right \"key\" can unscramble it and read the original message. This is one of the most important ways we keep information private on computers and the internet.",
+   "eli5_zh": "加密就像是把你的信件變成看不懂的亂碼，只有擁有正確鑰匙的人才能把它還原成原本的內容。",
+   "concepts": [
+    {
+     "slug": "hybrid-encryption",
+     "label": "Hybrid encryption"
+    },
+    {
+     "slug": "encryption-modes",
+     "label": "Encryption modes"
+    },
+    {
+     "slug": "key-length",
+     "label": "Key length"
+    },
+    {
+     "slug": "perfect-forward-secrecy-pfs",
+     "label": "Perfect Forward Secrecy (PFS)"
+    },
+    {
+     "slug": "ephemeral-keys",
+     "label": "ephemeral Diffie-Hellman"
+    }
+   ],
+   "tips": [
+    "Symmetric = one key, fast, bulk data (AES). Asymmetric = two keys, slow, key exchange and signatures (RSA, ECC). AES-256 is the standard. TLS uses hybrid encryption. Never use ECB mode — it leaks patterns."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/encryption",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-encryption"
+  },
+  "firewalls": {
+   "slug": "firewalls",
+   "title": "Firewalls",
+   "description": "Firewalls filter network traffic based on rules to enforce security boundaries between trusted and untrusted networks.",
+   "domain": 3,
+   "dir": "domain-3-security-architecture",
+   "weight": "high",
+   "aliases": [
+    "Firewalls"
+   ],
+   "eli5_en": "A firewall is like a bouncer at the door of a club. It checks everyone trying to come in or go out and only lets through the people who are on the list. If someone suspicious shows up, the bouncer turns them away. On a computer network, a firewall checks all the data trying to enter or leave and blocks anything that looks dangerous or breaks the rules.",
+   "eli5_zh": "防火牆就像是公司的警衛，它會檢查所有進出的包裹，只允許符合安全規則的包裹通過，把可疑的擋在門外。",
+   "concepts": [
+    {
+     "slug": "host-based-vs-network-based",
+     "label": "Host-based vs. network-based"
+    },
+    {
+     "slug": "unified-threat-management-utm",
+     "label": "Unified Threat Management (UTM)"
+    },
+    {
+     "slug": "access-control-lists-acls",
+     "label": "Access Control Lists (ACLs)"
+    },
+    {
+     "slug": "screened-subnet-dmz",
+     "label": "Screened subnet (DMZ)"
+    }
+   ],
+   "tips": [
+    "NGFW = stateful + DPI + IPS + app awareness. WAF = web apps specifically (Layer 7). Implicit deny = the last rule blocks everything else. Rules are processed top to bottom; order matters."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/firewalls",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-firewalls"
+  },
+  "hashing": {
+   "slug": "hashing",
+   "title": "Hashing",
+   "description": "Hashing produces a fixed-length digest from input data to verify integrity, authenticate messages, and securely store passwords.",
+   "domain": 3,
+   "dir": "domain-3-security-architecture",
+   "weight": "high",
+   "aliases": [
+    "Hashing",
+    "Hash Functions"
+   ],
+   "eli5_en": "Think of hashing like a fingerprint for data. Just like every person has a unique fingerprint, hashing takes any piece of information and creates a unique code for it. If even one tiny thing changes in the original data, the fingerprint looks completely different. This makes it easy to check if something has been tampered with. Unlike encryption, you cannot turn the fingerprint back into the original -- it is a one-way process.",
+   "eli5_zh": "雜湊就像是資料的指紋。即便是超大的檔案，經過雜湊運算後都會得到一段簡短且唯一的字串，只要檔案改動一點點，指紋就會完全不同。",
+   "concepts": [
+    {
+     "slug": "hmac-hash-based-message-authentication-code",
+     "label": "HMAC (Hash-based Message Authentication Code)"
+    },
+    {
+     "slug": "password-hashing",
+     "label": "Password hashing"
+    },
+    {
+     "slug": "digital-signatures",
+     "label": "Digital signatures"
+    },
+    {
+     "slug": "file-integrity-monitoring",
+     "label": "File integrity monitoring"
+    }
+   ],
+   "tips": [
+    "MD5 and SHA-1 are deprecated. SHA-256 is the current standard. Hashing is one-way; encryption is two-way. HMAC = hash + key = integrity + authentication. Salt defeats rainbow tables. Bcrypt/Argon2 defeat brute force on passwords."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/hashing",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-hashing"
+  },
+  "ids-ips": {
+   "slug": "ids-ips",
+   "title": "IDS/IPS",
+   "description": "Intrusion Detection and Prevention Systems monitor network traffic and system activity to identify and respond to malicious behavior.",
+   "domain": 3,
+   "dir": "domain-3-security-architecture",
+   "weight": "high",
+   "aliases": [
+    "IDS",
+    "IPS"
+   ],
+   "eli5_en": "Think of IDS like a security camera that watches everything and sounds an alarm when it spots trouble. IPS is like a security camera plus a guard -- it does not just alert you, it actually stops the bad guy in their tracks. Together, they watch all the activity on a computer network, looking for anything suspicious, and either warn someone or block the threat right away.",
+   "eli5_zh": "IDS 是警報器，發現有人翻牆就大叫；IPS 是守衛，發現有人翻牆會直接把他抓起來丟出去。",
+   "concepts": [
+    {
+     "slug": "tuning",
+     "label": "Tuning"
+    },
+    {
+     "slug": "inline-vs-passive-deployment",
+     "label": "Inline vs. passive deployment"
+    },
+    {
+     "slug": "file-integrity-monitoring",
+     "label": "FIM (File Integrity Monitoring)"
+    }
+   ],
+   "tips": [
+    "IDS = detect and alert (passive). IPS = detect and block (inline/active). Signature-based catches known threats; anomaly-based catches unknown threats. False negative = worst outcome (attack goes undetected)."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/ids-ips",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-ids-ips"
+  },
+  "infrastructure-as-code": {
+   "slug": "infrastructure-as-code",
+   "title": "Infrastructure as Code",
+   "description": "Infrastructure as Code manages and provisions computing resources through machine-readable configuration files rather than manual processes.",
+   "domain": 3,
+   "dir": "domain-3-security-architecture",
+   "weight": "medium",
+   "aliases": [
+    "IaC"
+   ],
+   "eli5_en": "Remember how LEGO instructions let you rebuild the same model perfectly every time? Infrastructure as Code works the same way for computers. Instead of setting up servers by hand (and maybe making mistakes), you write a set of instructions that a computer follows automatically. If something breaks, you just run the instructions again and get a perfect copy. This makes it much easier to keep everything safe and consistent.",
+   "eli5_zh": "IaC 就是用寫劇本的方式來蓋房子。只要寫好程式碼，電腦就能自動幫你蓋好成千上萬個伺服器，而且保證每一台都長得一模一樣。",
+   "concepts": [
+    {
+     "slug": "configuration-drift",
+     "label": "Configuration drift"
+    },
+    {
+     "slug": "immutable-infrastructure",
+     "label": "Immutable infrastructure"
+    },
+    {
+     "slug": "common-tools",
+     "label": "Common tools:"
+    },
+    {
+     "slug": "policy-as-code",
+     "label": "Policy as code"
+    }
+   ],
+   "tips": [
+    "IaC = consistent, auditable, repeatable infrastructure. Immutable infrastructure = replace, never patch in place. The biggest IaC security risk is hardcoded secrets in templates. Version control provides audit trails."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/infrastructure-as-code",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-infrastructure-as-code"
+  },
+  "key-management": {
+   "slug": "key-management",
+   "title": "Key Management",
+   "description": "Key management encompasses the generation, distribution, storage, rotation, and destruction of cryptographic keys throughout their lifecycle.",
+   "domain": 3,
+   "dir": "domain-3-security-architecture",
+   "weight": "medium",
+   "aliases": [
+    "Key Management"
+   ],
+   "eli5_en": "If encryption is like using a lock to keep your secrets safe, then key management is about taking care of the keys themselves. Where do you keep the key? Who gets a copy? When do you change the locks? If you lose the key or someone copies it, the lock becomes useless. Key management is all the rules for creating, sharing, storing, and eventually throwing away those keys so your secrets stay protected.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "hardware-security-module-hsm",
+     "label": "Hardware Security Module (HSM)"
+    },
+    {
+     "slug": "trusted-platform-module-tpm",
+     "label": "Trusted Platform Module (TPM)"
+    },
+    {
+     "slug": "key-escrow",
+     "label": "Key escrow"
+    },
+    {
+     "slug": "key-splitting-secret-sharing",
+     "label": "Key splitting / secret sharing"
+    },
+    {
+     "slug": "ephemeral-keys",
+     "label": "Ephemeral keys"
+    },
+    {
+     "slug": "perfect-forward-secrecy-pfs",
+     "label": "Perfect forward secrecy (PFS)"
+    }
+   ],
+   "tips": [
+    "HSM = hardware key storage, tamper-resistant. TPM = motherboard chip for keys and secure boot. PFS = session keys are ephemeral, so past traffic cannot be decrypted even if the private key is later compromised. Never store keys in plaintext."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/key-management",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-key-management"
+  },
+  "load-balancers-and-proxies": {
+   "slug": "load-balancers-and-proxies",
+   "title": "Load Balancers and Proxies",
+   "description": "Load balancers distribute traffic across servers for availability, while proxies act as intermediaries for security and performance.",
+   "domain": 3,
+   "dir": "domain-3-security-architecture",
+   "weight": "medium",
+   "aliases": [
+    "Load Balancers",
+    "Proxies"
+   ],
+   "eli5_en": "Picture a really popular ice cream shop with five windows. A load balancer is like a helper out front who sends each customer to the window with the shortest line, so nobody waits too long. A proxy is more like a middle-man -- you tell the proxy what ice cream you want, and the proxy goes and gets it for you, so the shop never knows who you are. Both help things run smoothly and safely.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "scheduling-algorithms",
+     "label": "Scheduling algorithms"
+    },
+    {
+     "slug": "active-active-vs-active-passive",
+     "label": "Active-active vs. active-passive"
+    },
+    {
+     "slug": "ssltls-offloading",
+     "label": "SSL/TLS offloading"
+    },
+    {
+     "slug": "health-checks",
+     "label": "Health checks"
+    },
+    {
+     "slug": "content-filtering",
+     "label": "Content filtering"
+    },
+    {
+     "slug": "caching",
+     "label": "Caching"
+    }
+   ],
+   "tips": [
+    "Forward proxy = protects clients (outbound). Reverse proxy = protects servers (inbound). Load balancers improve availability and are part of high-availability design. SSL offloading reduces backend server load."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/load-balancers-and-proxies",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-load-balancers-and-proxies"
+  },
+  "nac": {
+   "slug": "nac",
+   "title": "NAC",
+   "description": "Network Access Control restricts network access to devices and users that meet security policy requirements.",
+   "domain": 3,
+   "dir": "domain-3-security-architecture",
+   "weight": "medium",
+   "aliases": [
+    "NAC"
+   ],
+   "eli5_en": "It's like a health check before you enter a theme park. Before you get on the rides, someone checks your ticket and makes sure you are tall enough. NAC (Network Access Control) does the same for devices joining a network -- it checks that your computer has the right updates and security software before letting you in. If your device does not pass the check, it gets sent to a waiting area until it is fixed.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "8021x",
+     "label": "802.1X"
+    },
+    {
+     "slug": "remediation-network",
+     "label": "Remediation network"
+    },
+    {
+     "slug": "guest-networking",
+     "label": "Guest networking"
+    }
+   ],
+   "tips": [
+    "802.1X has three components: supplicant (client), authenticator (switch/AP), authentication server (RADIUS). NAC quarantines non-compliant devices rather than outright blocking them, allowing remediation. Agent-based is more thorough than agentless."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/nac",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-nac"
+  },
+  "network-security-architecture": {
+   "slug": "network-security-architecture",
+   "title": "Network Security Architecture",
+   "description": "Network security architecture defines the design principles and components used to protect an organization's network infrastructure.",
+   "domain": 3,
+   "dir": "domain-3-security-architecture",
+   "weight": "high",
+   "aliases": [
+    "Network Security Architecture"
+   ],
+   "eli5_en": "Think of a castle with walls, a moat, drawbridges, and guards at every gate. Network security architecture is like the blueprint for building all those defenses around a computer network. It plans where the walls go, who guards each entrance, and how to keep intruders from moving around inside if they do get in. The idea is that no single defense has to be perfect, because there are many layers backing it up.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "defense-in-depth",
+     "label": "Defense in depth"
+    },
+    {
+     "slug": "zero-trust-architecture",
+     "label": "Zero trust architecture"
+    },
+    {
+     "slug": "network-zones",
+     "label": "Network zones"
+    },
+    {
+     "slug": "dmz-demilitarized-zone",
+     "label": "DMZ (Demilitarized Zone)"
+    },
+    {
+     "slug": "east-west-vs-north-south-traffic",
+     "label": "East-west vs. north-south traffic"
+    },
+    {
+     "slug": "software-defined-networking-sdn",
+     "label": "Software-Defined Networking (SDN)"
+    },
+    {
+     "slug": "secure-access-service-edge-sase",
+     "label": "Secure Access Service Edge (SASE)"
+    },
+    {
+     "slug": "micro-segmentation",
+     "label": "Micro-segmentation"
+    },
+    {
+     "slug": "implicit-deny",
+     "label": "Implicit deny"
+    },
+    {
+     "slug": "ssltls-offloading",
+     "label": "SSL/TLS offloading"
+    },
+    {
+     "slug": "unified-threat-management-utm",
+     "label": "UTM (Unified Threat Management)"
+    }
+   ],
+   "tips": [
+    "Zero trust = \"never trust, always verify.\" The exam heavily tests zero trust concepts including the control plane (decision-making) and data plane (enforcement). Implicit deny is the default firewall rule."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/network-security-architecture",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-network-security-architecture"
+  },
+  "network-segmentation": {
+   "slug": "network-segmentation",
+   "title": "Network Segmentation",
+   "description": "Network segmentation divides a network into isolated zones to limit lateral movement, contain breaches, and enforce access controls.",
+   "domain": 3,
+   "dir": "domain-3-security-architecture",
+   "weight": "high",
+   "aliases": [
+    "Network Segmentation"
+   ],
+   "eli5_en": "You know how a submarine has separate compartments with heavy doors? If water floods one room, the doors keep it from spreading to the rest of the submarine. Network segmentation works the same way -- it divides a big network into smaller sections with barriers between them. If a hacker breaks into one section, they cannot easily reach everything else. It limits the damage.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "physical-segmentation",
+     "label": "Physical segmentation"
+    },
+    {
+     "slug": "logical-segmentation",
+     "label": "Logical segmentation"
+    },
+    {
+     "slug": "vlans-virtual-lans",
+     "label": "VLANs (Virtual LANs)"
+    },
+    {
+     "slug": "micro-segmentation",
+     "label": "Micro-segmentation"
+    },
+    {
+     "slug": "air-gap",
+     "label": "Air gap"
+    },
+    {
+     "slug": "jumpbox-jump-server",
+     "label": "Jumpbox / jump server"
+    },
+    {
+     "slug": "east-west-traffic-control",
+     "label": "East-west traffic control"
+    }
+   ],
+   "tips": [
+    "VLANs provide logical segmentation but are not a security boundary by themselves — you still need ACLs or firewalls between VLANs. Air gap = most secure isolation. Micro-segmentation = zero trust at the workload level."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/network-segmentation",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-network-segmentation"
+  },
+  "pki": {
+   "slug": "pki",
+   "title": "PKI",
+   "description": "Public Key Infrastructure provides the framework of policies, hardware, and software for managing digital certificates and public-key encryption.",
+   "domain": 3,
+   "dir": "domain-3-security-architecture",
+   "weight": "high",
+   "aliases": [
+    "PKI"
+   ],
+   "eli5_en": "Imagine a post office that hands out special ID badges. Before two people can send each other secret letters, they go to the post office and get an official badge that proves who they are. The post office keeps track of all the badges and can cancel one if it gets stolen. PKI (Public Key Infrastructure) is the whole system -- the post office, the badges, and the rules -- that lets computers prove their identity and communicate securely.",
+   "eli5_zh": "PKI 就像是發行身分證的一整套系統。它決定了誰能發證、怎麼驗證、以及如果證件弄丟了要怎麼作廢。",
+   "concepts": [
+    {
+     "slug": "chain-of-trust",
+     "label": "Chain of trust"
+    },
+    {
+     "slug": "certificate-pinning",
+     "label": "Certificate pinning"
+    },
+    {
+     "slug": "key-escrow",
+     "label": "Key escrow"
+    },
+    {
+     "slug": "cross-certification",
+     "label": "Cross-certification"
+    },
+    {
+     "slug": "certificate-formats",
+     "label": "Certificate formats"
+    }
+   ],
+   "tips": [
+    "Root CA should be offline. OCSP is real-time; CRL is a list. Chain of trust: root signs intermediate, intermediate signs leaf. If the root is compromised, the entire PKI is compromised. OCSP stapling reduces latency."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/pki",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-pki"
+  },
+  "resilience-and-redundancy": {
+   "slug": "resilience-and-redundancy",
+   "title": "Resilience and Redundancy",
+   "description": "Resilience and redundancy ensure systems remain available and operational through fault tolerance, high availability, and recovery mechanisms.",
+   "domain": 3,
+   "dir": "domain-3-security-architecture",
+   "weight": "high",
+   "aliases": [
+    "Resilience",
+    "Redundancy",
+    "High Availability"
+   ],
+   "eli5_en": "Have you ever noticed that airplanes have two engines when they really only need one to fly? That extra engine is redundancy -- a backup in case the first one fails. Resilience is the plane's ability to keep flying safely even when something goes wrong. In the computer world, this means having backup systems, extra copies of important data, and plans that kick in automatically so everything keeps working even during problems.",
+   "eli5_zh": "韌性與冗餘就是「備份」。當一台機器壞了，另一台能立刻補上，確保生意不會因為意外而中斷。",
+   "concepts": [
+    {
+     "slug": "high-availability-ha",
+     "label": "High availability (HA)"
+    },
+    {
+     "slug": "failover",
+     "label": "Failover"
+    },
+    {
+     "slug": "failback",
+     "label": "Failback"
+    },
+    {
+     "slug": "diversity",
+     "label": "Diversity"
+    },
+    {
+     "slug": "capacity-planning",
+     "label": "Capacity planning"
+    },
+    {
+     "slug": "scalability",
+     "label": "Scalability"
+    },
+    {
+     "slug": "non-persistence",
+     "label": "Non-persistence"
+    }
+   ],
+   "tips": [
+    "RAID 0 = no redundancy (just performance). RAID 1 = mirror. RAID 5 = minimum 3 disks, survives 1 failure. RAID 10 = best of both. UPS provides short-term power; generators provide long-term. Active-active = both nodes serve traffic."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/resilience-and-redundancy",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-resilience-and-redundancy"
+  },
+  "serverless-and-containers": {
+   "slug": "serverless-and-containers",
+   "title": "Serverless and Containers",
+   "description": "Serverless computing and containers provide lightweight, scalable deployment models with unique security considerations.",
+   "domain": 3,
+   "dir": "domain-3-security-architecture",
+   "weight": "medium",
+   "aliases": [
+    "Serverless",
+    "Containers"
+   ],
+   "eli5_en": "Think of containers like lunchboxes -- each one has everything a meal needs, packed neatly so it does not mix with anyone else's food. You can stack many lunchboxes on one table. Serverless is even simpler: instead of packing your own lunch, you just tell the cafeteria what you want, and they make it for you on the spot. Both are ways to run programs on computers more efficiently, but each comes with its own safety rules to follow.",
+   "eli5_zh": "",
+   "concepts": [],
+   "tips": [
+    "Containers share the host kernel = weaker isolation than VMs. Always scan container images for vulnerabilities. Serverless = provider manages infrastructure, customer manages code and permissions. Both are ephemeral, making logging challenging."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/serverless-and-containers",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-serverless-and-containers"
+  },
+  "virtualization-security": {
+   "slug": "virtualization-security",
+   "title": "Virtualization Security",
+   "description": "Virtualization security addresses the risks and controls specific to hypervisors, virtual machines, and virtualized infrastructure.",
+   "domain": 3,
+   "dir": "domain-3-security-architecture",
+   "weight": "medium",
+   "aliases": [
+    "Virtualization Security"
+   ],
+   "eli5_en": "Picture one big apartment building where each apartment is completely separate -- you cannot hear your neighbors or walk into their space. Virtualization lets one powerful computer pretend to be many smaller computers, each in its own \"apartment.\" But if the building manager (the hypervisor) is not careful, someone could break through the walls. Virtualization security is about keeping each apartment safe and the building itself locked down.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "vm-escape",
+     "label": "VM escape"
+    },
+    {
+     "slug": "vm-sprawl",
+     "label": "VM sprawl"
+    },
+    {
+     "slug": "resource-contention",
+     "label": "Resource contention"
+    },
+    {
+     "slug": "vm-isolation",
+     "label": "VM isolation"
+    },
+    {
+     "slug": "snapshot-management",
+     "label": "Snapshot management"
+    },
+    {
+     "slug": "virtual-network-security",
+     "label": "Virtual network security"
+    },
+    {
+     "slug": "hardening-the-hypervisor",
+     "label": "Hardening the hypervisor"
+    },
+    {
+     "slug": "live-migration-security",
+     "label": "Live migration security"
+    },
+    {
+     "slug": "sandboxing",
+     "label": "Sandboxing"
+    }
+   ],
+   "tips": [
+    "Type 1 hypervisor = bare-metal, more secure. Type 2 = hosted, less secure. VM escape is the most critical virtualization threat. VM sprawl creates unmanaged attack surface. Always encrypt live migrations."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/virtualization-security",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-virtualization-security"
+  },
+  "vpn": {
+   "slug": "vpn",
+   "title": "VPN",
+   "description": "Virtual Private Networks create encrypted tunnels over public networks to provide secure remote access and site-to-site connectivity.",
+   "domain": 3,
+   "dir": "domain-3-security-architecture",
+   "weight": "high",
+   "aliases": [
+    "VPN"
+   ],
+   "eli5_en": "It's like having a secret underground tunnel between your house and your friend's house. Even though cars drive on the regular roads above, your tunnel is hidden and only you two can use it. A VPN creates a private, secret tunnel through the regular internet so that nobody can spy on the information you are sending back and forth. Everything inside the tunnel is scrambled so even if someone found it, they could not read it.",
+   "eli5_zh": "VPN 就像是在公共網路上挖了一條只有你通行的私人隧道。你在這條隧道裡傳輸的東西，路人即便看得到也摸不著。",
+   "concepts": [
+    {
+     "slug": "always-on-vpn",
+     "label": "Always-on VPN"
+    },
+    {
+     "slug": "vpn-concentrator",
+     "label": "VPN concentrator"
+    },
+    {
+     "slug": "authentication",
+     "label": "Authentication"
+    }
+   ],
+   "tips": [
+    "IPSec = Layer 3, uses ESP for encryption. SSL/TLS VPN = Layer 4+, uses port 443, firewall-friendly. Full tunnel = all traffic secured. Split tunnel = only corporate traffic secured. Always-on VPN ensures policy compliance."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/vpn",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-3-security-architecture/cases/case-vpn"
+  },
+  "automation-and-scripting": {
+   "slug": "automation-and-scripting",
+   "title": "Automation and Scripting",
+   "description": "Using scripts and automation tools to improve security operations efficiency and consistency",
+   "domain": 4,
+   "dir": "domain-4-security-operations",
+   "weight": "medium",
+   "aliases": [
+    "Security Automation"
+   ],
+   "eli5_en": "You know how you can set up dominoes so that knocking one over makes the rest fall automatically? Security automation is like that -- you write instructions once, and the computer follows those steps every single time without getting tired or making mistakes. Instead of a person clicking buttons all day to check if every door and window is locked, a script does it in seconds. This frees up the security team to focus on the tricky problems that need a real human brain.",
+   "eli5_zh": "自動化與腳本就是「自動掃地機」。只要寫好程式，電腦就會自動重複做那些無聊又累人的安全檢查，不會偷懶也不會出錯。",
+   "concepts": [
+    {
+     "slug": "use-cases",
+     "label": "Use cases"
+    },
+    {
+     "slug": "scripting-languages",
+     "label": "Scripting languages"
+    },
+    {
+     "slug": "infrastructure-as-code-iac",
+     "label": "Infrastructure as Code (IaC)"
+    },
+    {
+     "slug": "configuration-management",
+     "label": "Configuration management"
+    },
+    {
+     "slug": "api-integration",
+     "label": "API integration"
+    },
+    {
+     "slug": "continuous-integrationdeployment-cicd-security",
+     "label": "Continuous integration/deployment (CI/CD) security"
+    },
+    {
+     "slug": "guardrails",
+     "label": "Guardrails"
+    },
+    {
+     "slug": "benefits",
+     "label": "Benefits"
+    },
+    {
+     "slug": "risks",
+     "label": "Risks"
+    },
+    {
+     "slug": "curl",
+     "label": "curl"
+    },
+    {
+     "slug": "openssl",
+     "label": "OpenSSL"
+    }
+   ],
+   "tips": [
+    "Automation benefits: Faster, more consistent, scalable, fewer human errors. Key risk: automating a flawed process = faster failure at scale. Always test automation in a safe environment first."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/automation-and-scripting",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-automation-and-scripting"
+  },
+  "digital-forensics": {
+   "slug": "digital-forensics",
+   "title": "Digital Forensics",
+   "description": "Collection, preservation, and analysis of digital evidence following security incidents or legal matters",
+   "domain": 4,
+   "dir": "domain-4-security-operations",
+   "weight": "medium",
+   "aliases": [
+    "Computer Forensics"
+   ],
+   "eli5_en": "Think of a detective investigating a crime scene -- they take photos, dust for fingerprints, and put evidence in sealed bags so nothing gets contaminated. Digital forensics is the same thing, but for computers. When something bad happens on a computer or network, investigators carefully collect clues like files, messages, and activity logs. They have to be super careful so the evidence can be trusted later, just like a real crime scene.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "order-of-volatility",
+     "label": "Order of volatility"
+    },
+    {
+     "slug": "chain-of-custody",
+     "label": "Chain of custody"
+    },
+    {
+     "slug": "disk-imaging",
+     "label": "Disk imaging"
+    },
+    {
+     "slug": "write-blockers",
+     "label": "Write blockers"
+    },
+    {
+     "slug": "hash-verification",
+     "label": "Hash verification"
+    },
+    {
+     "slug": "legal-hold",
+     "label": "Legal hold"
+    },
+    {
+     "slug": "timeline-analysis",
+     "label": "Timeline analysis"
+    },
+    {
+     "slug": "live-forensics-vs-dead-forensics",
+     "label": "Live forensics vs. dead forensics"
+    },
+    {
+     "slug": "e-discovery",
+     "label": "E-discovery"
+    },
+    {
+     "slug": "anti-forensics",
+     "label": "Anti-forensics"
+    },
+    {
+     "slug": "rfc-3227",
+     "label": "RFC 3227"
+    },
+    {
+     "slug": "time-offsets",
+     "label": "Time offsets"
+    },
+    {
+     "slug": "ftk-imager",
+     "label": "FTK Imager"
+    },
+    {
+     "slug": "autopsy",
+     "label": "Autopsy"
+    },
+    {
+     "slug": "dd",
+     "label": "dd"
+    },
+    {
+     "slug": "memdump",
+     "label": "memdump"
+    }
+   ],
+   "tips": [
+    "Order of volatility (most to least): Registers → Cache → RAM → Disk → Remote logs → Archive. ALWAYS image first, analyze the copy. Never work on original evidence."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/digital-forensics",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-digital-forensics"
+  },
+  "edr-xdr": {
+   "slug": "edr-xdr",
+   "title": "Endpoint Detection and Response / Extended Detection and Response",
+   "description": "Advanced security solutions that detect, investigate, and respond to threats across endpoints and beyond",
+   "domain": 4,
+   "dir": "domain-4-security-operations",
+   "weight": "high",
+   "aliases": [
+    "EDR",
+    "XDR"
+   ],
+   "eli5_en": "Picture a school with security cameras in every hallway. EDR is like having a smart camera on each computer that watches what programs do and sounds an alarm if something looks wrong. XDR takes it further -- it connects cameras from the hallways, parking lot, cafeteria, and playground all together so you can spot a troublemaker no matter where they go. Instead of just catching bad guys at one door, you can track them across the whole school.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "behavioral-analysis",
+     "label": "Behavioral analysis"
+    },
+    {
+     "slug": "continuous-monitoring",
+     "label": "Continuous monitoring"
+    },
+    {
+     "slug": "threat-containment",
+     "label": "Threat containment"
+    },
+    {
+     "slug": "automated-response",
+     "label": "Automated response"
+    },
+    {
+     "slug": "root-cause-analysis",
+     "label": "Root cause analysis"
+    },
+    {
+     "slug": "telemetry-correlation-xdr",
+     "label": "Telemetry correlation (XDR)"
+    },
+    {
+     "slug": "threat-intelligence-integration",
+     "label": "Threat intelligence integration"
+    },
+    {
+     "slug": "fileless-malware-detection",
+     "label": "Fileless malware detection"
+    },
+    {
+     "slug": "ngfw",
+     "label": "NGFW (Next-Generation Firewall)"
+    },
+    {
+     "slug": "remote-attestation",
+     "label": "Remote attestation"
+    }
+   ],
+   "tips": [
+    "EDR = endpoints only. XDR = everything (endpoints + network + cloud + email). Both go beyond signatures to use behavioral analytics. EDR is to antivirus what a security camera system is to a door lock."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/edr-xdr",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-edr-xdr"
+  },
+  "email-security": {
+   "slug": "email-security",
+   "title": "Email Security",
+   "description": "Controls and technologies to protect email communications from phishing, spoofing, and data loss",
+   "domain": 4,
+   "dir": "domain-4-security-operations",
+   "weight": "medium",
+   "aliases": [
+    "Email Protection"
+   ],
+   "eli5_en": "Your mailbox at home sometimes gets junk mail or letters pretending to be from someone they are not. Email security is like having a really smart mail sorter who checks every letter before it reaches you. They look at the return address to make sure it is real, scan for anything dangerous inside, and toss out the fakes. Without this protection, bad people could trick you into opening something harmful just by sending a convincing-looking message.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "spf-sender-policy-framework",
+     "label": "SPF (Sender Policy Framework)"
+    },
+    {
+     "slug": "dkim-domainkeys-identified-mail",
+     "label": "DKIM (DomainKeys Identified Mail)"
+    },
+    {
+     "slug": "dmarc-domain-based-message-authentication-reporting-conformance",
+     "label": "DMARC (Domain-based Message Authentication, Reporting & Conformance)"
+    },
+    {
+     "slug": "secure-email-gateway",
+     "label": "Secure email gateway"
+    },
+    {
+     "slug": "smime",
+     "label": "S/MIME"
+    },
+    {
+     "slug": "email-encryption",
+     "label": "Email encryption"
+    },
+    {
+     "slug": "anti-phishing-controls",
+     "label": "Anti-phishing controls"
+    },
+    {
+     "slug": "business-email-compromise-bec",
+     "label": "Business Email Compromise (BEC)"
+    },
+    {
+     "slug": "data-loss-prevention-dlp",
+     "label": "Data Loss Prevention (DLP)"
+    }
+   ],
+   "tips": [
+    "SPF = who CAN send (IP allowlist in DNS). DKIM = message INTEGRITY (digital signature). DMARC = what to DO when checks fail (policy). All three together provide strong anti-spoofing protection."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/email-security",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-email-security"
+  },
+  "endpoint-security": {
+   "slug": "endpoint-security",
+   "title": "Endpoint Security",
+   "description": "Protection of end-user devices such as workstations, laptops, and mobile devices from threats",
+   "domain": 4,
+   "dir": "domain-4-security-operations",
+   "weight": "high",
+   "aliases": [
+    "Endpoint Protection"
+   ],
+   "eli5_en": "Every laptop, phone, and tablet in a company is like a door into a building. Endpoint security means putting a strong lock, an alarm, and a guard at each of those doors. If someone tries to sneak in through any single device, the protection catches them. It is not enough to just guard the front gate when there are hundreds of doors -- you need protection on every single one.",
+   "eli5_zh": "端點安全就是保護每一台電腦。就像給每個人的房間都裝上防盜鎖和警報器，防止小偷從任何一扇窗戶溜進來。",
+   "concepts": [
+    {
+     "slug": "antivirus-anti-malware",
+     "label": "Antivirus / Anti-malware"
+    },
+    {
+     "slug": "host-based-firewall",
+     "label": "Host-based firewall"
+    },
+    {
+     "slug": "host-based-idsips-hidships",
+     "label": "Host-based IDS/IPS (HIDS/HIPS)"
+    },
+    {
+     "slug": "data-loss-prevention-dlp",
+     "label": "Data Loss Prevention (DLP)"
+    },
+    {
+     "slug": "full-disk-encryption-fde",
+     "label": "Full disk encryption (FDE)"
+    },
+    {
+     "slug": "application-whitelistingallowlisting",
+     "label": "Application whitelisting/allowlisting"
+    },
+    {
+     "slug": "patch-management",
+     "label": "Patch management"
+    },
+    {
+     "slug": "mobile-device-management-mdm",
+     "label": "Mobile Device Management (MDM)"
+    },
+    {
+     "slug": "boot-integrity",
+     "label": "Boot integrity"
+    },
+    {
+     "slug": "tpm",
+     "label": "TPM (Trusted Platform Module)"
+    },
+    {
+     "slug": "secure-boot",
+     "label": "Secure boot"
+    },
+    {
+     "slug": "measured-boot",
+     "label": "Measured boot"
+    },
+    {
+     "slug": "trusted-boot",
+     "label": "Trusted boot"
+    },
+    {
+     "slug": "sed",
+     "label": "SED (Self-Encrypting Drive)"
+    }
+   ],
+   "tips": [
+    "Endpoint security is defense-in-depth at the device level. Layer: FDE + host firewall + AV + EDR + patching + allowlisting. Know that BYOD requires MDM and containerization."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/endpoint-security",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-endpoint-security"
+  },
+  "federation": {
+   "slug": "federation",
+   "title": "Federation",
+   "description": "Trust relationship between organizations enabling cross-domain authentication and resource sharing",
+   "domain": 4,
+   "dir": "domain-4-security-operations",
+   "weight": "medium",
+   "aliases": [
+    "Federated Identity"
+   ],
+   "eli5_en": "You know how a library card from your town sometimes works at libraries in nearby towns too? That is federation. Different organizations agree to trust each other, so when you prove who you are at one place, the others accept it without making you sign up again. Each library still controls its own books and rules, but they all honor the same card. This makes life easier for everyone while each place stays in charge of its own stuff.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "trust-relationships",
+     "label": "Trust relationships"
+    },
+    {
+     "slug": "identity-provider-idp",
+     "label": "Identity Provider (IdP)"
+    },
+    {
+     "slug": "service-provider-sp",
+     "label": "Service Provider (SP)"
+    },
+    {
+     "slug": "saml",
+     "label": "SAML"
+    },
+    {
+     "slug": "openid-connect",
+     "label": "OpenID Connect"
+    },
+    {
+     "slug": "ws-federation",
+     "label": "WS-Federation"
+    },
+    {
+     "slug": "transitive-trust",
+     "label": "Transitive trust"
+    },
+    {
+     "slug": "attribute-mapping",
+     "label": "Attribute mapping"
+    },
+    {
+     "slug": "cross-certification",
+     "label": "Cross-certification"
+    },
+    {
+     "slug": "attestation",
+     "label": "Attestation"
+    },
+    {
+     "slug": "radius-federation",
+     "label": "RADIUS federation"
+    }
+   ],
+   "tips": [
+    "Federation = trust BETWEEN organizations. SSO = access within one organization's applications. Federation enables SSO across organizational boundaries. Think of federation as \"inter-organizational SSO.\""
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/federation",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-federation"
+  },
+  "hardening": {
+   "slug": "hardening",
+   "title": "Hardening",
+   "description": "Reducing the attack surface of systems by eliminating unnecessary services, applying patches, and enforcing secure configurations",
+   "domain": 4,
+   "dir": "domain-4-security-operations",
+   "weight": "high",
+   "aliases": [
+    "System Hardening",
+    "OS Hardening"
+   ],
+   "eli5_en": "When you move into a new house, you lock the doors, close the windows, and maybe remove the spare key from under the mat. Hardening a computer is the same idea -- you turn off features you do not need, remove programs that came pre-installed, and change all the default passwords. The fewer unlocked doors and open windows a system has, the harder it is for a bad guy to sneak in.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "cis-benchmarks",
+     "label": "CIS Benchmarks"
+    },
+    {
+     "slug": "stig-security-technical-implementation-guide",
+     "label": "STIG (Security Technical Implementation Guide)"
+    },
+    {
+     "slug": "disable-unnecessary-services-and-ports",
+     "label": "Disable unnecessary services and ports"
+    },
+    {
+     "slug": "remove-default-accounts-and-passwords",
+     "label": "Remove default accounts and passwords"
+    },
+    {
+     "slug": "patch-management",
+     "label": "Patch management"
+    },
+    {
+     "slug": "least-functionality-principle",
+     "label": "Least functionality principle"
+    },
+    {
+     "slug": "application-allowlisting",
+     "label": "Application allowlisting"
+    },
+    {
+     "slug": "registry-and-gpo-hardening",
+     "label": "Registry and GPO hardening"
+    },
+    {
+     "slug": "firmware-updates",
+     "label": "Firmware updates"
+    },
+    {
+     "slug": "secure-baseline-images",
+     "label": "Secure baseline images"
+    },
+    {
+     "slug": "file-system-permissions",
+     "label": "File system permissions"
+    }
+   ],
+   "tips": [
+    "Hardening = reduce attack surface. Steps: remove defaults, disable services, patch, configure securely, monitor for drift. CIS Benchmarks are the go-to reference for \"how should I configure this?\""
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/hardening",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-hardening"
+  },
+  "identity-management": {
+   "slug": "identity-management",
+   "title": "Identity Management",
+   "description": "Centralized management of user identities, credentials, and access rights across systems",
+   "domain": 4,
+   "dir": "domain-4-security-operations",
+   "weight": "high",
+   "aliases": [
+    "IdM"
+   ],
+   "eli5_en": "It is like the front office at a school that keeps track of every student, teacher, and visitor. They decide who gets a badge, what rooms each person can enter, and when someone leaves, they take the badge back. Identity management does the same thing for computers -- it controls who gets an account, what they are allowed to access, and makes sure old accounts get shut off when people leave. Without it, anyone could wander in and go anywhere.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "provisioning-and-deprovisioning",
+     "label": "Provisioning and deprovisioning"
+    },
+    {
+     "slug": "identity-lifecycle-management",
+     "label": "Identity lifecycle management"
+    },
+    {
+     "slug": "directory-services",
+     "label": "Directory services"
+    },
+    {
+     "slug": "role-based-access-control-rbac",
+     "label": "Role-Based Access Control (RBAC)"
+    },
+    {
+     "slug": "attribute-based-access-control-abac",
+     "label": "Attribute-Based Access Control (ABAC)"
+    },
+    {
+     "slug": "identity-governance",
+     "label": "Identity governance"
+    },
+    {
+     "slug": "self-service-capabilities",
+     "label": "Self-service capabilities"
+    },
+    {
+     "slug": "privileged-accounts",
+     "label": "Privileged accounts"
+    },
+    {
+     "slug": "identity-provider-idp",
+     "label": "IdP (Identity Provider)"
+    }
+   ],
+   "tips": [
+    "Identity management is the \"who\" — authentication verifies the identity, authorization determines access. Know the difference between identification, authentication, authorization, and accounting (IAAA)."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/identity-management",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-identity-management"
+  },
+  "incident-response": {
+   "slug": "incident-response",
+   "title": "Incident Response",
+   "description": "Structured approach to preparing for, detecting, containing, and recovering from security incidents",
+   "domain": 4,
+   "dir": "domain-4-security-operations",
+   "weight": "high",
+   "aliases": [
+    "IR"
+   ],
+   "eli5_en": "Think about a fire drill at school. Before any fire happens, you practice what to do: who calls for help, which exit to use, where to meet outside. Incident response is a plan like that, but for cyberattacks. It spells out what the team should do step by step when something bad happens -- how to spot the problem, stop it from spreading, clean it up, and learn from it so it does not happen again.",
+   "eli5_zh": "應變流程就像火災演習。發生問題時，先隔離 (滅火)、清除 (打掃)、最後檢討改進 (避免下次火災)。",
+   "concepts": [
+    {
+     "slug": "nist-ir-lifecycle",
+     "label": "NIST IR lifecycle"
+    },
+    {
+     "slug": "preparation",
+     "label": "Preparation"
+    },
+    {
+     "slug": "detection-and-analysis",
+     "label": "Detection and analysis"
+    },
+    {
+     "slug": "containment",
+     "label": "Containment"
+    },
+    {
+     "slug": "eradication",
+     "label": "Eradication"
+    },
+    {
+     "slug": "recovery",
+     "label": "Recovery"
+    },
+    {
+     "slug": "lessons-learned-post-incident-review",
+     "label": "Lessons learned / Post-incident review"
+    },
+    {
+     "slug": "chain-of-custody",
+     "label": "Chain of custody"
+    },
+    {
+     "slug": "communication-plan",
+     "label": "Communication plan"
+    },
+    {
+     "slug": "tabletop-exercises",
+     "label": "Tabletop exercises"
+    },
+    {
+     "slug": "nist-sp-800-61",
+     "label": "NIST SP 800-61"
+    },
+    {
+     "slug": "picerl",
+     "label": "PICERL"
+    },
+    {
+     "slug": "exercise-types",
+     "label": "Exercise types"
+    },
+    {
+     "slug": "mitre-attck-framework",
+     "label": "MITRE ATT&CK"
+    },
+    {
+     "slug": "diamond-model",
+     "label": "Diamond Model"
+    },
+    {
+     "slug": "cyber-kill-chain",
+     "label": "Cyber Kill Chain"
+    }
+   ],
+   "tips": [
+    "NIST phases: Prep → Detect → Contain → Eradicate → Recover → Lessons Learned. The exam loves scenario questions asking \"what do you do FIRST?\" — answer: contain the threat to prevent spread."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/incident-response",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-incident-response"
+  },
+  "log-management": {
+   "slug": "log-management",
+   "title": "Log Management",
+   "description": "Collection, storage, analysis, and retention of log data from systems, applications, and security devices",
+   "domain": 4,
+   "dir": "domain-4-security-operations",
+   "weight": "medium",
+   "aliases": [
+    "Log Monitoring"
+   ],
+   "eli5_en": "Every time someone walks through a door in a building, a security camera records it. Logs are like those recordings, but for computers -- they write down who did what and when. Log management means collecting all those recordings from every door in every building, putting them in one place, and keeping them organized so that if something goes wrong, you can rewind and figure out exactly what happened.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "log-sources",
+     "label": "Log sources"
+    },
+    {
+     "slug": "syslog",
+     "label": "Syslog"
+    },
+    {
+     "slug": "centralized-logging",
+     "label": "Centralized logging"
+    },
+    {
+     "slug": "log-forwarding-agents",
+     "label": "Log forwarding agents"
+    },
+    {
+     "slug": "ntp-synchronization",
+     "label": "NTP synchronization"
+    },
+    {
+     "slug": "log-retention-policies",
+     "label": "Log retention policies"
+    },
+    {
+     "slug": "log-integrity",
+     "label": "Log integrity"
+    },
+    {
+     "slug": "windows-event-log",
+     "label": "Windows Event Log"
+    },
+    {
+     "slug": "journald",
+     "label": "journald"
+    },
+    {
+     "slug": "rsyslog",
+     "label": "rsyslog"
+    },
+    {
+     "slug": "syslog-ng",
+     "label": "syslog-ng"
+    },
+    {
+     "slug": "journalctl",
+     "label": "journalctl"
+    }
+   ],
+   "tips": [
+    "Time synchronization (NTP) is CRITICAL — without consistent timestamps, you cannot correlate events across systems. Key Windows Event IDs: 4624 = logon success, 4625 = logon failure, 4648 = explicit credential use."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/log-management",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-log-management"
+  },
+  "mfa": {
+   "slug": "mfa",
+   "title": "Multi-Factor Authentication",
+   "description": "Authentication requiring two or more distinct factors to verify user identity",
+   "domain": 4,
+   "dir": "domain-4-security-operations",
+   "weight": "high",
+   "aliases": [
+    "MFA",
+    "Multi-Factor Authentication"
+   ],
+   "eli5_en": "A password is like a house key -- if someone copies it, they can walk right in. Multi-factor authentication adds extra checks, like also needing your fingerprint or a special code sent to your phone. So even if a bad guy steals your password, they still cannot get in because they do not have the other pieces. It is like needing both a key and a secret handshake to open the door.",
+   "eli5_zh": "多因素驗證就是「雙重保險」。除了密碼 (你知道的東西)，還要用手機簡訊 (你有的東西) 或指紋 (你就是的東西) 才能進門。",
+   "concepts": [
+    {
+     "slug": "something-you-know",
+     "label": "Something you know"
+    },
+    {
+     "slug": "something-you-have",
+     "label": "Something you have"
+    },
+    {
+     "slug": "something-you-are",
+     "label": "Something you are"
+    },
+    {
+     "slug": "something-you-do",
+     "label": "Something you do"
+    },
+    {
+     "slug": "somewhere-you-are",
+     "label": "Somewhere you are"
+    },
+    {
+     "slug": "totp-time-based-one-time-password",
+     "label": "TOTP (Time-based One-Time Password)"
+    },
+    {
+     "slug": "hotp-hmac-based-one-time-password",
+     "label": "HOTP (HMAC-based One-Time Password)"
+    },
+    {
+     "slug": "push-notifications",
+     "label": "Push notifications"
+    },
+    {
+     "slug": "passwordless-authentication",
+     "label": "Passwordless authentication"
+    },
+    {
+     "slug": "mfa-fatigue-attacks",
+     "label": "MFA fatigue attacks"
+    },
+    {
+     "slug": "biometric-types",
+     "label": "Biometric types"
+    },
+    {
+     "slug": "far",
+     "label": "FAR (False Acceptance Rate)"
+    },
+    {
+     "slug": "frr",
+     "label": "FRR (False Rejection Rate)"
+    },
+    {
+     "slug": "cer",
+     "label": "CER (Crossover Error Rate)"
+    }
+   ],
+   "tips": [
+    "Two passwords = NOT MFA (same factor category). MFA requires factors from DIFFERENT categories. A password + PIN = single factor (both \"something you know\"). A password + fingerprint = true MFA."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/mfa",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-mfa"
+  },
+  "network-monitoring": {
+   "slug": "network-monitoring",
+   "title": "Network Monitoring",
+   "description": "Continuous observation of network traffic and performance to detect anomalies and security threats",
+   "domain": 4,
+   "dir": "domain-4-security-operations",
+   "weight": "medium",
+   "aliases": [
+    "Network Traffic Analysis"
+   ],
+   "eli5_en": "Picture a lifeguard sitting in a tall chair watching the whole swimming pool. They scan the water constantly, looking for anyone in trouble. Network monitoring is like that lifeguard, but for your computer network -- it watches all the data flowing back and forth, looking for anything unusual. If someone is sending way too much data or connecting from a strange place, the monitoring system spots it and raises the alarm.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "snmp-simple-network-management-protocol",
+     "label": "SNMP (Simple Network Management Protocol)"
+    },
+    {
+     "slug": "netflow-sflow-ipfix",
+     "label": "NetFlow / sFlow / IPFIX"
+    },
+    {
+     "slug": "packet-capture-pcap",
+     "label": "Packet capture (PCAP)"
+    },
+    {
+     "slug": "network-taps",
+     "label": "Network taps"
+    },
+    {
+     "slug": "port-mirroring-span",
+     "label": "Port mirroring (SPAN)"
+    },
+    {
+     "slug": "bandwidth-monitoring",
+     "label": "Bandwidth monitoring"
+    },
+    {
+     "slug": "baseline-establishment",
+     "label": "Baseline establishment"
+    },
+    {
+     "slug": "protocol-analysis",
+     "label": "Protocol analysis"
+    },
+    {
+     "slug": "network-based-idsips",
+     "label": "Network-based IDS/IPS"
+    },
+    {
+     "slug": "tcpdump",
+     "label": "tcpdump"
+    },
+    {
+     "slug": "tcpreplay",
+     "label": "tcpreplay"
+    },
+    {
+     "slug": "wireshark",
+     "label": "Wireshark"
+    },
+    {
+     "slug": "pathping",
+     "label": "pathping"
+    },
+    {
+     "slug": "hping",
+     "label": "hping"
+    }
+   ],
+   "tips": [
+    "Full packet capture = most detail but most storage. NetFlow = metadata only (who talked to whom, how much). Use SPAN ports or network taps to feed traffic to monitoring tools. SNMPv3 is the only secure version."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/network-monitoring",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-network-monitoring"
+  },
+  "penetration-testing": {
+   "slug": "penetration-testing",
+   "title": "Penetration Testing",
+   "description": "Authorized simulated attack against systems to evaluate security controls and identify exploitable weaknesses",
+   "domain": 4,
+   "dir": "domain-4-security-operations",
+   "weight": "high",
+   "aliases": [
+    "Pen Test",
+    "Pentest"
+   ],
+   "eli5_en": "Have you ever asked a friend to try to sneak into your blanket fort to see if they could find a way in? Penetration testing is exactly that, but for computer systems. A company hires friendly hackers and gives them permission to try to break in. When they find a weak spot, they write a report so the company can fix it before a real bad guy finds the same hole.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "testing-types",
+     "label": "Testing types"
+    },
+    {
+     "slug": "phases",
+     "label": "Phases"
+    },
+    {
+     "slug": "rules-of-engagement-roe",
+     "label": "Rules of engagement (ROE)"
+    },
+    {
+     "slug": "reconnaissance",
+     "label": "Reconnaissance"
+    },
+    {
+     "slug": "exploitation",
+     "label": "Exploitation"
+    },
+    {
+     "slug": "lateral-movement",
+     "label": "Lateral movement"
+    },
+    {
+     "slug": "privilege-escalation",
+     "label": "Privilege escalation"
+    },
+    {
+     "slug": "pivoting",
+     "label": "Pivoting"
+    },
+    {
+     "slug": "bug-bounty-programs",
+     "label": "Bug bounty programs"
+    },
+    {
+     "slug": "red-team-vs-pen-test",
+     "label": "Red team vs. pen test"
+    },
+    {
+     "slug": "wardriving",
+     "label": "Wardriving"
+    },
+    {
+     "slug": "warflying",
+     "label": "Warflying"
+    }
+   ],
+   "tips": [
+    "Black box = attacker view (unknown environment). White box = full transparency (known environment). Gray box = partial info (partially known). Always get written authorization before testing."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/penetration-testing",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-penetration-testing"
+  },
+  "privileged-access-management": {
+   "slug": "privileged-access-management",
+   "title": "Privileged Access Management",
+   "description": "Controls and monitoring for accounts with elevated permissions to critical systems",
+   "domain": 4,
+   "dir": "domain-4-security-operations",
+   "weight": "high",
+   "aliases": [
+    "PAM"
+   ],
+   "eli5_en": "In a school, the principal has a master key that opens every room. If that key gets lost, someone could go anywhere -- the office, the supply room, everywhere. Privileged access management is about keeping those master keys in a locked safe, only handing them out when absolutely needed, watching what people do with them, and taking them back as soon as possible. The fewer people holding master keys, the safer the building.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "password-vaulting",
+     "label": "Password vaulting"
+    },
+    {
+     "slug": "just-in-time-jit-access",
+     "label": "Just-in-time (JIT) access"
+    },
+    {
+     "slug": "session-recording",
+     "label": "Session recording"
+    },
+    {
+     "slug": "credential-rotation",
+     "label": "Credential rotation"
+    },
+    {
+     "slug": "break-glass-accounts",
+     "label": "Break-glass accounts"
+    },
+    {
+     "slug": "service-account-management",
+     "label": "Service account management"
+    },
+    {
+     "slug": "least-privilege-enforcement",
+     "label": "Least privilege enforcement"
+    },
+    {
+     "slug": "separation-of-duties",
+     "label": "Separation of duties"
+    },
+    {
+     "slug": "pap",
+     "label": "PAP (Password Authentication Protocol)"
+    },
+    {
+     "slug": "chap",
+     "label": "CHAP (Challenge-Handshake Authentication Protocol)"
+    },
+    {
+     "slug": "ms-chapv2",
+     "label": "MS-CHAPv2"
+    }
+   ],
+   "tips": [
+    "PAM focuses on the \"keys to the kingdom\" — admin and root accounts. Key controls: vault credentials, limit time, record sessions, rotate passwords. If a scenario mentions admin access, think PAM."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/privileged-access-management",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-privileged-access-management"
+  },
+  "siem": {
+   "slug": "siem",
+   "title": "Security Information and Event Management",
+   "description": "Centralized platform for collecting, correlating, and analyzing security events across an organization",
+   "domain": 4,
+   "dir": "domain-4-security-operations",
+   "weight": "high",
+   "aliases": [
+    "SIEM"
+   ],
+   "eli5_en": "Think of a giant bulletin board in a security guard's office where every camera, door sensor, and alarm in the building reports what it sees. A SIEM is that bulletin board for computers. It collects alerts from every device across the entire network, puts them all in one place, and connects the dots. If the front door alarm and a camera alert happen at the same time, the SIEM figures out they are probably related and warns the security team.",
+   "eli5_zh": "SIEM 就像是公司的總控中心。它會收集所有監視器 (日誌) 的畫面，一旦發現哪裡有小偷，就會立刻發出警報。",
+   "concepts": [
+    {
+     "slug": "log-aggregation",
+     "label": "Log aggregation"
+    },
+    {
+     "slug": "normalization",
+     "label": "Normalization"
+    },
+    {
+     "slug": "correlation-rules",
+     "label": "Correlation rules"
+    },
+    {
+     "slug": "real-time-alerting",
+     "label": "Real-time alerting"
+    },
+    {
+     "slug": "dashboards-and-reporting",
+     "label": "Dashboards and reporting"
+    },
+    {
+     "slug": "retention-and-archival",
+     "label": "Retention and archival"
+    },
+    {
+     "slug": "user-and-entity-behavior-analytics-ueba",
+     "label": "User and Entity Behavior Analytics (UEBA)"
+    },
+    {
+     "slug": "common-siem-platforms",
+     "label": "Common SIEM platforms"
+    },
+    {
+     "slug": "syslog",
+     "label": "Syslog"
+    },
+    {
+     "slug": "syslog-severity-levels",
+     "label": "Syslog severity levels"
+    },
+    {
+     "slug": "journalctl",
+     "label": "journalctl"
+    }
+   ],
+   "tips": [
+    "SIEM = Collect, Correlate, Alert. It does NOT block attacks — it detects and notifies. For automated response, you need soar. Think of SIEM as the \"security dashboard\" that watches everything."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/siem",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-siem"
+  },
+  "soar": {
+   "slug": "soar",
+   "title": "Security Orchestration, Automation, and Response",
+   "description": "Platform that automates security operations workflows and coordinates incident response across tools",
+   "domain": 4,
+   "dir": "domain-4-security-operations",
+   "weight": "medium",
+   "aliases": [
+    "SOAR"
+   ],
+   "eli5_en": "You know how a vending machine automatically gives you a snack when you press a button, without needing a person behind it? SOAR does that for security. When an alert comes in, SOAR follows a recipe of steps automatically -- like blocking a suspicious address, sending a message to the team, and creating a ticket. This way, the security team does not have to do every little step by hand and can respond way faster.",
+   "eli5_zh": "SOAR 就像是自動報警器。一旦發現小偷 (SIEM 發出警報)，它會自動鎖上大門並通報警察，完全不需要人工操作。",
+   "concepts": [
+    {
+     "slug": "orchestration",
+     "label": "Orchestration"
+    },
+    {
+     "slug": "automation",
+     "label": "Automation"
+    },
+    {
+     "slug": "playbooksrunbooks",
+     "label": "Playbooks/Runbooks"
+    },
+    {
+     "slug": "case-management",
+     "label": "Case management"
+    },
+    {
+     "slug": "threat-intelligence-enrichment",
+     "label": "Threat intelligence enrichment"
+    },
+    {
+     "slug": "integration-apis",
+     "label": "Integration APIs"
+    },
+    {
+     "slug": "metrics-and-reporting",
+     "label": "Metrics and reporting"
+    }
+   ],
+   "tips": [
+    "SIEM = detect and alert. SOAR = respond and automate. They work together: SIEM triggers the alert, SOAR executes the playbook. Think \"SIEM watches, SOAR acts.\""
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/soar",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-soar"
+  },
+  "sso": {
+   "slug": "sso",
+   "title": "Single Sign-On",
+   "description": "Authentication mechanism allowing users to access multiple systems with one set of credentials",
+   "domain": 4,
+   "dir": "domain-4-security-operations",
+   "weight": "high",
+   "aliases": [
+    "SSO",
+    "Single Sign-On"
+   ],
+   "eli5_en": "Remember how annoying it would be if you had to show your ID at every single classroom door in school? Single sign-on is like showing your ID once at the front entrance and then being allowed into every room for the rest of the day. You log in one time, and all your apps and websites recognize you without asking for your password again. It saves time and means you only need to remember one password.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "saml-security-assertion-markup-language",
+     "label": "SAML (Security Assertion Markup Language)"
+    },
+    {
+     "slug": "oauth-20",
+     "label": "OAuth 2.0"
+    },
+    {
+     "slug": "openid-connect-oidc",
+     "label": "OpenID Connect (OIDC)"
+    },
+    {
+     "slug": "kerberos",
+     "label": "Kerberos"
+    },
+    {
+     "slug": "identity-provider-idp",
+     "label": "Identity Provider (IdP)"
+    },
+    {
+     "slug": "service-provider-sp",
+     "label": "Service Provider (SP)"
+    },
+    {
+     "slug": "token-based-authentication",
+     "label": "Token-based authentication"
+    },
+    {
+     "slug": "single-point-of-failure-risk",
+     "label": "Single point of failure risk"
+    }
+   ],
+   "tips": [
+    "SAML = enterprise/web SSO (XML-based), OAuth = authorization (not authentication), OIDC = authentication on top of OAuth. Kerberos = on-premises AD environments using tickets and a KDC."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/sso",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-sso"
+  },
+  "threat-hunting": {
+   "slug": "threat-hunting",
+   "title": "Threat Hunting",
+   "description": "Proactive searching through networks and datasets to detect threats that evade existing security controls",
+   "domain": 4,
+   "dir": "domain-4-security-operations",
+   "weight": "medium",
+   "aliases": [
+    "Cyber Threat Hunting"
+   ],
+   "eli5_en": "Most alarms wait for a burglar to trip them. But a threat hunter is more like a detective who goes looking for trouble before the alarm even rings. They walk through the building checking closets, looking behind doors, and following suspicious footprints -- not because an alarm went off, but because they have a hunch something might be wrong. If they find anything, they can stop the bad guy before real damage is done.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "hypothesis-driven-hunting",
+     "label": "Hypothesis-driven hunting"
+    },
+    {
+     "slug": "intelligence-driven-hunting",
+     "label": "Intelligence-driven hunting"
+    },
+    {
+     "slug": "baseline-driven-hunting",
+     "label": "Baseline-driven hunting"
+    },
+    {
+     "slug": "mitre-attck-framework",
+     "label": "MITRE ATT&CK framework"
+    },
+    {
+     "slug": "data-sources",
+     "label": "Data sources"
+    },
+    {
+     "slug": "indicators-of-attack-ioa",
+     "label": "Indicators of Attack (IoA)"
+    },
+    {
+     "slug": "advisary-emulation",
+     "label": "Advisary emulation"
+    },
+    {
+     "slug": "hunt-maturity-model",
+     "label": "Hunt maturity model"
+    },
+    {
+     "slug": "theharvester",
+     "label": "theHarvester"
+    },
+    {
+     "slug": "dnsenum",
+     "label": "dnsenum"
+    },
+    {
+     "slug": "nessus",
+     "label": "Nessus"
+    },
+    {
+     "slug": "cuckoo-sandbox",
+     "label": "Cuckoo Sandbox"
+    }
+   ],
+   "tips": [
+    "Threat hunting is PROACTIVE (you go looking), not reactive (waiting for alerts). It requires skilled humans — you cannot fully automate hunting. Think of it as \"assume breach and go find it.\""
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/threat-hunting",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-threat-hunting"
+  },
+  "threat-intelligence": {
+   "slug": "threat-intelligence",
+   "title": "Threat Intelligence",
+   "description": "Evidence-based knowledge about existing or emerging threats used to inform security decisions",
+   "domain": 4,
+   "dir": "domain-4-security-operations",
+   "weight": "medium",
+   "aliases": [
+    "CTI",
+    "Cyber Threat Intelligence"
+   ],
+   "eli5_en": "It is like getting a heads-up from your neighbor that someone has been trying doorknobs on your street. Threat intelligence is information about what bad guys are doing, what tools they use, and who they are targeting. When security teams get this information early, they can lock the right doors before the bad guys even show up. The better your information, the better you can prepare.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "strategic-intelligence",
+     "label": "Strategic intelligence"
+    },
+    {
+     "slug": "operational-intelligence",
+     "label": "Operational intelligence"
+    },
+    {
+     "slug": "tactical-intelligence",
+     "label": "Tactical intelligence"
+    },
+    {
+     "slug": "technical-intelligence",
+     "label": "Technical intelligence"
+    },
+    {
+     "slug": "threat-feeds",
+     "label": "Threat feeds"
+    },
+    {
+     "slug": "stix-structured-threat-information-expression",
+     "label": "STIX (Structured Threat Information eXpression)"
+    },
+    {
+     "slug": "taxii-trusted-automated-exchange-of-intelligence-information",
+     "label": "TAXII (Trusted Automated eXchange of Intelligence Information)"
+    },
+    {
+     "slug": "information-sharing-and-analysis-centers-isacs",
+     "label": "Information Sharing and Analysis Centers (ISACs)"
+    },
+    {
+     "slug": "threat-actor-profiling",
+     "label": "Threat actor profiling"
+    },
+    {
+     "slug": "confidence-levels",
+     "label": "Confidence levels"
+    },
+    {
+     "slug": "sentiment-analysis",
+     "label": "Sentiment analysis"
+    },
+    {
+     "slug": "nvd",
+     "label": "NVD (National Vulnerability Database)"
+    }
+   ],
+   "tips": [
+    "Intelligence levels: Strategic (WHY/WHO - executives) → Operational (WHAT campaigns) → Tactical (HOW - TTPs) → Technical (specific IoCs - machines). STIX = format, TAXII = transport."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/threat-intelligence",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-threat-intelligence"
+  },
+  "vulnerability-management": {
+   "slug": "vulnerability-management",
+   "title": "Vulnerability Management",
+   "description": "Ongoing process of identifying, classifying, prioritizing, and remediating security weaknesses",
+   "domain": 4,
+   "dir": "domain-4-security-operations",
+   "weight": "high",
+   "aliases": [
+    "Vuln Management"
+   ],
+   "eli5_en": "Think of your house having a crack in a window, a loose lock, and a hole in the fence. Vulnerability management is like walking around your house regularly, writing down every weak spot, deciding which ones are most dangerous, and fixing them in order. You start with the broken lock on the front door because that is the easiest way for someone to get in. Then you keep checking because new cracks can appear anytime.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "vulnerability-scanning",
+     "label": "Vulnerability scanning"
+    },
+    {
+     "slug": "credentialed-vs-non-credentialed-scans",
+     "label": "Credentialed vs. non-credentialed scans"
+    },
+    {
+     "slug": "cvss-common-vulnerability-scoring-system",
+     "label": "CVSS (Common Vulnerability Scoring System)"
+    },
+    {
+     "slug": "cve-common-vulnerabilities-and-exposures",
+     "label": "CVE (Common Vulnerabilities and Exposures)"
+    },
+    {
+     "slug": "risk-based-prioritization",
+     "label": "Risk-based prioritization"
+    },
+    {
+     "slug": "remediation-vs-mitigation",
+     "label": "Remediation vs. mitigation"
+    },
+    {
+     "slug": "patch-management",
+     "label": "Patch management"
+    },
+    {
+     "slug": "scan-scheduling",
+     "label": "Scan scheduling"
+    },
+    {
+     "slug": "false-positivesnegatives",
+     "label": "False positives/negatives"
+    },
+    {
+     "slug": "nmap",
+     "label": "nmap"
+    },
+    {
+     "slug": "sn1per",
+     "label": "sn1per"
+    },
+    {
+     "slug": "scanless",
+     "label": "scanless"
+    }
+   ],
+   "tips": [
+    "Vulnerability management lifecycle: Discover → Prioritize → Remediate → Verify → Report. CVSS scores: Critical (9.0-10.0), High (7.0-8.9), Medium (4.0-6.9), Low (0.1-3.9)."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/vulnerability-management",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-vulnerability-management"
+  },
+  "audits-and-assessments": {
+   "slug": "audits-and-assessments",
+   "title": "Audits and Assessments",
+   "description": "Audits and assessments evaluate the effectiveness of security controls and verify compliance with policies, standards, and regulations.",
+   "domain": 5,
+   "dir": "domain-5-program-management",
+   "weight": "high",
+   "aliases": [
+    "Audits and Assessments"
+   ],
+   "eli5_en": "Think of a school health inspection. Someone comes in to check that the cafeteria is clean, the fire exits work, and the playground is safe. An audit is like that official inspection -- someone with a checklist making sure everything meets the rules. An assessment is more like a teacher walking around the school looking for anything that could be improved, even stuff not on the checklist. Both help make sure the school (or a company's computers and data) stays safe and follows the rules.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "internal-audit",
+     "label": "Internal audit"
+    },
+    {
+     "slug": "external-audit",
+     "label": "External audit"
+    },
+    {
+     "slug": "regulatory-audit",
+     "label": "Regulatory audit"
+    },
+    {
+     "slug": "audit-scope",
+     "label": "Audit scope"
+    },
+    {
+     "slug": "evidence-collection",
+     "label": "Evidence collection"
+    },
+    {
+     "slug": "findings-and-remediation",
+     "label": "Findings and remediation"
+    },
+    {
+     "slug": "soc-reports",
+     "label": "SOC reports"
+    },
+    {
+     "slug": "attestation",
+     "label": "Attestation"
+    }
+   ],
+   "tips": [
+    "External audits are more authoritative than internal audits for compliance. SOC 2 Type II covers a time period and is preferred over Type I (point-in-time). Penetration tests go further than vulnerability assessments by actually exploiting flaws."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/audits-and-assessments",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-audits-and-assessments"
+  },
+  "business-continuity": {
+   "slug": "business-continuity",
+   "title": "Business Continuity",
+   "description": "Business continuity planning ensures that critical operations can continue during and after a disruption.",
+   "domain": 5,
+   "dir": "domain-5-program-management",
+   "weight": "high",
+   "aliases": [
+    "BCP",
+    "BC"
+   ],
+   "eli5_en": "You know how your school has a plan for snow days -- maybe you switch to online classes so learning doesn't stop? Business continuity is the same idea for companies. It's the plan for keeping the important stuff running even when something goes wrong, like a power outage, a big storm, or a computer crash. The goal is to never have to say \"sorry, we're closed\" when people are counting on you.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "business-continuity-vs-disaster-recovery",
+     "label": "Business continuity vs. disaster recovery"
+    },
+    {
+     "slug": "bia-as-the-foundation",
+     "label": "BIA as the foundation"
+    },
+    {
+     "slug": "succession-planning",
+     "label": "Succession planning"
+    },
+    {
+     "slug": "communication-plan",
+     "label": "Communication plan"
+    },
+    {
+     "slug": "order-of-restoration",
+     "label": "Order of restoration"
+    },
+    {
+     "slug": "after-action-review",
+     "label": "After-action review"
+    }
+   ],
+   "tips": [
+    "Hot site = most expensive, fastest recovery. Cold site = cheapest, slowest recovery. Tabletop exercises are discussion-only and low-risk. Full interruption tests are the most realistic but carry the highest risk of disruption."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/business-continuity",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-business-continuity"
+  },
+  "business-impact-analysis": {
+   "slug": "business-impact-analysis",
+   "title": "Business Impact Analysis",
+   "description": "BIA identifies critical business functions and quantifies the impact of their disruption to prioritize recovery efforts.",
+   "domain": 5,
+   "dir": "domain-5-program-management",
+   "weight": "high",
+   "aliases": [
+    "BIA"
+   ],
+   "eli5_en": "Picture this: you're packing for a camping trip and you need to decide what's most important to bring. Your water bottle matters more than your playing cards. A business impact analysis is when a company makes a list of everything it does and figures out which parts matter most. If the internet goes down, which things need to come back first? How long can each thing be broken before it's a real problem? This helps them plan ahead so the most important stuff gets fixed first.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "critical-business-functions",
+     "label": "Critical business functions"
+    },
+    {
+     "slug": "maximum-tolerable-downtime-mtd",
+     "label": "Maximum Tolerable Downtime (MTD)"
+    },
+    {
+     "slug": "recovery-time-objective-rto",
+     "label": "Recovery Time Objective (RTO)"
+    },
+    {
+     "slug": "recovery-point-objective-rpo",
+     "label": "Recovery Point Objective (RPO)"
+    },
+    {
+     "slug": "mean-time-to-repair-mttr",
+     "label": "Mean Time to Repair (MTTR)"
+    },
+    {
+     "slug": "mean-time-between-failures-mtbf",
+     "label": "Mean Time Between Failures (MTBF)"
+    },
+    {
+     "slug": "single-point-of-failure-spof",
+     "label": "Single point of failure (SPOF)"
+    },
+    {
+     "slug": "impact-categories",
+     "label": "Impact categories"
+    },
+    {
+     "slug": "dependencies",
+     "label": "Dependencies"
+    }
+   ],
+   "tips": [
+    "RTO < MTD always. RPO is about data loss, RTO is about downtime. If RPO = 0, you need real-time replication. The exam frequently tests the relationship between these metrics."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/business-impact-analysis",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-business-impact-analysis"
+  },
+  "compliance": {
+   "slug": "compliance",
+   "title": "Compliance",
+   "description": "Compliance ensures an organization meets the legal, regulatory, and contractual security requirements applicable to its operations.",
+   "domain": 5,
+   "dir": "domain-5-program-management",
+   "weight": "high",
+   "aliases": [
+    "Compliance"
+   ],
+   "eli5_en": "It's like following the rules at school. There are rules about being quiet in the library, not running in the halls, and turning in homework on time. If you break them, you get in trouble. Compliance means a company follows all the rules it's supposed to -- rules from the government, rules from its own leaders, and rules it promised to follow when working with other companies. Breaking these rules can mean big fines or losing trust.",
+   "eli5_zh": "合規就是「遵守法規」。不管你喜不喜歡，法律規定要怎麼保護資料，公司就得照做。",
+   "concepts": [
+    {
+     "slug": "regulatory-compliance",
+     "label": "Regulatory compliance"
+    },
+    {
+     "slug": "industry-standards",
+     "label": "Industry standards"
+    },
+    {
+     "slug": "contractual-compliance",
+     "label": "Contractual compliance"
+    },
+    {
+     "slug": "compliance-monitoring",
+     "label": "Compliance monitoring"
+    },
+    {
+     "slug": "compliance-reporting",
+     "label": "Compliance reporting"
+    },
+    {
+     "slug": "consequences-of-non-compliance",
+     "label": "Consequences of non-compliance"
+    },
+    {
+     "slug": "internal-vs-external-compliance",
+     "label": "Internal vs. external compliance"
+    },
+    {
+     "slug": "compliance-automation",
+     "label": "Compliance automation"
+    },
+    {
+     "slug": "geographic-considerations",
+     "label": "Geographic considerations"
+    },
+    {
+     "slug": "gdpr",
+     "label": "GDPR"
+    },
+    {
+     "slug": "pci-dss",
+     "label": "PCI DSS"
+    },
+    {
+     "slug": "hipaa",
+     "label": "HIPAA"
+    }
+   ],
+   "tips": [
+    "Compliance != security. You can be compliant and still insecure. The exam tests whether you know which regulation applies to which industry: HIPAA = healthcare, PCI DSS = payment cards, GDPR = EU personal data, SOX = financial reporting."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/compliance",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-compliance"
+  },
+  "data-classification": {
+   "slug": "data-classification",
+   "title": "Data Classification",
+   "description": "Data classification assigns sensitivity levels to information assets to ensure appropriate handling, storage, and protection controls.",
+   "domain": 5,
+   "dir": "domain-5-program-management",
+   "weight": "medium",
+   "aliases": [
+    "Data Classification"
+   ],
+   "eli5_en": "Think about how a library organizes books. Some are on open shelves anyone can grab, some are in a special section you need a library card for, and some rare books are locked in a glass case. Data classification works the same way -- a company sorts its information into groups based on how secret or important it is, then decides who can see it and how carefully it needs to be protected. The most sensitive stuff gets the strongest locks.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "government-military-classifications",
+     "label": "Government / military classifications:"
+    },
+    {
+     "slug": "commercial-private-sector-classifications",
+     "label": "Commercial / private sector classifications:"
+    },
+    {
+     "slug": "classification-criteria",
+     "label": "Classification criteria"
+    },
+    {
+     "slug": "data-states",
+     "label": "Data states"
+    },
+    {
+     "slug": "labeling-and-marking",
+     "label": "Labeling and marking"
+    },
+    {
+     "slug": "handling-procedures",
+     "label": "Handling procedures"
+    },
+    {
+     "slug": "declassification",
+     "label": "Declassification"
+    },
+    {
+     "slug": "privacy-impact-assessment-pia",
+     "label": "PIA (Privacy Impact Assessment)"
+    }
+   ],
+   "tips": [
+    "Data owner = business leader who decides classification. Data custodian = IT person who implements technical controls. The exam tests these role distinctions heavily. Remember: owner decides, custodian protects."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/data-classification",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-data-classification"
+  },
+  "disaster-recovery": {
+   "slug": "disaster-recovery",
+   "title": "Disaster Recovery",
+   "description": "Disaster recovery focuses on restoring IT systems, data, and infrastructure after a disruption to resume normal operations.",
+   "domain": 5,
+   "dir": "domain-5-program-management",
+   "weight": "high",
+   "aliases": [
+    "DR",
+    "DRP"
+   ],
+   "eli5_en": "Remember when your phone died and you were relieved your photos were backed up to the cloud? Disaster recovery is a company's plan to get its computers, files, and systems back up and running after something really bad happens -- like a flood, a fire, or a big cyberattack. It spells out exactly what to do, who does it, and in what order, so the company can get back to normal as fast as possible.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "replication",
+     "label": "Replication"
+    },
+    {
+     "slug": "geographic-considerations",
+     "label": "Geographic considerations"
+    },
+    {
+     "slug": "3-2-1-backup-rule",
+     "label": "3-2-1 backup rule"
+    },
+    {
+     "slug": "testing-the-drp",
+     "label": "Testing the DRP"
+    },
+    {
+     "slug": "documentation",
+     "label": "Documentation"
+    }
+   ],
+   "tips": [
+    "Incremental = fastest to back up, slowest to restore (needs all incrementals + last full). Differential = moderate both ways (needs last full + last differential only). The 3-2-1 rule is a favorite exam topic."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/disaster-recovery",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-disaster-recovery"
+  },
+  "governance": {
+   "slug": "governance",
+   "title": "Governance",
+   "description": "Security governance establishes the framework of policies, roles, and processes that guide an organization's security program.",
+   "domain": 5,
+   "dir": "domain-5-program-management",
+   "weight": "high",
+   "aliases": [
+    "Security Governance"
+   ],
+   "eli5_en": "Every school has a principal who sets the rules, teachers who enforce them, and a student handbook that explains what's expected. Security governance works the same way for a company. The leaders at the top decide what the security rules should be, who's in charge of what, and how much risk the company is okay with. Without this structure, everyone would make up their own rules and things would get messy fast.",
+   "eli5_zh": "治理就是「管理規則」。由公司高層決定安全的大方向，然後大家照著規則走，確保公司資產安全。",
+   "concepts": [
+    {
+     "slug": "board-and-executive-involvement",
+     "label": "Board and executive involvement"
+    },
+    {
+     "slug": "policies-standards-baselines-guidelines-procedures",
+     "label": "Policies, standards, baselines, guidelines, procedures"
+    },
+    {
+     "slug": "roles-and-responsibilities",
+     "label": "Roles and responsibilities"
+    },
+    {
+     "slug": "governance-committees",
+     "label": "Governance committees"
+    },
+    {
+     "slug": "centralized-vs-decentralized-governance",
+     "label": "Centralized vs. decentralized governance"
+    },
+    {
+     "slug": "monitoring-and-reporting",
+     "label": "Monitoring and reporting"
+    },
+    {
+     "slug": "due-diligence-vs-due-care",
+     "label": "Due diligence vs. due care"
+    }
+   ],
+   "tips": [
+    "Governance = \"who decides and how.\" Policies say what to do; standards say how; guidelines suggest; procedures give step-by-step. The exam loves asking about the hierarchy and who owns what."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/governance",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-governance"
+  },
+  "privacy": {
+   "slug": "privacy",
+   "title": "Privacy",
+   "description": "Privacy focuses on the proper collection, use, storage, and disposal of personal information in compliance with legal requirements.",
+   "domain": 5,
+   "dir": "domain-5-program-management",
+   "weight": "medium",
+   "aliases": [
+    "Privacy",
+    "Data Privacy"
+   ],
+   "eli5_en": "You know how your diary is yours, and nobody should read it without your permission? Privacy in the computer world means people get to control who sees their personal information -- like their name, address, or health records. Companies that collect this information have to follow rules about how they use it, store it, and who they share it with. It's about respecting that your personal stuff belongs to you.",
+   "eli5_zh": "隱私就是「保護個人秘密」。確保公司不會亂用你的個人資料，並且只在有需要的時候才看。",
+   "concepts": [
+    {
+     "slug": "pii-personally-identifiable-information",
+     "label": "PII (Personally Identifiable Information)"
+    },
+    {
+     "slug": "phi-protected-health-information",
+     "label": "PHI (Protected Health Information)"
+    },
+    {
+     "slug": "privacy-impact-assessment-pia",
+     "label": "Privacy Impact Assessment (PIA)"
+    },
+    {
+     "slug": "privacy-by-design",
+     "label": "Privacy by design"
+    },
+    {
+     "slug": "anonymization-vs-pseudonymization",
+     "label": "Anonymization vs. pseudonymization"
+    },
+    {
+     "slug": "data-breach-notification",
+     "label": "Data breach notification"
+    },
+    {
+     "slug": "data-sovereignty",
+     "label": "Data sovereignty"
+    }
+   ],
+   "tips": [
+    "Anonymization cannot be reversed; pseudonymization can. GDPR requires data breach notification within 72 hours. Privacy by design = build it in from the start, not bolted on later."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/privacy",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-privacy"
+  },
+  "regulations-and-frameworks": {
+   "slug": "regulations-and-frameworks",
+   "title": "Regulations and Frameworks",
+   "description": "Key regulations and security frameworks that organizations use to structure their security programs and meet legal requirements.",
+   "domain": 5,
+   "dir": "domain-5-program-management",
+   "weight": "high",
+   "aliases": [
+    "Regulations and Frameworks"
+   ],
+   "eli5_en": "Regulations are like traffic laws -- the government says you must stop at red lights, and you'll get a ticket if you don't. Frameworks are more like a coach's playbook -- a set of best plays you can choose to follow to win the game. Companies use both: they have to follow the laws (regulations), and they choose proven playbooks (frameworks) to build a strong security program. Together, these give the company a clear set of instructions to keep data safe.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "nist-cybersecurity-framework-csf",
+     "label": "NIST Cybersecurity Framework (CSF)"
+    },
+    {
+     "slug": "nist-sp-800-53",
+     "label": "NIST SP 800-53"
+    },
+    {
+     "slug": "iso-27001-27002",
+     "label": "ISO 27001 / 27002"
+    },
+    {
+     "slug": "gdpr",
+     "label": "GDPR"
+    },
+    {
+     "slug": "hipaa",
+     "label": "HIPAA"
+    },
+    {
+     "slug": "pci-dss",
+     "label": "PCI DSS"
+    },
+    {
+     "slug": "sox-sarbanes-oxley",
+     "label": "SOX (Sarbanes-Oxley)"
+    },
+    {
+     "slug": "glba",
+     "label": "GLBA"
+    },
+    {
+     "slug": "ferpa",
+     "label": "FERPA"
+    },
+    {
+     "slug": "cis-controls",
+     "label": "CIS Controls"
+    },
+    {
+     "slug": "csa-cloud-controls-matrix-ccm",
+     "label": "CSA Cloud Controls Matrix (CCM)"
+    },
+    {
+     "slug": "benchmarks-vs-frameworks",
+     "label": "Benchmarks vs. frameworks"
+    }
+   ],
+   "tips": [
+    "NIST CSF = voluntary framework, broad adoption. ISO 27001 = certifiable international standard. PCI DSS = mandatory for card data. HIPAA = healthcare. GDPR = EU data + right to be forgotten. Know which applies where."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/regulations-and-frameworks",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-regulations-and-frameworks"
+  },
+  "risk-assessment": {
+   "slug": "risk-assessment",
+   "title": "Risk Assessment",
+   "description": "Risk assessment evaluates identified risks using qualitative or quantitative methods to prioritize security responses.",
+   "domain": 5,
+   "dir": "domain-5-program-management",
+   "weight": "high",
+   "aliases": [
+    "Risk Assessment"
+   ],
+   "eli5_en": "It's like looking at all the things that could go wrong on a field trip and figuring out which ones to worry about most. Crossing a busy road? That's high risk. Getting a mosquito bite? Not great, but not a big deal. A risk assessment helps a company look at each danger, decide how likely it is to happen and how bad it would be, and then focus on fixing the scariest ones first.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "qualitative-risk-assessment",
+     "label": "Qualitative risk assessment"
+    },
+    {
+     "slug": "quantitative-risk-assessment",
+     "label": "Quantitative risk assessment"
+    },
+    {
+     "slug": "risk-matrix-heat-map",
+     "label": "Risk matrix / heat map"
+    },
+    {
+     "slug": "threat-assessment",
+     "label": "Threat assessment"
+    },
+    {
+     "slug": "vulnerability-assessment",
+     "label": "Vulnerability assessment"
+    },
+    {
+     "slug": "ad-hoc-vs-recurring-vs-continuous",
+     "label": "Ad hoc vs. recurring vs. continuous"
+    },
+    {
+     "slug": "environmental-factors",
+     "label": "Environmental factors"
+    }
+   ],
+   "tips": [
+    "Quantitative = numbers and dollar values. Qualitative = categories and expert opinion. The exam loves SLE/ALE/ARO calculations. If ALE > cost of control, implement the control."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/risk-assessment",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-risk-assessment"
+  },
+  "risk-management": {
+   "slug": "risk-management",
+   "title": "Risk Management",
+   "description": "Risk management is the ongoing process of identifying, assessing, and responding to threats that could impact an organization's assets.",
+   "domain": 5,
+   "dir": "domain-5-program-management",
+   "weight": "high",
+   "aliases": [
+    "Risk Management"
+   ],
+   "eli5_en": "When you ride your bike, you wear a helmet, check the brakes, and avoid busy roads. You can't prevent every possible accident, but you take steps to lower the chances. Risk management is a company doing the same thing with its computers and data -- finding dangers, deciding which ones matter most, and choosing the best way to handle each one. The goal isn't zero risk (that's impossible) but bringing risk down to a level everyone is comfortable with.",
+   "eli5_zh": "風險管理就是「權衡利弊」。評估哪些壞事可能發生、機率多高、損失多少，然後決定是要花錢防範、還是承擔後果。",
+   "concepts": [
+    {
+     "slug": "risk-threat-x-vulnerability-x-impact",
+     "label": "Risk = Threat x Vulnerability x Impact"
+    },
+    {
+     "slug": "risk-identification",
+     "label": "Risk identification"
+    },
+    {
+     "slug": "risk-appetite-vs-risk-tolerance",
+     "label": "Risk appetite vs. risk tolerance"
+    },
+    {
+     "slug": "residual-risk",
+     "label": "Residual risk"
+    },
+    {
+     "slug": "inherent-risk",
+     "label": "Inherent risk"
+    },
+    {
+     "slug": "risk-register",
+     "label": "Risk register"
+    },
+    {
+     "slug": "risk-matrix-heat-map",
+     "label": "Risk matrix (heat map)"
+    },
+    {
+     "slug": "qualitative-vs-quantitative-analysis",
+     "label": "Qualitative vs. quantitative analysis"
+    }
+   ],
+   "tips": [
+    "Know the formulas: SLE = AV x EF, ALE = SLE x ARO. The exam will test whether you can pick the right risk response strategy for a given scenario. \"Accept\" is valid when the cost of mitigation exceeds the potential loss."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/risk-management",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-risk-management"
+  },
+  "security-awareness-training": {
+   "slug": "security-awareness-training",
+   "title": "Security Awareness Training",
+   "description": "Security awareness training educates employees to recognize threats and follow security policies, reducing the human attack surface.",
+   "domain": 5,
+   "dir": "domain-5-program-management",
+   "weight": "medium",
+   "aliases": [
+    "Security Awareness Training"
+   ],
+   "eli5_en": "At school, you learn not to talk to strangers and not to share your passwords. Security awareness training is the grown-up version of that. Companies teach their workers how to spot tricks like fake emails, what to do if something looks suspicious, and why following the security rules matters. Since people are often the easiest target for bad guys, teaching everyone to be careful is one of the cheapest and best ways to stay safe.",
+   "eli5_zh": "安全意識培訓就是「防詐騙宣導」。教大家不要亂點連結、不要隨便給密碼，讓每個人都成為公司的安全守衛。",
+   "concepts": [
+    {
+     "slug": "phishing-simulations",
+     "label": "Phishing simulations"
+    },
+    {
+     "slug": "role-based-training",
+     "label": "Role-based training"
+    },
+    {
+     "slug": "training-frequency",
+     "label": "Training frequency"
+    },
+    {
+     "slug": "gamification",
+     "label": "Gamification"
+    },
+    {
+     "slug": "metrics",
+     "label": "Metrics"
+    },
+    {
+     "slug": "culture-of-security",
+     "label": "Culture of security"
+    },
+    {
+     "slug": "insider-threat-awareness",
+     "label": "Insider threat awareness"
+    }
+   ],
+   "tips": [
+    "The exam emphasizes phishing simulations as the primary method to test awareness. Training must be ongoing, not one-time. Role-based training ensures relevance. Always report, never punish for falling for a simulation."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/security-awareness-training",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-security-awareness-training"
+  },
+  "security-policies": {
+   "slug": "security-policies",
+   "title": "Security Policies",
+   "description": "Security policies are formal documents that define an organization's rules, expectations, and requirements for protecting information assets.",
+   "domain": 5,
+   "dir": "domain-5-program-management",
+   "weight": "medium",
+   "aliases": [
+    "Security Policies"
+   ],
+   "eli5_en": "A security policy is like the student handbook your school gives out at the start of the year. It lists the rules everyone needs to follow -- no cheating, be respectful, wear your uniform. For a company, security policies are the official written rules about how to protect computers and data. They cover things like who can access what, how strong your password must be, and what happens if you break a rule. Everyone in the company has to know and follow them.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "policy-lifecycle",
+     "label": "Policy lifecycle"
+    },
+    {
+     "slug": "exception-process",
+     "label": "Exception process"
+    }
+   ],
+   "tips": [
+    "Policies are mandatory and set by management. Guidelines are optional recommendations. Standards define specific requirements. The AUP is the most commonly referenced policy on the exam."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/security-policies",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-security-policies"
+  },
+  "third-party-risk": {
+   "slug": "third-party-risk",
+   "title": "Third-Party Risk",
+   "description": "Third-party risk management addresses the security threats introduced by vendors, suppliers, and service providers.",
+   "domain": 5,
+   "dir": "domain-5-program-management",
+   "weight": "medium",
+   "aliases": [
+    "Third-Party Risk Management",
+    "TPRM"
+   ],
+   "eli5_en": "Say you give your house key to a dog walker so they can come in while you're at school. You trust them, but what if they lose the key or leave the door unlocked? Third-party risk is the danger that comes from sharing your stuff (data, systems, or access) with outside helpers like vendors or partners. If their security is weak, bad guys could get to your data through them -- even if your own locks are strong.",
+   "eli5_zh": "",
+   "concepts": [
+    {
+     "slug": "supply-chain-risk",
+     "label": "Supply chain risk"
+    },
+    {
+     "slug": "vendor-assessment",
+     "label": "Vendor assessment"
+    },
+    {
+     "slug": "service-level-agreements-slas",
+     "label": "Service Level Agreements (SLAs)"
+    },
+    {
+     "slug": "right-to-audit",
+     "label": "Right to audit"
+    },
+    {
+     "slug": "data-ownership-and-processing-agreements",
+     "label": "Data ownership and processing agreements"
+    },
+    {
+     "slug": "soc-reports",
+     "label": "SOC reports"
+    },
+    {
+     "slug": "vendor-lock-in",
+     "label": "Vendor lock-in"
+    },
+    {
+     "slug": "offboarding",
+     "label": "Offboarding"
+    },
+    {
+     "slug": "fourth-party-risk",
+     "label": "Fourth-party risk"
+    }
+   ],
+   "tips": [
+    "SOC 2 Type II is more valuable than Type I because it covers a time period, not just a snapshot. The exam tests supply chain attacks and vendor assessment methods frequently."
+   ],
+   "questions": 4,
+   "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/third-party-risk",
+   "case_url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-third-party-risk"
+  }
+ }
+}

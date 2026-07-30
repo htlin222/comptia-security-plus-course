@@ -1,0 +1,1218 @@
+{
+ "chapter": "CH4",
+ "units": [
+  {
+   "id": "ch4-u1",
+   "name": "自動化與腳本",
+   "type": "topic",
+   "assessment": "說出自動化在資安維運帶來的三個好處與兩個風險。再自問：把自動化腳本的憑證寫在程式碼裡會發生什麼？答得出「一個 repo 外洩等於全環境失守」才算有資安思維。",
+   "note": {
+    "slug": "automation-and-scripting",
+    "title": "Automation and Scripting",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/automation-and-scripting",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-automation-and-scripting",
+    "questions": 4,
+    "concepts": [
+     "Use cases",
+     "Scripting languages",
+     "Infrastructure as Code (IaC)",
+     "Configuration management",
+     "API integration",
+     "Continuous integration/deployment (CI/CD) security",
+     "Guardrails",
+     "Benefits",
+     "Risks",
+     "curl"
+    ],
+    "eli5": "自動化與腳本就是「自動掃地機」。只要寫好程式，電腦就會自動重複做那些無聊又累人的安全檢查，不會偷懶也不會出錯。",
+    "eli5Lang": "zh",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Automate Tasks with Bash Scripting | Security+ Linux Labs (Ep.25)",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=FmZmJMa09TI",
+     "channel": "CyberLabs007",
+     "duration": "22:51",
+     "why": "CyberLabs007，完整講解"
+    },
+    {
+     "name": "What is SOAR (Security, Orchestration, Automation & Response)",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=k7ju95jDxFA",
+     "channel": "IBM Technology",
+     "duration": "7:16",
+     "why": "IBM Technology，短講補強"
+    },
+    {
+     "name": "you need to learn BASH Scripting RIGHT NOW!! // EP 1",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=SPwyp2NG-bE",
+     "channel": "NetworkChuck",
+     "duration": "12:14",
+     "why": "NetworkChuck，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Scripting and Automation",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=R9ojg881dLs",
+    "duration": "8:20",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch4-u2",
+   "name": "數位鑑識",
+   "type": "topic",
+   "assessment": "依揮發性排出蒐證順序（暫存器→記憶體→網路連線→磁碟→備份），並說明 chain of custody 為什麼決定證據能不能上法庭。再回答：legal hold 一發出，正常的資料保留政策該怎麼調整？",
+   "note": {
+    "slug": "digital-forensics",
+    "title": "Digital Forensics",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/digital-forensics",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-digital-forensics",
+    "questions": 4,
+    "concepts": [
+     "Order of volatility",
+     "Chain of custody",
+     "Disk imaging",
+     "Write blockers",
+     "Hash verification",
+     "Legal hold",
+     "Timeline analysis",
+     "Live forensics vs. dead forensics",
+     "E-discovery",
+     "Anti-forensics"
+    ],
+    "eli5": "Think of a detective investigating a crime scene -- they take photos, dust for fingerprints, and put evidence in sealed bags so nothing gets contaminated. Digital forensics is the same thing, but for computers. When something bad happens on a computer or network, investigators carefully collect clues like files, messages, and activity logs. They have to be super careful so the evidence can be trusted later, just like a real crime scene.",
+    "eli5Lang": "en",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Starting a New Digital Forensic Investigation Case in Autopsy 4.19+",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=fEqx0MeCCHg",
+     "channel": "DFIRScience",
+     "duration": "38:59",
+     "why": "DFIRScience，完整講解"
+    },
+    {
+     "name": "Autopsy - Forensic Acquisition Tool  | Digital Forensics Investigation | Autopsy Tutorial",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=S6V66G2tVr8",
+     "channel": "Free Education Academy - FreeEduHub",
+     "duration": "23:17",
+     "why": "Free Education Academy - FreeEduHub，實作示範"
+    },
+    {
+     "name": "What is Computer Forensics and How is it Used?",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=uBMPHXbgOgA",
+     "channel": "Eye on Tech",
+     "duration": "2:37",
+     "why": "Eye on Tech，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Digital Forensics",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=UtDWApdO8Zk",
+    "duration": "9:54",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch4-u3",
+   "name": "EDR 與 XDR",
+   "type": "topic",
+   "assessment": "說明 EDR 與傳統防毒的差別，以及 XDR 多整合了哪些訊號源。再自問：EDR 為什麼能抓到無檔案攻擊（fileless）？因為它看行為與記憶體，不只比對檔案特徵。",
+   "note": {
+    "slug": "edr-xdr",
+    "title": "Endpoint Detection and Response / Extended Detection and Response",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/edr-xdr",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-edr-xdr",
+    "questions": 4,
+    "concepts": [
+     "Behavioral analysis",
+     "Continuous monitoring",
+     "Threat containment",
+     "Automated response",
+     "Root cause analysis",
+     "Telemetry correlation (XDR)",
+     "Threat intelligence integration",
+     "Fileless malware detection",
+     "NGFW (Next-Generation Firewall)",
+     "Remote attestation"
+    ],
+    "eli5": "Picture a school with security cameras in every hallway. EDR is like having a smart camera on each computer that watches what programs do and sounds an alarm if something looks wrong. XDR takes it further -- it connects cameras from the hallways, parking lot, cafeteria, and playground all together so you can spot a troublemaker no matter where they go. Instead of just catching bad guys at one door, you can track them across the whole school.",
+    "eli5Lang": "en",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "EDR Interview Questions and Answers | Endpoint Detection and Response | CyberSecurity Interview",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=q2r2ZNA4PJY",
+     "channel": "CyberPlatter",
+     "duration": "52:06",
+     "why": "CyberPlatter，完整講解"
+    },
+    {
+     "name": "What Is Endpoint Detection And Response (EDR) | How EDR Works? | Cybersecurity Tutorial |Simplilearn",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=PlFCMyqU2-U",
+     "channel": "Simplilearn",
+     "duration": "11:48",
+     "why": "Simplilearn，實作示範"
+    },
+    {
+     "name": "What is Endpoint Detection and Response (EDR)?",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=55GaIolVVqI",
+     "channel": "IBM Technology",
+     "duration": "5:34",
+     "why": "IBM Technology，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "What is XDR vs EDR vs MDR?  Breaking down Extended Detection and Response",
+    "channel": "The CISO Perspective",
+    "url": "https://www.youtube.com/watch?v=SFFdbeogLFc",
+    "duration": "8:54",
+    "why": "Messer 官方課程沒有單獨講這個主題，改用 The CISO Perspective 這支講得最完整的"
+   }
+  },
+  {
+   "id": "ch4-u4",
+   "name": "電子郵件安全",
+   "type": "topic",
+   "assessment": "說出 SPF、DKIM、DMARC 各驗證什麼，以及三者的依賴順序。再回答：只設 SPF 為什麼擋不住偽冒？SPF 驗的是信封寄件者，使用者看到的是表頭寄件者，DMARC 才把兩者對齊。",
+   "note": {
+    "slug": "email-security",
+    "title": "Email Security",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/email-security",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-email-security",
+    "questions": 4,
+    "concepts": [
+     "SPF (Sender Policy Framework)",
+     "DKIM (DomainKeys Identified Mail)",
+     "DMARC (Domain-based Message Authentication, Reporting & Conformance)",
+     "Secure email gateway",
+     "S/MIME",
+     "Email encryption",
+     "Anti-phishing controls",
+     "Business Email Compromise (BEC)",
+     "Data Loss Prevention (DLP)"
+    ],
+    "eli5": "Your mailbox at home sometimes gets junk mail or letters pretending to be from someone they are not. Email security is like having a really smart mail sorter who checks every letter before it reaches you. They look at the return address to make sure it is real, scan for anything dangerous inside, and toss out the fakes. Without this protection, bad people could trick you into opening something harmful just by sending a convincing-looking message.",
+    "eli5Lang": "en",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Microsoft 365 SPF, DKIM and DMARC; Improve Your Email Security!",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=sJ-5URX19d4",
+     "channel": "Jonathan Edwards",
+     "duration": "17:38",
+     "why": "Jonathan Edwards，完整講解"
+    },
+    {
+     "name": "Email Header Analysis Tutorial | Email Header Analysis Steps | Cyber Security Tutorial | Simplilearn",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=3wwaYc_Yuhc",
+     "channel": "Simplilearn",
+     "duration": "16:45",
+     "why": "Simplilearn，實作示範"
+    },
+    {
+     "name": "What is DMARC: Email Security You Need to Know About",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=zLxJLKf-ua8",
+     "channel": "NextTech Consultants",
+     "duration": "11:48",
+     "why": "NextTech Consultants，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Email Security",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=v6ht9efsnRI",
+    "duration": "7:05",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch4-u5",
+   "name": "端點安全",
+   "type": "topic",
+   "assessment": "列出端點防護的分層（HIDS/HIPS、防毒、EDR、應用程式白名單、磁碟加密）。再自問：allow list 與 block list 各適合什麼環境？高風險固定用途的機器用前者，一般辦公環境用後者。",
+   "note": {
+    "slug": "endpoint-security",
+    "title": "Endpoint Security",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/endpoint-security",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-endpoint-security",
+    "questions": 4,
+    "concepts": [
+     "Antivirus / Anti-malware",
+     "Host-based firewall",
+     "Host-based IDS/IPS (HIDS/HIPS)",
+     "Data Loss Prevention (DLP)",
+     "Full disk encryption (FDE)",
+     "Application whitelisting/allowlisting",
+     "Patch management",
+     "Mobile Device Management (MDM)",
+     "Boot integrity",
+     "TPM (Trusted Platform Module)"
+    ],
+    "eli5": "端點安全就是保護每一台電腦。就像給每個人的房間都裝上防盜鎖和警報器，防止小偷從任何一扇窗戶溜進來。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Operating System Security",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=4dpTyRM6BU8",
+     "channel": "Professor Messer",
+     "duration": "3:22",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "See Falcon Endpoint Security in Action",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=GjR4p7ajR74",
+     "channel": "CrowdStrike",
+     "duration": "4:14",
+     "why": "CrowdStrike，實作示範"
+    },
+    {
+     "name": "Microsoft Defender for Endpoint Overview",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=YFPyTPDfZeY",
+     "channel": "Microsoft Security",
+     "duration": "6:41",
+     "why": "Microsoft Security，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Endpoint Security",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=83pCkSSj1IQ",
+    "duration": "9:25",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch4-u6",
+   "name": "身分聯邦",
+   "type": "topic",
+   "assessment": "說出聯邦中三個角色（使用者、identity provider、service provider）的互動流程。再回答：SAML、OAuth 2.0、OIDC 各解決什麼？SAML 是認證斷言、OAuth 是授權委派、OIDC 是在 OAuth 上補回認證。",
+   "note": {
+    "slug": "federation",
+    "title": "Federation",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/federation",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-federation",
+    "questions": 4,
+    "concepts": [
+     "Trust relationships",
+     "Identity Provider (IdP)",
+     "Service Provider (SP)",
+     "SAML",
+     "OpenID Connect",
+     "WS-Federation",
+     "Transitive trust",
+     "Attribute mapping",
+     "Cross-certification",
+     "Attestation"
+    ],
+    "eli5": "You know how a library card from your town sometimes works at libraries in nearby towns too? That is federation. Different organizations agree to trust each other, so when you prove who you are at one place, the others accept it without making you sign up again. Each library still controls its own books and rules, but they all honor the same card. This makes life easier for everyone while each place stays in charge of its own stuff.",
+    "eli5Lang": "en",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Authenticating users with Workforce Identity Federation",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=nGEWGrZk_2I",
+     "channel": "Google Cloud Tech",
+     "duration": "4:12",
+     "why": "Google Cloud Tech，短講補強"
+    },
+    {
+     "name": "What is Federation? - Intro to Identity Series",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=BFkFRnayIYY",
+     "channel": "ForgeRock (Now Ping Identity)",
+     "duration": "5:13",
+     "why": "ForgeRock (Now Ping Identity)，短講補強"
+    },
+    {
+     "name": "AWS Directory Service, Identity Federation & AWS SSO",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=ubMahR5EdlE",
+     "channel": "Digital Cloud Training",
+     "duration": "10:45",
+     "why": "Digital Cloud Training，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Identity and Access Management - CompTIA Security+ SY0-701 - 4.6",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=ZoOyyqhptik",
+    "duration": "12:46",
+    "why": "Messer 官方課程沒有單獨講這個主題，改用 Professor Messer 這支講得最完整的"
+   }
+  },
+  {
+   "id": "ch4-u7",
+   "name": "系統強化",
+   "type": "topic",
+   "assessment": "為一台新伺服器列出強化清單：關閉不必要服務與埠、移除預設帳號、套用基準、打補丁、開稽核日誌。再自問：什麼叫 secure baseline，它跟 hardening 的關係是什麼？",
+   "note": {
+    "slug": "hardening",
+    "title": "Hardening",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/hardening",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-hardening",
+    "questions": 4,
+    "concepts": [
+     "CIS Benchmarks",
+     "STIG (Security Technical Implementation Guide)",
+     "Disable unnecessary services and ports",
+     "Remove default accounts and passwords",
+     "Patch management",
+     "Least functionality principle",
+     "Application allowlisting",
+     "Registry and GPO hardening",
+     "Firmware updates",
+     "Secure baseline images"
+    ],
+    "eli5": "When you move into a new house, you lock the doors, close the windows, and maybe remove the spare key from under the mat. Hardening a computer is the same idea -- you turn off features you do not need, remove programs that came pre-installed, and change all the default passwords. The fewer unlocked doors and open windows a system has, the harder it is for a bad guy to sneak in.",
+    "eli5Lang": "en",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Secure Baselines",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=BWPJD9Eb9iE",
+     "channel": "Professor Messer",
+     "duration": "4:11",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Hardening Targets",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=YQKbs0ug0XQ",
+     "channel": "Professor Messer",
+     "duration": "10:11",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "System Hardening - CISSP",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=B09dU3jEPzc",
+     "channel": "Tom Olzak",
+     "duration": "10:40",
+     "why": "Tom Olzak，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Hardening Techniques",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=wXoC46Qr_9Q",
+    "duration": "12:11",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch4-u8",
+   "name": "身分管理",
+   "type": "topic",
+   "assessment": "說出身分生命週期（provisioning→變更→de-provisioning）各階段最常出的資安漏洞。再回答：離職當天沒有停用帳號屬於哪一類風險？孤兒帳號，這是稽核必查項。",
+   "note": {
+    "slug": "identity-management",
+    "title": "Identity Management",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/identity-management",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-identity-management",
+    "questions": 4,
+    "concepts": [
+     "Provisioning and deprovisioning",
+     "Identity lifecycle management",
+     "Directory services",
+     "Role-Based Access Control (RBAC)",
+     "Attribute-Based Access Control (ABAC)",
+     "Identity governance",
+     "Self-service capabilities",
+     "Privileged accounts",
+     "IdP (Identity Provider)"
+    ],
+    "eli5": "It is like the front office at a school that keeps track of every student, teacher, and visitor. They decide who gets a badge, what rooms each person can enter, and when someone leaves, they take the badge back. Identity management does the same thing for computers -- it controls who gets an account, what they are allowed to access, and makes sure old accounts get shut off when people leave. Without it, anyone could wander in and go anywhere.",
+    "eli5Lang": "en",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Cybersecurity Architecture: Who Are You? Identity and Access Management",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=5uNifnVlBy4",
+     "channel": "IBM Technology",
+     "duration": "31:15",
+     "why": "IBM Technology，完整講解"
+    },
+    {
+     "name": "Azure Active Directory (AD, AAD) Tutorial | Identity and Access Management Service",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=Ma7VAQE7ga4",
+     "channel": "Adam Marczak - Azure for Everyone",
+     "duration": "30:57",
+     "why": "Adam Marczak - Azure for Everyone，實作示範"
+    },
+    {
+     "name": "Identity & Access Management (IAM)",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=aNj36g7fSsU",
+     "channel": "IBM Technology",
+     "duration": "3:37",
+     "why": "IBM Technology，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Identity and Access Management",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=ZoOyyqhptik",
+    "duration": "12:46",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch4-u9",
+   "name": "事件應變",
+   "type": "topic",
+   "assessment": "依序說出 NIST 的事件應變階段：準備、偵測與分析、圍堵、根除、復原、事後檢討。再自問：圍堵要選短期還是長期，判斷依據是什麼？答得出要權衡業務衝擊與證據保全才算懂。",
+   "note": {
+    "slug": "incident-response",
+    "title": "Incident Response",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/incident-response",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-incident-response",
+    "questions": 4,
+    "concepts": [
+     "NIST IR lifecycle",
+     "Preparation",
+     "Detection and analysis",
+     "Containment",
+     "Eradication",
+     "Recovery",
+     "Lessons learned / Post-incident review",
+     "Chain of custody",
+     "Communication plan",
+     "Tabletop exercises"
+    ],
+    "eli5": "應變流程就像火災演習。發生問題時，先隔離 (滅火)、清除 (打掃)、最後檢討改進 (避免下次火災)。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Incident Planning",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=CYFe16lCRMk",
+     "channel": "Professor Messer",
+     "duration": "6:50",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Incident Response: Azure Log Analysis",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=Eb-D0hTf5GQ",
+     "channel": "John Hammond",
+     "duration": "19:15",
+     "why": "John Hammond，完整講解"
+    },
+    {
+     "name": "SOC 101: Real-time Incident Response Walkthrough",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=2BOOl8_nwjQ",
+     "channel": "Exabeam",
+     "duration": "12:30",
+     "why": "Exabeam，實作示範"
+    }
+   ],
+   "lesson": {
+    "title": "Incident Response",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=X2UiMLxRdhE",
+    "duration": "9:14",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch4-u10",
+   "name": "日誌管理",
+   "type": "topic",
+   "assessment": "說出哪些日誌來源在調查時最關鍵，以及為什麼時間同步（NTP）是日誌關聯的前提。再回答：日誌保留期限該由什麼決定？法規與合約要求，不是硬碟大小。",
+   "note": {
+    "slug": "log-management",
+    "title": "Log Management",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/log-management",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-log-management",
+    "questions": 4,
+    "concepts": [
+     "Log sources",
+     "Syslog",
+     "Centralized logging",
+     "Log forwarding agents",
+     "NTP synchronization",
+     "Log retention policies",
+     "Log integrity",
+     "Windows Event Log",
+     "journald",
+     "rsyslog"
+    ],
+    "eli5": "Every time someone walks through a door in a building, a security camera records it. Logs are like those recordings, but for computers -- they write down who did what and when. Log management means collecting all those recordings from every door in every building, putting them in one place, and keeping them organized so that if something goes wrong, you can rewind and figure out exactly what happened.",
+    "eli5Lang": "en",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Monitoring Data",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=ZDJ-BLPLWq4",
+     "channel": "Professor Messer",
+     "duration": "7:25",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Introduction to Log Management",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=8XuqFwgFYUk",
+     "channel": "CISA",
+     "duration": "54:49",
+     "why": "CISA，完整講解"
+    },
+    {
+     "name": "How to Use RAID Log in REAL-LIFE Project (+ Template)",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=inZI16nIvdo",
+     "channel": "Tactical Project Manager",
+     "duration": "7:06",
+     "why": "Tactical Project Manager，實作示範"
+    }
+   ],
+   "lesson": {
+    "title": "Log Data",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=EDru1LTYDJw",
+    "duration": "13:41",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch4-u11",
+   "name": "多因子認證",
+   "type": "topic",
+   "assessment": "說出五種認證因子並判斷哪些組合才算真正的多因子。再自問：簡訊 OTP 的弱點是什麼？SIM swap 與 SS7 攔截，所以 NIST 已不建議把它當高保證等級的因子。",
+   "note": {
+    "slug": "mfa",
+    "title": "Multi-Factor Authentication",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/mfa",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-mfa",
+    "questions": 4,
+    "concepts": [
+     "Something you know",
+     "Something you have",
+     "Something you are",
+     "Something you do",
+     "Somewhere you are",
+     "TOTP (Time-based One-Time Password)",
+     "HOTP (HMAC-based One-Time Password)",
+     "Push notifications",
+     "Passwordless authentication",
+     "MFA fatigue attacks"
+    ],
+    "eli5": "多因素驗證就是「雙重保險」。除了密碼 (你知道的東西)，還要用手機簡訊 (你有的東西) 或指紋 (你就是的東西) 才能進門。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "How to add Multi Factor Authentication (MFA) to AWS User Login | Step by Step Tutorial",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=miS7GdKJrZQ",
+     "channel": "Be A Better Dev",
+     "duration": "4:23",
+     "why": "Be A Better Dev，實作示範"
+    },
+    {
+     "name": "Cybersecurity Simplified: Multi-Factor Authentication",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=6FpLATsI6F0",
+     "channel": "ControlCase: IT Certification and Compliance",
+     "duration": "9:07",
+     "why": "ControlCase: IT Certification and Compliance，短講補強"
+    },
+    {
+     "name": "How to Enable Multi-Factor Authentication (MFA) in AWS | Amazon Web Services for Beginners",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=Y5G3c6lb8e0",
+     "channel": "Tiny Technical Tutorials",
+     "duration": "4:40",
+     "why": "Tiny Technical Tutorials，實作示範"
+    }
+   ],
+   "lesson": {
+    "title": "Multifactor Authentication",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=MpIzA4fNWew",
+    "duration": "4:30",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch4-u12",
+   "name": "網路監控",
+   "type": "topic",
+   "assessment": "分辨 SNMP、NetFlow、封包擷取、SIEM 各看到什麼層級的資訊。再回答：為什麼多數環境用 NetFlow 而不是全流量擷取？儲存成本與隱私，代價是看不到封包內容。",
+   "note": {
+    "slug": "network-monitoring",
+    "title": "Network Monitoring",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/network-monitoring",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-network-monitoring",
+    "questions": 4,
+    "concepts": [
+     "SNMP (Simple Network Management Protocol)",
+     "NetFlow / sFlow / IPFIX",
+     "Packet capture (PCAP)",
+     "Network taps",
+     "Port mirroring (SPAN)",
+     "Bandwidth monitoring",
+     "Baseline establishment",
+     "Protocol analysis",
+     "Network-based IDS/IPS",
+     "tcpdump"
+    ],
+    "eli5": "Picture a lifeguard sitting in a tall chair watching the whole swimming pool. They scan the water constantly, looking for anyone in trouble. Network monitoring is like that lifeguard, but for your computer network -- it watches all the data flowing back and forth, looking for anything unusual. If someone is sending way too much data or connecting from a strange place, the monitoring system spots it and raises the alarm.",
+    "eli5Lang": "en",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Security Tools",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=nNiNTviiacU",
+     "channel": "Professor Messer",
+     "duration": "14:06",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "CompTIA Security+ Full Course: Security Network Monitoring & SIEMs",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=ZZfADqZNjfI",
+     "channel": "Certify Breakfast",
+     "duration": "52:39",
+     "why": "Certify Breakfast，完整講解"
+    },
+    {
+     "name": "How to Analyze Network Traffic for Threat Detection: Cybersecurity",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=7KmBe1S5tsk",
+     "channel": "Learn from CTO-X",
+     "duration": "9:14",
+     "why": "Learn from CTO-X，實作示範"
+    }
+   ],
+   "lesson": {
+    "title": "Security Monitoring",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=np2WI_rM-Ok",
+    "duration": "10:27",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch4-u13",
+   "name": "滲透測試",
+   "type": "topic",
+   "assessment": "分辨 black box、gray box、white box 與紅隊、藍隊、紫隊的角色。再自問：滲透測試開始前一定要拿到什麼？書面授權（rules of engagement），沒有它就不是測試而是入侵。",
+   "note": {
+    "slug": "penetration-testing",
+    "title": "Penetration Testing",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/penetration-testing",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-penetration-testing",
+    "questions": 4,
+    "concepts": [
+     "Testing types",
+     "Phases",
+     "Rules of engagement (ROE)",
+     "Reconnaissance",
+     "Exploitation",
+     "Lateral movement",
+     "Privilege escalation",
+     "Pivoting",
+     "Bug bounty programs",
+     "Red team vs. pen test"
+    ],
+    "eli5": "Have you ever asked a friend to try to sneak into your blanket fort to see if they could find a way in? Penetration testing is exactly that, but for computer systems. A company hires friendly hackers and gives them permission to try to break in. When they find a weak spot, they write a report so the company can fix it before a real bad guy finds the same hole.",
+    "eli5Lang": "en",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Penetration Tests",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=wEMzVfwBiWY",
+     "channel": "Professor Messer",
+     "duration": "5:29",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "What Are The Types Of Penetration Testing? | PurpleSec",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=ca-6xCLmND8",
+     "channel": "PurpleSec",
+     "duration": "17:14",
+     "why": "PurpleSec，完整講解"
+    },
+    {
+     "name": "Ethical Hacking in Action: Red Teaming, Pen Testing, & Cybersecurity",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=bSVGrA1_gYw",
+     "channel": "IBM Technology",
+     "duration": "17:34",
+     "why": "IBM Technology，實作示範"
+    }
+   ],
+   "lesson": {
+    "title": "Penetration Testing",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=-LevHAzXgFs",
+    "duration": "6:21",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch4-u14",
+   "name": "特權存取管理（PAM）",
+   "type": "topic",
+   "assessment": "說出 PAM 的核心機制：密碼保管庫、即時提權（JIT）、連線側錄、自動輪替。再回答：為什麼共用的管理員帳號是稽核大忌？做不到不可否認性，出事查不出是誰。",
+   "note": {
+    "slug": "privileged-access-management",
+    "title": "Privileged Access Management",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/privileged-access-management",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-privileged-access-management",
+    "questions": 4,
+    "concepts": [
+     "Password vaulting",
+     "Just-in-time (JIT) access",
+     "Session recording",
+     "Credential rotation",
+     "Break-glass accounts",
+     "Service account management",
+     "Least privilege enforcement",
+     "Separation of duties",
+     "PAP (Password Authentication Protocol)",
+     "CHAP (Challenge-Handshake Authentication Protocol)"
+    ],
+    "eli5": "In a school, the principal has a master key that opens every room. If that key gets lost, someone could go anywhere -- the office, the supply room, everywhere. Privileged access management is about keeping those master keys in a locked safe, only handing them out when absolutely needed, watching what people do with them, and taking them back as soon as possible. The fewer people holding master keys, the safer the building.",
+    "eli5Lang": "en",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Privileged Access Management (PAM) and Identity Security",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=7MKW4WJjewA",
+     "channel": "Razorwire Cybersecurity",
+     "duration": "38:11",
+     "why": "Razorwire Cybersecurity，完整講解"
+    },
+    {
+     "name": "Privileged Remote Access Demo: Secure Access Without a VPN",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=Nh9w7S0h5J0",
+     "channel": "BeyondTrust",
+     "duration": "3:04",
+     "why": "BeyondTrust，實作示範"
+    },
+    {
+     "name": "Why you need Privileged Account Management",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=hVLaRQ3TjGk",
+     "channel": "IBM Technology",
+     "duration": "4:20",
+     "why": "IBM Technology，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Identity Access Management (IAM) vs Privileged Access Management (PAM)",
+    "channel": "HashiCorp, an IBM Company",
+    "url": "https://www.youtube.com/watch?v=x4Wf2W3Wl4w",
+    "duration": "5:07",
+    "why": "Messer 官方課程沒有單獨講這個主題，改用 HashiCorp, an IBM Company 這支講得最完整的"
+   }
+  },
+  {
+   "id": "ch4-u15",
+   "name": "資安事件管理（SIEM）",
+   "type": "topic",
+   "assessment": "說出 SIEM 的三個動作：蒐集、關聯、告警。再自問：SIEM 會自動阻擋攻擊嗎？不會——它偵測與通知，要自動處置得靠 SOAR，這是考題最愛的辨析。",
+   "note": {
+    "slug": "siem",
+    "title": "Security Information and Event Management",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/siem",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-siem",
+    "questions": 4,
+    "concepts": [
+     "Log aggregation",
+     "Normalization",
+     "Correlation rules",
+     "Real-time alerting",
+     "Dashboards and reporting",
+     "Retention and archival",
+     "User and Entity Behavior Analytics (UEBA)",
+     "Common SIEM platforms",
+     "Syslog",
+     "Syslog severity levels"
+    ],
+    "eli5": "SIEM 就像是公司的總控中心。它會收集所有監視器 (日誌) 的畫面，一旦發現哪裡有小偷，就會立刻發出警報。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "What is a SIEM (Security Information and Event Management)?",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=ts4V4ieaonA",
+     "channel": "TechTransformation",
+     "duration": "15:24",
+     "why": "TechTransformation，完整講解"
+    },
+    {
+     "name": "This is a FREE Cybersecurity SIEM Lab in UNDER 15 minutes | SOC ANALYST",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=QT81wcuoRFY",
+     "channel": "The Social Dork | Cyber Security",
+     "duration": "15:29",
+     "why": "The Social Dork | Cyber Security，實作示範"
+    },
+    {
+     "name": "What is a SIEM? (Security Information & Event Management)",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=zrgBrpv4azs",
+     "channel": "Day Johnson",
+     "duration": "13:59",
+     "why": "Day Johnson，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "What is SIEM? Security Information & Event Management Explained",
+    "channel": "Exabeam",
+    "url": "https://www.youtube.com/watch?v=GbFtSDnPZBQ",
+    "duration": "4:24",
+    "why": "Messer 官方課程沒有單獨講這個主題，改用 Exabeam 這支講得最完整的"
+   }
+  },
+  {
+   "id": "ch4-u16",
+   "name": "資安協同與自動化應變（SOAR）",
+   "type": "topic",
+   "assessment": "說明 playbook 與 runbook 的差別，以及 SOAR 接手 SIEM 之後多做了什麼。再回答：把處置全自動化的風險是什麼？誤判被自動執行，衝擊比人工慢一步大得多。",
+   "note": {
+    "slug": "soar",
+    "title": "Security Orchestration, Automation, and Response",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/soar",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-soar",
+    "questions": 4,
+    "concepts": [
+     "Orchestration",
+     "Automation",
+     "Playbooks/Runbooks",
+     "Case management",
+     "Threat intelligence enrichment",
+     "Integration APIs",
+     "Metrics and reporting"
+    ],
+    "eli5": "SOAR 就像是自動報警器。一旦發現小偷 (SIEM 發出警報)，它會自動鎖上大門並通報警察，完全不需要人工操作。",
+    "eli5Lang": "zh",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "SOAR Interview Questions and Answers | Security Orchestration, Automation and Response | SOAR Course",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=cWfECEsHjyw",
+     "channel": "CyberPlatter",
+     "duration": "40:02",
+     "why": "CyberPlatter，完整講解"
+    },
+    {
+     "name": "Splunk SOAR Demo Video",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=Jynck9Yw_dg",
+     "channel": "Splunk",
+     "duration": "8:41",
+     "why": "Splunk，實作示範"
+    },
+    {
+     "name": "What is SOAR? Security Automation and Orchestration | Explained",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=S1yLzqcZFNE",
+     "channel": "Check Point Software",
+     "duration": "3:24",
+     "why": "Check Point Software，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "All about SOAR (Security, Orchestration, Automation and Response)",
+    "channel": "Sceptertech.Digital",
+    "url": "https://www.youtube.com/watch?v=I-H1iup9owc",
+    "duration": "7:32",
+    "why": "Messer 官方課程沒有單獨講這個主題，改用 Sceptertech.Digital 這支講得最完整的"
+   }
+  },
+  {
+   "id": "ch4-u17",
+   "name": "單一登入（SSO）",
+   "type": "topic",
+   "assessment": "說出 SSO 帶來的好處與它集中化之後的風險。再自問：SSO 等於 federation 嗎？不等於——SSO 是使用者體驗，federation 是跨組織的信任機制，一個組織內也可以有 SSO。",
+   "note": {
+    "slug": "sso",
+    "title": "Single Sign-On",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/sso",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-sso",
+    "questions": 4,
+    "concepts": [
+     "SAML (Security Assertion Markup Language)",
+     "OAuth 2.0",
+     "OpenID Connect (OIDC)",
+     "Kerberos",
+     "Identity Provider (IdP)",
+     "Service Provider (SP)",
+     "Token-based authentication",
+     "Single point of failure risk"
+    ],
+    "eli5": "Remember how annoying it would be if you had to show your ID at every single classroom door in school? Single sign-on is like showing your ID once at the front entrance and then being allowed into every room for the rest of the day. You log in one time, and all your apps and websites recognize you without asking for your password again. It saves time and means you only need to remember one password.",
+    "eli5Lang": "en",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Configuring an Enterprise Application for Single Sign-on",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=7SU5S0WtNNk",
+     "channel": "Microsoft Security",
+     "duration": "18:19",
+     "why": "Microsoft Security，實作示範"
+    },
+    {
+     "name": "What is single sign on (sso) | How sso works with saml | SAML  authentication with AD (2023)",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=cD6pkL020q4",
+     "channel": "IT k Funde",
+     "duration": "7:23",
+     "why": "IT k Funde，短講補強"
+    },
+    {
+     "name": "What is Single Sign-On Authentication? And...How Does it Work? (SSO)",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=Vp6kx4Sd_E0",
+     "channel": "OktaDev",
+     "duration": "7:58",
+     "why": "OktaDev，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "What is Single Sign On (SSO)",
+    "channel": "IBM Technology",
+    "url": "https://www.youtube.com/watch?v=Bv6NZlqqn48",
+    "duration": "6:20",
+    "why": "Messer 官方課程沒有單獨講這個主題，改用 IBM Technology 這支講得最完整的"
+   }
+  },
+  {
+   "id": "ch4-u18",
+   "name": "威脅獵捕",
+   "type": "topic",
+   "assessment": "說明威脅獵捕與被動告警處理的差別，以及一次獵捕從假說到驗證的流程。再回答：獵捕的成果除了找到入侵，還應該產出什麼？新的偵測規則，否則同樣的手法下次還是要靠人找。",
+   "note": {
+    "slug": "threat-hunting",
+    "title": "Threat Hunting",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/threat-hunting",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-threat-hunting",
+    "questions": 4,
+    "concepts": [
+     "Hypothesis-driven hunting",
+     "Intelligence-driven hunting",
+     "Baseline-driven hunting",
+     "MITRE ATT&CK framework",
+     "Data sources",
+     "Indicators of Attack (IoA)",
+     "Advisary emulation",
+     "Hunt maturity model",
+     "theHarvester",
+     "dnsenum"
+    ],
+    "eli5": "Most alarms wait for a burglar to trip them. But a threat hunter is more like a detective who goes looking for trouble before the alarm even rings. They walk through the building checking closets, looking behind doors, and following suspicious footprints -- not because an alarm went off, but because they have a hunch something might be wrong. If they find anything, they can stop the bad guy before real damage is done.",
+    "eli5Lang": "en",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Introduction to  Cyber Threat Hunting : SOC",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=n97tgFcRZg8",
+     "channel": "Prabh Nair",
+     "duration": "24:12",
+     "why": "Prabh Nair，完整講解"
+    },
+    {
+     "name": "Threat Hunting Tutorial: Introduction",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=qrZsc5IkchI",
+     "channel": "PC Security Channel",
+     "duration": "10:47",
+     "why": "PC Security Channel，實作示範"
+    },
+    {
+     "name": "Microsoft Sentinel-Threat Hunting",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=DFg8WnL9q0I",
+     "channel": "T-Minus365",
+     "duration": "5:44",
+     "why": "T-Minus365，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Network Threat Hunting Made Easy (Finding Hackers)",
+    "channel": "John Hammond",
+    "url": "https://www.youtube.com/watch?v=mTIDoZ7I-Co",
+    "duration": "11:38",
+    "why": "Messer 官方課程沒有單獨講這個主題，改用 John Hammond 這支講得最完整的"
+   }
+  },
+  {
+   "id": "ch4-u19",
+   "name": "威脅情報",
+   "type": "topic",
+   "assessment": "分辨戰略、戰術、營運三個層級的威脅情報各給誰用。再自問：OSINT、商業情報、ISAC 各有什麼取捨？再說出 IoC 與 TTP 的差別——前者會過期，後者才是行為指紋。",
+   "note": {
+    "slug": "threat-intelligence",
+    "title": "Threat Intelligence",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/threat-intelligence",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-threat-intelligence",
+    "questions": 4,
+    "concepts": [
+     "Strategic intelligence",
+     "Operational intelligence",
+     "Tactical intelligence",
+     "Technical intelligence",
+     "Threat feeds",
+     "STIX (Structured Threat Information eXpression)",
+     "TAXII (Trusted Automated eXchange of Intelligence Information)",
+     "Information Sharing and Analysis Centers (ISACs)",
+     "Threat actor profiling",
+     "Confidence levels"
+    ],
+    "eli5": "It is like getting a heads-up from your neighbor that someone has been trying doorknobs on your street. Threat intelligence is information about what bad guys are doing, what tools they use, and who they are targeting. When security teams get this information early, they can lock the right doors before the bad guys even show up. The better your information, the better you can prepare.",
+    "eli5Lang": "en",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Understanding & Managing Collection to Support Threat Intelligence Analysis - SANS CTI Summit",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=1BBw9GO7g74",
+     "channel": "SANS Digital Forensics and Incident Response",
+     "duration": "24:10",
+     "why": "SANS Digital Forensics and Incident Response，完整講解"
+    },
+    {
+     "name": "1: Overview of Microsoft Defender Threat Intelligence with demo",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=cjrvdYByt_0",
+     "channel": "Microsoft Security",
+     "duration": "29:35",
+     "why": "Microsoft Security，實作示範"
+    },
+    {
+     "name": "2025 Threat Intelligence Index: Dark Web, AI, & Ransomware Trends",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=iGE7b_XQqtY",
+     "channel": "IBM Technology",
+     "duration": "13:07",
+     "why": "IBM Technology，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Threat Intelligence",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=86fruE9jkKk",
+    "duration": "4:46",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch4-u20",
+   "name": "弱點管理",
+   "type": "topic",
+   "assessment": "說出弱點管理循環：盤點、掃描、驗證、排序、修補、複掃。再回答：CVSS 分數高就一定要先修嗎？不一定——還要看資產暴露面與業務重要性，這是實務與考試都會強調的。",
+   "note": {
+    "slug": "vulnerability-management",
+    "title": "Vulnerability Management",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/vulnerability-management",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-4-security-operations/cases/case-vulnerability-management",
+    "questions": 4,
+    "concepts": [
+     "Vulnerability scanning",
+     "Credentialed vs. non-credentialed scans",
+     "CVSS (Common Vulnerability Scoring System)",
+     "CVE (Common Vulnerabilities and Exposures)",
+     "Risk-based prioritization",
+     "Remediation vs. mitigation",
+     "Patch management",
+     "Scan scheduling",
+     "False positives/negatives",
+     "nmap"
+    ],
+    "eli5": "Think of your house having a crack in a window, a loose lock, and a hole in the fence. Vulnerability management is like walking around your house regularly, writing down every weak spot, deciding which ones are most dangerous, and fixing them in order. You start with the broken lock on the front door because that is the easiest way for someone to get in. Then you keep checking because new cracks can appear anytime.",
+    "eli5Lang": "en",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Analyzing Vulnerabilities",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=eyVy1gKCuAU",
+     "channel": "Professor Messer",
+     "duration": "10:29",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Vulnerability Remediation",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=P9xakfmX70c",
+     "channel": "Professor Messer",
+     "duration": "8:45",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "The Secret to Vulnerability Management",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=PzX8NLPaxNk",
+     "channel": "SANS Institute",
+     "duration": "58:18",
+     "why": "SANS Institute，完整講解"
+    }
+   ],
+   "lesson": {
+    "title": "Vulnerability Scanning",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=9B0mtWk_AM0",
+    "duration": "7:45",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  }
+ ]
+}

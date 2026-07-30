@@ -1,0 +1,710 @@
+{
+ "chapter": "CH5",
+ "units": [
+  {
+   "id": "ch5-u1",
+   "name": "稽核與評鑑",
+   "type": "topic",
+   "assessment": "分辨內部稽核、外部稽核、第三方認證與自評的效力差別。再自問：attestation 和 assessment 差在哪？前者是簽名背書、要承擔責任，後者只是評估報告。",
+   "note": {
+    "slug": "audits-and-assessments",
+    "title": "Audits and Assessments",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/audits-and-assessments",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-audits-and-assessments",
+    "questions": 4,
+    "concepts": [
+     "Internal audit",
+     "External audit",
+     "Regulatory audit",
+     "Audit scope",
+     "Evidence collection",
+     "Findings and remediation",
+     "SOC reports",
+     "Attestation"
+    ],
+    "eli5": "Think of a school health inspection. Someone comes in to check that the cafeteria is clean, the fire exits work, and the playground is safe. An audit is like that official inspection -- someone with a checklist making sure everything meets the rules. An assessment is more like a teacher walking around the school looking for anything that could be improved, even stuff not on the checklist. Both help make sure the school (or a company's computers and data) stays safe and follows the rules.",
+    "eli5Lang": "en",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "What is Internal Audit? | Types of Internal Audits | Internal Audit Meaning & Explanation",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=jeTOJhujqZ0",
+     "channel": "Auditing Tricks",
+     "duration": "8:45",
+     "why": "Auditing Tricks，短講補強"
+    },
+    {
+     "name": "CertMike Explains SOC Audits",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=KlE2grb4qo0",
+     "channel": "Mike Chapple",
+     "duration": "8:24",
+     "why": "Mike Chapple，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Audits and Assessments",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=uo2Yw720mv4",
+    "duration": "2:49",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch5-u2",
+   "name": "營運持續",
+   "type": "topic",
+   "assessment": "說出 BCP 與 DRP 的分工，以及 tabletop、walkthrough、parallel、full interruption 四種演練的成本與風險排序。再回答：只寫了計畫但從沒演練過，實務上等於什麼？等於沒有計畫。",
+   "note": {
+    "slug": "business-continuity",
+    "title": "Business Continuity",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/business-continuity",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-business-continuity",
+    "questions": 4,
+    "concepts": [
+     "Business continuity vs. disaster recovery",
+     "BIA as the foundation",
+     "Succession planning",
+     "Communication plan",
+     "Order of restoration",
+     "After-action review"
+    ],
+    "eli5": "You know how your school has a plan for snow days -- maybe you switch to online classes so learning doesn't stop? Business continuity is the same idea for companies. It's the plan for keeping the important stuff running even when something goes wrong, like a power outage, a big storm, or a computer crash. The goal is to never have to say \"sorry, we're closed\" when people are counting on you.",
+    "eli5Lang": "en",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Webinar: Business Continuity Management: Impact Analysis and Risk Assessment",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=awLn7yZDKXs",
+     "channel": "GRC Solutions",
+     "duration": "59:19",
+     "why": "GRC Solutions，完整講解"
+    },
+    {
+     "name": "What is Business Continuity and Disaster Recovery Planning?",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=o0xj1JKjjOE",
+     "channel": "CBT Nuggets",
+     "duration": "12:10",
+     "why": "CBT Nuggets，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "What is Business Continuity Planning (BCP)?",
+    "channel": "Eye on Tech",
+    "url": "https://www.youtube.com/watch?v=ZetTrqWFE_w",
+    "duration": "2:30",
+    "why": "Messer 官方課程沒有單獨講這個主題，改用 Eye on Tech 這支講得最完整的"
+   }
+  },
+  {
+   "id": "ch5-u3",
+   "name": "營運衝擊分析（BIA）",
+   "type": "topic",
+   "assessment": "說出 RTO、RPO、MTTR、MTBF 各衡量什麼，並用一句話區分 RTO 與 RPO：前者是可以停多久，後者是可以掉多少資料。這四個縮寫混用是這一格最常見的失分。",
+   "note": {
+    "slug": "business-impact-analysis",
+    "title": "Business Impact Analysis",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/business-impact-analysis",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-business-impact-analysis",
+    "questions": 4,
+    "concepts": [
+     "Critical business functions",
+     "Maximum Tolerable Downtime (MTD)",
+     "Recovery Time Objective (RTO)",
+     "Recovery Point Objective (RPO)",
+     "Mean Time to Repair (MTTR)",
+     "Mean Time Between Failures (MTBF)",
+     "Single point of failure (SPOF)",
+     "Impact categories",
+     "Dependencies"
+    ],
+    "eli5": "Picture this: you're packing for a camping trip and you need to decide what's most important to bring. Your water bottle matters more than your playing cards. A business impact analysis is when a company makes a list of everything it does and figures out which parts matter most. If the internet goes down, which things need to come back first? How long can each thing be broken before it's a real problem? This helps them plan ahead so the most important stuff gets fixed first.",
+    "eli5Lang": "en",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "How to Conduct a BIA (Business Impact Analysis)",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=Dd6D5ijabdA",
+     "channel": "Eye on Tech",
+     "duration": "2:54",
+     "why": "Eye on Tech，實作示範"
+    },
+    {
+     "name": "BIA - Business Impact Analysis (CISSP Free by Skillset.com)",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=GXNDSOxfri0",
+     "channel": "Skillset",
+     "duration": "7:21",
+     "why": "Skillset，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Business Impact Analysis",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=myI-v3mj7Kc",
+    "duration": "2:55",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch5-u4",
+   "name": "法遵與合規",
+   "type": "topic",
+   "assessment": "說出不合規的後果類型（罰款、制裁、名譽、合約終止），以及 due care 與 due diligence 的差別：前者是做該做的事，後者是查清楚該做什麼。",
+   "note": {
+    "slug": "compliance",
+    "title": "Compliance",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/compliance",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-compliance",
+    "questions": 4,
+    "concepts": [
+     "Regulatory compliance",
+     "Industry standards",
+     "Contractual compliance",
+     "Compliance monitoring",
+     "Compliance reporting",
+     "Consequences of non-compliance",
+     "Internal vs. external compliance",
+     "Compliance automation",
+     "Geographic considerations",
+     "GDPR"
+    ],
+    "eli5": "合規就是「遵守法規」。不管你喜不喜歡，法律規定要怎麼保護資料，公司就得照做。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Introduction to Cybersecurity - Governance Risk and Compliance",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=ev6tQbnI22Q",
+     "channel": "University of Maryland Smith School of Business",
+     "duration": "41:31",
+     "why": "University of Maryland Smith School of Business，完整講解"
+    },
+    {
+     "name": "SailPoint – Workday Integration Demo: Going Beyond Day 1 Access and Compliance",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=ECe_gnDtGXs",
+     "channel": "SailPoint",
+     "duration": "3:34",
+     "why": "SailPoint，實作示範"
+    }
+   ],
+   "lesson": {
+    "title": "Compliance",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=IjJf4jLtONQ",
+    "duration": "8:06",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch5-u5",
+   "name": "資料分級與角色",
+   "type": "topic",
+   "assessment": "說出常見的分級層次與各自的處理要求，再分辨 data owner、data controller、data processor、data custodian、DPO 五個角色的責任。角色搞混是 GDPR 相關題目最常見的錯誤。",
+   "note": {
+    "slug": "data-classification",
+    "title": "Data Classification",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/data-classification",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-data-classification",
+    "questions": 4,
+    "concepts": [
+     "Government / military classifications:",
+     "Commercial / private sector classifications:",
+     "Classification criteria",
+     "Data states",
+     "Labeling and marking",
+     "Handling procedures",
+     "Declassification",
+     "PIA (Privacy Impact Assessment)"
+    ],
+    "eli5": "Think about how a library organizes books. Some are on open shelves anyone can grab, some are in a special section you need a library card for, and some rare books are locked in a glass case. Data classification works the same way -- a company sorts its information into groups based on how secret or important it is, then decides who can see it and how carefully it needs to be protected. The most sensitive stuff gets the strongest locks.",
+    "eli5Lang": "en",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Data Roles and Responsibilities",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=gxNi-04yP8Q",
+     "channel": "Professor Messer",
+     "duration": "2:27",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Everything about Data Classification and DLP Data Loss Prevention explained with real life examples",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=wl4vaJ7NIBs",
+     "channel": "Luv Johar Free IT Training Videos",
+     "duration": "41:48",
+     "why": "Luv Johar Free IT Training Videos，完整講解"
+    }
+   ],
+   "lesson": {
+    "title": "Data Types and Classifications",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=R0W0_gZCVzk",
+    "duration": "5:54",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch5-u6",
+   "name": "災難復原",
+   "type": "topic",
+   "assessment": "分辨 hot site、warm site、cold site 的成本與切換時間，並說明 3-2-1 備份原則。再自問：全量、增量、差異備份的還原步驟各要動用幾份備份？",
+   "note": {
+    "slug": "disaster-recovery",
+    "title": "Disaster Recovery",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/disaster-recovery",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-disaster-recovery",
+    "questions": 4,
+    "concepts": [
+     "Replication",
+     "Geographic considerations",
+     "3-2-1 backup rule",
+     "Testing the DRP",
+     "Documentation"
+    ],
+    "eli5": "Remember when your phone died and you were relieved your photos were backed up to the cloud? Disaster recovery is a company's plan to get its computers, files, and systems back up and running after something really bad happens -- like a flood, a fire, or a big cyberattack. It spells out exactly what to do, who does it, and in what order, so the company can get back to normal as fast as possible.",
+    "eli5Lang": "en",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Recovery Testing",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=IhT7Odu4xHc",
+     "channel": "Professor Messer",
+     "duration": "5:18",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Backups",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=8mGSwRScqIM",
+     "channel": "Professor Messer",
+     "duration": "12:16",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    }
+   ],
+   "lesson": {
+    "title": "Disaster Recovery - CompTIA Network+ N10-009 - 3.3",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=NaXMohP4-vU",
+    "duration": "12:09",
+    "why": "Messer 官方課程沒有單獨講這個主題，改用 Professor Messer 這支講得最完整的"
+   }
+  },
+  {
+   "id": "ch5-u7",
+   "name": "資安治理",
+   "type": "topic",
+   "assessment": "說出政策、標準、程序、指引四層文件的效力差別與誰負責核准。再回答：治理與管理差在哪？治理決定方向與問責，管理負責執行，董事會層級的題目考的都是前者。",
+   "note": {
+    "slug": "governance",
+    "title": "Governance",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/governance",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-governance",
+    "questions": 4,
+    "concepts": [
+     "Board and executive involvement",
+     "Policies, standards, baselines, guidelines, procedures",
+     "Roles and responsibilities",
+     "Governance committees",
+     "Centralized vs. decentralized governance",
+     "Monitoring and reporting",
+     "Due diligence vs. due care"
+    ],
+    "eli5": "治理就是「管理規則」。由公司高層決定安全的大方向，然後大家照著規則走，確保公司資產安全。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Security Considerations",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=4tGFraaP48Q",
+     "channel": "Professor Messer",
+     "duration": "4:52",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "What Are Policies vs Standards vs Procedures vs Guidelines? // Free CySA+ (CS0-002) Course",
+     "channel": "Jon Good",
+     "url": "https://www.youtube.com/watch?v=SCqiX7LpfF8",
+     "duration": "6:05",
+     "why": "Jon Good，指定收錄",
+     "kind": "core"
+    }
+   ],
+   "lesson": {
+    "title": "What is GRC? Governance, Risk, And Compliance in 8 Minutes",
+    "channel": "InvGate",
+    "url": "https://www.youtube.com/watch?v=ujkNmD3ygoY",
+    "duration": "8:43",
+    "why": "Messer 官方課程沒有單獨講這個主題，改用 InvGate 這支"
+   }
+  },
+  {
+   "id": "ch5-u8",
+   "name": "隱私保護",
+   "type": "topic",
+   "assessment": "分辨 PII、PHI、PII 與去識別化、假名化、匿名化的差別。再自問：假名化的資料還算個資嗎？算——因為還能還原，這是 GDPR 明訂的，考題很愛在這裡設陷阱。",
+   "note": {
+    "slug": "privacy",
+    "title": "Privacy",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/privacy",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-privacy",
+    "questions": 4,
+    "concepts": [
+     "PII (Personally Identifiable Information)",
+     "PHI (Protected Health Information)",
+     "Privacy Impact Assessment (PIA)",
+     "Privacy by design",
+     "Anonymization vs. pseudonymization",
+     "Data breach notification",
+     "Data sovereignty"
+    ],
+    "eli5": "隱私就是「保護個人秘密」。確保公司不會亂用你的個人資料，並且只在有需要的時候才看。",
+    "eli5Lang": "zh",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "What is Data Privacy | Explained in 30 minutes | Exploring Cybersecurity: Data Protection & Privacy",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=soliOHbzJog",
+     "channel": "Great Learning",
+     "duration": "28:24",
+     "why": "Great Learning，完整講解"
+    },
+    {
+     "name": "a Practical Guide To Online Privacy in 2026",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=ncsx5iLFBfc",
+     "channel": "CyberFlow",
+     "duration": "5:39",
+     "why": "CyberFlow，實作示範"
+    }
+   ],
+   "lesson": {
+    "title": "Privacy",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=WGXrbAh0LUI",
+    "duration": "5:22",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch5-u9",
+   "name": "法規與框架",
+   "type": "topic",
+   "assessment": "把 GDPR、HIPAA、PCI DSS、SOX、ISO 27001、NIST CSF 各配一句適用範圍。再回答：PCI DSS 是法律嗎？不是——它是產業合約要求，違反的後果是罰款與停止收單，不是刑責。",
+   "note": {
+    "slug": "regulations-and-frameworks",
+    "title": "Regulations and Frameworks",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/regulations-and-frameworks",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-regulations-and-frameworks",
+    "questions": 4,
+    "concepts": [
+     "NIST Cybersecurity Framework (CSF)",
+     "NIST SP 800-53",
+     "ISO 27001 / 27002",
+     "GDPR",
+     "HIPAA",
+     "PCI DSS",
+     "SOX (Sarbanes-Oxley)",
+     "GLBA",
+     "FERPA",
+     "CIS Controls"
+    ],
+    "eli5": "Regulations are like traffic laws -- the government says you must stop at red lights, and you'll get a ticket if you don't. Frameworks are more like a coach's playbook -- a set of best plays you can choose to follow to win the game. Companies use both: they have to follow the laws (regulations), and they choose proven playbooks (frameworks) to build a strong security program. Together, these give the company a clear set of instructions to keep data safe.",
+    "eli5Lang": "en",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Security Procedures",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=vJINnOZyQNg",
+     "channel": "Professor Messer",
+     "duration": "7:02",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Cyber Security Frameworks | Types of Cyber Security Frameworks | Great Learning",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=hW1MZZoHKYE",
+     "channel": "Great Learning",
+     "duration": "13:23",
+     "why": "Great Learning，短講補強"
+    }
+   ],
+   "lesson": {
+    "title": "Security Standards",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=jBvdRpXaomk",
+    "duration": "5:36",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch5-u10",
+   "name": "風險評鑑",
+   "type": "topic",
+   "assessment": "算一次量化風險：說出 SLE = AV × EF、ALE = SLE × ARO，並判斷一個年成本高於 ALE 的控制該不該買。再分辨質化與量化評鑑各自的適用場合。",
+   "note": {
+    "slug": "risk-assessment",
+    "title": "Risk Assessment",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/risk-assessment",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-risk-assessment",
+    "questions": 4,
+    "concepts": [
+     "Qualitative risk assessment",
+     "Quantitative risk assessment",
+     "Risk matrix / heat map",
+     "Threat assessment",
+     "Vulnerability assessment",
+     "Ad hoc vs. recurring vs. continuous",
+     "Environmental factors"
+    ],
+    "eli5": "It's like looking at all the things that could go wrong on a field trip and figuring out which ones to worry about most. Crossing a busy road? That's high risk. Getting a mosquito bite? Not great, but not a big deal. A risk assessment helps a company look at each danger, decide how likely it is to happen and how bad it would be, and then focus on fixing the scariest ones first.",
+    "eli5Lang": "en",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Mastering GRC with ISO 27001:2022 Risk Assessment Made Easy!",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=EAgQ6u7ARIA",
+     "channel": "Prabh Nair",
+     "duration": "55:40",
+     "why": "Prabh Nair，完整講解"
+    },
+    {
+     "name": "What Is a Cybersecurity Risk Assessment (and HOW TO DO THEM!)",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=9D_OwDKwbkA",
+     "channel": "Simply Cyber - Gerald Auger, PhD",
+     "duration": "13:16",
+     "why": "Simply Cyber - Gerald Auger, PhD，實作示範"
+    }
+   ],
+   "lesson": {
+    "title": "Risk Analysis",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=Ykx7t54y-oo",
+    "duration": "9:13",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch5-u11",
+   "name": "風險管理策略",
+   "type": "topic",
+   "assessment": "說出四種風險處置（接受、避免、轉移、緩解）並各配一個實例。再自問：買保險屬於哪一種？轉移——但殘餘風險與名譽損失仍留在自己身上，這一點考題常追問。",
+   "note": {
+    "slug": "risk-management",
+    "title": "Risk Management",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/risk-management",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-risk-management",
+    "questions": 4,
+    "concepts": [
+     "Risk = Threat x Vulnerability x Impact",
+     "Risk identification",
+     "Risk appetite vs. risk tolerance",
+     "Residual risk",
+     "Inherent risk",
+     "Risk register",
+     "Risk matrix (heat map)",
+     "Qualitative vs. quantitative analysis"
+    ],
+    "eli5": "風險管理就是「權衡利弊」。評估哪些壞事可能發生、機率多高、損失多少，然後決定是要花錢防範、還是承擔後果。",
+    "eli5Lang": "zh",
+    "weight": "high"
+   },
+   "drills": [
+    {
+     "name": "Risk Management Strategies",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=pmyuWY7Pbag",
+     "channel": "Professor Messer",
+     "duration": "3:12",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Risk Management in Cybersecurity- Information Security Risk Management | Quantitative & Qualitative",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=2S3regElG2M",
+     "channel": "CyberPlatter",
+     "duration": "48:48",
+     "why": "CyberPlatter，完整講解"
+    }
+   ],
+   "lesson": {
+    "title": "Risk Management",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=cLhUMoQS1a8",
+    "duration": "3:30",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch5-u12",
+   "name": "資安意識訓練",
+   "type": "topic",
+   "assessment": "說出意識訓練該涵蓋的主題與評估成效的方法（模擬釣魚點擊率、回報率）。再回答：回報率比點擊率更重要的原因是什麼？點擊會發生，關鍵是有沒有人願意通報。",
+   "note": {
+    "slug": "security-awareness-training",
+    "title": "Security Awareness Training",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/security-awareness-training",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-security-awareness-training",
+    "questions": 4,
+    "concepts": [
+     "Phishing simulations",
+     "Role-based training",
+     "Training frequency",
+     "Gamification",
+     "Metrics",
+     "Culture of security",
+     "Insider threat awareness"
+    ],
+    "eli5": "安全意識培訓就是「防詐騙宣導」。教大家不要亂點連結、不要隨便給密碼，讓每個人都成為公司的安全守衛。",
+    "eli5Lang": "zh",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "User Training",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=WQRZMMLUkGE",
+     "channel": "Professor Messer",
+     "duration": "4:31",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "Platform to Share - June 2021 | Mimecast | Email Security | Security Training",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=PFJshOIh2RI",
+     "channel": "Breakwater IT",
+     "duration": "53:24",
+     "why": "Breakwater IT，完整講解"
+    }
+   ],
+   "lesson": {
+    "title": "Security Awareness",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=W_Npxwk4fbI",
+    "duration": "6:45",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch5-u13",
+   "name": "資安政策",
+   "type": "topic",
+   "assessment": "說出 AUP、密碼政策、資料保留政策、職務輪調與強制休假各防什麼。再自問：強制休假為什麼是資安控制？讓長期舞弊在當事人不在時被別人接手發現。",
+   "note": {
+    "slug": "security-policies",
+    "title": "Security Policies",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/security-policies",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-security-policies",
+    "questions": 4,
+    "concepts": [
+     "Policy lifecycle",
+     "Exception process"
+    ],
+    "eli5": "A security policy is like the student handbook your school gives out at the start of the year. It lists the rules everyone needs to follow -- no cheating, be respectful, wear your uniform. For a company, security policies are the official written rules about how to protect computers and data. They cover things like who can access what, how strong your password must be, and what happens if you break a rule. Everyone in the company has to know and follow them.",
+    "eli5Lang": "en",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Lock Down Your Microsoft 365: Your Essential Security Policies",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=D1tgTqmD6j0",
+     "channel": "Jonathan Edwards",
+     "duration": "22:09",
+     "why": "Jonathan Edwards，完整講解"
+    },
+    {
+     "name": "Maximize S3 Security with Bucket Policies: A Hands-On AWS Demo",
+     "kind": "lab",
+     "url": "https://www.youtube.com/watch?v=Lgs1Lvjg1MA",
+     "channel": "Future Skills",
+     "duration": "11:07",
+     "why": "Future Skills，實作示範"
+    }
+   ],
+   "lesson": {
+    "title": "Security Policies",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=5kY9kvzeWjA",
+    "duration": "11:02",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  },
+  {
+   "id": "ch5-u14",
+   "name": "第三方風險",
+   "type": "topic",
+   "assessment": "分辨 SLA、MOU、MSA、BPA、NDA、SOW 各約定什麼。再回答：供應商評鑑該在合約簽訂前還是後做？前，且要有持續監控條款——供應鏈攻擊的教訓都在這一格。",
+   "note": {
+    "slug": "third-party-risk",
+    "title": "Third-Party Risk",
+    "url": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/third-party-risk",
+    "caseUrl": "https://htlin222.github.io/CompTIA-security-plus-notes/domain-5-program-management/cases/case-third-party-risk",
+    "questions": 4,
+    "concepts": [
+     "Supply chain risk",
+     "Vendor assessment",
+     "Service Level Agreements (SLAs)",
+     "Right to audit",
+     "Data ownership and processing agreements",
+     "SOC reports",
+     "Vendor lock-in",
+     "Offboarding",
+     "Fourth-party risk"
+    ],
+    "eli5": "Say you give your house key to a dog walker so they can come in while you're at school. You trust them, but what if they lose the key or leave the door unlocked? Third-party risk is the danger that comes from sharing your stuff (data, systems, or access) with outside helpers like vendors or partners. If their security is weak, bad guys could get to your data through them -- even if your own locks are strong.",
+    "eli5Lang": "en",
+    "weight": "medium"
+   },
+   "drills": [
+    {
+     "name": "Agreement Types",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=HSZxjj1YAh8",
+     "channel": "Professor Messer",
+     "duration": "5:19",
+     "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+    },
+    {
+     "name": "TPRM 101: What Is Third Party Risk Management (TPRM)?",
+     "kind": "deep",
+     "url": "https://www.youtube.com/watch?v=H3qQv_6FTwA",
+     "channel": "Third Party Risk Association",
+     "duration": "16:04",
+     "why": "Third Party Risk Association，完整講解"
+    }
+   ],
+   "lesson": {
+    "title": "Third-party Risk Assessment",
+    "channel": "Professor Messer",
+    "url": "https://www.youtube.com/watch?v=13KNjPexnEI",
+    "duration": "11:36",
+    "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+   }
+  }
+ ]
+}

@@ -1,0 +1,96 @@
+/* ==========================================================================
+   note.css — 單元對應的外部筆記面板
+   影片講懂、筆記講細，這一塊是兩者之間的橋。用 accent 色是刻意的：
+   它跟自我評估（attention）與實證註記（依 grade 變色）要一眼分得出來。
+   ========================================================================== */
+
+.Note {
+  margin-top: var(--base-size-12);
+  padding: var(--base-size-12);
+  background-color: var(--bgColor-accent-muted);
+  border: 1px solid color-mix(in srgb, var(--fgColor-accent) 25%, transparent);
+  border-radius: var(--borderRadius-medium);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.Note__head {
+  display: flex;
+  align-items: center;
+  gap: var(--base-size-8);
+  color: var(--fgColor-accent);
+  /* 標題長度不定，窄螢幕要能換行而不是把卡片撐開 */
+  flex-wrap: wrap;
+}
+
+.Note__label {
+  font-weight: 600;
+}
+
+.Note__title {
+  color: var(--fgColor-muted);
+  font-weight: 400;
+  /* 英文主題名可能很長，允許在任意位置斷 */
+  overflow-wrap: anywhere;
+}
+
+.Note__eli5 {
+  margin-top: var(--base-size-8);
+  color: var(--fgColor-default);
+}
+
+.Note__eli5Label {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--fgColor-muted);
+}
+
+.Note__concepts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--base-size-4);
+  margin-top: var(--base-size-8);
+}
+
+/* 概念標籤數量多，字級再壓小一點才不會蓋過 ELI5 */
+.Note__concepts .Label {
+  font-size: 11px;
+  font-weight: 400;
+  /* .Label 預設 nowrap，長概念名在窄欄位會頂出卡片 */
+  white-space: normal;
+}
+
+.Note__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--base-size-8);
+  margin-top: var(--base-size-12);
+}
+
+.Note__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--base-size-4);
+  padding: 4px 10px;
+  background-color: var(--bgColor-default);
+  border: 1px solid var(--borderColor-default);
+  border-radius: var(--borderRadius-full, 999px);
+  color: var(--fgColor-accent);
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.Note__link:hover {
+  background-color: var(--bgColor-accent-muted);
+  border-color: var(--fgColor-accent);
+}
+
+.Note__link:focus-visible {
+  outline: 2px solid var(--fgColor-accent);
+  outline-offset: 2px;
+}

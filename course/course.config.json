@@ -1,0 +1,367 @@
+{
+  "$schema": "../src/build/course.schema.json",
+  "site": {
+    "project": "security-plus-course",
+    "name": "Security+ 影片伴讀課",
+    "url": "https://security-plus-course.pages.dev",
+    "locale": "zh-Hant",
+    "ogLocale": "zh_TW",
+    "brandIcon": "shield-check",
+    "title": "CompTIA Security+ SY0-701 影片伴讀課 — 83 個考綱主題的影片、筆記與標準依據",
+    "description": "83 個 SY0-701 考綱主題，每個都配一支主講影片、數支延伸影片，並直連同名筆記頁的 ELI5、概念圖與練習題。每個單元標註 NIST／MITRE ATT&CK／RFC 的原始標準依據，連結全數經 API 重驗。",
+    "ogDescription": "Security+ SY0-701 的影片伴讀：83 個考綱主題、真實驗證過的 YouTube 策展，每個主題都對得回筆記頁與 NIST／ATT&CK 原始文件。",
+    "keywords": [
+      "CompTIA Security+",
+      "SY0-701",
+      "資安證照",
+      "資訊安全",
+      "考試準備",
+      "NIST",
+      "MITRE ATT&CK"
+    ],
+    "audience": "準備 CompTIA Security+ SY0-701 的自學考生、想補資安基礎的 IT 從業者",
+    "about": [
+      "資訊安全",
+      "CompTIA Security+",
+      "證照考試準備",
+      "資安治理"
+    ],
+    "learningResourceType": [
+      "影片課程",
+      "考試準備",
+      "自我檢核"
+    ]
+  },
+  "hero": {
+    "eyebrow": "SY0-701 自學課程",
+    "heading": "把 83 個考綱主題，變成看得完、對得上、查得到出處的一門課",
+    "lede": "五個章節、{units} 個單元，涵蓋 SY0-701 全部 {problems} 個考綱主題。每個主題都給你三件事：<strong>一支講得清楚的影片</strong>、<strong>一段可以自問自答的檢核</strong>，以及<strong>這個說法在 NIST 或 ATT&CK 裡的原始出處</strong>。"
+  },
+  "ui": {
+    "searchPlaceholder": "搜尋主題、概念或攻擊手法…",
+    "tabs": {
+      "course": "課程內容",
+      "player": "上課模式",
+      "stance": "這門課的立場"
+    },
+    "progressLabel": "學習進度",
+    "facetLabel": "依主題領域篩選",
+    "assessmentLabel": "怎麼確認自己真的懂了",
+    "tightLabel": "考試最愛考",
+    "weakLabel": "最常被搞混",
+    "lessonLabel": "主講",
+    "drillEvidenceLabel": "這類主題的標準依據",
+    "unitEvidenceLabel": "標準依據",
+    "stats": [
+      {
+        "icon": "layers",
+        "field": "units",
+        "label": "個單元"
+      },
+      {
+        "icon": "clock",
+        "field": "duration",
+        "label": "課程時長"
+      },
+      {
+        "icon": "book-open",
+        "field": "lesson_units",
+        "label": "支主講影片"
+      },
+      {
+        "icon": "presentation",
+        "field": "drill_units",
+        "label": "支延伸影片"
+      },
+      {
+        "icon": "target",
+        "field": "problem_units",
+        "label": "個考綱主題"
+      },
+      {
+        "icon": "list-checks",
+        "field": "notes_questions",
+        "label": "題筆記練習題"
+      }
+    ],
+    "unitTypes": {
+      "topic": "考綱主題"
+    },
+    "evidenceRows": [
+      {
+        "field": "exam_scope",
+        "label": "考綱落點"
+      },
+      {
+        "field": "standard_basis",
+        "label": "標準依據"
+      },
+      {
+        "field": "real_world",
+        "label": "實務與考試的落差"
+      },
+      {
+        "field": "common_trap",
+        "label": "命題常見陷阱"
+      },
+      {
+        "field": "summary",
+        "label": "摘要"
+      },
+      {
+        "field": "pitfalls",
+        "label": "最容易失分的地方",
+        "type": "flags"
+      },
+      {
+        "field": "caveats",
+        "label": "課程須誠實告知"
+      }
+    ],
+    "problemType": "topic",
+    "facetClear": "清除領域篩選",
+    "facetPrefix": "領域",
+    "emptyTitle": "找不到符合的內容",
+    "emptyHint": "換個關鍵字或清除領域篩選再試一次。",
+    "playlistSearch": "搜尋播放清單…",
+    "prevLabel": "上一部影片",
+    "nextLabel": "下一部影片",
+    "doneLabel": "看完了",
+    "openExternal": "在 YouTube 開啟",
+    "moreLabel": "選片理由與自我檢核",
+    "discussLabel": "討論",
+    "discussNote": "留言會同步到 GitHub Discussions，需要 GitHub 帳號才能發言。每支影片各有一串討論。",
+    "lessonNoun": "支主講",
+    "drillNoun": "支延伸影片",
+    "drillNounShort": "支延伸",
+    "unitNoun": "個單元",
+    "kindFilterLabel": "影片類型篩選",
+    "missingTitle": "尚未找到合格影片",
+    "missingHint": "這個主題在 YouTube 上沒有品質足夠、且確實對到考綱的影片",
+    "lessonLangLabel": "主講語言",
+    "watchLabel": "看影片",
+    "facetFilterHint": "篩選屬於「{name}」的內容",
+    "evidenceSource": "原始標準文件",
+    "evidenceSourceLink": "讀原始標準文件",
+    "noteLabel": "對應筆記",
+    "noteLinkLabel": "讀完整筆記",
+    "noteCaseLabel": "讀情境案例",
+    "noteQuestionsLabel": "題練習題",
+    "noteConceptsLabel": "個下層概念",
+    "eli5Label": "先用最白話的講法",
+    "highWeightLabel": "高權重",
+    "highWeightHint": "筆記把這個主題標為高權重，考試出現頻率高"
+  },
+  "notes": {
+    "repo": "htlin222/CompTIA-security-plus-notes",
+    "branch": "v4",
+    "site": "https://htlin222.github.io/CompTIA-security-plus-notes",
+    "name": "CompTIA Security+ SY0-701 Study Notes"
+  },
+  "kinds": [
+    {
+      "id": "core",
+      "label": "精講",
+      "tone": "accent"
+    },
+    {
+      "id": "deep",
+      "label": "深講",
+      "tone": "success"
+    },
+    {
+      "id": "lab",
+      "label": "實作",
+      "tone": "danger"
+    }
+  ],
+  "grades": [
+    {
+      "id": "standard",
+      "label": "官方標準明訂",
+      "tone": "success"
+    },
+    {
+      "id": "framework",
+      "label": "框架有對應",
+      "tone": "accent"
+    },
+    {
+      "id": "advisory",
+      "label": "業界共識",
+      "tone": "attention"
+    },
+    {
+      "id": "contested",
+      "label": "說法不一致",
+      "tone": "danger"
+    }
+  ],
+  "languages": {
+    "en": "English",
+    "zh": "繁中"
+  },
+  "taxonomy": {
+    "facets": "taxonomy.domains",
+    "categories": "taxonomy.families"
+  },
+  "nav": [
+    {
+      "title": "基礎與威脅",
+      "chapters": [
+        "CH1",
+        "CH2"
+      ]
+    },
+    {
+      "title": "架構與維運",
+      "chapters": [
+        "CH3",
+        "CH4"
+      ]
+    },
+    {
+      "title": "治理",
+      "chapters": [
+        "CH5"
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "code": "CH1",
+      "title": "一般資安概念",
+      "icon": "shield-check",
+      "source": "ch1",
+      "units": 14,
+      "drills": 42
+    },
+    {
+      "code": "CH2",
+      "title": "威脅、弱點與緩解",
+      "icon": "bug",
+      "source": "ch2",
+      "units": 15,
+      "drills": 45
+    },
+    {
+      "code": "CH3",
+      "title": "安全架構",
+      "icon": "network",
+      "source": "ch3",
+      "units": 20,
+      "drills": 60
+    },
+    {
+      "code": "CH4",
+      "title": "資安維運",
+      "icon": "radar",
+      "source": "ch4",
+      "units": 20,
+      "drills": 60
+    },
+    {
+      "code": "CH5",
+      "title": "治理、風險與合規",
+      "icon": "scale",
+      "source": "ch5",
+      "units": 14,
+      "drills": 28
+    }
+  ],
+  "audit": {
+    "duration": {
+      "lesson": {
+        "min": "2:30",
+        "max": "35:00"
+      },
+      "drill": {
+        "min": "2:00",
+        "max": "60:00"
+      }
+    },
+    "driftSeconds": 30,
+    "minViews": 3000,
+    "metaCoverage": 1,
+    "drillsPerUnit": {
+      "min": 2,
+      "max": 4
+    },
+    "maxSharedVideos": 40,
+    "requireAssessment": [
+      "topic"
+    ],
+    "minAssessmentChars": 60,
+    "minCitations": 1,
+    "allowMissingUrls": 12
+  },
+  "stance": {
+    "title": "這門課的立場",
+    "intro": "在把 83 個主題排成一門課之前，先把三個最根本的問題查清楚：影片看得完等於考得過嗎？YouTube 上的資安內容跟得上考綱改版嗎？把「通過考試」和「真的會做」畫上等號合理嗎？以下每一條結論都附原始標準文件，你可以自己去查。",
+    "verdicts": {
+      "concept-1": "影片是最省力的入門，但單靠看影片通過率不高——考題是情境題，不是名詞解釋。",
+      "concept-2": "YouTube 的資安內容有明顯的時效落差，尤其是雲端與 AI 相關主題。",
+      "concept-3": "Security+ 驗證的是共通詞彙與判斷框架，不是動手能力。"
+    },
+    "outroTitle": "所以這門課的定位是什麼？",
+    "outro": "這門課是<strong>筆記的伴讀，不是筆記的替代</strong>。影片負責把觀念講到你聽得懂，筆記負責把細節、辨析與練習題補齊，兩邊的主題是一對一對上的。真正決定考試成敗的是情境題的判斷力——那個只能靠做題累積，這門課每個單元都直接連到筆記頁的練習題，就是為了讓你看完影片馬上驗收。至於實務動手能力，Security+ 本來就不驗證那個，別把證照當成能力證明。"
+  },
+  "landing": {
+    "howTitle": "怎麼用這門課",
+    "steps": [
+      {
+        "icon": "play",
+        "title": "先看主講",
+        "body": "每個考綱主題配一支講得最清楚的主講影片，多數來自 Professor Messer 的官方對照課程，長度落在 3 到 12 分鐘，通勤就能看完一個主題。"
+      },
+      {
+        "icon": "brain",
+        "title": "再自我檢核",
+        "body": "每個單元都有一段「怎麼確認自己真的懂了」，是從筆記的考點提示轉寫成的自問自答。答不出來就代表影片白看了，回去重看比往下衝有用。"
+      },
+      {
+        "icon": "notebook-pen",
+        "title": "回筆記補細節",
+        "body": "看完影片點進同名筆記頁：ELI5 白話解釋、下層概念、情境案例與練習題都在那裡。影片負責懂，筆記負責熟。"
+      }
+    ],
+    "stanceTitle": "開始之前，先知道這件事",
+    "stanceLede": "影片伴讀有它的極限。與其讓你考完才發現，不如一開始就講清楚這門課能給你什麼、不能給你什麼。",
+    "chaptersTitle": "五個章節，對齊 SY0-701 五大考科",
+    "ctaTitle": "準備好就開始",
+    "ctaLede": "{units} 個單元、{videos} 支影片，全部免費。進度存在你自己的瀏覽器裡，沒有帳號、沒有後端。"
+  },
+  "footer": {
+    "disclaimer": "<strong>與 CompTIA 無關。</strong>本站為第三方獨立製作的自學資源，未經 CompTIA 認可或背書，CompTIA、Security+ 與 SY0-701 為 CompTIA 的商標。課程內容依 SY0-701 考綱編排，但<strong>不保證涵蓋所有命題範圍</strong>，也不是考古題。單元標註的「標準依據」為 NIST、MITRE、IETF 等公開文件的對應關係，連結經 API 重驗，但標準文件本身會改版，請以官方最新版為準。",
+    "credits": "影片為 YouTube 上第三方創作者的作品，版權歸原頻道所有，本站僅提供連結。筆記內容來自同作者的 CompTIA Security+ SY0-701 Study Notes。"
+  },
+  "llms": {
+    "summary": "這是一門免費的 CompTIA Security+ SY0-701 自學影片課程，涵蓋考綱全部 {problems} 個主題。所有影片皆為 YouTube 上第三方頻道的作品，本站僅提供策展與連結，並對應到同作者的開源筆記站。",
+    "stanceIntro": "課程對自身的 {evidence} 個限制做了查證，結果照實呈現，包含對課程本身不利的部分：",
+    "stanceConclusion": "簡言之：這門課是筆記的影片伴讀，不是筆記的替代，更不是實務能力的證明。影片負責把觀念講懂，情境題判斷力仍須靠練習題累積。",
+    "disclaimer": "本站與 CompTIA 無關，未經其認可或背書。課程依 SY0-701 考綱編排但不保證涵蓋所有命題範圍。標準依據連結經 API 重驗，惟標準文件會改版，請以官方最新版為準。"
+  },
+  "discussions": {
+    "provider": "giscus",
+    "repo": "htlin222/comptia-security-plus-course",
+    "repoId": "",
+    "category": "General",
+    "categoryId": "",
+    "mapping": "specific",
+    "termPrefix": "video",
+    "lang": "zh-TW",
+    "reactions": true,
+    "inputPosition": "top"
+  },
+  "counter": {
+    "label": "次瀏覽",
+    "title": "累計頁面瀏覽次數，不是不重複訪客；已排除常見爬蟲。"
+  },
+  "og": {
+    "heading": "把 83 個考綱主題，變成<em>對得回筆記</em>的一門課",
+    "lede": "SY0-701 全考綱的影片伴讀。每個主題一支主講、數支延伸，<br />直連同名筆記頁的 ELI5、概念圖與練習題。",
+    "evidenceIcon": "file-text",
+    "evidenceNote": "每個單元都標到 NIST／MITRE ATT&CK 的原始文件，連結經 API 重驗",
+    "statCount": 4
+  }
+}
