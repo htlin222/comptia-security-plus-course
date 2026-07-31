@@ -1,0 +1,408 @@
+{
+ "_readme": [
+  "只有中繼資料。字幕本身在 .cache/captions/，不進版控——那是原頻道的著作。",
+  "source=manual 是創作者自己上的字幕，auto 是 YouTube 自動聽打（專有名詞常錯）。"
+ ],
+ "counts": {
+  "manual": 73,
+  "auto": 6,
+  "none": 0
+ },
+ "videos": {
+  "-LevHAzXgFs": {
+   "source": "manual",
+   "words": 966,
+   "role": "lesson"
+  },
+  "-ZfbifHwEVE": {
+   "source": "manual",
+   "words": 1108,
+   "role": "lesson"
+  },
+  "-eZs8wjjGGE": {
+   "source": "manual",
+   "words": 894,
+   "role": "lesson"
+  },
+  "13KNjPexnEI": {
+   "source": "manual",
+   "words": 1737,
+   "role": "lesson"
+  },
+  "1nUXQHr4l9g": {
+   "source": "manual",
+   "words": 1504,
+   "role": "lesson"
+  },
+  "48wRbMdHFVI": {
+   "source": "manual",
+   "words": 1776,
+   "role": "lesson"
+  },
+  "4lAbGpTDZ18": {
+   "source": "manual",
+   "words": 2708,
+   "role": "lesson"
+  },
+  "5kY9kvzeWjA": {
+   "source": "manual",
+   "words": 1577,
+   "role": "lesson"
+  },
+  "6xUH0t6ugIM": {
+   "source": "manual",
+   "words": 1548,
+   "role": "lesson"
+  },
+  "7QuYupuic3Q": {
+   "source": "manual",
+   "words": 753,
+   "role": "lesson"
+  },
+  "7aJaEQy6Yoc": {
+   "source": "manual",
+   "words": 1409,
+   "role": "lesson"
+  },
+  "83pCkSSj1IQ": {
+   "source": "manual",
+   "words": 1426,
+   "role": "lesson"
+  },
+  "86fruE9jkKk": {
+   "source": "manual",
+   "words": 709,
+   "role": "lesson"
+  },
+  "8qpQ8Q6xxiU": {
+   "source": "manual",
+   "words": 1469,
+   "role": "lesson"
+  },
+  "9ANHcZwJfdQ": {
+   "source": "manual",
+   "words": 1179,
+   "role": "lesson"
+  },
+  "9B0mtWk_AM0": {
+   "source": "manual",
+   "words": 1140,
+   "role": "lesson"
+  },
+  "9SD6DRCKZFU": {
+   "source": "manual",
+   "words": 1029,
+   "role": "lesson"
+  },
+  "AhaZtj5P2a8": {
+   "source": "manual",
+   "words": 1289,
+   "role": "lesson"
+  },
+  "BoxeL5ybOXI": {
+   "source": "manual",
+   "words": 1280,
+   "role": "lesson"
+  },
+  "Bv6NZlqqn48": {
+   "source": "manual",
+   "words": 984,
+   "role": "lesson"
+  },
+  "DT6Zy1X3ytM": {
+   "source": "auto",
+   "words": 1830,
+   "role": "lesson"
+  },
+  "EDru1LTYDJw": {
+   "source": "manual",
+   "words": 2091,
+   "role": "lesson"
+  },
+  "EcGmQjl6XEo": {
+   "source": "manual",
+   "words": 1593,
+   "role": "lesson"
+  },
+  "Fc8ZJfmapbI": {
+   "source": "manual",
+   "words": 1021,
+   "role": "lesson"
+  },
+  "GbFtSDnPZBQ": {
+   "source": "manual",
+   "words": 588,
+   "role": "lesson"
+  },
+  "HDiNPPrGhzE": {
+   "source": "manual",
+   "words": 2171,
+   "role": "lesson"
+  },
+  "I-H1iup9owc": {
+   "source": "auto",
+   "words": 787,
+   "role": "lesson"
+  },
+  "IjJf4jLtONQ": {
+   "source": "manual",
+   "words": 1056,
+   "role": "lesson"
+  },
+  "M_Af6_8JTuo": {
+   "source": "manual",
+   "words": 806,
+   "role": "lesson"
+  },
+  "MpIzA4fNWew": {
+   "source": "manual",
+   "words": 652,
+   "role": "lesson"
+  },
+  "NaXMohP4-vU": {
+   "source": "manual",
+   "words": 1946,
+   "role": "lesson"
+  },
+  "OjMnlizubTU": {
+   "source": "manual",
+   "words": 336,
+   "role": "lesson"
+  },
+  "PKgw0CLZIhE": {
+   "source": "manual",
+   "words": 1288,
+   "role": "lesson"
+  },
+  "QhLQ6J4satw": {
+   "source": "manual",
+   "words": 514,
+   "role": "lesson"
+  },
+  "R0W0_gZCVzk": {
+   "source": "manual",
+   "words": 847,
+   "role": "lesson"
+  },
+  "R9ojg881dLs": {
+   "source": "manual",
+   "words": 1281,
+   "role": "lesson"
+  },
+  "SBcDGb9l6yo": {
+   "source": "manual",
+   "words": 746,
+   "role": "lesson"
+  },
+  "SFFdbeogLFc": {
+   "source": "auto",
+   "words": 1591,
+   "role": "lesson"
+  },
+  "STM3EUvL7wg": {
+   "source": "manual",
+   "words": 1701,
+   "role": "lesson"
+  },
+  "TaTaEvqjjDM": {
+   "source": "manual",
+   "words": 972,
+   "role": "lesson"
+  },
+  "UtDWApdO8Zk": {
+   "source": "manual",
+   "words": 1544,
+   "role": "lesson"
+  },
+  "WGXrbAh0LUI": {
+   "source": "manual",
+   "words": 729,
+   "role": "lesson"
+  },
+  "W_Npxwk4fbI": {
+   "source": "manual",
+   "words": 950,
+   "role": "lesson"
+  },
+  "WlOslEy3ztg": {
+   "source": "manual",
+   "words": 1817,
+   "role": "lesson"
+  },
+  "X2UiMLxRdhE": {
+   "source": "manual",
+   "words": 1438,
+   "role": "lesson"
+  },
+  "X_qfMVty4ts": {
+   "source": "manual",
+   "words": 631,
+   "role": "lesson"
+  },
+  "Ykx7t54y-oo": {
+   "source": "manual",
+   "words": 1311,
+   "role": "lesson"
+  },
+  "YtT8q2mUM9c": {
+   "source": "manual",
+   "words": 1289,
+   "role": "lesson"
+  },
+  "Z7OntvK--PQ": {
+   "source": "manual",
+   "words": 896,
+   "role": "lesson"
+  },
+  "ZetTrqWFE_w": {
+   "source": "manual",
+   "words": 292,
+   "role": "lesson"
+  },
+  "ZoOyyqhptik": {
+   "source": "manual",
+   "words": 1937,
+   "role": "lesson"
+  },
+  "cLa94BZH_9s": {
+   "source": "manual",
+   "words": 2205,
+   "role": "lesson"
+  },
+  "cLhUMoQS1a8": {
+   "source": "manual",
+   "words": 483,
+   "role": "lesson"
+  },
+  "eyNBf1sqdBQ": {
+   "source": "auto",
+   "words": 1354,
+   "role": "lesson"
+  },
+  "jBvdRpXaomk": {
+   "source": "manual",
+   "words": 762,
+   "role": "lesson"
+  },
+  "jd001Hj7XWM": {
+   "source": "manual",
+   "words": 1012,
+   "role": "lesson"
+  },
+  "jpsc4c7lntw": {
+   "source": "manual",
+   "words": 1499,
+   "role": "lesson"
+  },
+  "leX_Qa7wqB4": {
+   "source": "manual",
+   "words": 2198,
+   "role": "lesson"
+  },
+  "mTIDoZ7I-Co": {
+   "source": "auto",
+   "words": 2366,
+   "role": "lesson"
+  },
+  "mq1HRM-zGtQ": {
+   "source": "manual",
+   "words": 1095,
+   "role": "lesson"
+  },
+  "myI-v3mj7Kc": {
+   "source": "manual",
+   "words": 440,
+   "role": "lesson"
+  },
+  "np2WI_rM-Ok": {
+   "source": "manual",
+   "words": 1663,
+   "role": "lesson"
+  },
+  "nu27ovJ5rqw": {
+   "source": "manual",
+   "words": 1150,
+   "role": "lesson"
+  },
+  "qFUOLkEk8AQ": {
+   "source": "manual",
+   "words": 721,
+   "role": "lesson"
+  },
+  "sb0dRaQbuBA": {
+   "source": "manual",
+   "words": 1450,
+   "role": "lesson"
+  },
+  "t2JrPrzRDLA": {
+   "source": "manual",
+   "words": 783,
+   "role": "lesson"
+  },
+  "tSLqrKhUvts": {
+   "source": "manual",
+   "words": 1180,
+   "role": "lesson"
+  },
+  "uU3e_ntg-3g": {
+   "source": "manual",
+   "words": 1404,
+   "role": "lesson"
+  },
+  "ujkNmD3ygoY": {
+   "source": "manual",
+   "words": 1233,
+   "role": "lesson"
+  },
+  "uo2Yw720mv4": {
+   "source": "manual",
+   "words": 390,
+   "role": "lesson"
+  },
+  "v6ht9efsnRI": {
+   "source": "manual",
+   "words": 1068,
+   "role": "lesson"
+  },
+  "wXoC46Qr_9Q": {
+   "source": "manual",
+   "words": 1773,
+   "role": "lesson"
+  },
+  "x4Wf2W3Wl4w": {
+   "source": "auto",
+   "words": 1051,
+   "role": "lesson"
+  },
+  "x72hG9GvkaQ": {
+   "source": "manual",
+   "words": 1714,
+   "role": "lesson"
+  },
+  "xHAMEF7-inQ": {
+   "source": "manual",
+   "words": 1359,
+   "role": "lesson"
+  },
+  "yDeDGCh_PDs": {
+   "source": "manual",
+   "words": 866,
+   "role": "lesson"
+  },
+  "yRSqIGjeb7s": {
+   "source": "manual",
+   "words": 1694,
+   "role": "lesson"
+  },
+  "zC_Pndpg8-c": {
+   "source": "manual",
+   "words": 1467,
+   "role": "lesson"
+  },
+  "zWw2wuiKd5o": {
+   "source": "manual",
+   "words": 1200,
+   "role": "lesson"
+  }
+ }
+}

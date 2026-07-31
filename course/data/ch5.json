@@ -190,12 +190,12 @@
      "why": "University of Maryland Smith School of Business，完整講解"
     },
     {
-     "name": "SailPoint – Workday Integration Demo: Going Beyond Day 1 Access and Compliance",
-     "kind": "lab",
-     "url": "https://www.youtube.com/watch?v=ECe_gnDtGXs",
-     "channel": "SailPoint",
-     "duration": "3:34",
-     "why": "SailPoint，實作示範"
+     "name": "SOC 2 Compliance: Everything You Need to Know | Secureframe",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=mpxaZIUSOmc",
+     "channel": "Secureframe",
+     "duration": "12:13",
+     "why": "Secureframe，短講補強"
     }
    ],
    "lesson": {
@@ -302,7 +302,7 @@
     "channel": "Professor Messer",
     "url": "https://www.youtube.com/watch?v=NaXMohP4-vU",
     "duration": "12:09",
-    "why": "Messer 官方課程沒有單獨講這個主題，改用 Professor Messer 這支講得最完整的"
+    "why": "Messer 官方課程沒有單獨講這個主題，改用 Professor Messer 這支講得最完整的（這支出自 Messer 的 N10-009 課程，觀念相同但不是照 SY0-701 錄的）"
    }
   },
   {

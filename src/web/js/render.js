@@ -87,13 +87,38 @@ function videoCard(v) {
     </a>`;
 }
 
+/* 影片是英文的，導讀讓人在點進去之前先知道值不值得看。
+   做成 <details> 是刻意的：預設收起來不搶版面，而且不需要 JS 就能展開。
+   放在卡片外面而不是裡面——<a> 裡面塞可互動元素是不合法的 HTML。 */
+function guideBox(g) {
+  if (!g || !g.eli5) return "";
+  const points = (g.points || []).length
+    ? `<ul class="Guide__points">${g.points.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>`
+    : "";
+  const heads = g.heads_up
+    ? `<p class="Guide__heads">${icon("triangle-alert", 12)} ${esc(g.heads_up)}</p>`
+    : "";
+  return `
+    <details class="Guide">
+      <summary class="Guide__summary">
+        ${icon("brain", 12)} ${esc(UI.guideLabel || "")}
+        ${g.heads_up ? `<span class="Guide__flag">${esc(UI.guideHeadsUpFlag || "")}</span>` : ""}
+      </summary>
+      <div class="Guide__body">
+        <p class="Guide__eli5">${esc(g.eli5)}</p>
+        ${points}
+        ${heads}
+      </div>
+    </details>`;
+}
+
 const langLabel = (l) => (CFG.languages || {})[l] || l || "其他";
 
 /** 主課可能有多個語言版本，用小分頁切換 */
 function lessonBox(u) {
   const lessons = (u.lessons || (u.lesson ? [u.lesson] : [])).filter(Boolean);
   if (!lessons.length) return videoCard(null);
-  if (lessons.length === 1) return videoCard(lessons[0]);
+  if (lessons.length === 1) return videoCard(lessons[0]) + guideBox(lessons[0].guide);
 
   return `
     <div class="LessonBox">
@@ -111,7 +136,7 @@ function lessonBox(u) {
       ${lessons
         .map(
           (l, i) =>
-            `<div class="LessonBox__pane" data-lesson-pane="${i}"${i ? " hidden" : ""}>${videoCard(l)}</div>`,
+            `<div class="LessonBox__pane" data-lesson-pane="${i}"${i ? " hidden" : ""}>${videoCard(l)}${guideBox(l.guide)}</div>`,
         )
         .join("")}
     </div>`;
@@ -147,8 +172,9 @@ function drill(d) {
   const attrs = `class="Drill" data-kind="${esc(d.kind)}" data-facets="${esc((d.facets || []).join("|"))}"${d.cat ? ` data-cat="${esc(d.cat)}"` : ""}`;
 
   // 有連結就整列可點，跟主課卡片一致
+  const guide = guideBox(d.guide);
   return d.url
-    ? `<li ${attrs}><a class="Drill__link" href="${esc(d.url)}" target="_blank" rel="noopener" title="${esc(d.title || UI.watchLabel || "觀看示範")}">${inner}</a></li>`
+    ? `<li ${attrs}><a class="Drill__link" href="${esc(d.url)}" target="_blank" rel="noopener" title="${esc(d.title || UI.watchLabel || "觀看示範")}">${inner}</a>${guide}</li>`
     : `<li ${attrs}><span class="Drill__link" aria-disabled="true" title="${esc(UI.missingTitle || "尚未找到合格影片")}">${inner}</span></li>`;
 }
 

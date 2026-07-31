@@ -150,7 +150,9 @@
     "noteConceptsLabel": "個下層概念",
     "eli5Label": "先用最白話的講法",
     "highWeightLabel": "高權重",
-    "highWeightHint": "筆記把這個主題標為高權重，考試出現頻率高"
+    "highWeightHint": "筆記把這個主題標為高權重，考試出現頻率高",
+    "guideLabel": "這支影片講什麼",
+    "guideHeadsUpFlag": "· 有一點要先知道"
   },
   "notes": {
     "repo": "htlin222/CompTIA-security-plus-notes",

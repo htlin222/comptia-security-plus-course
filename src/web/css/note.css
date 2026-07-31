@@ -94,3 +94,76 @@
   outline: 2px solid var(--fgColor-accent);
   outline-offset: 2px;
 }
+
+/* --- 影片導讀 ------------------------------------------------------------ */
+
+/* 影片是英文的，導讀是給不想先點開才知道內容的人看的。
+   預設收起：一個單元有 3–4 支影片，全部展開會把單元撐得很長。 */
+.Guide {
+  margin: var(--base-size-4) 0 var(--base-size-8);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.Guide__summary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--base-size-4);
+  padding: 3px 9px;
+  border: 1px solid var(--borderColor-muted);
+  border-radius: var(--borderRadius-full, 999px);
+  color: var(--fgColor-muted);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+/* Safari 仍會畫預設的三角形 */
+.Guide__summary::-webkit-details-marker {
+  display: none;
+}
+
+.Guide__summary:hover {
+  color: var(--fgColor-accent);
+  border-color: var(--fgColor-accent);
+}
+
+.Guide[open] .Guide__summary {
+  margin-bottom: var(--base-size-8);
+}
+
+/* 有 heads_up 的影片先在收起狀態就標出來，不用展開才發現 */
+.Guide__flag {
+  color: var(--fgColor-attention);
+  font-weight: 600;
+}
+
+.Guide__body {
+  padding: var(--base-size-12);
+  background-color: var(--bgColor-neutral-muted);
+  border-left: 2px solid var(--borderColor-muted);
+  border-radius: 0 var(--borderRadius-medium) var(--borderRadius-medium) 0;
+}
+
+.Guide__eli5 {
+  color: var(--fgColor-default);
+}
+
+.Guide__points {
+  margin: var(--base-size-8) 0 0;
+  padding-left: 1.15em;
+  color: var(--fgColor-muted);
+}
+
+.Guide__points li + li {
+  margin-top: var(--base-size-4);
+}
+
+.Guide__heads {
+  display: flex;
+  gap: var(--base-size-4);
+  margin-top: var(--base-size-8);
+  padding-top: var(--base-size-8);
+  border-top: 1px solid var(--borderColor-muted);
+  color: var(--fgColor-attention);
+}

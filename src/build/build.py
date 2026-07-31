@@ -113,6 +113,12 @@ def load_json(path: Path):
         return None
 
 
+def collect_guides() -> dict:
+    """videoId -> 這支影片的導讀。影片是英文的，導讀讓人在點進去之前先知道值不值得看。"""
+    blob = load_json(DATA / "video-notes.json") or {}
+    return blob.get("videos") or {}
+
+
 def notes_meta() -> dict:
     """單元對應的外部筆記統計。沒有 notes-index.json 就整組省略。"""
     blob = load_json(DATA / "notes-index.json") or {}
@@ -170,6 +176,8 @@ def main() -> int:
     within_unit = Counter()  # (unit_id, url) -> 次數，同單元重複才是真問題
 
     vmeta = load_json(DATA / "video-meta.json") or {}
+    guides = collect_guides()
+    guided = [0]
     drill_ev = collect_drill_evidence()
     alt_lessons = collect_alt_lessons()
     multilang = [0]
@@ -249,8 +257,13 @@ def main() -> int:
                 seen_urls[url] += 1
                 within_unit[(u["id"], url)] += 1
 
+                vid = video_id(url) or ""
+                if vid in guides:
+                    v["guide"] = guides[vid]
+                    guided[0] += 1
+
                 # 時長與頻道以 YouTube 實際 metadata 為準，策展資料僅作後備
-                info = vmeta.get(video_id(url) or "")
+                info = vmeta.get(vid)
                 if info and info.get("status") == "OK":
                     v["duration"] = fmt_clock(info["seconds"])
                     v["channel"] = info["channel"]
@@ -339,6 +352,7 @@ def main() -> int:
                 if u.get("type") == (CFG.get("ui", {}).get("problemType") or "posture")
             ),
             "evidence_checked": len(evidence),
+            "guided_videos": len(guides),
             # 對應筆記的規模。放進 meta 是為了讓首頁的統計數字直接由資料決定，
             # 不必在文案裡手寫一個會過期的數字。
             **notes_meta(),
@@ -369,6 +383,7 @@ def main() -> int:
     )
     print(
         f"   YouTube metadata {meta_hits[0]}/{meta_hits[0] + len(meta_miss)} 命中"
+        f" · 影片導讀 {len(guides)} 支"
         f" · 分面索引 {len(muscle_index)} 項"
         f" · 項目類別 {len(cat_counts)} 類（文獻 {len(drill_ev)} 類）"
     )

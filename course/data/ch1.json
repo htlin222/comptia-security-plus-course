@@ -317,20 +317,18 @@
      "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
     },
     {
-     "name": "(Day 18)Incident ServiceNow | Problem ServiceNow | Change ServiceNow | Life Cycle",
-     "kind": "deep",
-     "url": "https://www.youtube.com/watch?v=8YyIUtfFWQo",
-     "channel": "Learn Tech with Ravi",
-     "duration": "36:02",
-     "why": "Learn Tech with Ravi，完整講解"
+     "name": "What is Configuration Management (CM)?",
+     "kind": "core",
+     "url": "https://www.youtube.com/watch?v=66gpOMI2m4Y",
+     "channel": "Eye on Tech",
+     "duration": "4:23",
+     "why": "Eye on Tech，短講補強"
     },
     {
-     "name": "ITSM ServiceNow Full Course | Major Incident Management ServiceNow | ServiceNow Ticketing Tool",
+     "name": "Change Management（待補 1）",
      "kind": "core",
-     "url": "https://www.youtube.com/watch?v=9hsNOV3t_LU",
-     "channel": "TechTalk with Bill",
-     "duration": "4:31",
-     "why": "TechTalk with Bill，短講補強"
+     "url": null,
+     "note": "搜過 107 支候選，符合主題且過得了觀看數與長度門檻的不足這一格"
     }
    ],
    "lesson": {
@@ -378,7 +376,7 @@
      "url": "https://www.youtube.com/watch?v=q2E9URvdoYs",
      "channel": "BurningIceTech",
      "duration": "16:29",
-     "why": "BurningIceTech，完整講解"
+     "why": "BurningIceTech，完整講解（這支出自 Messer 的 N10-008 課程，觀念相同但不是照 SY0-701 錄的）"
     },
     {
      "name": "What is the CIA Triad in Cybersecurity? | Confidentiality, Integrity, Availability",
@@ -511,7 +509,7 @@
     "channel": "Professor Messer",
     "url": "https://www.youtube.com/watch?v=1nUXQHr4l9g",
     "duration": "10:02",
-    "why": "Messer 官方課程沒有單獨講這個主題，改用 Professor Messer 這支講得最完整的"
+    "why": "Messer 官方課程沒有單獨講這個主題，改用 Professor Messer 這支講得最完整的（這支出自 Messer 的 N10-008 課程，觀念相同但不是照 SY0-701 錄的）"
    }
   },
   {

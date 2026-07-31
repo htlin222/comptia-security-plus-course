@@ -35,3 +35,6 @@ Thumbs.db
 .idea/
 .vscode/*
 !.vscode/extensions.json
+
+# 字幕快取：原頻道的著作，只當建置輸入，絕不進版控
+.cache/

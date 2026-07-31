@@ -72,7 +72,11 @@ SECURITY_CONTEXT = re.compile(
 OFF_TOPIC = re.compile(
     r"\b(game|gaming|gamedev|unity|unreal|minecraft|roblox|anime|"
     r"fastapi|django|react|flutter|wordpress|shopify|zapier|notion|excel|photoshop|"
-    r"forex|trading|nft|airdrop|weight loss|recipe)\b",
+    r"forex|trading|nft|airdrop|weight loss|recipe|"
+    # 商用軟體的操作教學。標題常含 incident / change management / access control
+    # 這些考綱詞，但教的是某個產品怎麼點，不是觀念。
+    r"servicenow|\bitsm\b|jira|salesforce|workday|sap [a-z]|sharepoint|power ?bi|"
+    r"tally|quickbooks|odoo)\b",
     re.I,
 )
 LAB_HINT = re.compile(
@@ -161,6 +165,17 @@ def terms_of(slug: str) -> set[str]:
     return t
 
 
+# Messer 在 Network+、A+ 也講同一批觀念，搜尋結果常常撈到那幾支。內容本身沒問題，
+# 但把它寫成「SY0-701 課程」就是誤導——讀的人會以為那支影片是照這張考綱錄的。
+OTHER_EXAM = re.compile(r"\b(N10-\d{3}|220-\d{4}|CompTIA (?:Network|A)\+|SY0-[456]01)\b", re.I)
+
+
+def exam_note(title: str) -> str:
+    """回傳要附註的考科說明；是 SY0-701 或看不出來就回空字串。"""
+    m = OTHER_EXAM.search(title or "")
+    return f"（這支出自 Messer 的 {m.group(1)} 課程，觀念相同但不是照 SY0-701 錄的）" if m else ""
+
+
 def messer_item(vid: str, kind: str) -> dict:
     m = MESSER.get(vid, {})
     return {
@@ -169,7 +184,8 @@ def messer_item(vid: str, kind: str) -> dict:
         "url": f"https://www.youtube.com/watch?v={vid}",
         "channel": "Professor Messer",
         "duration": m.get("duration", ""),
-        "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號",
+        "why": "Professor Messer 官方 SY0-701 課程，逐條對應考綱編號"
+        + exam_note(m.get("title", "")),
     }
 
 
@@ -228,14 +244,16 @@ def build_unit(code: str, idx: int, slug: str, want_drills: int, used: set[str])
             "channel": "Professor Messer",
             "url": f"https://www.youtube.com/watch?v={vid}",
             "duration": m.get("duration", ""),
-            "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號",
+            "why": "Professor Messer 官方 SY0-701 課程，這一格逐條對應考綱編號"
+            + exam_note(m.get("title", "")),
         }
         used.add(vid)
     elif seed.get("lesson"):
         les = from_candidate(
             seed["lesson"],
             seed.get("lessonWhy")
-            or f"Messer 官方課程沒有單獨講這個主題，改用 {by_id[seed['lesson']]['channel']} 這支",
+            or f"Messer 官方課程沒有單獨講這個主題，改用 {by_id[seed['lesson']]['channel']} 這支"
+            + exam_note(by_id[seed["lesson"]]["title"]),
         )
         les.pop("name", None)
         unit["lesson"] = les
@@ -252,8 +270,11 @@ def build_unit(code: str, idx: int, slug: str, want_drills: int, used: set[str])
                 "channel": pick["channel"],
                 "url": f"https://www.youtube.com/watch?v={pick['videoId']}",
                 "duration": pick["duration"],
-                "why": copy.get("lessonWhy")
-                or f"Messer 官方課程沒有單獨講這個主題，改用 {pick['channel']} 這支講得最完整的",
+                "why": (
+                    copy.get("lessonWhy")
+                    or f"Messer 官方課程沒有單獨講這個主題，改用 {pick['channel']} 這支講得最完整的"
+                )
+                + exam_note(pick["title"]),
             }
             used.add(pick["videoId"])
         else:
@@ -317,7 +338,7 @@ def build_unit(code: str, idx: int, slug: str, want_drills: int, used: set[str])
                 "url": f"https://www.youtube.com/watch?v={pick['videoId']}",
                 "channel": pick["channel"],
                 "duration": pick["duration"],
-                "why": f"{pick['channel']}，{label}",
+                "why": f"{pick['channel']}，{label}" + exam_note(pick["title"]),
             }
         )
         used.add(pick["videoId"])
