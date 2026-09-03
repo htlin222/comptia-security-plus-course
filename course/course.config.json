@@ -152,7 +152,14 @@
     "highWeightLabel": "高權重",
     "highWeightHint": "筆記把這個主題標為高權重，考試出現頻率高",
     "guideLabel": "這支影片講什麼",
-    "guideHeadsUpFlag": "· 有一點要先知道"
+    "guideHeadsUpFlag": "· 有一點要先知道",
+    "notesLabel": "影片筆記",
+    "notesCountNoun": "條",
+    "notesCoreLabel": "底層邏輯：這個機制為什麼會長這樣",
+    "notesSectionsLabel": "逐段重點",
+    "notesTermsLabel": "名詞對照",
+    "notesExamLabel": "考場怎麼考",
+    "notesLinksLabel": "跟其他單元的關聯"
   },
   "notes": {
     "repo": "htlin222/CompTIA-security-plus-notes",

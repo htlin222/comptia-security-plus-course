@@ -11,6 +11,9 @@
 （SIEM 變 seem、SAML 變 samul），拿它當導讀依據要多留意。
 
 需要 yt-dlp（timedtext 端點現在需要對應的 session，直接打會拿到空回應）。
+預設的 web client 從資料中心 IP 打會被「Sign in to confirm you're not a bot」擋下，
+web_embedded client 不會，但它拿不到影片格式，所以要配 --ignore-no-formats-error
+（我們本來就只要字幕）。
 
 用法：
     python3 tools/fetch_captions.py              # 只補還沒抓過的
@@ -58,11 +61,12 @@ def videos(lessons_only: bool) -> list[tuple[str, str]]:
 def json3_to_text(path: Path) -> str:
     """json3 的字幕段落攤平成連續文字。時間軸對寫導讀沒用，丟掉。"""
     blob = json.loads(path.read_text(errors="replace"))
-    parts = []
+    lines = []
     for ev in blob.get("events") or []:
-        for seg in ev.get("segs") or []:
-            parts.append(seg.get("utf8", ""))
-    text = re.sub(r"\s+", " ", "".join(parts))
+        # 一個 event 是一行字幕；行內的 segs 直接接起來，行與行之間補空白，
+        # 不然人工字幕會變成 "password.There might"。
+        lines.append("".join(seg.get("utf8", "") for seg in ev.get("segs") or []))
+    text = re.sub(r"\s+", " ", " ".join(lines))
     # 自動字幕常見的填充標記
     return re.sub(r"\[(Music|Applause|Laughter|__)\]", "", text, flags=re.I).strip()
 
@@ -75,7 +79,9 @@ def fetch(item: tuple[str, str]) -> tuple[str, dict]:
     for source, flag in (("manual", "--write-subs"), ("auto", "--write-auto-subs")):
         with tempfile.TemporaryDirectory() as tmp:
             cmd = [
-                "yt-dlp", "--skip-download", "--no-warnings", "--no-progress",
+                "yt-dlp", "--skip-download", "--ignore-no-formats-error",
+                "--no-warnings", "--no-progress",
+                "--extractor-args", "youtube:player_client=web_embedded",
                 flag, "--sub-langs", "en.*", "--sub-format", "json3",
                 "-o", f"{tmp}/%(id)s.%(ext)s", url,
             ]

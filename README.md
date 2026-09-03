@@ -15,11 +15,13 @@
 面對一頁 8000 字的 Zero Trust 筆記，沒有背景的人不知道從哪裡開始讀。
 影片解決的就是這件事：先用 10 分鐘把觀念講到聽得懂，再進筆記補細節。
 
-所以每個單元固定給你三件事：
+所以每個單元固定給你四件事：
 
 1. **一支主講影片** — 多數來自 Professor Messer 的官方 SY0-701 對照課程，逐條對應考綱編號
-2. **一段自我檢核** — 「怎麼確認自己真的懂了」，答不出來就代表影片白看了
-3. **一個回筆記的入口** — 同名筆記頁的 ELI5、下層概念、情境案例與練習題
+2. **一份影片筆記** — 從底層邏輯講起（這個機制為什麼存在、被什麼限制逼出來），
+   再依影片順序列逐段重點、名詞對照、考場怎麼考、跟其他單元的關聯。繁中，技術名詞保留英文
+3. **一段自我檢核** — 「怎麼確認自己真的懂了」，答不出來就代表影片白看了
+4. **一個回筆記的入口** — 同名筆記頁的 ELI5、下層概念、情境案例與練習題
 
 外加每個單元都標到 **NIST／MITRE ATT&CK／RFC 的原始文件**，連結全數經 API 重驗。
 
@@ -53,6 +55,10 @@ make verify    打真實 API：每個 YouTube 連結重打 oEmbed、
 
 **三、找不到合格影片就留空並說明。**
 硬塞一支「大致相關」的比留空更糟——它會讓人以為這個主題已經被講過了。
+
+**字幕不進版控。** 導讀與影片筆記是看過字幕之後自己寫的，字幕本身是原頻道的著作，
+只當建置輸入快取在 `.cache/captions/`；進版控的只有 `caption-index.json` 的中繼資料
+（人工／自動字幕、字數）與 `video-notes.json` 裡的原創內容。
 
 ---
 
@@ -90,7 +96,9 @@ uv run python tools/assemble.py            # 3. 確定性選片，組出 ch1..ch
 uv run python tools/fetch_meta.py          # 4. 抓真實長度／觀看數／可否嵌入
 uv run python tools/assemble.py            # 5. 再組一次（這次會排除不可嵌入的）
 uv run python tools/build_evidence.py      # 6. 產生單元層級的考綱與標準對應
-make check && make verify                  # 7. 全綠才算數
+uv run python tools/fetch_captions.py --lessons  # 7. 用 yt-dlp 抓主課字幕到 .cache/（不進版控）
+                                           #    再據此寫 course/data/video-notes.json 的導讀與筆記
+make check && make verify                  # 8. 全綠才算數
 make deploy
 ```
 

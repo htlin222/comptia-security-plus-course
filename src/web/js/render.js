@@ -109,6 +109,54 @@ function guideBox(g) {
         ${points}
         ${heads}
       </div>
+    </details>${notesBox(g.notes)}`;
+}
+
+/* 影片筆記：比導讀長很多，是看完（或不想看）影片之後拿來對答案的那份。
+   結構固定：底層邏輯 → 逐段重點 → 名詞對照 → 考場怎麼考 → 跟其他單元的關聯。
+   同樣做成 <details>，預設收起；跟導讀分開是因為兩者用途不同——
+   導讀決定要不要看，筆記負責看完之後留下什麼。 */
+function notesBox(n) {
+  if (!n || !(n.core || (n.sections || []).length)) return "";
+  const block = (label, inner) =>
+    inner ? `<section class="Notes__block"><h4 class="Notes__label">${esc(label)}</h4>${inner}</section>` : "";
+  const list = (items) =>
+    (items || []).length ? `<ul class="Notes__list">${items.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : "";
+
+  const core = n.core ? block(UI.notesCoreLabel || "", `<p class="Notes__core">${esc(n.core)}</p>`) : "";
+  const sections = (n.sections || [])
+    .map(
+      (s) => `
+        <section class="Notes__section">
+          <h5 class="Notes__title">${esc(s.title)}</h5>
+          ${list(s.points)}
+        </section>`,
+    )
+    .join("");
+  const body = sections ? block(UI.notesSectionsLabel || "", sections) : "";
+  const terms = (n.terms || []).length
+    ? block(
+        UI.notesTermsLabel || "",
+        `<dl class="Notes__terms">${n.terms
+          .map(
+            (t) =>
+              `<div class="Notes__term"><dt>${esc(t.term)}${t.zh ? ` <span class="Notes__zh">${esc(t.zh)}</span>` : ""}</dt><dd>${esc(t.note || "")}</dd></div>`,
+          )
+          .join("")}</dl>`,
+      )
+    : "";
+  const exam = block(UI.notesExamLabel || "", list(n.exam));
+  const links = block(UI.notesLinksLabel || "", list(n.links));
+  const count = (n.sections || []).reduce((a, s) => a + (s.points || []).length, 0);
+  return `
+    <details class="Guide Notes">
+      <summary class="Guide__summary">
+        ${icon("notebook-pen", 12)} ${esc(UI.notesLabel || "")}
+        ${count ? `<span class="Notes__count">${count} ${esc(UI.notesCountNoun || "")}</span>` : ""}
+      </summary>
+      <div class="Guide__body Notes__body">
+        ${core}${body}${terms}${exam}${links}
+      </div>
     </details>`;
 }
 

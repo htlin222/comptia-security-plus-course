@@ -734,6 +734,39 @@ def audit_depth(cfg: dict, units: list[dict], opts: dict, rep: Report) -> None:
     ]:
         rep.warn(sec, f"{len(nowhy)} 堂主課沒有寫選片理由 why", nowhy)
 
+    # 影片導讀與筆記：主課影片每一支都要有，而且筆記的結構要完整。
+    # 這裡不看內容好壞（那是人的事），只看「有沒有」與「欄位齊不齊」，
+    # 因為缺一個欄位前端會靜默少渲染一塊，沒有人會發現。
+    guides = (load_json(DATA / "video-notes.json") or {}).get("videos") or {}
+    if guides:
+        lesson_ids = {
+            video_id(r["unit"]["lesson"].get("url"))
+            for r in units
+            if r["unit"].get("lesson") and r["unit"]["lesson"].get("url")
+        } - {None}
+        no_guide = sorted(v for v in lesson_ids if not (guides.get(v) or {}).get("eli5"))
+        no_notes, bad_notes = [], []
+        for v in sorted(lesson_ids):
+            n = (guides.get(v) or {}).get("notes")
+            if not n:
+                no_notes.append(v)
+                continue
+            lack = [k for k in ("core", "sections", "terms", "exam", "links") if k not in n]
+            if lack:
+                bad_notes.append(f"{v} 缺 {'/'.join(lack)}")
+            elif not n["core"] or not n["sections"] or not n["terms"] or not n["exam"]:
+                bad_notes.append(f"{v} 有空欄位")
+            elif any(not s.get("title") or not s.get("points") for s in n["sections"]):
+                bad_notes.append(f"{v} 有段落沒標題或沒重點")
+        if no_guide:
+            rep.warn(sec, f"{len(no_guide)} 支主課影片沒有導讀 eli5", no_guide)
+        if bad_notes:
+            rep.err(sec, f"{len(bad_notes)} 支主課影片的筆記欄位不完整", bad_notes)
+        if no_notes:
+            rep.warn(sec, f"{len(no_notes)} 支主課影片沒有影片筆記 notes", no_notes)
+        if not (no_guide or bad_notes or no_notes):
+            rep.ok(sec, f"{len(lesson_ids)} 支主課影片都有導讀與影片筆記")
+
     # 單元層級實證
     ev_units, bad_grade = set(), []
     # 兩套命名都要掃，跟 build.py 的 collect_evidence 對齊

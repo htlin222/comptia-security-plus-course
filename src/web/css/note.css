@@ -167,3 +167,76 @@
   border-top: 1px solid var(--borderColor-muted);
   color: var(--fgColor-attention);
 }
+
+/* --- 影片筆記 ------------------------------------------------------------ */
+
+/* 比導讀長很多，所以標題層級、名詞表、清單都要自己有節奏，不然會變成一面牆。 */
+.Notes {
+  margin-top: 0;
+}
+
+.Notes__count {
+  color: var(--fgColor-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.Notes__body {
+  display: grid;
+  gap: var(--base-size-12);
+}
+
+.Notes__label {
+  margin: 0 0 var(--base-size-4);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--fgColor-accent);
+}
+
+.Notes__core {
+  margin: 0;
+  color: var(--fgColor-default);
+}
+
+.Notes__section + .Notes__section {
+  margin-top: var(--base-size-8);
+}
+
+.Notes__title {
+  margin: 0 0 2px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--fgColor-default);
+}
+
+.Notes__list {
+  margin: 0;
+  padding-left: 1.15em;
+  color: var(--fgColor-muted);
+}
+
+.Notes__list li + li {
+  margin-top: 3px;
+}
+
+.Notes__terms {
+  display: grid;
+  gap: var(--base-size-4);
+  margin: 0;
+}
+
+.Notes__term dt {
+  font-weight: 600;
+  color: var(--fgColor-default);
+}
+
+.Notes__zh {
+  font-weight: 400;
+  color: var(--fgColor-muted);
+}
+
+.Notes__term dd {
+  margin: 0;
+  color: var(--fgColor-muted);
+}

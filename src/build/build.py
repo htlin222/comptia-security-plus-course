@@ -353,6 +353,7 @@ def main() -> int:
             ),
             "evidence_checked": len(evidence),
             "guided_videos": len(guides),
+            "noted_videos": sum(1 for g in guides.values() if g.get("notes")),
             # 對應筆記的規模。放進 meta 是為了讓首頁的統計數字直接由資料決定，
             # 不必在文案裡手寫一個會過期的數字。
             **notes_meta(),
@@ -384,6 +385,7 @@ def main() -> int:
     print(
         f"   YouTube metadata {meta_hits[0]}/{meta_hits[0] + len(meta_miss)} 命中"
         f" · 影片導讀 {len(guides)} 支"
+        f" · 影片筆記 {sum(1 for g in guides.values() if g.get('notes'))} 支"
         f" · 分面索引 {len(muscle_index)} 項"
         f" · 項目類別 {len(cat_counts)} 類（文獻 {len(drill_ev)} 類）"
     )
